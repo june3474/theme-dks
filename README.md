@@ -1,8 +1,8 @@
 # theme-dks
 
-theme-dks is a gtk2/gtk3/XFCE theme that blends gtk2 theme(gtkrc) of the Adwaita theme 
-and gtk3 theme(gtk.css) of the PRO-dark-XFCE theme created by PAULXFCE. 
-Some modifications have been added to the originals as well.
+theme-dks is a gtk2/gtk3/XFCE theme that blends gtk2 theme(gtkrc) of the Adwaita 
+and gtk3 theme(gtk.css) of the PRO-dark-XFCE created by PAULXFCE. 
+In the course of blending, some modifications were added as well.
 
 theme-dks is licensed under GPLv2, of which the downloaded file contains a copy.
 
