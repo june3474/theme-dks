@@ -1,0 +1,384 @@
+/*************************************************/
+/*                   NAUTILUS                    */
+/*************************************************/
+
+.nautilus-window .floating-bar {
+  padding: 1px;
+  background-color: @selected_bg_color;
+  color: #ffffff;
+  text-shadow:  0 -1px alpha(#ffffff, 0.04),
+				 -1px  0px alpha(@fg_color, 0.05),
+				  1px  0px alpha(@fg_color, 0.05),
+				  0px  1px alpha(@fg_color, 0.3),
+				  0px  2px alpha(@fg_color, 0.05);
+  border-radius: 2px 2px 0 0; }
+
+.nautilus-window .floating-bar button {
+  color: #ffffff;
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.5); }
+
+.nautilus-window .floating-bar button.flat {
+  border-color: transparent;
+  background-color: transparent;
+  background-image: none;
+  color: #ffffff; }
+
+.nautilus-window .floating-bar button.sidebar-button {
+  border-color: transparent;
+  background-color: transparent;
+  background-image: none;
+  color: #ffffff; }
+
+.nautilus-window .floating-bar button.flat:disabled {
+  color: rgba(255, 255, 255, 0.4); }
+
+.nautilus-window .floating-bar button.sidebar-button:disabled {
+  color: rgba(255, 255, 255, 0.4); }
+
+.nautilus-window .floating-bar button.flat:disabled label {
+  color: rgba(255, 255, 255, 0.4); }
+
+.nautilus-window .floating-bar button.sidebar-button:disabled label {
+  color: rgba(255, 255, 255, 0.4); }
+
+.nautilus-window .floating-bar button:hover {
+  color: #ffffff;
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.8); }
+
+.nautilus-window .floating-bar button:active {
+  color: @selected_bg_color;
+  background-color: #ffffff;
+  border-color: #ffffff; }
+
+.nautilus-window .floating-bar button:active:hover {
+  color: @selected_bg_color;
+  background-color: #ffffff;
+  border-color: #ffffff; }
+
+.nautilus-window .floating-bar button:checked {
+  color: @selected_bg_color;
+  background-color: #ffffff;
+  border-color: #ffffff; }
+
+.nautilus-window .floating-bar button:disabled {
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.4); }
+
+.nautilus-window .floating-bar button:disabled {
+  color: rgba(255, 255, 255, 0.5); }
+
+.nautilus-window .floating-bar button:disabled label {
+  color: rgba(255, 255, 255, 0.5); }
+
+.nautilus-window .floating-bar button:disabled:active {
+  color: rgba(255, 255, 255, 0.5);
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.5); }
+
+.nautilus-window .floating-bar button:disabled:checked {
+   color: rgba(255, 255, 255, 0.5);
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.5); }
+
+.nautilus-window .floating-bar.bottom.left {
+  border-top-left-radius: 0; }
+
+.nautilus-window .floating-bar.bottom.right {
+  border-top-right-radius: 0; }
+
+/* NAUTILUS WINDOW SEARCHBAR */
+
+.nautilus-window searchbar {
+  border-top: 1px solid @light_border_color; }
+
+.nautilus-window .searchbar-container {
+  margin-top: -1px; }
+
+/* NAUTILUS WINDOW NOTEBOOK */
+
+.nautilus-window notebook {
+  background-color: #ffffff; }
+
+.nautilus-window notebook > stack:not(:only-child) searchbar {
+  background-color: #ffffff; }
+
+/* NAUTILUS DESKTOP */
+
+.nautilus-desktop.nautilus-canvas-item {
+  color: white;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.6); }
+
+.nautilus-desktop.nautilus-canvas-item:active {
+  color: white;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.6); }
+
+.nautilus-desktop.nautilus-canvas-item:selected {
+  color: #ffffff;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.6); }
+
+/* NAUTILUS CANVAS */
+
+.nautilus-canvas-item {
+  border-radius: 2px; }
+
+.nautilus-canvas-item.dim-label {
+  color: #8d8d8d; }
+
+.nautilus-canvas-item.dim-label:selected {
+  color: #d2e1f7; }
+  
+.nautilus-canvas-item.dim-label:selected:focus {
+	color: #d2e1f7; }
+
+headerbar .nautilus-canvas-item.subtitle {
+  color: #8d8d8d; }
+
+headerbar .nautilus-canvas-item.subtitle:selected {
+  color: #d2e1f7; }
+   
+headerbar .nautilus-canvas-item.subtitle:selected:focus {
+  color: #d2e1f7; }
+
+.titlebar:not(headerbar) .nautilus-canvas-item.subtitle {
+  color: #8d8d8d; }
+
+.titlebar:not(headerbar) .nautilus-canvas-item.subtitle:selected {
+  color: #d2e1f7; }
+
+.titlebar:not(headerbar) .nautilus-canvas-item.subtitle:selected:focus {
+  color: #d2e1f7; }
+
+/* NAUTILUS LIST DIM */
+
+.nautilus-list-dim-label {
+  color: #8d8d8d; }
+
+.nautilus-list-dim-label:selected {
+  color: #d2e1f7; }
+
+.nautilus-list-dim-label:selected:focus {
+  color: #d2e1f7; }
+
+/* NAUTILUS WINDOW PANED SEPARATOR */
+
+/*
+.nautilus-window paned > separator {
+box-shadow: 0px 1px 14px 14px rgba(0, 0, 0, 0.4);
+  background-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,1)); 
+ }
+
+.nautilus-window paned > separator:dir(ltr) {
+  margin-left: 0px; }
+
+.nautilus-window paned > separator:dir(rtl) {
+  margin-right: 0px; }
+*/
+
+/* NAUTILUS WINDOW CSD */
+
+.nautilus-window.csd.background {
+    background-color: transparent; }
+
+/* NAUTILUS PLACESSIDEBAR  */
+
+.nautilus-window placessidebar.sidebar separator {
+    background-color: rgba(0,0,0,0.1);/*transparent;black;*/
+    color:  rgba(0,0,0,0.1);
+    /*transparent; black; */ }
+
+.nautilus-window paned > separator {
+  background-color: #caced5;
+  /*background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.1));*/ 
+ }
+
+.nautilus-window paned > separator:dir(ltr) {
+  margin-left: -1px; }
+
+.nautilus-window paned > separator:dir(rtl) {
+  margin-right: 0px; }
+
+/* NAUTILUS WINDOW SIDEBAR SCROLLBAR */
+
+.nautilus-window placessidebar.sidebar scrollbar {
+   border-color: rgba(222, 227, 240, 0.85); }
+
+.nautilus-window placessidebar.sidebar scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider {
+  background-color: #767676;
+  border: 1px solid rgba(0, 0, 0, 0.3); }
+
+.nautilus-window placessidebar.sidebar scrollbar slider {
+  background-color: rgba(118, 118, 118, 0.7); }
+
+.nautilus-window placessidebar.sidebar scrollbar slider:hover {
+  background-color: #838383; }
+
+.nautilus-window placessidebar.sidebar scrollbar slider:hover:active {
+  background-color: @selected_bg_color; }
+
+.nautilus-window placessidebar.sidebar scrollbar slider:disabled {
+  background-color: transparent; }
+
+.nautilus-window placessidebar.sidebar scrollbar trough {
+  background-color: rgba(222, 227, 240, 0.85); }
+ 
+/* NAUTILUS MISSELANEOUS */
+
+.nautilus-operations-button-needs-attention {
+  animation: needs_attention_keyframes 2s ease-in-out; }
+
+.nautilus-operations-button-needs-attention-multiple {
+  animation: needs_attention_keyframes 3s ease-in-out;
+  animation-iteration-count: 3; }
+
+button.nautilus-circular-button.image-button {
+  padding: 0;
+  min-width: 16px;
+  min-height: 24px;
+  padding: 2px 6px;
+  border-radius: 50%; }
+
+button.nautilus-circular-button.image-button label {
+  padding: 0; }
+
+
+/*************************************************/
+/*                TWEAK TOOL                     */
+/*************************************************/
+
+.tweak-categories {
+  background-image: linear-gradient(to bottom, #ffffff, #ffffff); }
+
+.tweak-category:not(:selected):not(:hover) {
+  background-image: linear-gradient(to bottom, #ffffff, #ffffff); }
+
+.tweak-category:hover {
+background-image:image(#dde3e8);
+color: @fg_color; }
+.tweak-category:hover:active {
+background-image:image(@selected_bg_color);
+color: white; }
+.tweak-category:selected {
+background-image:image(@selected_bg_color);
+color: white; }
+.tweak-category:hover:selected {
+background-image:image(@selected_bg_color);
+color: white; }
+
+.tweak-categories separator {
+    min-width: 1px;
+    min-height: 1px;
+ background-color: transparent;
+ background-image: linear-gradient(to right, rgba(37,37,37,0.03), rgba(37,37,37,0.12), rgba(37,37,37,0.03));
+    /*background: @light_border_color;*/ }
+
+.tweak-titlebar-left:dir(ltr) {
+ }
+
+
+/*************************************************/
+/*                    GEDIT                      */
+/*************************************************/
+
+.gedit-document-panel row button {
+  min-width: 22px;
+  min-height: 22px;
+  padding: 0;
+  color: transparent;
+  background: none;
+  border: none;
+  box-shadow: none; }
+
+.gedit-document-panel row button image {
+  color: inherit; }
+
+.gedit-document-panel row:hover:not(:selected) button {
+  color: #6e6e6e; }
+
+.gedit-document-panel row:hover:not(:selected) button:hover {
+  color: #ff4d4d; }
+
+.gedit-document-panel row:hover:not(:selected) button:active {
+  color: @fg_color; }
+
+.gedit-document-panel row:hover:selected button:hover {
+  color: #ff6666;
+  background: none;
+  border: none;
+  box-shadow: none; }
+
+.gedit-document-panel row:hover:selected button:hover:active {
+    color: #ffffff; }
+
+.gedit-document-panel-dragged-row {
+  border: 1px solid @light_border_color;
+  background-color: gainsboro;
+  color: @fg_color; }
+
+.gedit-side-panel-paned statusbar {
+  border-top: 1px solid @light_border_color;
+  background-color: #ebf0f4; }
+
+.gedit-search-slider {
+  background-color: #f6f8fa;
+  padding: 6px;
+  border-color: @light_border_color;
+  border-radius: 0 0 2px 2px;
+  border-width: 0 1px 1px 1px;
+  border-style: solid; }
+
+.gedit-search-entry-occurrences-tag {
+  color: rgba(37, 37, 37, 0.6);
+  border: none;
+  margin: 2px;
+  padding: 2px; }
+
+.gedit-map-frame border {
+  border-color: rgba(0, 0, 0, 0.3);
+  border-width: 0; }
+
+.gedit-map-frame border:dir(ltr) {
+  border-left-width: 1px; }
+
+.gedit-map-frame border:dir(rtl) {
+  border-right-width: 1px; }
+
+.gedit-bottom-panel-paned {
+  background-color: #ffffff; }
+
+.gedit-side-panel-paned > separator {
+  background-image: linear-gradient(to bottom, rgba(240, 242, 248, 0.85), rgba(240, 242, 248, 0.85)); }
+
+.gedit-bottom-panel-paned > separator {
+  background-image: linear-gradient(to bottom, @light_border_color, @light_border_color); }
+
+.gedit-document-panel {
+ background-color: rgba(240, 242, 248, 0.85); }
+
+.maximized .gedit-document-panel {
+  background-color: #f0f2f8; }
+
+.gedit-document-panel row {
+  color: @fg_color;
+  background-color: rgba(80, 80, 80, 0); }
+
+.gedit-document-panel row:hover {
+  background-color: rgba(80, 80, 80, 0.15); }
+
+.gedit-document-panel row:active {
+  color: #ffffff;
+  background-color: @selected_bg_color; }
+
+.gedit-document-panel row:active button {
+  color: #ffffff; }
+
+.gedit-document-panel row:selected, .gedit-document-panel row:selected:hover {
+  color: #ffffff;
+  background-color: @selected_bg_color; }
+
+.gedit-document-panel row:hover:not(:selected) button:active {
+  color: @fg_color; }
+
+.gedit-bottom-panel-paned notebook > header.top > tabs > tab:checked {
+	box-shadow: inset 0 -1px @light_border_color; }
