@@ -344,9 +344,9 @@ font-style: normal;
 	-gtk-icon-transform:scale(0.8); }
 
 .thunar .shortcuts-pane { /* left panel */
-	background-color: @placessidebar_bg;
+  background-color: @placessidebar_bg;
   -gtk-icon-style: symbolic;
- }
+  padding: 0; }
 
 .thunar notebook .view:active { /* right pannel */
 	color: @selected_fg_color;
@@ -368,8 +368,7 @@ font-style: normal;
 	color: @fg_color; }
 #whiskermenu-window frame {
       border-radius: 3px;
-      box-shadow: 1px 7px 7px 7px rgba(0, 0, 0, 0.26);
-      border: 1px solid @border_color; }   
+      box-shadow: 1px 7px 7px 7px rgba(0, 0, 0, 0.26); }
  
 #whiskermenu-window button { /* left-side pane */
     margin-right: 4px;
