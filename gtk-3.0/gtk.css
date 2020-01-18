@@ -126,7 +126,7 @@
 /*                     FRAME                     */
 /*************************************************/
 
-frame > border
+frame > border,
 .frame {
   margin: 0;
   padding: 0;
@@ -146,6 +146,11 @@ frame > border.flat {
 /*************************************************/
 /*               SCROLLED WINDOWS                */
 /*************************************************/
+
+/*
+scrolledwindow.frame {
+  border: 1px solid @border_color; }
+*/
 
 scrolledwindow viewport.frame {
   border-style: none; }
@@ -317,7 +322,8 @@ scrolledwindow junction {
 
 treeview.view {
   border-left-color: rgba(37, 37, 37, 0.15);
-  border-top-color: rgba(0, 0, 0, 0.1); }
+  border-top-color: rgba(0, 0, 0, 0.1);
+  padding-left: 3px; }
 	
 /*
 * {
@@ -362,58 +368,32 @@ treeview.view:drop(active).before {
 treeview.view acceleditor > label {
 	background-color: @selected_bg_color; }
 
-/* TREEVIEW BUTTON */
-
-treeview.view button.dnd {
-  padding: 0 6px;
-  transition: none;
-  color: #ffffff;
-  background-color: @selected_bg_color;
-  border-radius: 0;
-  border-style: none; }
-
-treeview.view button.dnd:selected {
-
-  padding: 0 6px;
-  transition: none;
-  color: #ffffff;
-  background-color: @selected_bg_color;
-  border-radius: 0;
-  border-style: none; }
-
-treeview.view button.dnd:hover {
-  padding: 0 6px;
-  transition: none;
-  color: #ffffff;
-  text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
-  background-color: @selected_bg_color;
-  border-radius: 0;
-  border-style: none; }
-
-treeview.view button.dnd:active {
-  padding: 0 6px;
-  transition: none;
-  color: #ffffff;
-  text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
-  background-color: @selected_bg_color;
-  border-radius: 0;
-  border-style: none; }
-
 /* TREEVIEW HEADER BUTTON */
+
+treeview.view header button,
+treeview.view header button:hover {
+  min-height: 0;
+  min-width: 0;
+  padding: 3px 6px;
+  font-weight: normal;
+  /* color: @fg_color; */
+  background-color: @button_bg;
+  background-image: none;
+  border-color: @border_color;
+  border-style: none solid solid none;
+  border-radius: 0; }
+
+treeview.view header button:last-child {
+  border-right-style: none; }
+
+treeview.view header button:active {
+  background-color: @button_active_bg; }
 
 treeview.view header.button.dnd {
   padding: 0 6px;
   transition: none;
   color: #ffffff;
-text-shadow:  0 -1px alpha(#ffffff, 0.04),
+  text-shadow:  0 -1px alpha(#ffffff, 0.04),
 				 -1px  0px alpha(@fg_color, 0.05),
 				  1px  0px alpha(@fg_color, 0.05),
 				  0px  1px alpha(@fg_color, 0.3),
@@ -448,27 +428,52 @@ treeview.view header.button.dnd:active {
   border-radius: 0;
   border-style: none; }
 
-treeview.view header button,
-treeview.view header button:hover {
-  min-height: 0;
-  min-width: 0;
-  padding: 3px 6px;
-  font-weight: normal;
-  /* color: @fg_color; */
-  background-color: @button_bg;
-  background-image: none;
-  
-  border-color: @border_color;
-  border-style: none solid solid none;
-  border-radius: 0; }
-
-treeview.view header button:active {
-  background-color: @button_active_bg; }
-
-treeview.view header button:last-child {
-  border-right-style: none; }
-
 treeview.view header.button.dnd:selected {
+  padding: 0 6px;
+  transition: none;
+  color: #ffffff;
+  text-shadow:  0 -1px alpha(#ffffff, 0.04),
+				 -1px  0px alpha(@fg_color, 0.05),
+				  1px  0px alpha(@fg_color, 0.05),
+				  0px  1px alpha(@fg_color, 0.3),
+				  0px  2px alpha(@fg_color, 0.05);
+  background-color: @selected_bg_color;
+  border-radius: 0;
+  border-style: none; }
+
+/* TREEVIEW BUTTON */
+
+treeview.view button.dnd {
+  padding: 0 6px;
+  transition: none;
+  color: #ffffff;
+  background-color: @selected_bg_color;
+  border-radius: 0;
+  border-style: none; }
+
+treeview.view button.dnd:selected {
+
+  padding: 0 6px;
+  transition: none;
+  color: #ffffff;
+  background-color: @selected_bg_color;
+  border-radius: 0;
+  border-style: none; }
+
+treeview.view button.dnd:hover {
+  padding: 0 6px;
+  transition: none;
+  color: #ffffff;
+  text-shadow:  0 -1px alpha(#ffffff, 0.04),
+				 -1px  0px alpha(@fg_color, 0.05),
+				  1px  0px alpha(@fg_color, 0.05),
+				  0px  1px alpha(@fg_color, 0.3),
+				  0px  2px alpha(@fg_color, 0.05);
+  background-color: @selected_bg_color;
+  border-radius: 0;
+  border-style: none; }
+
+treeview.view button.dnd:active {
   padding: 0 6px;
   transition: none;
   color: #ffffff;

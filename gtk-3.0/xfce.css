@@ -352,7 +352,7 @@ font-style: normal;
 	color: @selected_fg_color;
 	background-color: @selected_bg_color; }
 
-.thunar notebook treeview.viw:hover:not(:selected) /* detailed list view */
+.thunar notebook treeview.view:hover:not(:selected) /* detailed list view */
 {
 	color: @fg_color;
 	background-color: shade(@base_color, 0.95); }
@@ -363,13 +363,13 @@ font-style: normal;
 /*************************************************/
 
 #whiskermenu-window {
-    border-radius: 2px;
+    border-radius: 3px;
 	background-color: @bg_color;
 	color: @fg_color; }
 #whiskermenu-window frame {
-      border-radius: 2px;
+      border-radius: 3px;
       box-shadow: 1px 7px 7px 7px rgba(0, 0, 0, 0.26);
-      /*border: 3px solid black;*/ }   
+      border: 1px solid @border_color; }   
  
 #whiskermenu-window button { /* left-side pane */
     margin-right: 4px;
