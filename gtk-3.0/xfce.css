@@ -90,6 +90,7 @@ XfceHeading {
 	background-image: none;
 	background-color: @button_active_bg;
 	border: none;
+	border-radius: 4px;
 	color: @selected_fg_color;
 	transition: none;
 	text-shadow: none;
