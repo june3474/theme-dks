@@ -67,12 +67,7 @@
   -GtkDialog-button-spacing: 6;
   -GtkDialog-action-area-border: 0;
 }
-/*
-*:selected {
-  color: @selected_fg_color;
-  background-color: @selected_bg_color;
-}
-*/
+
 *:disabled {
   -gtk-icon-effect: dim;
 }
@@ -1166,14 +1161,6 @@ button.font separator {
 button.file separator {
   background-color: transparent;
 }
-
-/*
-combobox:drop(active) button.combo {
-  color: #F08437;
-  border-color: #F08437;
-  box-shadow: none;
-}
-*/
 
 /* SIDEBAR BUTTONS */
 
@@ -2695,6 +2682,22 @@ entry selection:disabled {
 /*                    COMBOBOX                        */
 /******************************************************/
 
+/* ENTRY */
+
+combobox entry.combo:dir(ltr),
+box.linked.horizontal:not(.path-bar):dir(ltr) > entry:not(only-child) {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	border-right-style: none;
+}
+
+combobox entry.combo:dir(rtl),
+box.linked.horizontal:not(.path-bar):dir(rtl) > entry:not(only-child) {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	border-left-style: none;
+}
+
 /* BUTTON */
 
 combobox button.combo {
@@ -2706,6 +2709,19 @@ combobox button.combo {
   padding-bottom:3px;
 }
 
+/* For the combobox with an entry, remove button's left/right radius. */
+combobox entry.combo:dir(ltr) + button.combo,
+box.linked.horizontal:not(.path-bar) > entry:dir(ltr) + button {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+combobox entry.combo:dir(rtl) + button.combo,
+box.linked.horizontal:not(.path-bar) > entry:dir(rtl) + button {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
 /* ARROW */
 
 combobox arrow {
@@ -2713,42 +2729,6 @@ combobox arrow {
   min-height: 16px;
   min-width: 16px;
 }
-
-/* 
-   Combine the entry and the buttion of a combobox to make them look like 
-   a single widget 
-*/
-
-/* ENTRY */
-
-combobox entry.combo:dir(ltr),
-box.linked.horizontal:not(.path-bar):not(only-child):dir(ltr) > entry {
-	border-top-right-radius: 0;
-	border-bottom-right-radius: 0;
-	border-right-style: none;
-}
-
-combobox entry.combo:dir(rtl),
-box.linked.horizontal:not(.path-bar):not(only-child):dir(rtl) > entry {
-	border-top-left-radius: 0;
-	border-bottom-left-radius: 0;
-	border-left-style: none;
-}
-
-/* BUTTON */
-
-combobox button.combo:dir(ltr),
-box.linked.horizontal:not(.path-bar):not(only-child):dir(ltr) > button {
-	border-top-left-radius: 0;
-	border-bottom-left-radius: 0;
-}
-
-combobox button.combo:dir(rtl),
-box.linked.horizontal:not(.path-bar):not(only-child):dir(rtl) > button {
-	border-top-right-radius: 0;
-	border-bottom-right-radius: 0;
-}
-
 
 /*************************************************/
 /*                   TOOLBAR                     */
@@ -2886,7 +2866,6 @@ toolbar.bottom-toolbar button {
 
 .primary-toolbar:not(.libreoffice-toolbar) {
   min-height: 20px;
-  /* color: rgba(82, 93, 118, 0.8); */
   box-shadow: none;
   border-width: 0 0 1px 0;
   border-style: solid;
@@ -7421,9 +7400,7 @@ headerbar button.titlebutton.restore:active,
 /*                   SIDEBAR                     */
 /*************************************************/
 
-/* 
-  style class .sidebar is applied for both placessidebar and stacksidebar css nodes -- remark by dks
-*/
+/* .sidebar is applied for both placessidebar and stacksidebar */
 
 .sidebar {
   min-width: 176px;
@@ -7437,9 +7414,11 @@ headerbar button.titlebutton.restore:active,
 
 .sidebar row,
 .sidebar treeview {
-  color: @fg_color;
+	color: @fg_color;
+/*	
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
+*/
   padding-right: 8px;
 }
 
@@ -7556,6 +7535,7 @@ placessidebar.sidebar {
 }
 
 placessidebar > viewport.frame {
+	border-style: none;
 	border-right: 1px solid @light_border_color;
 }
 
