@@ -29,11 +29,11 @@
 @define-color insensitive_fg_color #8c8c8c;
 @define-color insensitive_base_color @base_color;
 @define-color unfocused_fg_color @fg_color;
-@define-color unfocused_text_color #000000;
+@define-color unfocused_text_color @text_color;
 @define-color unfocused_bg_color #ebf0f4;
 @define-color unfocused_base_color @base_color;
 @define-color border_color #808080;
-@define-color unfocused_border_color #808080;
+@define-color unfocused_border_color @border_color;
 @define-color warning_color #F27835;
 @define-color error_color #FC4138;
 @define-color success_color #73d216;
@@ -67,12 +67,12 @@
   -GtkDialog-button-spacing: 6;
   -GtkDialog-action-area-border: 0;
 }
-
+/*
 *:selected {
   color: @selected_fg_color;
   background-color: @selected_bg_color;
 }
-
+*/
 *:disabled {
   -gtk-icon-effect: dim;
 }
@@ -290,6 +290,18 @@ scrolledwindow junction {
   border-radius: 2px;
 }
 
+/* VIEW TEXT */
+
+.view text:selected,
+.view text selection {
+  color: @selected_fg_color;
+  background-color: @selected_bg_color;
+}
+
+.view text:disabled:selected,
+.view text selection:disabled {
+  color: @insensitive_fg_color;
+}
 
 /* VIEW CHECKBUTTON */
 
@@ -341,25 +353,6 @@ scrolledwindow junction {
 
 .view radio:checked:disabled:selected {
   -gtk-icon-source: -gtk-scaled(url("objects/radio-objects/radio-checked-insensitive-selected.svg"), url("objects/radio-objects/radio-checked-insensitive-selected@2.svg"));
-}
-
-/* VIEW TEXT */
-
-.view text selection {
-  color: @selected_fg_color;
-  background-color: @selected_bg_color;
-}
-
-.view:disabled:selected {
-   color: #90b5ec;
-}
-
-.view text:disabled:selected {
-  color: #90b5ec;
-}
-
-.view text selection:disabled {
-  color: #90b5ec;
 }
 
 
