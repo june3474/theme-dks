@@ -54,6 +54,7 @@ XfceHeading {
   text-shadow: 0px 1px rgba(0, 0, 0, 0.1); }
 */
 
+#XfcePanelWindowWrapper,
 .xfce4-panel.background {
 	background-color: @panel_bg;
 	color: @fg_color;
@@ -163,6 +164,72 @@ XfceHeading {
 
 .xfce4-panel.background .tasklist button image {
   /*padding: 3px;*/ }
+
+/*** systray | status tray ***/
+#systray-6,
+#sn-button {
+	-gtk-icon-shadow: none;
+	/* -gtk-icon-style: symbolic; */ }
+/*
+#sn-button-box > image {
+    -gtk-icon-transform: scale(1.5); }
+*/
+
+/*************************************************/
+/*                Whisker Menu                   */
+/*************************************************/
+
+#whiskermenu-window {
+	background-color: @bg_color;
+	color: @fg_color;
+    box-shadow: 1px 7px 7px 7px rgba(0, 0, 0, 0.26); }
+
+#whiskermenu-window box.vertical {
+    margin-top: 5px; }
+
+#whiskermenu-window button { /* left-side */
+    margin-right: 4px;
+    margin-left: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+	
+    border: none;
+	background-color: transparent;
+	background-image: none;
+	color: @fg_color; }
+
+#whiskermenu-window button:hover,
+#whiskermenu-window button:checked {
+	background-color: @selected_bg_dark;
+	color: @selected_fg_color; }
+
+#whiskermenu-window scrolledwindow.frame {
+	border-color: @light_border_color;
+	border-radius: 6px;
+	margin-right: 5px;
+}
+#whiskermenu-window treeview { /* right-side */
+	background-color: @placessidebar_bg;
+	border-radius: 6px;
+    padding: 1px 5px;
+	color: @fg_color; }
+
+#whiskermenu-window treeview:hover {
+	background-color: @selected_bg_color;
+	color: @selected_fg_color; }
+
+#whiskermenu-window entry,
+#whiskermenu-window entry:focus {
+	margin: 4px 5px;
+	border: 1px solid;
+	border-color:rgba(0, 0, 0, 0.12);
+	border-bottom-color: rgba(0, 0, 0, 0.18);
+	border-top-color: rgba(0, 0, 0, 0.08);
+	background-color: @base_color; }
+
+#whiskermenu-button image {
+	-gtk-icon-transform:scale(0.9);
+	padding: 5px; }
 
 
 /*************************************************/
@@ -358,60 +425,3 @@ XfceHeading {
 {
   color: @fg_color;
   background-color: shade(@base_color, 0.95); }
-
-
-/*************************************************/
-/*                Whisker Menu                   */
-/*************************************************/
-
-#whiskermenu-window {
-	background-color: @bg_color;
-	color: @fg_color;
-    box-shadow: 1px 7px 7px 7px rgba(0, 0, 0, 0.26); }
-
-#whiskermenu-window box.vertical {
-    margin-top: 5px; }
-
-#whiskermenu-window button { /* left-side */
-    margin-right: 4px;
-    margin-left: 4px;
-    padding-left: 4px;
-    padding-right: 4px;
-	
-    border: none;
-	background-color: transparent;
-	background-image: none;
-	color: @fg_color; }
-
-#whiskermenu-window button:hover,
-#whiskermenu-window button:checked {
-	background-color: @selected_bg_dark;
-	color: @selected_fg_color; }
-
-#whiskermenu-window scrolledwindow.frame {
-	border-color: @light_border_color;
-	border-radius: 6px;
-	margin-right: 5px;
-}
-#whiskermenu-window treeview { /* right-side */
-	background-color: @placessidebar_bg;
-	border-radius: 6px;
-    padding: 1px 5px;
-	color: @fg_color; }
-
-#whiskermenu-window treeview:hover {
-	background-color: @selected_bg_color;
-	color: @selected_fg_color; }
-
-#whiskermenu-window entry,
-#whiskermenu-window entry:focus {
-	margin: 4px 5px;
-	border: 1px solid;
-	border-color:rgba(0, 0, 0, 0.12);
-	border-bottom-color: rgba(0, 0, 0, 0.18);
-	border-top-color: rgba(0, 0, 0, 0.08);
-	background-color: @base_color; }
-
-#whiskermenu-button image {
-	-gtk-icon-transform:scale(0.9);
-	padding: 5px; }
