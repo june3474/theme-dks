@@ -424,4 +424,4 @@ XfceHeading {
 .thunar notebook treeview.view:hover:not(:selected) /* detailed list view */
 {
   color: @fg_color;
-  background-color: shade(@base_color, 0.95); }
+  background-color: @hover_bg; }

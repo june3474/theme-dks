@@ -1,0 +1,129 @@
+/*
+ * This file is for thunderbird.
+ * Put this file in <profile folder>/chrome/ directory 
+ */
+
+/*
+ * Documents say userChrome.css must include the line below at the top:
+ * @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+ * But this line causes the problem of css varibles not being recognized. 
+ * https://www.userchrome.org/adding-style-recipes-userchrome-css.html#namespaces
+ */
+
+:root {
+	--fg_color: #202020;
+	--text_color: black;
+    --bg_color: #f2f2f2;
+	--selected_bg:#486d9d;
+	--selected_bg_dark: #3a3c41;
+	--selected_fg: white;
+	--foldertree_bg: #dde2e7;
+
+	--border_light: rgba(105, 105, 105, 0.3);
+	--border_dark: #808080;
+	
+	--toolbox-border-bottom-color: var(--border_dark) !important;
+	--toolbarbutton-border-radius: 4px !important;
+}
+
+/****** Global settings ******/
+* {
+
+} 
+
+/****** General Tree Views *****/
+/* remove zebra striping */
+treechildren::-moz-tree-row {
+	background-color: transparent !important;
+}
+
+treechildren::-moz-tree-row(selected) {
+	background: var(--selected_bg) !important;
+}
+
+treechildren::-moz-tree-cell-text(selected) {
+	color: var(--selected_fg) !important;
+}
+
+treechildren::-moz-tree-twisty {
+	width: 12px !important;
+	-moz-image-region: rect(0px 12px 12px 0px) !important;
+	-moz-appearance: none !important;
+	list-style-type: image !important;
+}
+
+
+/****** Folder Tree *****/
+#folderTree {
+	-moz-appearance: none !important;
+	color: var(--fg-color) !important;
+	background: var(--foldertree_bg) !important;
+    border-bottom: 1px solid var(--border_dark) !important;
+}
+
+#folderTree > treechildren::-moz-tree-row(selected) {
+	background: var(--selected_bg_dark) !important;
+}
+
+#folderTree > treechildren::-moz-tree-cell-text(folderNameCol, newMessages-true),
+#folderTree > treechildren::-moz-tree-cell-text(folderNameCol, closed, subfoldersHaveUnreadMessages-true) {
+	color: inherit !important;
+	font-style: italic !important;
+}
+
+#folderpane_splitter {
+
+    border-inline-start: 1px solid var(--border_dark) !important;
+}
+
+/***** MessagesBox *****/
+
+#quick-filter-bar {
+/*	border-bottom: 1px solid var(--border_dark) !important; */
+}
+
+/* Thread tree */
+#threadTree {
+	background: var(--bg_color) !important;
+}
+
+#threadpane-splitter, #attachment-splitter {
+	border-bottom: 1px solid var(--border_dark) !important;
+}	
+
+/* messagepanebox */
+#messagepanebox {
+	border-bottom: 1px solid var(--border_dark) !important;
+}
+
+.main-header-area {
+	border-bottom: 1px solid var(--border_light) !important;
+}	
+
+#attachmentView {
+	border-top: 1px solid var(--border_light) !important;
+}	
+
+findbar {
+	border-top: 1px solid var(--border_light) !important;
+}	
+
+/* searchbox */
+.searchBox,
+#view-task-edit-field,
+#unifinder-task-edit-field {
+	border-color: var(--border_dark) !important;
+}
+
+.searchBox:hover,
+#view-task-edit-field:hover,
+#unifinder-task-edit-field:hover {
+	border-color: var(--fg_color) !important;
+}
+
+menuseparator{
+    margin-top: 4px !important;
+    margin-bottom: 4px !important;
+	margin-left: 7px !important;
+	margin-right: 7px !important;
+}

@@ -45,7 +45,8 @@
 @define-color menubar_bg #b5b8be;
 @define-color panel_bg #a1a8af;  /* for dark, consider #344952 or #263e50 */
 @define-color selected_bg_dark #3a3c41;
-@define-color button_bg #e6e6e6;  /* same as shade(0.95, @base_color); */
+@define-color button_bg #e6e6e6;  /* same as shade(@base_color, 0.95); */
+@define-color hover_bg shade(@base_color, 0.95);
 @define-color button_active_bg #646772;
 @define-color light_border_color rgba(105, 105, 105, 0.3);
 @define-color rubberband_bg  rgba(25, 84, 173, 0.2);
@@ -817,29 +818,19 @@ list row {
 /*************************************************/ 
 
 row:selected {
-  color: #ffffff;
+  color: @selected_fg_color;
+  /*  
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
 				 -1px  0px alpha(@fg_color, 0.05),
 				  1px  0px alpha(@fg_color, 0.05),
 				  0px  1px alpha(@fg_color, 0.3),
 				  0px  2px alpha(@fg_color, 0.05);
+  */
   background-color: @selected_bg_color;
 }
 
-row:selected label {
-  color: #ffffff;
-  text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
-}
-
-row:selected label:disabled {
-  color: #90b5ec; } 
-
 row:disabled:selected {
-  color: #90b5ec;
+  color: @insensitive_fg_color;
 }
 
 row:not(:hover) {
@@ -855,7 +846,7 @@ row.activatable:active {
 }
 
 row.activatable:disabled {
-  color: rgba(92, 97, 108, 0.55);
+  color: @insensitive_fg_color;
 }
 
 row.activatable:disabled image {
@@ -1651,20 +1642,24 @@ radiobutton label:not(:only-child):last-child {
 /*************************************************/
 
 modelbutton.flat {
-  color: black;
+  color: @fg_color;
   text-shadow: 0 1px alpha(#ffffff, 0.65); 
   transition: none;
   min-height: 24px;
   padding-left: 6px;
   padding-right: 6px;
+  padding-top: 2px;
+  padding-bottom: 2px;
   border-radius: 0px;
 }
 
 modelbutton.flat:hover {
-  color: black;
+  color: @selected_fg_color;
   text-shadow: 0 1px alpha(#ffffff, 0.45); 
-  background-color: transparent;
+  background-color: @selected_bg_dark;
+  /*
   background-image:linear-gradient(to right,rgba(100,103,114,0.1),rgba(100,103,114,0.18),rgba(100,103,114,0.18),rgba(100,103,114,0.1));
+  */
 }
 
 modelbutton.flat:checked {
@@ -2132,6 +2127,7 @@ separator {
   background-color: rgba(37,37,37, 0.1);
   min-width: 1px;
   min-height: 1px;
+  padding: 1px;
 }
 
 
@@ -2222,7 +2218,7 @@ label.separator {
 /*************************************************/
 
 popover {
-  padding: 6px;
+  padding: 5px;
   border-radius: 5px;
  
   background-color: #ff0000;
@@ -8527,6 +8523,10 @@ menu menuitem:hover {
   background-color: @selected_bg_dark;
 }
 
+menu menuitem:disabled {
+  color: @insensitive_fg_color;
+}
+
 menu menuitem check {
   text-shadow: none;
   margin: 0;
@@ -8535,10 +8535,6 @@ menu menuitem check {
 menu menuitem radio {
   text-shadow: none;
   margin: 0;
-}
-
-menu menuitem:disabled {
-  color: rgba(37, 37, 37, 0.55);
 }
 
 .menu menuitem arrow,
