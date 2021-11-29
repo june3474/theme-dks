@@ -10,7 +10,10 @@
  * https://www.userchrome.org/adding-style-recipes-userchrome-css.html#namespaces
  */
 
-:root {
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/****** Global settings ******/
+*|*:root {
 	--fg_color: #202020;
 	--text_color: black;
     --bg_color: #f2f2f2;
@@ -26,10 +29,6 @@
 	--toolbarbutton-border-radius: 4px !important;
 }
 
-/****** Global settings ******/
-* {
-
-} 
 
 /****** General Tree Views *****/
 /* remove zebra striping */
@@ -51,7 +50,6 @@ treechildren::-moz-tree-twisty {
 	-moz-appearance: none !important;
 	list-style-type: image !important;
 }
-
 
 /****** Folder Tree *****/
 #folderTree {

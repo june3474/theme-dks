@@ -7135,22 +7135,21 @@ window > .titlebar:not(headerbar):backdrop {
   /*padding: 0;
   background: none;
   border: none;
-  box-shadow: none;*/ }
+  box-shadow: none;*/
+}
 
 .titlebar {
   border-radius: 6px 6px 0 0;
 }
 
-.maximized .titlebar:not(headerbar) {
-  border-radius: 1px;
-}
-
+.maximized .titlebar:not(headerbar),
 .maximized .titlebar:backdrop:not(headerbar) {
   border-radius: 1px;
 }
 
 .titlebar:backdrop:not(headerbar) {
-  /*transition: 200ms ease-out;*/ }
+    /* transition: 200ms ease-out; */
+}
 
 .titlebar:not(headerbar) .title {
   color: @fg_color;
@@ -7246,10 +7245,12 @@ window.csd > .titlebar:not(headerbar):backdrop {
   box-shadow: none;
 }
 
+/*
 .csd .titlebar:not(headerbar) {
   background-color: transparent;
-  border-color: #8c8c8c;
+  border-color: @border_color;
 }
+*/
 
 /* TITLEBAR OR HEADERBAR BUTTON */
 
@@ -9547,13 +9548,15 @@ calendar:disabled:selected {
 
 messagedialog .titlebar {
   min-height: 24px;
-  background-color: #dedcdf;
-  border-bottom: 1px solid #d4d5db;
+  background-color: @menubar_bg;
+  border-bottom: 1px solid @border_color;
 }
 
-/*messagedialog .dialog-action-area button {
+/*
+messagedialog .dialog-action-area button {
   padding: 8px;
-  min-height: 0; }*/
+  min-height: 0; }
+*/
 
 messagedialog.csd.background {
   border-bottom-left-radius: 5px;
