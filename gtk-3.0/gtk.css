@@ -9547,9 +9547,16 @@ calendar:disabled:selected {
 /*************************************************/
 
 messagedialog .titlebar {
+  /* show titlebar */
+  /*
   min-height: 24px;
   background-color: @menubar_bg;
-  border-bottom: 1px solid @border_color;
+  border-bottom: 1px solid @border_color; 
+  */
+
+  /* hide titlebar */
+  min-height: 10px;
+  background-color: @bg_color;
 }
 
 /*
