@@ -5,15 +5,18 @@
 # which is also mostly done in this file. Sadly not all of them can be overcome
 # so there will always be a visible difference between the GTK+ 2 and 3 theme.
 
-# This is a slightly modified gtk2 theme from Adwaita's 
+# This is a slightly modified gtk2 theme from Adwaita's
+
+# Default style, containing theme properties and trying to match every widget as
+# much as possible, which is not only faster than trying to match every widget
+# by its own but also less bug-prune and more consistent.
 
 style "default" {
-
   xthickness = 1
   ythickness = 1
 
   ####################
- # Style Properties #
+  # Style Properties #
   ####################
 
   GtkWidget::focus-line-width = 1
@@ -139,7 +142,9 @@ style "default" {
 
   # Draw frame around menu in a non-compositied environment
   # This needs to go before pixmap because we need to override some stuff
-  engine "adwaita" {}
+  engine "adwaita" {
+    # adwaita engine will be used with its default settings
+  }
 
   engine "pixmap" {
 
@@ -1374,8 +1379,10 @@ style "default" {
       function = SHADOW
     }
   }
-}
+} # end of style "default"
 
+# However there is some widget specific stuff that needs to be taken care of,
+# which is the point of every other style below.
 
 style "menubar" {
   bg[NORMAL] = @menubar_bg
@@ -1395,7 +1402,6 @@ style "menubar" {
 
 
 style "menubar_item" {
-
   xthickness = 3
   ythickness = 4
 
@@ -1404,7 +1410,6 @@ style "menubar_item" {
 
 
 style "menu" {
-
   xthickness = 0
   ythickness = 0
 
@@ -1421,7 +1426,6 @@ style "menu" {
 
 
 style "menu_item" {
-
   xthickness = 3
   ythickness = 4
 
@@ -1743,7 +1747,6 @@ style "separator_menu_item" {
 
 
 style "button" {
-
   xthickness = 1
   ythickness = 1
   
@@ -1811,7 +1814,6 @@ style "link_button" {
 
 
 style "entry" {
-
   # We set this same as the border of the entry
   # This way there's no overlap
 
@@ -1823,25 +1825,29 @@ style "entry" {
 
 
 style "combobox_button" {
-
   xthickness = 6
   ythickness = 4
   
   # This affects only the button beside an entry
   GtkButton::inner-border = {0, 0, 0, 0}
-
+  engine "pixmap" {
+    image {
+      function = FOCUS
+      file     = "assets/no-focus.png"
+      border   = {1, 1, 1, 1}
+      stretch  = TRUE
+    }
+  }  
 }
 
 
 style "combobox_cellview" {
-
   text[NORMAL]   = @fg_color
   text[PRELIGHT] = @fg_color
 }
 
 
 style "combobox_entry" {
-
   # Since one side of the button is missing, we need to shift the arrow a little to the right
   #GtkButton::inner-border = {0, 1, 0, 0}
 
@@ -1965,21 +1971,25 @@ style "combobox_entry" {
 
 
 style "combo_button_padding" {
-
   # Since one side of the button is missing, we need to shift the arrow a
   # little to the right.
   # This is the same thing we've done above but the combo, unlike the combobox,
   # uses padding the same way as a button.
   GtkButton::inner-border = {6, 8, 4, 4}
-
 }
 
 
 style "notebook" {
-
   xthickness = 5
   ythickness = 2
-
+  engine "pixmap" {
+    image {
+      function = FOCUS
+      file     = "assets/no-focus.png"
+      border   = {1, 1, 1, 1}
+      stretch  = TRUE
+    }
+  }  
 }
 
 
@@ -1991,7 +2001,6 @@ style "notebook_bg" {
 
 
 style "notebook_entry" {
-
   engine "pixmap" {
 
     image {
@@ -2012,7 +2021,6 @@ style "normal_bg" {
 }
 
 style "notebook_combo" {
-
   engine "pixmap" {
 
     #############
@@ -2059,7 +2067,6 @@ style "textview" {
  */
 
 style "treeview" {  
-
   engine "pixmap" {
     image {
       function = FLAT_BOX
@@ -2070,7 +2077,6 @@ style "treeview" {
 
 
 style "scale_horz" {
-
   engine "pixmap" {
 
     image {
@@ -2088,16 +2094,12 @@ style "scale_horz" {
       border      = {10, 10, 0, 0}
       stretch     = TRUE
     }
-
   }
-
 }
 
 
 style "scale_vert" {
-
   engine "pixmap" {
-
     image {
       function    = BOX
       detail      = "trough-upper"
@@ -2113,14 +2115,11 @@ style "scale_vert" {
       border      = {0, 0, 10, 10}
       stretch     = TRUE
     }
-
   }
-
 }
 
 
 style "progressbar" {
-
   xthickness = 1
   ythickness = 1
 
@@ -2150,7 +2149,6 @@ style "progressbar" {
 
 
 style "treeview_header" {
-
   xthickness = 1
   ythickness = 0
 
@@ -2228,7 +2226,6 @@ style "treeview_header" {
 
 
 style "scrolled_window" {
-
   engine "pixmap" {
     image {
       function = SHADOW
@@ -2241,7 +2238,6 @@ style "scrolled_window" {
 
 
 style "frame" {
-
   engine "pixmap" {
 
     image {
@@ -2269,7 +2265,6 @@ style "frame" {
 
 
 style "toolbar_button" {
-
   xthickness = 2
   ythickness = 2
 
@@ -2278,7 +2273,6 @@ style "toolbar_button" {
 
 
 style "toolbar_separator" {
-
   GtkWidget::wide-separators  = 1
   GtkWidget::separator-width  = 1
   GtkWidget::separator-height = 1
@@ -2293,7 +2287,6 @@ style "toolbar_separator" {
 
 
 style "inline_toolbar" {
-
   GtkToolbar::button-relief = GTK_RELIEF_NORMAL
 
   engine "pixmap" {
@@ -2308,7 +2301,6 @@ style "inline_toolbar" {
 
 
 style "tooltip" {
-
   xthickness = 13
   ythickness = 13
 
@@ -2319,7 +2311,6 @@ style "tooltip" {
 
 
 style "disable_separator" {
-
   xthickness = 0
   ythickness = 0
 
@@ -2332,20 +2323,15 @@ style "button_active_text" {
 
 	  fg[ACTIVE] = @selected_fg_color
 	  text[ACTIVE] = @selected_fg_color
-} 
+}
 
-# Default style, containing theme properties and trying to match every widget as
-# much as possible, which is not only faster than trying to match every widget
-# by its own but also less bug-prune and more consistent. However there is some
-# widget specific stuff that needs to be taken care of, which is the point of
-# every other style below.
+
+######################################
+# Now, apply styles                  #
+######################################
 
 class "GtkWidget" style "default"
 
-
- ######################################
- # Override padding, style and colour #
- ######################################
 class "GtkButton"                                                  style "button"
 class "GtkLinkButton"                                              style "link_button"
 class "GtkEntry"                                                   style "entry"
