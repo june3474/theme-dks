@@ -8110,27 +8110,23 @@ notebook {
 }
 
 notebook.frame {
-	border: 1px solid @border_color;
-}
-
-notebook.frame > header { 
-	margin: -1px;
+    border-color: transparent;
 }
 
 notebook.frame > header.top {
-  margin-bottom: 0;
+  margin-bottom: -1px;
 }
 
 notebook.frame > header.bottom {
-	margin-top: 0;
+	margin-top: -1px;
 }
 
 notebook.frame > header.left {
-  margin-right: 0;
+  margin-right: -1px;
 }
 
 notebook.frame > header.right {
-  margin-left: 0;
+  margin-left: -1px;
 }
 
 notebook.frame > header.top,
@@ -8147,6 +8143,7 @@ notebook.frame > header.right {
 
 notebook > stack:not(:only-child) {
 	background-color: @base_color;
+    border: 1px solid @border_color;
 }
 
 notebook > header {
@@ -8155,7 +8152,7 @@ notebook > header {
 }
 
 notebook > header.top {
-  box-shadow: inset 0 -1px @border_color;
+ box-shadow: inset 0 -1px @border_color;
 }
 
 notebook > header.bottom {
@@ -8180,7 +8177,7 @@ notebook > header.top > tabs > tab {
   min-height: 20px;
   border: 1px solid @border_color;
   border-bottom: none;
-  border-radius: 3px 3px 0 0;
+  border-radius: 4px 4px 0 0;
 }
 
 notebook > header.top > tabs > tab + tab {
@@ -8197,7 +8194,7 @@ notebook > header.bottom > tabs > tab {
   min-height: 20px;
   border: 1px solid @border_color;
   border-top: none;
-  border-radius: 0 0 3px 3px;
+  border-radius: 0 0 4px 4px;
 }
 
 notebook > header.bottom > tabs > tab + tab {
@@ -8214,7 +8211,7 @@ notebook > header.right > tabs > tab {
   min-height: 20px;
   border: 1px solid @border_color;
   border-left: none;
-  border-radius: 0 3px 3px 0;
+  border-radius: 0 4px 4px 0;
 }
 
 notebook > header.right > tabs > tab + tab {
@@ -8231,7 +8228,7 @@ notebook > header.left > tabs > tab {
   min-height: 20px;
   border: 1px solid @border_color;
   border-right: none;
-  border-radius: 3px 0 0 3px;
+  border-radius: 4px 0 0 4px;
 }
 
 notebook > header.left > tabs > tab + tab {
