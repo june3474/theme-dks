@@ -145,8 +145,8 @@
 frame > border,
 .frame {
   margin: 0px;
-  padding: 5px;
-  border-radius: 3px;
+  padding: 0px;
+  border-radius: 0px;
   border: 1px solid @border_color;
 }
 
