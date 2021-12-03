@@ -10931,8 +10931,12 @@ GtkListBox .h4 {
 
 
 /*************************************************/
-/*             BUTTONBOX-FRAME                   */
+/*                  BUTTONBOX                    */
 /*************************************************/
+
+buttonbox {
+    padding: 10px;
+}
 
 #buttonbox_frame {
   padding-top: 20px;
