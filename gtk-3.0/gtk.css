@@ -142,7 +142,21 @@
 /*                     FRAME                     */
 /*************************************************/
 
-frame > border,
+/* Actual frame object */
+frame > border {
+  margin: 0px;
+  padding: 6px;
+  border-radius: 4px;
+  border: 1px solid @border_color;
+}
+
+frame > label {
+  padding: 0px 2px 0px 2px;
+  font-weight: 500;
+  text-shadow: 0 1px alpha(#ffffff, 0.95);
+}
+
+/* frame css class used by container such as window */
 .frame {
   margin: 0px;
   padding: 0px;
@@ -556,7 +570,6 @@ treeview.view button.dnd:active {
 treeview.check {
   -gtk-icon-source: -gtk-scaled(url("objects/checkbox-objects/checkbox-unchecked.svg"), url("objects/checkbox-objects/checkbox-unchecked@2.svg"));
 }
-
 
 treeview.check:selected {
   -gtk-icon-source: -gtk-scaled(url("objects/checkbox-objects/checkbox-unchecked-selected.svg"), url("objects/checkbox-objects/checkbox-unchecked-selected@2.svg"));
@@ -10935,7 +10948,11 @@ GtkListBox .h4 {
 /*************************************************/
 
 buttonbox {
-    padding: 10px;
+    padding: 6px;
+}
+
+dialog > box > buttonbox:last-child {
+    padding: 10px 10px 12px 10px;
 }
 
 #buttonbox_frame {
