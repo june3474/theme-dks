@@ -8126,30 +8126,30 @@ notebook.frame {
     border-color: transparent;
 }
 
-notebook.frame > header.top {
+notebook > header.top {
   margin-bottom: -1px;
 }
 
-notebook.frame > header.bottom {
+notebook > header.bottom {
 	margin-top: -1px;
 }
 
-notebook.frame > header.left {
+notebook > header.left {
   margin-right: -1px;
 }
 
-notebook.frame > header.right {
+notebook > header.right {
   margin-left: -1px;
 }
 
-notebook.frame > header.top,
-notebook.frame > header.bottom {
+notebook > header.top,
+notebook > header.bottom {
   padding-left: 0;
   padding-right: 0;
 }
 
-notebook.frame > header.left, 
-notebook.frame > header.right {
+notebook > header.left, 
+notebook > header.right {
   padding-top: 0;
   padding-bottom: 0;
 }
