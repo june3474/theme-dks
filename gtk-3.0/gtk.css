@@ -9209,15 +9209,14 @@ levelbar block.empty {
 /*************************************************/
 
 .app-notification {
-  color: @fg_color;
-  background-color: transparent;
-  background-image:linear-gradient(to bottom left,rgba(242,243,246,0.92),rgba(213,218,224,0.92),rgba(213,218,224,0.92));
+  color: @selected_fg_color;
+  background-color: @selected_bg_dark;
+  margin-top: 5px;
+  border-radius: 20px;  
 }
 
 .app-notification > border {
-  padding: 10px;
-  border: 1px solid @border_color;
-  border-radius: 0 0 4px 4px;
+    padding: 8px 10px 8px 10px;
 }
 
 
@@ -9237,12 +9236,10 @@ levelbar block.empty {
   border-left-color: rgba(0,0,0,0.12);
   border-bottom-color: rgba(0, 0, 0, 0.2);
   border-top-color: rgba(0, 0, 0, 0.08);
-  background-color: transparent;
-  background-image:linear-gradient(to bottom,#fdfefe, #eaedf3);
 }
 
 .app-notification button.flat {
-  color: @fg_color;
+  color: @bg_color;
   background-color: transparent;
   background-image: none;
   box-shadow: none; 
@@ -9262,9 +9259,7 @@ levelbar block.empty {
 
 .app-notification button:hover {
   color:#101010;
-  background-color: transparent;
-  background-image: linear-gradient(to top,rgba(255,255,255,1),
-                                              rgba(255,255,255,1));
+  background-color: shade(@button_bg, 1.2);
   border-right-color: rgba(0,0,0,0.12);
   border-left-color: rgba(0,0,0,0.12);
   border-bottom-color: rgba(0, 0, 0, 0.2);
