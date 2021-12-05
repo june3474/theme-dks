@@ -5254,7 +5254,14 @@ toolbar.inline-toolbar toolbutton:backdrop:only-child > button.flat {
 /*                SPINBUTTON                     */
 /*************************************************/
 
-spinbutton button:active {
+spinbutton > button,
+spinbutton > button:focus {
+  font-weight: normal;
+  border-radius: 0px;
+  border-color: @border_color;
+}
+
+spinbutton > button:active {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
 				 -1px  0px alpha(@fg_color, 0.05),
@@ -5263,187 +5270,57 @@ spinbutton button:active {
 				  0px  2px alpha(@fg_color, 0.05);
 }
 
-spinbutton:drop(active) {
-  box-shadow: none;
+spinbutton:drop(active) > entry {
+  border-color: #F08437;
 }
 
 spinbutton:disabled {
 	color: rgba(92, 97, 108, 0.55);
 }
 
-/* SPINBUTTON NOT (VERTICAL) ENTRY */
+/* SPINBUTTON HORIZONTAL ENTRY */
 
-spinbutton:not(.vertical) entry {
+spinbutton.horizontal > entry {
   min-width: 28px;
   border-radius: 0;
-  border-style: solid;
-  border-right-style: none;
-}
-
-spinbutton:not(.vertical) entry:first-child {
-  border-top-right-radius:0px;
-  border-bottom-right-radius:0px;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
-  margin-left: 0px;
+  border-right-width: 0px;
 }
 
-spinbutton:not(.vertical) entry:last-child {
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
+/* SPINBUTTON HORIZONTAL BUTTON */
+
+spinbutton.horizontal > button.down {
+  /* notthing to add */
+}    
+
+spinbutton.horizontal > button.up {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
-  margin-left:-1px;
+  border-left-width: 0px;
 }
 
-spinbutton:not(.vertical) entry:only-child {
-  border-radius: 4px;
-}
-
-spinbutton:not(.vertical):dir(ltr) entry {
-  border-radius: 4px 0 0 4px;
-}
-
-spinbutton:not(.vertical) > entry + button:not(:active):hover {
-  box-shadow: none;
-}
-
-spinbutton:not(.vertical) > entry:focus + button {
-  border-left-color: rgba(0, 0, 0, 0.12);
-}
-
-spinbutton:not(.vertical) > entry:drop(active) + button {
-  border-left-color: #F08437;
-}
-
-/* SPINBUTTON NOT(.VERTICAL) BUTTON */
-
-spinbutton:not(.vertical) button {
-  font-weight: normal;
-  border-radius: 0px;
-}
-
-spinbutton:not(.vertical) button:last-child {
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  border-style: solid;
-  margin-left:-1px;
-}
-
-spinbutton:not(.vertical) button:only-child {
-  border-radius: 4px;
-  border-style: solid;
-}
-
-spinbutton:not(.vertical) button:first-child {
-  border-top-right-radius:0px;
-  border-bottom-right-radius:0px;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-  margin-left: 0px;
-  border-style: solid;
-}
-
-spinbutton:not(.vertical):dir(rtl) button.up {
-  border-radius: 4px 0 0 4px;
-}
-
-spinbutton:not(.vertical) > button + button {
-  border-left-style: none;
-}
-
-spinbutton:not(.vertical) > button:hover:not(:active) {
-  box-shadow: inset 1px 0 rgba(0, 0, 0, 0.2);
-}
-
-spinbutton:not(.vertical) > button:hover + button {
-  box-shadow: inset 1px 0 rgba(0, 0, 0, 0.2);
-}
-
-spinbutton:not(.vertical) > button:disabled + button:not(:disabled):not(:active):not(:checked):not(:hover) {
-  box-shadow: inset 1px 0 transparent;
-}
-
-spinbutton:not(.vertical) > button:not(:disabled):not(:active):not(:checked):not(:hover) + button:disabled {
-  box-shadow: inset 1px 0 transparent;
-}
-
-spinbutton:not(.vertical) > button:first-child:hover:not(:active) {
-  box-shadow: none;
-}
-
-spinbutton:not(.vertical) > button.up:dir(rtl):hover:not(:active) {
-  box-shadow: none;
-}
 
 /* SPINBUTTON VERTICAL ENTRY */
 
-spinbutton.vertical entry {
+spinbutton.vertical > entry {
   border-radius: 0;
-  border-style: solid;
-  border-bottom-style: none;
   padding-left: 4px;
   padding-right: 4px;
-  min-width: 0;
-}
-
-spinbutton.vertical entry:first-child {
-  border-bottom-right-radius:0px;
-  border-bottom-left-radius:0px;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-}
-
-spinbutton.vertical entry:last-child {
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
-  border-bottom-style: solid;
-}
-
-spinbutton.vertical entry:only-child {
-  border-radius: 4px;
-}
-
-spinbutton.vertical > entry:focus + button {
-  border-top-color: @selected_bg_color;
-}
-
-spinbutton.vertical > entry:drop(active) + button {
-  border-top-color: #F08437;
 }
 
 /* SPINBUTTON VERTICAL BUTTON */
 
-spinbutton.vertical button {
-  border-radius: 0px;
-  border-bottom-style: none;
-  padding-left: 4px;
-  padding-right: 4px;
-  min-width: 0;
-}
-
-spinbutton.vertical button:first-child {
-  border-bottom-right-radius:0px;
-  border-bottom-left-radius:0px;
+spinbutton.vertical > button.up {
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
+  border-bottom-width: 0px;
 }
 
-spinbutton.vertical button:last-child {
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
+spinbutton.vertical > button.down {
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
-  border-bottom-style: solid;
-}
-
-spinbutton.vertical button:only-child {
-  border-radius: 4px;
-  border-style: solid;
+  border-top-width: 0px;
 }
 
 
@@ -9332,17 +9209,17 @@ levelbar block.empty {
 /*************************************************/
 
 .app-notification {
-  padding: 10px;
   color: @fg_color;
   background-color: transparent;
   background-image:linear-gradient(to bottom left,rgba(242,243,246,0.92),rgba(213,218,224,0.92),rgba(213,218,224,0.92));
-  border: 1px solid @light_border_color;
-  border-radius: 0 0 5px 5px;
 }
 
-.app-notification border {
-  border: none;
+.app-notification > border {
+  padding: 10px;
+  border: 1px solid @border_color;
+  border-radius: 0 0 4px 4px;
 }
+
 
 .app-notification button {
   min-height: 20px;
