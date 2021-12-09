@@ -412,16 +412,23 @@ XfceHeading {
 .thunar toolbar.horizontal button image {
 	-gtk-icon-transform:scale(0.8); }
 
-.thunar .shortcuts-pane { /* left panel */
+/* left panel */
+.thunar .shortcuts-pane { 
   background-color: @placessidebar_bg;
   -gtk-icon-style: symbolic;
   padding: 0; }
 
-.thunar notebook .view:active { /* right pannel */
+ /* right pannel */
+.thunar notebook .view:active {
   color: @selected_fg_color;
   background-color: @selected_bg_color; }
 
-.thunar notebook treeview.view:hover:not(:selected) /* detailed list view */
-{
+ /* detailed list view */
+.thunar notebook treeview.view:hover:not(:selected) {
   color: @fg_color;
   background-color: @hover_bg; }
+
+/* separator between left and right panel */
+.thunar paned > separator {
+    border-width: 0px;
+}

@@ -2137,12 +2137,18 @@ stackswitcher button.nautilus-circular-button.image-button {
 /*************************************************/
 
 separator {
-  background-color: rgba(37,37,37, 0.1);
-  min-width: 1px;
-  min-height: 1px;
-  padding: 1px;
+  background-color: @border_color;
 }
 
+separator.vertical {
+  min-width: 1px;
+  margin: 0px 2px;
+}
+
+separator.horizontal {
+  min-height: 1px;
+  margin: 2px 0px;
+}
 
 /*************************************************/
 /*                RUBBERBAND                     */
@@ -7527,62 +7533,43 @@ paned .sidebar {
 /* PANED SEPARATOR */
 
 paned > separator {
-  min-width: 1px;
-  min-height: 1px;
+  /* Required. without this, some noise appears. dunno why */ 
   -gtk-icon-source: none;
-  border-style: none;
-  background-color: transparent;
-  background-image: linear-gradient(to bottom, @light_border_color, @light_border_color);
-  background-size: 1px 1px; 
-  }
-
-paned > separator:selected {
-  background-image: linear-gradient(to bottom, @selected_bg_color, @selected_bg_color);
+  margin: 0px;  
+  border-style: solid;
+  border-color: transparent;
 }
 
-paned > separator.wide {
-  min-width: 5px;
-  min-height: 5px;
-  background-color: #ebf0f4;
-  background-image: linear-gradient(to bottom, @light_border_color, @light_border_color), linear-gradient(to bottom, @light_border_color, @light_border_color);
-  background-size: 1px 1px, 1px 1px;
-}
-
-paned.horizontal > separator {
-  background-repeat: repeat-y;
-}
-
-paned.horizontal > separator:dir(ltr) {
-  margin: 0 -8px 0 0;
-  padding: 0 8px 0 0;
-  background-position: left;
-}
-
-paned.horizontal > separator:dir(rtl) {
-  margin: 0 0 0 -8px;
-  padding: 0 0 0 8px;
-  background-position: right;
-}
-
+paned.horizontal > separator,
 paned.horizontal > separator.wide {
-  margin: 0;
-  padding: 0;
-  background-repeat: repeat-y, repeat-y;
-  background-position: left, right;
+  min-width: 1px;
+  border-width: 0px 4px;
 }
 
-paned.vertical > separator {
-  margin: 0 0 -8px 0;
-  padding: 0 0 8px 0;
-  background-repeat: repeat-x;
-  background-position: top;
+paned.horizontal > separator:hover,
+paned.horizontal > separator:selected,
+paned.horizontal > separator.active {
+  min-width: 3px;
+  border-width: 20px 3px;
+  border-color: transparent;
+  border-radius: 3px;
+  background-color: @selected_bg_color;
 }
 
+paned.vertical > separator,
 paned.vertical > separator.wide {
-  margin: 0;
-  padding: 0;
-  background-repeat: repeat-x, repeat-x;
-  background-position: bottom, top;
+  min-height: 1px;
+  border-width: 4px 0px;    
+}
+
+paned.vertical > separator:hover,
+paned.vertical > separator:selected,
+paned.vertical > separator.active {
+  min-height: 3px;
+  border-width: 3px 20px;
+  border-color: transparent;
+  border-radius: 3px;
+  background-color: @selected_bg_color;
 }
 
 
@@ -8787,7 +8774,8 @@ scrollbar slider:hover {
   background-color: #b7b7b7;
 }
 
-scrollbar slider:hover:active {
+scrollbar slider:hover,
+scrollbar slider:active {
   background-color: @selected_bg_color;
 }
 
@@ -8832,7 +8820,8 @@ scrollbar.overlay-indicator:not(.dragging):not(.hovering).vertical slider {
   min-height: 40px;
 }
 
-scrollbar.overlay-indicator.dragging, scrollbar.overlay-indicator.hovering {
+scrollbar.overlay-indicator.dragging,
+scrollbar.overlay-indicator.hovering {
   opacity: 0.99;
 }
 
