@@ -7552,7 +7552,6 @@ paned.horizontal > separator.active {
   min-width: 3px;
   border-width: 20px 3px;
   border-color: transparent;
-  border-radius: 3px;
   background-color: @selected_bg_color;
 }
 
@@ -7568,7 +7567,6 @@ paned.vertical > separator.active {
   min-height: 3px;
   border-width: 3px 20px;
   border-color: transparent;
-  border-radius: 3px;
   background-color: @selected_bg_color;
 }
 
