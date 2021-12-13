@@ -1,0 +1,22 @@
+/*
+ * userChrome.css for firefox.
+ * Put this file in <profile folder>/chrome/ directory 
+ */
+
+/*
+ * Documents say userChrome.css must include the line below at the top:
+ * @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+ * But this line causes the problem of css varibles not being recognized. 
+ * https://www.userchrome.org/adding-style-recipes-userchrome-css.html#namespaces
+ */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+menuseparator {
+    margin: 4px 10px !important;
+}
+
+.menuitem-with-favicon,
+.menu-iconic {
+	margin-left: 6px;
+}

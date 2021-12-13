@@ -1,5 +1,5 @@
 /*
- * This file is for thunderbird.
+ * userChrome.css for thunderbird.
  * Put this file in <profile folder>/chrome/ directory 
  */
 
@@ -30,7 +30,24 @@
 }
 
 
-/****** General Tree Views *****/
+/***** Menu *****/
+.menuitem-with-favicon,
+.menu-iconic {
+	margin-left: 6px;
+}
+
+menuseparator {
+    margin: 4px 10px !important;
+}
+menuseparator{
+    margin-top: 4px !important;
+    margin-bottom: 4px !important;
+	margin-left: 7px !important;
+	margin-right: 7px !important;
+}
+
+
+/****** Tree Views *****/
 /* remove zebra striping */
 treechildren::-moz-tree-row {
 	background-color: transparent !important;
@@ -50,6 +67,7 @@ treechildren::-moz-tree-twisty {
 	-moz-appearance: none !important;
 	list-style-type: image !important;
 }
+
 
 /****** Folder Tree *****/
 #folderTree {
@@ -73,6 +91,7 @@ treechildren::-moz-tree-twisty {
 
     border-inline-start: 1px solid var(--border_dark) !important;
 }
+
 
 /***** MessagesBox *****/
 
@@ -117,11 +136,4 @@ findbar {
 #view-task-edit-field:hover,
 #unifinder-task-edit-field:hover {
 	border-color: var(--fg_color) !important;
-}
-
-menuseparator{
-    margin-top: 4px !important;
-    margin-bottom: 4px !important;
-	margin-left: 7px !important;
-	margin-right: 7px !important;
 }
