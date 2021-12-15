@@ -12,11 +12,16 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
+menu.menu-iconic,
+menuitem {
+    margin: 1px 6px;
+}
+
 menuseparator {
     margin: 4px 10px !important;
 }
 
-.menuitem-with-favicon,
-.menu-iconic {
-	margin-left: 6px;
+/* application menu on the right of search bar. three horizontal bars */
+#appMenu-popup toolbarbutton {
+    --arrowpanel-menuitem-padding: 4px 8px;
 }

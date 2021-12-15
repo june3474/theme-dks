@@ -14,44 +14,7 @@
     with this program; if not, write to the Free Software Foundation, Inc.,
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.*/
 
-
-/*************************************************/
-/*             COLOR DEFINITION                  */
-/*************************************************/
-
-@define-color fg_color #202020;
-@define-color text_color #000000;
-@define-color bg_color #d4d4d4;   /* #eeeeee */
-@define-color base_color #f2f2f2;
-@define-color selected_bg_color #486d9d;
-@define-color selected_fg_color #ffffff;
-@define-color insensitive_bg_color #f6f8fa;
-@define-color insensitive_fg_color #8c8c8c;
-@define-color insensitive_base_color @base_color;
-@define-color unfocused_fg_color @fg_color;
-@define-color unfocused_text_color @text_color;
-@define-color unfocused_bg_color #ebf0f4;
-@define-color unfocused_base_color @base_color;
-@define-color border_color #808080;
-@define-color unfocused_border_color @border_color;
-@define-color warning_color #F27835;
-@define-color error_color #FC4138;
-@define-color success_color #73d216;
-@define-color placeholder_text_color #A8A8A8;
-@define-color link_color #2679db;
-
-/* added by dks */
-@define-color placessidebar_bg #dde2e7;
-@define-color menubar_bg #b5b8be;
-@define-color panel_bg #a1a8af;  /* for dark, consider #344952 or #263e50 */
-@define-color selected_bg_dark #3a3c41;
-@define-color button_bg #e6e6e6;  /* same as shade(@base_color, 0.95); */
-@define-color hover_bg shade(@base_color, 0.95);
-@define-color button_active_bg #646772;
-@define-color light_border_color rgba(105, 105, 105, 0.3);
-@define-color rubberband_bg  rgba(25, 84, 173, 0.2);
-@define-color rubberband_border #1954ad;
-
+@import url("colors.css");
 
 /*************************************************/
 /*                  DEFAULT                      */
@@ -2699,15 +2662,17 @@ entry selection:disabled {
 
 /* ENTRY */
 
-combobox entry.combo:dir(ltr),
+combobox entry.combo:dir(ltr) {
+/* Below is to make 'entry+button' look like a combobox. but more side-effects
 box.linked.horizontal:not(.path-bar):dir(ltr) > entry:not(only-child) {
+*/
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
 	border-right-style: none;
 }
 
-combobox entry.combo:dir(rtl),
-box.linked.horizontal:not(.path-bar):dir(rtl) > entry:not(only-child) {
+combobox entry.combo:dir(rtl) {
+/* box.linked.horizontal:not(.path-bar):dir(rtl) > entry:not(only-child) { */
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
 	border-left-style: none;
@@ -7535,39 +7500,59 @@ paned .sidebar {
 paned > separator {
   /* Required. without this, some noise appears. dunno why */ 
   -gtk-icon-source: none;
-  margin: 0px;  
   border-style: solid;
   border-color: transparent;
 }
 
-paned.horizontal > separator,
-paned.horizontal > separator.wide {
+paned.horizontal > separator { /* separator.vertical */
   min-width: 1px;
-  border-width: 0px 4px;
+  margin: 2px 0px;
+  border-width: 0px 2px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+paned.horizontal > separator.wide {
+  margin: 50px 1px;
+  border-color: darker(@border_color);
+  border-radius: 4px;
+  background-color: darker(@border_color);
 }
 
 paned.horizontal > separator:hover,
 paned.horizontal > separator:selected,
 paned.horizontal > separator.active {
-  min-width: 3px;
-  border-width: 20px 3px;
-  border-color: transparent;
+  border-color: @selected_bg_color;
+  border-radius: 4px;
   background-color: @selected_bg_color;
 }
 
-paned.vertical > separator,
-paned.vertical > separator.wide {
+paned.vertical > separator { /* separator.horizontal */
   min-height: 1px;
-  border-width: 4px 0px;    
+  margin: 0px 2px;
+  border-width: 2px 0px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+paned.vertical > separator.wide {
+  margin: 1px 50px;
+  border-color: darker(@border_color);
+  border-radius: 4px;
+  background-color: darker(@border_color);
 }
 
 paned.vertical > separator:hover,
 paned.vertical > separator:selected,
 paned.vertical > separator.active {
-  min-height: 3px;
-  border-width: 3px 20px;
-  border-color: transparent;
+  border-color: @selected_bg_color;
+  border-radius: 4px;
   background-color: @selected_bg_color;
+}
+
+paned > separator.sidebar,
+paned > .sidebar + separator,
+paned > placessidebar + separator {
+  margin: 0px;
+  border-width: 0px;
 }
 
 
@@ -7860,10 +7845,6 @@ actionbar {
 /*************************************************/
 /*                 STATUSBAR                     */
 /*************************************************/
-
-statusbar {
-  border-top: 1px solid @light_border_color;
-}
 
 /*
 statusbar {
@@ -8228,8 +8209,15 @@ notebook > header.right > tabs > tab:checked {
 notebook > header > tabs > tab button.flat {
   min-height: 22px;
   min-width: 16px;
-  padding: 0;
-  color: #6e6e6e;
+  /* background-color: transparent; */
+  background-image: none;
+  border: none;
+  margin: 0px 3px;
+}
+
+notebook > header > tabs > tab button.flat:hover {
+  box-shadow: none;
+  color: #ff4d4d;
 }
 
 notebook > header > tabs > tab button.sidebar-button {
@@ -8237,14 +8225,6 @@ notebook > header > tabs > tab button.sidebar-button {
   min-width: 16px;
   padding: 0;
   color: #6e6e6e;
-}
-
-notebook > header > tabs > tab button.flat:hover {
-  border-color: transparent;
-  background-color: transparent;
-  background-image: none;
-  box-shadow: none;
-  color: #ff4d4d;
 }
 
 notebook > header > tabs > tab button.sidebar-button:hover {
@@ -10355,149 +10335,6 @@ MsdOsdWindow.background.osd .trough {
 
 
 /*************************************************/
-/*               LIGHTDM.MENU                    */
-/*************************************************/
-
-.lightdm.menu {
-  background-image: none;
-  background-color: rgba(0, 0, 0, 0.4);
-  border-color: rgba(255, 255, 255, 0.8);
-  border-radius: 4px;
-  padding: 1px;
-  color: white;
-}
-
-.lightdm-combo .menu {
-  background-color: rgba(253, 253, 254, 0.95);
-  border-radius: 0px;
-  padding: 0px;
-  color: white;
-}
-
-.lightdm.menu .menuitem * {
-  color: white;
-}
-
-.lightdm.menu .menuitem.check:active {
-  color: white;
-}
-
-.lightdm.menu .menuitem.radio:active {
-  color: white;
-}
-
-.lightdm.menubar {
-  color: rgba(255, 255, 255, 0.8);
-  background-image: none;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.lightdm.menubar > .menuitem {
-  padding: 2px 6px;
-}
-
-.lightdm-combo.combobox-entry .button {
-  background-image: none;
-  background-color: rgba(0, 0, 0, 0.3);
-  border-color: rgba(255, 255, 255, 0.4);
-  border-radius: 10px;
-  padding: 7px;
-  color: white;
-  text-shadow: none;
-}
-
-.lightdm-combo .cell {
-  background-image: none;
-  background-color: rgba(0, 0, 0, 0.3);
-  border-color: rgba(255, 255, 255, 0.4);
-  border-radius: 10px;
-  padding: 7px;
-  color: white;
-  text-shadow: none; } 
-
-.lightdm-combo .button {
-  background-image: none;
-  background-color: rgba(0, 0, 0, 0.3);
-  border-color: rgba(255, 255, 255, 0.4);
-  border-radius: 10px;
-  padding: 7px;
-  color: white;
-  text-shadow: none; } 
-
-.lightdm-combo .entry {
-  background-image: none;
-  background-color: rgba(0, 0, 0, 0.3);
-  border-color: rgba(255, 255, 255, 0.4);
-  border-radius: 10px;
-  padding: 7px;
-  color: white;
-  text-shadow: none; } 
-
-.lightdm.button {
-  background-image: none;
-  background-color: rgba(0, 0, 0, 0.3);
-  border-color: rgba(255, 255, 255, 0.4);
-  border-radius: 10px;
-  padding: 7px;
-  color: white;
-  text-shadow: none; } 
-
-.lightdm.entry {
-  background-image: none;
-  background-color: rgba(0, 0, 0, 0.3);
-  border-color: rgba(255, 255, 255, 0.4);
-  border-radius: 10px;
-  padding: 7px;
-  color: white;
-  text-shadow: none;
-}
-
-.lightdm.button,
-.lightdm.button:hover,
-.lightdm.button:active,
-.lightdm.button:active:focus,
-.lightdm.entry,
-.lightdm.entry:hover,
-.lightdm.entry:active,
-.lightdm.entry:active:focus {
-  background-image: none;
-  border-image: none;
-}
-
-.lightdm.button:focus,
-.lightdm.entry:focus {
-  border-color: rgba(255, 255, 255, 0.1);
-  border-width: 1px;
-  border-style: solid;
-  color: white;
-}
-
-.lightdm.entry:selected {
-  background-color: rgba(255, 255, 255, 0.8);
-}
-
-.lightdm.entry:active {
-  -gtk-icon-source: -gtk-icontheme("process-working-symbolic");
-  animation: dashentry_spinner 1s infinite linear;
-}
-
-.lightdm.option-button {
-  padding: 2px;
-  background: none;
-  border: 0;
-}
-
-.lightdm.toggle-button {
-  background: none;
-  border-width: 0;
-}
-.lightdm.toggle-button.selected {
-  background-color: rgba(0, 0, 0, 0.7);
-  border-width: 1px;
-}
-
-
-/*************************************************/
 /*               .OVERLAY-BAR                    */
 /*************************************************/
 
@@ -11281,10 +11118,6 @@ filechooserbutton:drop(active) {
 
 filechooser.csd.background {
   background-color: transparent;
-}
-
-filechooser paned > separator {
-  background-image: linear-gradient(to bottom, rgba(240, 242, 248, 0.85), rgba(240, 242, 248, 0.85));
 }
 
 /* FILECHOOSER ACTIONBAR CHECK AND RADIO */
