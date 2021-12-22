@@ -12,9 +12,8 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-menu.menu-iconic,
-menuitem {
-    margin: 1px 6px;
+menupopup {
+    --panel-padding: 4px !important;
 }
 
 menuseparator {
