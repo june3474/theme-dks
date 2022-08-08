@@ -1,5 +1,5 @@
 /*
- * userChrome.css for thunderbird.
+ * This file is for thunderbird.
  * Put this file in <profile folder>/chrome/ directory 
  */
 
@@ -12,7 +12,9 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
+
 /****** Global settings ******/
+
 *|*:root {
 	--fg_color: #202020;
 	--text_color: black;
@@ -31,6 +33,7 @@
 
 
 /***** Menu *****/
+
 .menuitem-with-favicon,
 .menu-iconic {
 	margin-left: 6px;
@@ -42,6 +45,7 @@ menuseparator {
 
 
 /****** Tree Views *****/
+
 /* remove zebra striping */
 treechildren::-moz-tree-row {
 	background-color: transparent !important;
@@ -75,6 +79,11 @@ treechildren::-moz-tree-twisty {
 	background: var(--selected_bg_dark) !important;
 }
 
+/* folder icon color */
+#folderTree > treechildren::-moz-tree-image(selected) {
+	fill: var(--selected_fg) !important;
+}
+
 #folderTree > treechildren::-moz-tree-cell-text(folderNameCol, newMessages-true),
 #folderTree > treechildren::-moz-tree-cell-text(folderNameCol, closed, subfoldersHaveUnreadMessages-true) {
 	color: inherit !important;
@@ -82,7 +91,6 @@ treechildren::-moz-tree-twisty {
 }
 
 #folderpane_splitter {
-
     border-inline-start: 1px solid var(--border_dark) !important;
 }
 
