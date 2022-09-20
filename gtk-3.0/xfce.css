@@ -171,8 +171,10 @@ XfceHeading {
 /*** systray | status tray ***/
 #systray-6,
 #sn-button {
+    color: lighter(@fg_color);
 	-gtk-icon-shadow: none;
 	/* -gtk-icon-style: symbolic; */ }
+
 /*
 #sn-button-box > image {
     -gtk-icon-transform: scale(1.5); }
