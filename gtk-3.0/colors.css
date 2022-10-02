@@ -3,19 +3,30 @@
 /*************************************************/
 
 @define-color fg_color #202020;
+@define-color theme_fg_color @fg_color;
 @define-color text_color #000000;
+@define-color theme_text_color @text_color;
 @define-color bg_color #d4d4d4;   /* #eeeeee */
+@define-color theme_bg_color @bg_color;
 @define-color base_color #f2f2f2;
+@define-color theme_base_color @base_color;
 @define-color selected_bg_color #486d9d;
+@define-color theme_selected_bg_color @selected_bg_color;
 @define-color selected_fg_color #ffffff;
+@define-color theme_selected_fg_color @selected_fg_color;
 @define-color insensitive_bg_color #f6f8fa;
 @define-color insensitive_fg_color #8c8c8c;
 @define-color insensitive_base_color @base_color;
 @define-color unfocused_fg_color @fg_color;
+@define-color theme_unfocused_fg_color @unfocused_fg_color;
 @define-color unfocused_text_color @text_color;
+@define-color theme_unfocused_text_color @unfocused_text_color;
 @define-color unfocused_bg_color #ebf0f4;
+@define-color theme_unfocused_bg_color @unfocused_bg_color;
 @define-color unfocused_base_color @base_color;
+@define-color theme_unfocused_base_color @unfocused_base_color;
 @define-color border_color #808080;
+@define-color borders @border_color;
 @define-color unfocused_border_color @border_color;
 @define-color warning_color #F27835;
 @define-color error_color #FC4138;
