@@ -10,84 +10,109 @@
  * https://www.userchrome.org/adding-style-recipes-userchrome-css.html#namespaces
  */
 
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
-
-
 /****** Global settings ******/
 
 *|*:root {
-	--fg_color: #202020;
-	--text_color: black;
-    --bg_color: #f2f2f2;
-	--selected_bg:#486d9d;
-	--selected_bg_dark: #3a3c41;
-	--selected_fg: white;
-	--foldertree_bg: #dde2e7;
+    --fg_color: #202020;
+    --text_color: black;
+    --selected_fg: white;
 
-	--border_light: rgba(105, 105, 105, 0.3);
-	--border_dark: #808080;
-	
-	--toolbox-border-bottom-color: var(--border_dark) !important;
-	--toolbarbutton-border-radius: 4px !important;
+    --bg_color: #d4d4d4;
+    --base_color: #f2f2f2;
+    --selected_bg:#486d9d;
+    --selected_bg_dark: #3a3c41;
+    --menubar_bg: #b5b8be;
+    --foldertree_bg: #dde2e7;
+
+    --border_light: rgba(105, 105, 105, 0.3);
+    --border_dark: #808080;
+
+    --toolbox-border-bottom-color: var(--border_dark) !important;
+    --toolbarbutton-border-radius: 4px !important;    
 }
-
 
 /***** Menu *****/
 
+#titlebar {
+    background: var(--menubar_bg) !important;
+    border-radius: 8px 8px 0 0;   
+}
+
 .menuitem-with-favicon,
 .menu-iconic {
-	margin-left: 6px;
+    margin-left: 6px;
 }
 
 menuseparator {
     margin: 4px 10px !important;
 }
 
+/****** Tab bar *****/
+
+.tab-line {
+    background: transparent !important;
+}
 
 /****** Tree Views *****/
 
 /* remove zebra striping */
 treechildren::-moz-tree-row {
-	background-color: transparent !important;
+    background-color: transparent !important;
 }
 
 treechildren::-moz-tree-row(selected) {
-	background: var(--selected_bg) !important;
+    background: var(--selected_bg) !important;
 }
 
 treechildren::-moz-tree-cell-text(selected) {
-	color: var(--selected_fg) !important;
+    color: var(--selected_fg) !important;
 }
 
 treechildren::-moz-tree-twisty {
-	width: 12px !important;
-	-moz-image-region: rect(0px 12px 12px 0px) !important;
-	-moz-appearance: none !important;
-	list-style-type: image !important;
+    width: 12px !important;
+    -moz-image-region: rect(0px 12px 12px 0px) !important;
+    -moz-appearance: none !important;
+    list-style-type: image !important;
 }
 
 
-/****** Folder Tree *****/
+/****** Folder Pane *****/
+#folderPane {
+    background: var(--foldertree_bg) !important;
+    border-right: 1px solid var(--border_dark) !important;
+}
+
+#folderPaneHeaderBar {
+    background: var(--foldertree_bg) !important;
+    padding: 15px 0px !important;
+}
+
+#folderPaneWriteMessage {
+    border-radius: 20px !important;
+    background: var(--selected_bg) !important;
+}
+
 #folderTree {
-	-moz-appearance: none !important;
-	color: var(--fg-color) !important;
-	background: var(--foldertree_bg) !important;
-    border-bottom: 1px solid var(--border_dark) !important;
+    -moz-appearance: none !important;
+    color: var(--fg-color) !important;
+    margin-top: 5px !important;
 }
 
-#folderTree > treechildren::-moz-tree-row(selected) {
-	background: var(--selected_bg_dark) !important;
+#folderTree > treechildren::-moz-tree-row(selected),
+#folderTree li[is="folder-tree-row"][aria-selected="true"] > div.container {
+    color: var(--selected_fg) !important;
+    background: var(--selected_bg_dark) !important;
 }
 
 /* folder icon color */
 #folderTree > treechildren::-moz-tree-image(selected) {
-	fill: var(--selected_fg) !important;
+    fill: var(--selected_fg) !important;
 }
 
 #folderTree > treechildren::-moz-tree-cell-text(folderNameCol, newMessages-true),
 #folderTree > treechildren::-moz-tree-cell-text(folderNameCol, closed, subfoldersHaveUnreadMessages-true) {
-	color: inherit !important;
-	font-style: italic !important;
+    color: inherit !important;
+    font-style: italic !important;
 }
 
 #folderpane_splitter {
@@ -97,45 +122,46 @@ treechildren::-moz-tree-twisty {
 
 /***** MessagesBox *****/
 
-#quick-filter-bar {
-/*	border-bottom: 1px solid var(--border_dark) !important; */
-}
-
-/* Thread tree */
+/* Thread tree, 메일 리스트 */
 #threadTree {
-	background: var(--bg_color) !important;
+    background: var(--base_color) !important;
+    border-bottom: 1px solid var(--border_dark) !important;
 }
 
 #threadpane-splitter, #attachment-splitter {
-	border-bottom: 1px solid var(--border_dark) !important;
-}	
-
-/* messagepanebox */
-#messagepanebox {
-	border-bottom: 1px solid var(--border_dark) !important;
+    border-bottom: 1px solid var(--border_dark) !important;
 }
 
-.main-header-area {
-	border-bottom: 1px solid var(--border_light) !important;
-}	
+/* 메세지 헤더 */
+#msgHeaderView {
+    background: var(--bg_color) !important;
+    border-bottom: 1px solid var(--border_light) !important;
+}
+
+/* messagepanebox */
+#messagepane {
+    background: var(--base_color) !important;
+    border-bottom: 1px solid var(--border_light) !important;
+}
 
 #attachmentView {
-	border-top: 1px solid var(--border_light) !important;
-}	
+}   
 
-findbar {
-	border-top: 1px solid var(--border_light) !important;
-}	
+/* status bar */
+#status-bar {
+    border-top: 1px solid var(--border_dark) !important;
+    background: var(--bg_color) !important;
+}
 
 /* searchbox */
 .searchBox,
 #view-task-edit-field,
 #unifinder-task-edit-field {
-	border-color: var(--border_dark) !important;
+    border-color: var(--border_dark) !important;
 }
 
 .searchBox:hover,
 #view-task-edit-field:hover,
 #unifinder-task-edit-field:hover {
-	border-color: var(--fg_color) !important;
+    border-color: var(--fg_color) !important;
 }
