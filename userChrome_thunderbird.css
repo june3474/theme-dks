@@ -85,17 +85,19 @@ treechildren::-moz-tree-twisty {
 #folderPaneHeaderBar {
     background: var(--foldertree_bg) !important;
     padding: 15px 0px !important;
+    margin: 0px 10px !important;  /* for separate line below */
+    border-bottom: 1px solid var(--border_light) !important;
 }
 
 #folderPaneWriteMessage {
-    border-radius: 20px !important;
+    border-radius: 18px !important;  /* button height 36 */
     background: var(--selected_bg) !important;
 }
 
 #folderTree {
     -moz-appearance: none !important;
     color: var(--fg-color) !important;
-    margin-top: 5px !important;
+    margin-top: 10px !important;
 }
 
 #folderTree > treechildren::-moz-tree-row(selected),
@@ -132,7 +134,7 @@ treechildren::-moz-tree-twisty {
     border-bottom: 1px solid var(--border_dark) !important;
 }
 
-/* 메세지 헤더 */
+/* message header, 메세지 정보 */
 #msgHeaderView {
     background: var(--bg_color) !important;
     border-bottom: 1px solid var(--border_light) !important;
