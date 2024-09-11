@@ -10,7 +10,12 @@
  * https://www.userchrome.org/adding-style-recipes-userchrome-css.html#namespaces
  */
 
-@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* remove focus rings in dialog window
+   esp, for the radio button label in open/save dialog */
+window {
+    --focus-outline-width: 0px !important;
+}
 
 menupopup {
     --panel-padding: 4px !important;

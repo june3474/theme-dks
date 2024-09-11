@@ -396,7 +396,7 @@ treeview.view:drop(active).before {
 }
 
 treeview.view acceleditor > label {
-	background-color: @selected_bg_color;
+    background-color: @selected_bg_color;
 }
 
 /* TREEVIEW HEADER BUTTON */
@@ -428,10 +428,10 @@ treeview.view header.button.dnd {
   transition: none;
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   background-color: @selected_bg_color;
   border-radius: 0;
   border-style: none;
@@ -442,10 +442,10 @@ treeview.view header.button.dnd:hover {
   transition: none;
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   background-color: @selected_bg_color;
   border-radius: 0;
   border-style: none;
@@ -456,10 +456,10 @@ treeview.view header.button.dnd:active {
   transition: none;
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   background-color: @selected_bg_color;
   border-radius: 0;
   border-style: none;
@@ -470,10 +470,10 @@ treeview.view header.button.dnd:selected {
   transition: none;
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   background-color: @selected_bg_color;
   border-radius: 0;
   border-style: none;
@@ -505,10 +505,10 @@ treeview.view button.dnd:hover {
   transition: none;
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   background-color: @selected_bg_color;
   border-radius: 0;
   border-style: none;
@@ -519,10 +519,10 @@ treeview.view button.dnd:active {
   transition: none;
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   background-color: @selected_bg_color;
   border-radius: 0;
   border-style: none;
@@ -647,7 +647,7 @@ treeview entry.flat {
 treeview entry:focus,
 treeview entry.flat:focus
 {
-	border-color: @selected_bg_color;
+    border-color: @selected_bg_color;
 }
 
 /* TREEVIEW EXPANDER */
@@ -674,7 +674,7 @@ treeview.view.expander:selected:hover {
 }
 
 treeview.view.expander:checked {
-	-gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
 }
 
 /* TREEVIEW PROGRESSBAR */
@@ -797,10 +797,10 @@ row:selected {
   color: @selected_fg_color;
   /*
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   */
   background-color: @selected_bg_color;
 }
@@ -833,10 +833,10 @@ row.activatable:disabled image {
 row.activatable:selected:active {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
 }
 
 row.activatable:selected.has-open-popup, row.activatable:selected:hover {
@@ -849,10 +849,10 @@ row.activatable:selected.has-open-popup, row.activatable:selected:hover {
 row:selected button {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   background-color: rgba(255, 255, 255, 0);
   border-color: rgba(255, 255, 255, 0.5);
 }
@@ -863,10 +863,10 @@ row:selected button.flat {
   background-image: none;
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
 }
 
 row:selected button.sidebar-button {
@@ -875,10 +875,10 @@ row:selected button.sidebar-button {
   background-image: none;
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
 }
 
 row:selected button.flat:disabled {
@@ -900,10 +900,10 @@ row:selected button.sidebar-button:disabled label {
 row:selected button:hover {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   background-color: rgba(255, 255, 255, 0.2);
   border-color: rgba(255, 255, 255, 0.8);
 }
@@ -1046,7 +1046,7 @@ row:selected progressbar progress {
 }
 
 row:selected progressbar trough {
-	background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 
@@ -1081,8 +1081,8 @@ button:checked {
 }
 
 button:focus {
-	border-color: @selected_bg_color;
-	border-width: 1px;
+    border-color: @selected_bg_color;
+    border-width: 1px;
 }
 
 button:hover {
@@ -1216,10 +1216,10 @@ button.osd:hover {
 button.osd:active {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: rgba(26, 28, 34, 0.35);
   background-color: @selected_bg_color;
 }
@@ -1227,10 +1227,10 @@ button.osd:active {
 button.osd:checked {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: rgba(26, 28, 34, 0.35);
   background-color: @selected_bg_color;
 }
@@ -1270,7 +1270,7 @@ button.circular label {
 }
 
 button.circular-button label {
-	padding: 0;
+    padding: 0;
 }
 
 /* SUGGESTED ACTION */
@@ -1278,10 +1278,10 @@ button.circular-button label {
 button.suggested-action {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: #0277db;
   background-color: transparent;
   background-image: linear-gradient(to bottom,@selected_bg_color,@selected_bg_color);
@@ -1297,10 +1297,10 @@ button.suggested-action.flat {
 button.suggested-action:hover {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: @selected_bg_color;
   background-color: #4b86e0;
   background-image: linear-gradient(to bottom,#4b86e0,#4b86e0);
@@ -1310,10 +1310,10 @@ button.suggested-action:hover {
 button.suggested-action:active {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color:  #0277db;
   background-color: @selected_bg_color;
   background-image: linear-gradient(to bottom,@selected_bg_color,@selected_bg_color);
@@ -1323,10 +1323,10 @@ button.suggested-action:active {
 button.suggested-action:checked {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color:  #0277db;
   background-color: @selected_bg_color;
   background-image: linear-gradient(to bottom,@selected_bg_color,@selected_bg_color);
@@ -1372,10 +1372,10 @@ button.destructive-action {
   background-clip: border-box;
   color: white;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   background-color: #F04A50;
   background-image: linear-gradient(to bottom, #F04A50,
                                                #F04A50);
@@ -1386,10 +1386,10 @@ button.destructive-action:hover {
   background-clip: border-box;
   color: white;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   background-color: #f3313a;
   background-image: linear-gradient(to bottom, #f3313a,
                                                #f3313a);
@@ -1400,10 +1400,10 @@ button.destructive-action:active {
   background-clip: border-box;
   color: white;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   background-color: #f3313a;
   background-image: linear-gradient(to bottom, #f3313a,
                                                #f3313a);
@@ -1414,10 +1414,10 @@ button.destructive-action:checked {
   background-clip: border-box;
   color: white;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   background-color: #f3313a;
   background-image: linear-gradient(to bottom, #f3313a,
                                                #f3313a);
@@ -1549,6 +1549,7 @@ radio {
   min-width: 16px;
   min-height: 16px;
   margin: 0 2px;
+  border-style: none;
 
   -gtk-icon-source: -gtk-scaled(url("objects/radio-objects/radio-unchecked.svg"), url("objects/radio-objects/radio-unchecked@2.svg"));
 }
@@ -1647,10 +1648,10 @@ modelbutton.flat:checked {
 modelbutton.flat:active {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   background-color: transparent;
   background-image:linear-gradient(to right,rgba(100,103,114,0.8),rgba(100,103,114,1),rgba(100,103,114,1),rgba(100,103,114,0.8));
 }
@@ -1658,19 +1659,19 @@ modelbutton.flat:active {
 modelbutton.flat:active arrow {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
 }
 
 modelbutton.flat:selected {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   background-color: transparent;
   background-image:linear-gradient(to right,rgba(100,103,114,0.8),rgba(100,103,114,1),rgba(100,103,114,1),rgba(100,103,114,0.8));
 }
@@ -1678,10 +1679,10 @@ modelbutton.flat:selected {
 modelbutton.flat:selected arrow {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   background-color:#646772;
 }
 
@@ -1726,7 +1727,7 @@ modelbutton.flat arrow.left {
 }
 
 modelbutton.flat arrow.right {
-	-gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
 }
 
 
@@ -1752,10 +1753,10 @@ modelbutton.flat arrow.right {
   background-clip: padding-box;
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: rgba(26, 28, 34, 0.35);
   background-color: @selected_bg_color;
 }
@@ -1764,10 +1765,10 @@ modelbutton.flat arrow.right {
   background-clip: padding-box;
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: rgba(26, 28, 34, 0.35);
   background-color: @selected_bg_color;
 }
@@ -1801,10 +1802,10 @@ modelbutton.flat arrow.right {
 .osd button.flat:active {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: rgba(26, 28, 34, 0.35);
   background-color: @selected_bg_color;
 }
@@ -1812,10 +1813,10 @@ modelbutton.flat arrow.right {
 .osd button.flat:checked {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: rgba(26, 28, 34, 0.35);
   background-color: @selected_bg_color;
 }
@@ -1852,10 +1853,10 @@ osd button.sidebar-button {
 .osd button.sidebar-button:active {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: rgba(26, 28, 34, 0.35);
   background-color: @selected_bg_color;
 }
@@ -1863,10 +1864,10 @@ osd button.sidebar-button {
 .osd button.sidebar-button:checked {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: rgba(26, 28, 34, 0.35);
   background-color: @selected_bg_color;
 }
@@ -1969,10 +1970,10 @@ osd spinbutton:not(.vertical) > button:first-child:hover:not(:active) {
 osd entry:focus {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: rgba(198, 205, 229, 0.25);
   background-color: @selected_bg_color;
 }
@@ -2152,10 +2153,10 @@ flowbox flowboxchild:disabled:selected {
 label:selected {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
 }
 
 label:disabled:selected {
@@ -2165,10 +2166,10 @@ label:disabled:selected {
 label selection {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   background-color: @selected_bg_color;
 }
 
@@ -2193,7 +2194,7 @@ label.nautilus-canvas-item.separator:selected:focus {
 }
 
 label.separator {
-	opacity: 0.55;
+    opacity: 0.55;
 }
 
 
@@ -2490,10 +2491,10 @@ entry:disabled {
 entry.warning {
   color: white;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: #F27835;
   background-color: #f7ae86;
   background-image: linear-gradient(to bottom, #f7ae86, #f7ae86);
@@ -2502,19 +2503,19 @@ entry.warning {
 entry.warning image {
   color: white;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
 }
 
 entry.warning:focus {
   color: white;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   background-color: #F27835;
   box-shadow: none;
 }
@@ -2534,10 +2535,10 @@ entry.warning selection:focus {
 entry.error {
   color: white;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: #FC4138;
   background-image: linear-gradient(to bottom, #fd8d88, #fd8d88);
   background-color: #fd8d88;
@@ -2550,10 +2551,10 @@ entry.error image {
 entry.error:focus {
   color: white;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   background-image: linear-gradient(to bottom,#FC4138,#FC4138);
   background-color: #FC4138;
   box-shadow: none;
@@ -2574,10 +2575,10 @@ entry.error selection:focus {
 entry.search-missing {
   color: white;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: #FC4138;
   background-image: linear-gradient(to bottom, #fd8d88, #fd8d88);
   background-color: #fd8d88;
@@ -2591,10 +2592,10 @@ entry.search-missing image {
 entry.search-missing:focus {
   color: white;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   background-image: linear-gradient(to bottom,#FC4138,#FC4138);
   background-color: #FC4138;
   box-shadow: none;
@@ -2636,20 +2637,20 @@ entry progress {
 entry selection:focus {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   background-color: @selected_bg_color;
 }
 
 entry selection {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   background-color: @selected_bg_color;
 }
 
@@ -2668,16 +2669,16 @@ combobox entry.combo:dir(ltr) {
 /* Below is to make 'entry+button' look like a combobox. but more side-effects
 box.linked.horizontal:not(.path-bar):dir(ltr) > entry:not(only-child) {
 */
-	border-top-right-radius: 0;
-	border-bottom-right-radius: 0;
-	border-right-style: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right-style: none;
 }
 
 combobox entry.combo:dir(rtl) {
 /* box.linked.horizontal:not(.path-bar):dir(rtl) > entry:not(only-child) { */
-	border-top-left-radius: 0;
-	border-bottom-left-radius: 0;
-	border-left-style: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left-style: none;
 }
 
 /* BUTTON */
@@ -2694,14 +2695,14 @@ combobox button.combo {
 /* For the combobox with an entry, remove button's left/right radius. */
 combobox entry.combo:dir(ltr) + button.combo,
 box.linked.horizontal:not(.path-bar) > entry:dir(ltr) + button {
-	border-top-left-radius: 0;
-	border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
 combobox entry.combo:dir(rtl) + button.combo,
 box.linked.horizontal:not(.path-bar) > entry:dir(rtl) + button {
-	border-top-right-radius: 0;
-	border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 /* ARROW */
@@ -2895,10 +2896,10 @@ toolbar.bottom-toolbar button {
 .primary-toolbar entry selection:focus {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: @selected_bg_color;
   background-color: @selected_bg_color;
   background-clip: border-box;
@@ -2913,10 +2914,10 @@ toolbar.bottom-toolbar button {
 .primary-toolbar entry.warning {
   color: white;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: #F27835;
   background-color: rgba(238, 162, 121, 0.98);
 }
@@ -2924,10 +2925,10 @@ toolbar.bottom-toolbar button {
 .primary-toolbar entry.warning:focus {
   color: white;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   background-color: #F27835;
 }
 
@@ -2944,10 +2945,10 @@ toolbar.bottom-toolbar button {
 .primary-toolbar entry.error {
   color: white;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: #FC4138;
   background-color: rgba(244, 128, 123, 0.98);
 }
@@ -2955,10 +2956,10 @@ toolbar.bottom-toolbar button {
 .primary-toolbar entry.error:focus {
   color: white;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   background-color: #FC4138;
 }
 
@@ -3026,10 +3027,10 @@ toolbar.bottom-toolbar button {
 .primary-toolbar button:disabled:active {
   color: rgba(255, 255, 255, 0.55);
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   /*
   border-color:rgba(0, 0, 0, 0.12);
   border-bottom-color: rgba(0, 0, 0, 0.25);
@@ -3039,10 +3040,10 @@ toolbar.bottom-toolbar button {
 .primary-toolbar button:disabled:checked {
   color: rgba(255, 255, 255, 0.55);
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   /*
   border-color:rgba(0, 0, 0, 0.12);
   border-bottom-color: rgba(0, 0, 0, 0.25);
@@ -3085,10 +3086,10 @@ toolbar.bottom-toolbar button {
 .primary-toolbar .linked:not(.vertical).path-bar > button:active {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
 
   border-right-color: rgba(0,0,0,0.12);
   border-left-color: rgba(0,0,0,0.12);
@@ -3102,10 +3103,10 @@ toolbar.bottom-toolbar button {
 .primary-toolbar .linked:not(.vertical).path-bar > button:checked {
  color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
 
   border-right-color: rgba(0,0,0,0.12);
   border-left-color: rgba(0,0,0,0.12);
@@ -3309,10 +3310,10 @@ primary-toolbar .linked:not(.vertical):not(.path-bar) > entry.warning + entry.er
 .primary-toolbar .linked:not(.vertical):not(path-bar) > button:active {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   -gtk-icon-shadow: 0px 1px alpha(@fg_color, 0.2);
   border-radius: 0px;
   border-color: #646772;
@@ -3324,10 +3325,10 @@ primary-toolbar .linked:not(.vertical):not(.path-bar) > entry.warning + entry.er
 .primary-toolbar .linked:not(.vertical):not(path-bar) > button:checked {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   -gtk-icon-shadow: 0px 1px alpha(@fg_color, 0.2);
   border-radius: 0px;
   border-color: #646772;
@@ -3485,10 +3486,10 @@ box-shadow: inset 1px 0 rgba(105, 105, 105, 0.1), inset -1px 0 rgba(105, 105, 10
 .primary-toolbar button.suggested-action {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: #0277db;
   background-color: @selected_bg_color;
   background-image: linear-gradient(to bottom,@selected_bg_color,#1c59b5);
@@ -3507,10 +3508,10 @@ box-shadow: inset 1px 0 rgba(105, 105, 105, 0.1), inset -1px 0 rgba(105, 105, 10
 .primary-toolbar button.suggested-action:hover {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: @selected_bg_color;
   background-color: #4b86e0;
   background-image: linear-gradient(to bottom,#4b86e0,@selected_bg_color);
@@ -3520,10 +3521,10 @@ box-shadow: inset 1px 0 rgba(105, 105, 105, 0.1), inset -1px 0 rgba(105, 105, 10
 .primary-toolbar button.suggested-action:active {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color:  #0277db;
   background-color: @selected_bg_color;
   background-image: linear-gradient(to bottom,@selected_bg_color,@selected_bg_color);
@@ -3533,10 +3534,10 @@ box-shadow: inset 1px 0 rgba(105, 105, 105, 0.1), inset -1px 0 rgba(105, 105, 10
 .primary-toolbar button.suggested-action:checked {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color:  #0277db;
   background-color: @selected_bg_color;
   background-image: linear-gradient(to bottom,@selected_bg_color,@selected_bg_color);
@@ -3600,10 +3601,10 @@ box-shadow: inset 1px 0 rgba(105, 105, 105, 0.1), inset -1px 0 rgba(105, 105, 10
   background-clip: border-box;
   color: white;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   background-color: #F04A50;
   background-image: linear-gradient(to bottom, #F04A50,
                                                #F04A50);
@@ -3628,10 +3629,10 @@ box-shadow: inset 1px 0 rgba(105, 105, 105, 0.1), inset -1px 0 rgba(105, 105, 10
   background-clip: border-box;
   color: white;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   background-color: #f3313a;
   background-image: linear-gradient(to bottom, #f3313a,
                                                #f3313a);
@@ -3642,10 +3643,10 @@ box-shadow: inset 1px 0 rgba(105, 105, 105, 0.1), inset -1px 0 rgba(105, 105, 10
   background-clip: border-box;
   color: white;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   background-color: #f3313a;
   background-image: linear-gradient(to bottom, #f3313a,
                                                #f3313a);
@@ -3656,10 +3657,10 @@ box-shadow: inset 1px 0 rgba(105, 105, 105, 0.1), inset -1px 0 rgba(105, 105, 10
   background-clip: border-box;
   color: white;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   background-color: #f3313a;
   background-image: linear-gradient(to bottom, #f3313a,
                                                #f3313a);
@@ -3724,10 +3725,10 @@ box-shadow: inset 1px 0 rgba(105, 105, 105, 0.1), inset -1px 0 rgba(105, 105, 10
 .primary-toolbar spinbutton:not(.vertical):focus {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   caret-color: #ffffff;
 }
 
@@ -3750,10 +3751,10 @@ box-shadow: inset 1px 0 rgba(105, 105, 105, 0.1), inset -1px 0 rgba(105, 105, 10
 .primary-toolbar spinbutton:not(.vertical) button:active {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: @light_border_color;
   background-color: rgba(0, 0, 0, 0.45);
 }
@@ -3761,10 +3762,10 @@ box-shadow: inset 1px 0 rgba(105, 105, 105, 0.1), inset -1px 0 rgba(105, 105, 10
 .primary-toolbar spinbutton:not(.vertical) button:checked {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: @light_border_color;
   background-color: rgba(0, 0, 0, 0.45);
 }
@@ -3829,10 +3830,10 @@ primary-toolbar spinbutton:not(.vertical) > button:not(:disabled):not(:active):n
 .primary-toolbar combobox > .linked > button.combo:hover {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: @selected_bg_color;
   background-color: @selected_bg_color;
   box-shadow: none;
@@ -3989,10 +3990,10 @@ primary-toolbar spinbutton:not(.vertical) > button:not(:disabled):not(:active):n
   background-image: none;
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
 
   border-color:  #0277db;
   background-color: @selected_bg_color;
@@ -4005,10 +4006,10 @@ primary-toolbar spinbutton:not(.vertical) > button:not(:disabled):not(:active):n
   background-image: none;
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   }
 
 .selection-mode.primary-toolbar button.sidebar-button {
@@ -4017,10 +4018,10 @@ primary-toolbar spinbutton:not(.vertical) > button:not(:disabled):not(:active):n
   background-image: linear-gradient(to bottom,@selected_bg_color,@selected_bg_color);
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
 }
 
 .selection-mode.primary-toolbar button:hover {
@@ -4029,10 +4030,10 @@ primary-toolbar spinbutton:not(.vertical) > button:not(:disabled):not(:active):n
   background-image: linear-gradient(to bottom,@selected_bg_color,@selected_bg_color);
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
 }
 
 .selection-mode.primary-toolbar button:disabled {
@@ -4041,10 +4042,10 @@ primary-toolbar spinbutton:not(.vertical) > button:not(:disabled):not(:active):n
   background-color: @selected_bg_color;
   background-image: linear-gradient(to bottom,@selected_bg_color,@selected_bg_color);
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
 }
 
 .selection-mode.primary-toolbar button:active {
@@ -4053,10 +4054,10 @@ primary-toolbar spinbutton:not(.vertical) > button:not(:disabled):not(:active):n
   background-image: linear-gradient(to bottom,@selected_bg_color,@selected_bg_color);
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
 }
 
 .selection-mode.primary-toolbar button:checked {
@@ -4065,10 +4066,10 @@ primary-toolbar spinbutton:not(.vertical) > button:not(:disabled):not(:active):n
   background-image: linear-gradient(to bottom,@selected_bg_color,@selected_bg_color);
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
 }
 
 .selection-mode.primary-toolbar button:hover:active {
@@ -4077,10 +4078,10 @@ primary-toolbar spinbutton:not(.vertical) > button:not(:disabled):not(:active):n
   background-image: linear-gradient(to bottom,@selected_bg_color,@selected_bg_color);
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
 }
 
 .selection-mode.primary-toolbar button:hover:checked {
@@ -4089,10 +4090,10 @@ primary-toolbar spinbutton:not(.vertical) > button:not(:disabled):not(:active):n
   background-image: linear-gradient(to bottom,@selected_bg_color,@selected_bg_color);
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
 }
 
 .selection-mode.primary-toolbar button:disabled:active {
@@ -4101,10 +4102,10 @@ primary-toolbar spinbutton:not(.vertical) > button:not(:disabled):not(:active):n
   background-image: linear-gradient(to bottom,@selected_bg_color,@selected_bg_color);
   color: rgba(255, 255, 255, 0.4);
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
 }
 
 .selection-mode.primary-toolbar button:disabled:checked {
@@ -4113,10 +4114,10 @@ primary-toolbar spinbutton:not(.vertical) > button:not(:disabled):not(:active):n
   background-image: linear-gradient(to bottom,@selected_bg_color,@selected_bg_color);
   color: rgba(255, 255, 255, 0.4);
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
 }
 
 
@@ -4302,14 +4303,14 @@ inline-toolbar, /* no shuch a css node? */
 */
 
 .inline-toolbar toolbutton > button:disabled:checked {
-	color:  shade(@insensitive_fg_color, 1.25);
-	border-color: @button_active_bg; }
+    color:  shade(@insensitive_fg_color, 1.25);
+    border-color: @button_active_bg; }
 
 .inline-toolbar toolbutton > button:disabled:active label {
  color: rgba(37, 37, 37, 0.55); }
 
 .inline-toolbar toolbutton > button:disabled:checked label {
-	color: shade(@insensitive_fg_color, 1.25);
+    color: shade(@insensitive_fg_color, 1.25);
 }
 
 .inline-toolbar toolbutton > button.flat {
@@ -4493,10 +4494,10 @@ toolbar.inline-toolbar toolbutton:backdrop:only-child > button.flat {
   font-style: normal;
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-right-color: rgba(0,0,0,0.12);
   border-left-color: rgba(0,0,0,0.12);
   border-bottom-color: rgba(0, 0, 0, 0.2);
@@ -4511,10 +4512,10 @@ toolbar.inline-toolbar toolbutton:backdrop:only-child > button.flat {
   font-style: normal;
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-right-color: rgba(0,0,0,0.12);
   border-left-color: rgba(0,0,0,0.12);
   border-bottom-color: rgba(0, 0, 0, 0.2);
@@ -5237,10 +5238,10 @@ spinbutton > button:focus {
 spinbutton > button:active {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
 }
 
 spinbutton:drop(active) > entry {
@@ -5248,7 +5249,7 @@ spinbutton:drop(active) > entry {
 }
 
 spinbutton:disabled {
-	color: rgba(92, 97, 108, 0.55);
+    color: rgba(92, 97, 108, 0.55);
 }
 
 /* SPINBUTTON HORIZONTAL ENTRY */
@@ -5428,10 +5429,10 @@ headerbar.default-decoration,
 headerbar.selection-mode {
   color: #ffffff;
   text-shadow:  0px -1px alpha(@fg_color, 0.02),
-				 -1px 0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.15),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px 0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.15),
+                  0px  2px alpha(@fg_color, 0.05);
   background-color: @selected_bg_color;
   border-color: #8c8c8c;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
@@ -5444,10 +5445,10 @@ headerbar.selection-mode {
 headerbar.selection-mode:backdrop {
   color: rgba(255, 255, 255, 0.6);
   text-shadow:  0px -1px alpha(@fg_color, 0.02),
-				 -1px 0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.15),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px 0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.15),
+                  0px  2px alpha(@fg_color, 0.05);
   background-color: @selected_bg_color;
   border-color: #8c8c8c;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
@@ -5477,10 +5478,10 @@ headerbar.selection-mode button {
   background-image: linear-gradient(to bottom,@selected_bg_color,#1c59b5);
   color: #ffffff;
   text-shadow:  0px -1px alpha(#ffffff, 0.04),
-				 -1px 0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.4),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px 0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.4),
+                  0px  2px alpha(@fg_color, 0.05);
 }
 
 headerbar.selection-mode button.flat {
@@ -5489,10 +5490,10 @@ headerbar.selection-mode button.flat {
   background-image: none;
   color: #ffffff;
   text-shadow:  0px -1px alpha(#ffffff, 0.04),
-				 -1px 0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.4),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px 0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.4),
+                  0px  2px alpha(@fg_color, 0.05);
 }
 
 headerbar.selection-mode button.sidebar-button {
@@ -5501,10 +5502,10 @@ headerbar.selection-mode button.sidebar-button {
   background-image: none;
   color: #ffffff;
   text-shadow:  0px -1px alpha(#ffffff, 0.04),
-				 -1px 0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.4),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px 0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.4),
+                  0px  2px alpha(@fg_color, 0.05);
 }
 
 /* HEADERBAR SEPARATOR */
@@ -5612,10 +5613,10 @@ headerbar entry:disabled {
 headerbar entry selection:focus {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: @selected_bg_color;
   background-color: @selected_bg_color;
   background-clip: border-box;
@@ -5632,10 +5633,10 @@ headerbar entry image:hover {
 headerbar entry:focus image {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
 }
 
 headerbar entry progress {
@@ -5647,10 +5648,10 @@ headerbar entry progress {
 headerbar entry.warning {
   color: white;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: #F27835;
   background-color: rgba(238, 162, 121, 0.98);
 }
@@ -5658,10 +5659,10 @@ headerbar entry.warning {
 headerbar entry.warning:focus {
   color: white;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   background-color: #F27835;
 }
 
@@ -5678,10 +5679,10 @@ headerbar entry.warning selection:focus {
 headerbar entry.error {
   color: white;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: #FC4138;
   background-color: rgba(244, 128, 123, 0.98);
 }
@@ -5689,10 +5690,10 @@ headerbar entry.error {
 headerbar entry.error:focus {
   color: white;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   background-color: #FC4138;
 }
 
@@ -5745,9 +5746,9 @@ headerbar button:active {
   border: 1px solid;
   color: rgba(255,255,255,0.9);
   text-shadow:  0 -1px alpha(@fg_color, 1),
-				 -1px  0px alpha(@fg_color, 0.10),
-				  1px  0px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.3);
+                 -1px  0px alpha(@fg_color, 0.10),
+                  1px  0px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.3);
   border-right-color: rgba(0,0,0,0.12);
   border-left-color: rgba(0,0,0,0.12);
   border-bottom-color: rgba(0, 0, 0, 0.2);
@@ -5760,9 +5761,9 @@ headerbar button:active:hover {
   border: 1px solid;
   color: rgba(255,255,255,0.9);
   text-shadow:  0 -1px alpha(@fg_color, 1),
-				 -1px  0px alpha(@fg_color, 0.10),
-				  1px  0px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.3);
+                 -1px  0px alpha(@fg_color, 0.10),
+                  1px  0px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.3);
   border-right-color: rgba(0,0,0,0.12);
   border-left-color: rgba(0,0,0,0.12);
   border-bottom-color: rgba(0, 0, 0, 0.2);
@@ -5775,9 +5776,9 @@ headerbar button:checked {
   border: 1px solid;
   color: rgba(255,255,255,0.9);
   text-shadow:  0 -1px alpha(@fg_color, 1),
-				 -1px  0px alpha(@fg_color, 0.10),
-				  1px  0px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.3);
+                 -1px  0px alpha(@fg_color, 0.10),
+                  1px  0px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.3);
   border-right-color: rgba(0,0,0,0.12);
   border-left-color: rgba(0,0,0,0.12);
   border-bottom-color: rgba(0, 0, 0, 0.2);
@@ -5790,9 +5791,9 @@ headerbar button:checked:hover {
   border: 1px solid;
   color: rgba(255,255,255,0.9);
   text-shadow:  0 -1px alpha(@fg_color, 1),
-				 -1px  0px alpha(@fg_color, 0.10),
-				  1px  0px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.3);
+                 -1px  0px alpha(@fg_color, 0.10),
+                  1px  0px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.3);
   border-right-color: rgba(0,0,0,0.12);
   border-left-color: rgba(0,0,0,0.12);
   border-bottom-color: rgba(0, 0, 0, 0.2);
@@ -5845,9 +5846,9 @@ headerbar button:disabled:active {
   border: 1px solid;
   color: rgba(255, 255, 255, 0.75);
   text-shadow:  0 -1px alpha(@fg_color, 1),
-				 -1px  0px alpha(@fg_color, 0.10),
-				  1px  0px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.3);
+                 -1px  0px alpha(@fg_color, 0.10),
+                  1px  0px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.3);
   border-right-color: rgba(0,0,0,0.12);
   border-left-color: rgba(0,0,0,0.12);
   border-bottom-color: rgba(0, 0, 0, 0.2);
@@ -5860,9 +5861,9 @@ headerbar button:disabled:checked {
   border: 1px solid;
   color: rgba(255, 255, 255, 0.75);
   text-shadow:  0 -1px alpha(@fg_color, 1),
-				 -1px  0px alpha(@fg_color, 0.10),
-				  1px  0px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.3);
+                 -1px  0px alpha(@fg_color, 0.10),
+                  1px  0px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.3);
   border-right-color: rgba(0,0,0,0.12);
   border-left-color: rgba(0,0,0,0.12);
   border-bottom-color: rgba(0, 0, 0, 0.2);
@@ -5908,9 +5909,9 @@ headerbar button.text-button:active {
   border: 1px solid;
   color: rgba(255,255,255,0.9);
   text-shadow:  0 -1px alpha(@fg_color, 1),
-				 -1px  0px alpha(@fg_color, 0.10),
-				  1px  0px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.3);
+                 -1px  0px alpha(@fg_color, 0.10),
+                  1px  0px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.3);
   border-right-color: rgba(0,0,0,0.12);
   border-left-color: rgba(0,0,0,0.12);
   border-bottom-color: rgba(0, 0, 0, 0.2);
@@ -5923,9 +5924,9 @@ headerbar button.text-button:checked {
   border: 1px solid;
   color: rgba(255,255,255,0.9);
   text-shadow:  0 -1px alpha(@fg_color, 1),
-				 -1px  0px alpha(@fg_color, 0.10),
-				  1px  0px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.3);
+                 -1px  0px alpha(@fg_color, 0.10),
+                  1px  0px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.3);
   border-right-color: rgba(0,0,0,0.12);
   border-left-color: rgba(0,0,0,0.12);
   border-bottom-color: rgba(0, 0, 0, 0.2);
@@ -5970,9 +5971,9 @@ headerbar button.text-button.image-button:active {
   border: 1px solid;
   color: rgba(255,255,255,0.9);
   text-shadow:  0 -1px alpha(@fg_color, 1),
-				 -1px  0px alpha(@fg_color, 0.10),
-				  1px  0px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.3);
+                 -1px  0px alpha(@fg_color, 0.10),
+                  1px  0px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.3);
   border-right-color: rgba(0,0,0,0.12);
   border-left-color: rgba(0,0,0,0.12);
   border-bottom-color: rgba(0, 0, 0, 0.2);
@@ -5985,9 +5986,9 @@ headerbar button.text-button.image-button:checked {
   border: 1px solid;
   color: rgba(255,255,255,0.9);
   text-shadow:  0 -1px alpha(@fg_color, 1),
-				 -1px  0px alpha(@fg_color, 0.10),
-				  1px  0px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.3);
+                 -1px  0px alpha(@fg_color, 0.10),
+                  1px  0px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.3);
   border-right-color: rgba(0,0,0,0.12);
   border-left-color: rgba(0,0,0,0.12);
   border-bottom-color: rgba(0, 0, 0, 0.2);
@@ -6035,10 +6036,10 @@ headerbar button.suggested-action {
   border: 1px solid;
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: #0277db;
   background-color: @selected_bg_color;
   background-image: linear-gradient(to bottom,@selected_bg_color,#0277db);
@@ -6061,10 +6062,10 @@ headerbar button.suggested-action.sidebar-button {
 headerbar button.suggested-action:hover {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: #0277db;
   background-color: @selected_bg_color;
   background-image: linear-gradient(to bottom,@selected_bg_color,#0277db);
@@ -6073,10 +6074,10 @@ headerbar button.suggested-action:hover {
 headerbar button.suggested-action:active {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: #0277db;
   background-color: @selected_bg_color;
   background-image: linear-gradient(to bottom,@selected_bg_color,#0277db);
@@ -6085,10 +6086,10 @@ headerbar button.suggested-action:active {
 headerbar button.suggested-action:checked {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: #0277db;
   background-color: @selected_bg_color;
   background-image: linear-gradient(to bottom,@selected_bg_color,#0277db);
@@ -6135,10 +6136,10 @@ headerbar button.suggested-action:backdrop {
 headerbar button.destructive-action {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05)
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05)
   background-color: #F04A50;
   background-image: linear-gradient(to bottom, #F04A50,
                                                #e53a42);
@@ -6163,10 +6164,10 @@ headerbar button.destructive-action:hover {
 
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05)
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05)
   background-color: #F04A50;
   background-image: linear-gradient(to bottom, #F04A50,
                                                #e53a42);
@@ -6176,10 +6177,10 @@ headerbar button.destructive-action:hover {
 headerbar button.destructive-action:active {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05)
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05)
   background-color: #F04A50;
   background-image: linear-gradient(to bottom, #F04A50,
                                                #e53a42);
@@ -6189,10 +6190,10 @@ headerbar button.destructive-action:active {
 headerbar button.destructive-action:checked {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05)
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05)
   background-color: #F04A50;
   background-image: linear-gradient(to bottom, #F04A50,
                                                #e53a42);
@@ -6233,7 +6234,7 @@ headerbar button.destructive-action:backdrop {
 }
 
 headerbar button.destructive-action:backdrop {
-	opacity: 0.8;
+    opacity: 0.8;
 }
 
 /*  HEADERBAR LINKED:NOT(.VERTICAL).PATH-BAR */
@@ -6267,9 +6268,9 @@ headerbar .linked:not(.vertical).path-bar > button:hover {
 headerbar .linked:not(.vertical).path-bar > button:active {
   color: rgba(255,255,255,1);
   text-shadow:  0 -1px alpha(#646772, 1),
-				 -1px  0px alpha(@fg_color, 0.10),
-				  1px  0px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.3);
+                 -1px  0px alpha(@fg_color, 0.10),
+                  1px  0px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.3);
   border-right-color: rgba(0,0,0,0.12);
   border-left-color: rgba(0,0,0,0.12);
   border-bottom-color: rgba(0, 0, 0, 0.2);
@@ -6281,9 +6282,9 @@ headerbar .linked:not(.vertical).path-bar > button:active {
 headerbar .linked:not(.vertical).path-bar > button:checked {
  color: rgba(255,255,255,1);
   text-shadow:  0 -1px alpha(#646772, 1),
-				 -1px  0px alpha(@fg_color, 0.10),
-				  1px  0px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.3);
+                 -1px  0px alpha(@fg_color, 0.10),
+                  1px  0px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.3);
   border-right-color: rgba(0,0,0,0.12);
   border-left-color: rgba(0,0,0,0.12);
   border-bottom-color: rgba(0, 0, 0, 0.2);
@@ -6489,9 +6490,9 @@ headerbar .linked:not(.vertical):not(.path-bar) > button:active {
   border: 1px solid;
   color: rgba(255,255,255,0.9);
   text-shadow:  0 -1px alpha(@fg_color, 1),
-				 -1px  0px alpha(@fg_color, 0.10),
-				  1px  0px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.3);
+                 -1px  0px alpha(@fg_color, 0.10),
+                  1px  0px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.3);
   border-right-color: rgba(0,0,0,0.12);
   border-left-color: rgba(0,0,0,0.12);
   border-bottom-color: rgba(0, 0, 0, 0.2);
@@ -6504,9 +6505,9 @@ headerbar .linked:not(.vertical):not(.path-bar) > button:checked {
  border: 1px solid;
   color: rgba(255,255,255,0.9);
   text-shadow:  0 -1px alpha(@fg_color, 1),
-				 -1px  0px alpha(@fg_color, 0.10),
-				  1px  0px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.3);
+                 -1px  0px alpha(@fg_color, 0.10),
+                  1px  0px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.3);
   border-right-color: rgba(0,0,0,0.12);
   border-left-color: rgba(0,0,0,0.12);
   border-bottom-color: rgba(0, 0, 0, 0.2);
@@ -6568,9 +6569,9 @@ headerbar .linked:not(.vertical):not(.path-bar) > button:first-child:active {
   border: 1px solid;
   color: rgba(255,255,255,0.9);
   text-shadow:  0 -1px alpha(@fg_color, 1),
-				 -1px  0px alpha(@fg_color, 0.10),
-				  1px  0px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.3);
+                 -1px  0px alpha(@fg_color, 0.10),
+                  1px  0px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.3);
   border-right-color: rgba(0,0,0,0.12);
   border-left-color: rgba(0,0,0,0.12);
   border-bottom-color: rgba(0, 0, 0, 0.2);
@@ -6583,9 +6584,9 @@ headerbar .linked:not(.vertical):not(.path-bar) > button:first-child:checked {
   border: 1px solid;
   color: rgba(255,255,255,0.9);
   text-shadow:  0 -1px alpha(@fg_color, 1),
-				 -1px  0px alpha(@fg_color, 0.10),
-				  1px  0px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.3);
+                 -1px  0px alpha(@fg_color, 0.10),
+                  1px  0px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.3);
   border-right-color: rgba(0,0,0,0.12);
   border-left-color: rgba(0,0,0,0.12);
   border-bottom-color: rgba(0, 0, 0, 0.2);
@@ -6633,9 +6634,9 @@ headerbar .linked:not(.vertical):not(.path-bar) > button:last-child:active {
  border: 1px solid;
   color: rgba(255,255,255,0.9);
   text-shadow:  0 -1px alpha(@fg_color, 1),
-				 -1px  0px alpha(@fg_color, 0.10),
-				  1px  0px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.3);
+                 -1px  0px alpha(@fg_color, 0.10),
+                  1px  0px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.3);
   border-right-color: rgba(0,0,0,0.12);
   border-left-color: rgba(0,0,0,0.12);
   border-bottom-color: rgba(0, 0, 0, 0.2);
@@ -6648,9 +6649,9 @@ headerbar .linked:not(.vertical):not(.path-bar) > button:last-child:checked {
  border: 1px solid;
   color: rgba(255,255,255,0.9);
   text-shadow:  0 -1px alpha(@fg_color, 1),
-				 -1px  0px alpha(@fg_color, 0.10),
-				  1px  0px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.3);
+                 -1px  0px alpha(@fg_color, 0.10),
+                  1px  0px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.3);
   border-right-color: rgba(0,0,0,0.12);
   border-left-color: rgba(0,0,0,0.12);
   border-bottom-color: rgba(0, 0, 0, 0.2);
@@ -6716,9 +6717,9 @@ headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:active {
  border: 1px solid;
   color: rgba(255,255,255,0.9);
   text-shadow:  0 -1px alpha(@fg_color, 1),
-				 -1px  0px alpha(@fg_color, 0.10),
-				  1px  0px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.3);
+                 -1px  0px alpha(@fg_color, 0.10),
+                  1px  0px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.3);
   border-right-color: rgba(0,0,0,0.12);
   border-left-color: rgba(0,0,0,0.12);
   border-bottom-color: rgba(0, 0, 0, 0.2);
@@ -6733,9 +6734,9 @@ headerbar .linked:not(.vertical):not(.path-bar).stack-switcher > button:checked 
  border: 1px solid;
   color: rgba(255,255,255,0.9);
   text-shadow:  0 -1px alpha(@fg_color, 1),
-				 -1px  0px alpha(@fg_color, 0.10),
-				  1px  0px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.3);
+                 -1px  0px alpha(@fg_color, 0.10),
+                  1px  0px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.3);
   border-right-color: rgba(0,0,0,0.12);
   border-left-color: rgba(0,0,0,0.12);
   border-bottom-color: rgba(0, 0, 0, 0.2);
@@ -6810,10 +6811,10 @@ headerbar .linked:not(.vertical):not(.path-bar):not(.stack-switcher) button:not(
 headerbar spinbutton:not(.vertical):focus {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   caret-color: #ffffff;
 }
 
@@ -6837,10 +6838,10 @@ headerbar spinbutton:not(.vertical) button:hover {
 headerbar spinbutton:not(.vertical) button:active {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: @light_border_color;
   background-color: rgba(0, 0, 0, 0.45);
 }
@@ -6848,10 +6849,10 @@ headerbar spinbutton:not(.vertical) button:active {
 headerbar spinbutton:not(.vertical) button:checked {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: @light_border_color;
   background-color:rgba(0, 0, 0, 0.45);
 }
@@ -6898,9 +6899,9 @@ headerbar combobox {
  border-radius: 5px;
  /*color: rgba(255,255,255,0.9);
   text-shadow:  0 -1px alpha(@fg_color, 1),
-				 -1px  0px alpha(@fg_color, 0.10),
-				  1px  0px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.3);
+                 -1px  0px alpha(@fg_color, 0.10),
+                  1px  0px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.3);
   border-right-color: rgba(0,0,0,0.12);
   border-left-color: rgba(0,0,0,0.12);
   border-bottom-color: rgba(0, 0, 0, 0.2);
@@ -6935,10 +6936,10 @@ headerbar combobox > .linked > button.combo image:hover {
 headerbar combobox > .linked > button.combo:hover {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: @selected_bg_color;
   background-color: @selected_bg_color;
   box-shadow: none;
@@ -7047,10 +7048,10 @@ window > .titlebar:not(headerbar):backdrop {
 .selection-mode.titlebar:not(headerbar) {
   color: #ffffff;
   text-shadow:  0px -1px alpha(@fg_color, 0.02),
-				 -1px 0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.15),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px 0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.15),
+                  0px  2px alpha(@fg_color, 0.05);
   background-color: rgba(32, 106, 217, 0.95);
   border-color: #8c8c8c;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
@@ -7060,10 +7061,10 @@ window > .titlebar:not(headerbar):backdrop {
 .selection-mode.titlebar:backdrop:not(headerbar) {
   color: rgba(255, 255, 255, 0.6);
   text-shadow:  0px -1px alpha(@fg_color, 0.02),
-				 -1px 0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.15),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px 0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.15),
+                  0px  2px alpha(@fg_color, 0.05);
   background-color: rgba(32, 106, 217, 0.95);
   border-color: #8c8c8c;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
@@ -7274,7 +7275,7 @@ headerbar button.titlebutton.restore:active,
 
 .sidebar row,
 .sidebar treeview {
-	color: @fg_color;
+    color: @fg_color;
 /*
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
@@ -7288,7 +7289,7 @@ headerbar button.titlebutton.restore:active,
 .sidebar treeview:selected,
 .sidebar treeview:selected:focus,
 .sidebar treeview:selected:hover {
-	color: @selected_fg_color;
+    color: @selected_fg_color;
     background-color: @selected_bg_dark;
  }
 
@@ -7300,7 +7301,7 @@ headerbar button.titlebutton.restore:active,
  sidebar row:selected label, .sidebar row:selected:focus label,
 .sidebar treeview:selected label,
 .sidebar treeview:selected:focus label {
-	 color: @selected_fg_color;
+     color: @selected_fg_color;
  }
 
 .sidebar row .view:selected,
@@ -7351,16 +7352,16 @@ assistant .sidebar label.highlight {
   background-color: @selected_bg_color;
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
 }
 
 /* STACKSIDEBAR */
 
 stacksidebar row {
-	padding: 10px 4px;
+    padding: 10px 4px;
 }
 
 stacksidebar row > label {
@@ -7369,7 +7370,7 @@ stacksidebar row > label {
 }
 
 stacksidebar row.needs-attention > label {
-	background-size: 6px 6px, 0 0;
+    background-size: 6px 6px, 0 0;
 }
 
 stacksidebar.sidebar:dir(ltr) list,
@@ -7401,8 +7402,8 @@ placessidebar.sidebar {
 }
 
 placessidebar > viewport.frame {
-	border-style: none;
-	border-right: 1px solid @light_border_color;
+    border-style: none;
+    border-right: 1px solid @light_border_color;
 }
 
 placessidebar row,
@@ -7577,10 +7578,10 @@ infobar.warning {
   background-color: transparent;
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   background-image: linear-gradient(to bottom,#2b69d2,#2b69d2); }
 
 infobar.error button,
@@ -7589,10 +7590,10 @@ infobar.question button,
 infobar.info button {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: #265bb3;
   background-color: transparent;
   background-image: linear-gradient(to bottom,#2b69d2,#265bb3);
@@ -7604,10 +7605,10 @@ infobar.question button.flat,
 infobar.info button.flat {
  color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: #2b69d2;
   background-color: transparent;
   background-image: linear-gradient(to bottom,#2b69d2,#2b69d2);
@@ -7619,10 +7620,10 @@ infobar.question button.sidebar-button,
 infobar.info button.sidebar-button {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: #265bb3;
   background-color: transparent;
   background-image: linear-gradient(to bottom,#2b69d2,#265bb3);
@@ -7669,10 +7670,10 @@ infobar.question button:hover,
 infobar.info button:hover {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: #265bb3;
   background-color: transparent;
   background-image: linear-gradient(to bottom,#2b69d2,#2b69d2);
@@ -7692,10 +7693,10 @@ infobar.question button:disabled,
 infobar.info button:disabled {
   color: rgba(255,255,255,0.8);
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: #265bb3;
   background-color: transparent;
   background-image: linear-gradient(to bottom,#2b69d2,#2b69d2);
@@ -7980,7 +7981,7 @@ notebook > header.top {
 }
 
 notebook > header.bottom {
-	margin-top: -1px;
+    margin-top: -1px;
 }
 
 notebook > header.left {
@@ -8004,7 +8005,7 @@ notebook > header.right {
 }
 
 notebook > stack:not(:only-child) {
-	background-color: @base_color;
+    background-color: @base_color;
     border: 1px solid @border_color;
 }
 
@@ -8030,7 +8031,7 @@ notebook > header.left {
 }
 
 notebook > header.top {
-	padding-bottom: 0;
+    padding-bottom: 0;
 }
 
 notebook > header.top > tabs > tab {
@@ -8193,7 +8194,7 @@ notebook > header > tabs > tab {
 }
 
 notebook > header > tabs > tab:hover:not(:checked) {
-	background-color: @button_bg;  /* similar to shade(@bg_color, 1.1) */ }
+    background-color: @button_bg;  /* similar to shade(@bg_color, 1.1) */ }
 
 notebook > header > tabs > tab:checked {
   color: @text_color;
@@ -8201,16 +8202,16 @@ notebook > header > tabs > tab:checked {
 }
 
 notebook > header.top > tabs > tab:checked {
-	border-top: 3px solid @selected_bg_color;  }
+    border-top: 3px solid @selected_bg_color;  }
 
 notebook > header.bottom > tabs > tab:checked {
-	border-bottom: 3px solid @selected_bg_color;  }
+    border-bottom: 3px solid @selected_bg_color;  }
 
 notebook > header.left > tabs > tab:checked {
-	border-left: 3px solid @selected_bg_color;  }
+    border-left: 3px solid @selected_bg_color;  }
 
 notebook > header.right > tabs > tab:checked {
-	border-right: 3px solid @selected_bg_color;  }
+    border-right: 3px solid @selected_bg_color;  }
 
 notebook > header > tabs > tab button.flat {
   min-height: 22px;
@@ -8374,10 +8375,10 @@ menu menuitem {
 menu menuitem:hover {
   color: @selected_fg_color;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.5),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.5),
+                  0px  2px alpha(@fg_color, 0.05);
 
   background-color: @selected_bg_dark;
 }
@@ -8471,10 +8472,10 @@ menuitem.button.flat:active,
 menuitem.button.flat:selected {
   color: @selected_fg_color;
   text-shadow:  0 -1px alpha(@selected_fg_color, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
 
   background-color: @selected_bg_dark;
   background-image: none;
@@ -8512,10 +8513,10 @@ menuitem.button.flat:active arrow,
 menuitem.button.flat:selected arrow {
   color: @selected_fg_color;
   text-shadow:  0 -1px alpha(@selected_fg_color, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   background-color: @selected_bg_dark;
   background-image: none;
 }
@@ -8644,10 +8645,10 @@ menubar > menuitem:hover,
 
   color: @selected_fg_color;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
 
   background-color: @selected_bg_dark;
   background-image: none;
@@ -8691,7 +8692,7 @@ context-menu,
 }
 
 .context-menu > menuitem {
-	padding: 3px;
+    padding: 3px;
 }
 
 
@@ -9244,10 +9245,10 @@ levelbar block.empty {
   font-weight: normal;
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-right-color: rgba(0,0,0,0.12);
   border-left-color: rgba(0,0,0,0.12);
   border-bottom-color: rgba(0, 0, 0, 0.2);
@@ -9261,10 +9262,10 @@ levelbar block.empty {
   font-weight: normal;
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-right-color: rgba(0,0,0,0.12);
   border-left-color: rgba(0,0,0,0.12);
   border-bottom-color: rgba(0, 0, 0, 0.2);
@@ -9375,30 +9376,38 @@ calendar:disabled:selected {
 /*************************************************/
 
 .dialog-action-area {
-	padding: 0 10px 10px 10px;
+    padding: 0 10px 10px 10px;
 }
 
 .dialog-action-area.horizontal.linked button {
-	margin-right: 6px;
+    margin-right: 6px;
 }
 
 .dialog-action-area.horizontal.linked button:last-child,
 .dialog-action-area.horizontal.linked button:only-child {
-	margin-right: 0px;
+    margin-right: 0px;
 }
 
 .dialog-action-area.vertical.linked button {
-	margin-bottom: 6px;
+    margin-bottom: 6px;
 }
 
 .dialog-action-area.vertical.linked button:last-child,
 .dialog-action-area.vertical.linked button:only-child {
-	margin-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+/*************************************************/
+/*                SAVE_AS DIALOG                 */
+/*************************************************/
+dialog filechooser.vertical > box.search-bar,
+dialog filechooser.vertical > box.vertical {
+    border-bottom: 1px solid @light_border_color;
 }
 
 
 /*************************************************/
-/*                MESSAGEDIALOG                  */
+/*                MESSAGE DIALOG                 */
 /*************************************************/
 
 messagedialog .titlebar {
@@ -9464,7 +9473,7 @@ messagedialog.csd .dialog-action-area button:only-child {
 
 
 /*************************************************/
-/*                 PRINTDIALOG                   */
+/*                 PRINT DIALOG                  */
 /*************************************************/
 
 printdialog paper {
@@ -9474,7 +9483,7 @@ printdialog paper {
 }
 
 printdialog .dialog-action-box {
-	margin: 12px;
+    margin: 12px;
 }
 
 
@@ -9874,10 +9883,10 @@ iconview.open-document-selector-treeview:hover {
 iconview.open-document-selector-treeview:hover:selected {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   background-color: @selected_bg_color;
 }
 
@@ -10015,10 +10024,10 @@ conflict-row.activatable {
 .conflict-row.activatable:selected {
  color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   background-color: @selected_bg_color;
 }
 
@@ -10612,10 +10621,10 @@ GtkListBox .h4 {
 #content_frame button:active {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: @selected_bg_color;
   background-color: @selected_bg_color;
 }
@@ -10623,10 +10632,10 @@ GtkListBox .h4 {
 #content_frame button:checked {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: @selected_bg_color;
   background-color: @selected_bg_color;
 }
@@ -10684,10 +10693,10 @@ dialog > box > buttonbox:last-child {
 #buttonbox_frame button:active, #buttonbox_frame button:checked {
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: rgba(26, 28, 34, 0.35);
   background-color: @selected_bg_color;
 }
@@ -10899,22 +10908,22 @@ filechooser placessidebar.sidebar row.sidebar-row.has-open-popup:selected {
 
 filechooser placessidebar.sidebar row.sidebar-row:selected {
   color: #ffffff;
-	text-shadow:  0px -1px alpha(@fg_color, 0.02),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.15),
-				  0px  2px alpha(@fg_color, 0.05);
+    text-shadow:  0px -1px alpha(@fg_color, 0.02),
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.15),
+                  0px  2px alpha(@fg_color, 0.05);
 -gtk-icon-shadow: 0px 1px alpha(@fg_color, 0.2);
   background-color: rgba(0, 0, 0, 0.45);
 }
 
 filechooser placessidebar.sidebar row.sidebar-row:selected:hover {
   color: #ffffff;
-	text-shadow:  0px -1px alpha(@fg_color, 0.02),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.15),
-				  0px  2px alpha(@fg_color, 0.05);
+    text-shadow:  0px -1px alpha(@fg_color, 0.02),
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.15),
+                  0px  2px alpha(@fg_color, 0.05);
 -gtk-icon-shadow: 0px 1px alpha(@fg_color, 0.2);
   background-color: rgba(0, 0, 0, 0.55);
 }
@@ -10949,11 +10958,11 @@ filechooser placessidebar.sidebar row.sidebar-row:disabled image {
 
 filechooser placessidebar.sidebar row.sidebar-row:selected.has-open-popup {
   color: #ffffff;
-	text-shadow:  0px -1px alpha(@fg_color, 0.02),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.15),
-				  0px  2px alpha(@fg_color, 0.05);
+    text-shadow:  0px -1px alpha(@fg_color, 0.02),
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.15),
+                  0px  2px alpha(@fg_color, 0.05);
 -gtk-icon-shadow: 0px 1px alpha(@fg_color, 0.2);
   background-color: rgba(0, 0, 0, 0.45);
 }
@@ -10970,21 +10979,21 @@ filechooser placessidebar.sidebar row.sidebar-row:selected .sidebar-icon {
 
 filechooser placessidebar.sidebar row.sidebar-row:selected:hover .sidebar-icon {
  color: #ffffff;
-	text-shadow:  0px -1px alpha(@fg_color, 0.02),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.15),
-				  0px  2px alpha(@fg_color, 0.05);
+    text-shadow:  0px -1px alpha(@fg_color, 0.02),
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.15),
+                  0px  2px alpha(@fg_color, 0.05);
 -gtk-icon-shadow: 0px 1px alpha(@fg_color, 0.2);
 }
 
 filechooser placessidebar.sidebar row.sidebar-row:active:hover {
   color: #ffffff;
-	text-shadow:  0px -1px alpha(@fg_color, 0.02),
-				 -1px 0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.15),
-				  0px  2px alpha(@fg_color, 0.05);
+    text-shadow:  0px -1px alpha(@fg_color, 0.02),
+                 -1px 0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.15),
+                  0px  2px alpha(@fg_color, 0.05);
 -gtk-icon-shadow: 0px 1px alpha(@fg_color, 0.2);
   background-color: rgba(0, 0, 0, 0.55);
 }
@@ -11006,10 +11015,10 @@ filechooser placessidebar.sidebar row.sidebar-row:not(:selected) button.sidebar-
 filechooser placessidebar.sidebar row.sidebar-row:not(:selected) button.sidebar-button:active {
   color: #ffffff;
   text-shadow:  0px -1px alpha(@fg_color, 0.02),
-				 -1px 0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.15),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px 0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.15),
+                  0px  2px alpha(@fg_color, 0.05);
   border-color: @selected_bg_color;
   background-color: @selected_bg_color;
 }
@@ -11045,28 +11054,28 @@ filechooser placessidebar.sidebar row.sidebar-row:drop(active):not(:disabled):se
 filechooser placessidebar.sidebar row.sidebar-row:drop(active):not(:disabled):selected {
   color: #ffffff;
   text-shadow:  0px -1px alpha(@fg_color, 0.02),
-				 -1px 0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.15),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px 0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.15),
+                  0px  2px alpha(@fg_color, 0.05);
 }
 
 filechooser placessidebar.sidebar row.sidebar-row:drop(active):not(:disabled):selected label {
   color: #ffffff;
   text-shadow:  0px -1px alpha(@fg_color, 0.02),
-				 -1px 0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.15),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px 0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.15),
+                  0px  2px alpha(@fg_color, 0.05);
 }
 
 filechooser placessidebar.sidebar row.sidebar-row:drop(active):not(:disabled):selected .sidebar-icon {
    color: #ffffff;
    text-shadow:  0px -1px alpha(@fg_color, 0.02),
-				 -1px 0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.15),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px 0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.15),
+                  0px  2px alpha(@fg_color, 0.05);
 }
 
 filechooser placessidebar.sidebar separator {
@@ -11107,7 +11116,7 @@ filechooser placessidebar.sidebar scrollbar slider:disabled {
   background-color: transparent; }
 
 filechooser placessidebar.sidebar scrollbar trough {
-	background-color: rgba(222, 227, 240, 0.85);
+    background-color: rgba(222, 227, 240, 0.85);
 }
 
 
@@ -11116,7 +11125,7 @@ filechooser #pathbarbox {
 }
 
 filechooser actionbar {
-	padding-right: 16px;
+    padding-right: 16px;
 }
 
 filechooserbutton:drop(active) {
