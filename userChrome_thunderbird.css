@@ -31,16 +31,28 @@
     --toolbarbutton-border-radius: 4px !important;    
 }
 
-/***** Menu *****/
+
+/***** Title Bar *****/
 
 #titlebar {
     background: var(--menubar_bg) !important;
-    border-radius: 8px 8px 0 0;   
+    border-radius: 8px 8px 0px 0px !important;   
+}
+
+#titlebar > unified-toolbar {
+    border-bottom: none !important;
+}
+
+
+/***** Menu *****/
+
+#mail-menubar > menu {
+    margin-right: 0.5rem !important;
 }
 
 .menuitem-with-favicon,
 .menu-iconic {
-    margin-left: 6px;
+    margin-left: 6px !important;
 }
 
 menuseparator {
