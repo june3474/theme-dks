@@ -10,6 +10,12 @@
  * https://www.userchrome.org/adding-style-recipes-userchrome-css.html#namespaces
  */
 
+/*
+ * This doesn't seems to work. why?
+ * @import url("gtk-3.0/colors.css");
+*/
+
+
 /****** Global settings ******/
 
 *|*:root {
@@ -28,7 +34,11 @@
     --border_dark: #808080;
 
     --toolbox-border-bottom-color: var(--border_dark) !important;
-    --toolbarbutton-border-radius: 4px !important;    
+    --toolbarbutton-border-radius: 4px !important;
+
+    --tab_border_radius: 10px;
+    --tab_border_width: 1px;
+    --tab_border_style: solid;
 }
 
 
@@ -61,6 +71,68 @@ menuseparator {
 
 /****** Tab bar *****/
 
+/* 위에 search bar와 아래 menubar를 통합하는 box의 아래에 경계선을 그음 */
+#toolbar-menubar {
+    border-bottom: var(--tab_border_width) solid var(--border_dark) !important;
+}
+
+/* 아래 탭으로 이루어진 toolbar 셋팅
+ * 기본적으로(아마 gtk3 셋팅인듯) 아래 쪽에 box shadow를 그리게 되어 있어 취소
+ * background-image를 thunar의 toolbar와 일치하여 gradient로 처리
+ * 탭 라인 밑에 따라오는 실제 탭과 거리를 설정하려 했지만 안하는게 자연스러운 듯
+ */
+#tabs-toolbar {
+    box-shadow: none !important;
+    background-image: linear-gradient(to top, #7e8185 1px, #999ca1 1px, #b5b8be) !important;
+    /* padding-top: .7rem !important; */
+}
+
+tab.tabmail-tab {
+    position: relative !important;
+    border: var(--tab_border_width) solid var(--border_light) !important;
+    border-bottom: none !important;
+    border-radius: var(--tab_border_radius) var(--tab_border_radius) 0px 0px !important;
+}
+
+tab.tabmail-tab[selected="true"] {
+    box-sizing: content-box !important;
+    border-color: var(--border_dark) !important;
+    border-top: 3px solid var(--selected_bg) !important;
+}
+
+/* As of ver 115.14.0, thunderbird doesn't seem to support ::before/after
+ * 향후 참고를 위해 남겨둠
+ */
+
+tab.tabmail-tab[selected="true"]::before {
+      content: '';
+      position: absolute;
+      margin: 0px calc(var(--tab_border_radius) / -1);
+      width: var(--tab_border_radius);
+      height: 50%;
+      right: 100%;
+      bottom: 0;
+      border-bottom: var(--tab_border_width) var(--tab_border_style) var(--border_dark);
+}
+
+tab.tabmail-tab[selected="true"]::after {
+      content: '';
+      position: absolute;
+      margin: 0px calc(var(--tab-border-radius) / -1);
+      width: var(--tab-border-radius);
+      height: 50%;
+      left: 100%;
+      bottom: 0;
+      border-bottom: var(--tab-border-width) var(--tab-border-style) red;
+}
+
+.tab-background[selected="true"] {
+    background-color: var(--bg_color) !important;
+}
+
+/* seleted item, 특히 tab 위 부분에 나타나는 파란 색 라인
+ * developer tool로 보면 별거 없음. 그냥 tab안에 box(?)?
+ */
 .tab-line {
     background: transparent !important;
 }
