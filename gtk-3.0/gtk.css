@@ -9398,12 +9398,8 @@ calendar:disabled:selected {
 }
 
 /*************************************************/
-/*                SAVE_AS DIALOG                 */
+/*    OPEN/SAVE DIALOG(see filechooser below)    */
 /*************************************************/
-dialog filechooser.vertical > box.search-bar,
-dialog filechooser.vertical > box.vertical {
-    border-bottom: 1px solid @light_border_color;
-}
 
 
 /*************************************************/
@@ -11086,6 +11082,13 @@ filechooser.maximized placessidebar.sidebar {
   background-color: rgba(242, 243, 246, 0.9);
 }
 */
+
+
+/* dialog filechooser.vertical > box.vertical.search-bar, */
+dialog filechooser.vertical > box.vertical:not(.search-bar) {
+    border-top: 1px solid @light_border_color;
+    border-bottom: 1px solid @light_border_color;
+}
 
 filechooser placessidebar.sidebar scrollbar {
   border-color: rgba(222, 227, 240, 0.85);
