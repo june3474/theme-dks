@@ -1,0 +1,3583 @@
+@import url("colors.css");
+
+/*************************************************/
+/*                  DEFAULT                      */
+/*************************************************/
+
+* {
+    background-clip: padding-box;
+    color: inherit;
+}
+
+*:selected {
+    background-color: @selected_bg_color;
+    color: @selected_fg_color;
+}
+
+*:disabled {
+    color: @insensitive_fg_color;
+}
+
+*:link {
+    color: @link_color;
+    text-decoration: underline;
+}
+
+/* ICON & IMAGE */
+
+.normal-icons {
+    -gtk-icon-size: 16px;
+}
+
+.large-icons {
+    -gtk-icon-size: 32px;
+}
+
+image:disabled {
+    -gtk-icon-filter: opacity(0.5);
+}
+
+picture:disabled {
+    opacity: 0.5;
+}
+
+/* Typography */
+
+.large-title {
+    font-weight: 300;
+    font-size: 240%;
+}
+.title-1 {
+    font-weight: 800;
+    font-size: 200%;
+}
+.title-2 {
+    font-weight: 800;
+    font-size: 150%;
+}
+.title-3 {
+    font-weight: 700;
+    font-size: 150%;
+}
+.title-4 {
+    font-weight: 700;
+    font-size: 130%;
+}
+.heading {
+    font-weight: 700;
+    font-size: 110%;
+}
+.body {
+    font-weight: 400;
+    font-size: 110%;
+}
+.caption-heading {
+    font-weight: 700;
+    font-size: 90%;
+}
+.caption {
+    font-weight: 400;
+    font-size: 90%;
+}
+
+/*************************************************/
+/*                 SELECTION                     */
+/*************************************************/
+
+selection {
+    color: @selected_fg_color;
+    background-color: @selected_bg_color;
+    /*
+    text-shadow:  0 -1px alpha(#ffffff, 0.04),
+                  -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
+   */
+}
+
+selection:disabled {
+    color: #90b5ec;
+}
+
+*.error selection,
+*.search-missing selection {
+    background-color: white;
+    color: #FC4138;
+}
+
+*.warning selection {
+    background-color: white;
+    /* background-image: linear-gradient(to bottom, #ffffff, #ffffff); */
+    color: #F27835;
+}
+
+/*************************************************/
+/*                 SELECTION                     */
+/*************************************************/
+
+selection {
+    color: @selected_fg_color;
+    background-color: @selected_bg_color;
+    /*
+    text-shadow:  0 -1px alpha(#ffffff, 0.04),
+                  -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
+   */
+}
+
+selection:disabled {
+    color: #90b5ec;
+}
+
+*.error selection,
+*.search-missing selection {
+    background-color: white;
+    color: #FC4138;
+}
+
+*.warning selection {
+    background-color: white;
+    /* background-image: linear-gradient(to bottom, #ffffff, #ffffff); */
+    color: #F27835;
+}
+
+/*************************************************/
+/*                    BUTTON                     */
+/*************************************************/
+
+button {
+    background-clip: border-box;      
+    min-height: 24px;
+    transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    font-weight: normal;
+    border: 1px solid @border_color;
+    border-radius: 4px;
+    padding: 3px 6px;
+    color: @fg_color;
+    background-color: transparent;
+    background-image: linear-gradient(to bottom, #f1f1f1, #f0f0f0 48%, #eeeeee 50%, #e6e6e6);
+}
+
+button:active,
+button:active:hover { /* Actually, "active" acompanies "hover" */
+    color: @selected_fg_color;
+    background-color: @button_active_bg;
+    /* required because the background-image of the button which is defined above is inherited */
+    background-image: none;
+}
+
+button:checked {
+    color: @selected_fg_color;
+    background-color: @button_checked_bg;
+    /* required because the background-image of the button which is defined above is inherited */
+    background-image: none;
+}
+
+button:checked:hover {
+    /* shade() leaves the color unchanged when the number is 1 and transforms it to black or white as the number approaches 0 or 2 respectively. */        
+    background-color: shade(@button_checked_bg, 1.2);
+}
+
+button:hover {
+    background-color: shade(@button_bg, 1.2);
+    background-image: none;
+}
+
+button:link {
+    background-image: none;
+    background-color: transparent;
+    border: none;
+}
+
+button:link label {
+    text-decoration: underline;
+}
+
+button:disabled {
+    color: @insensitive_fg_color;
+}
+
+button:disabled:checked,
+button:disabled:checked label {
+    color: shade(@insensitive_fg_color, 1.25);
+    background-image: none;
+}
+
+button.dnd {
+    padding: 0 6px;
+    transition: none;
+    color: @selected_fg_color;
+    background-color: @selected_bg_color;
+    border-style: none;
+}
+
+button.dnd:hover,
+button.dnd:active {
+    text-shadow:  0 -1px alpha(@selected_fg_color, 0.04),
+                  -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
+}
+
+button.font separator {
+    background-color: transparent;
+}
+
+button.file separator {
+    background-color: transparent;
+}
+
+/* text button */
+
+button.text-button:not(.image-button) {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* image button */
+
+button.image-button:not(.text-button) {
+    /* make it square */ 
+    min-width: 24px;
+    padding: 3px;
+}
+
+button.image-button.radio:checked > image {
+    color: white;
+}
+
+/* text & image button */
+
+button.text-button.image-button {
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+button.text-button.image-button label:first-child {
+    padding-left: 8px;
+    padding-right: 2px;
+}
+
+button.text-button.image-button label:last-child {
+    padding-right: 8px;
+    padding-left: 2px;
+}
+
+button.text-button.image-button label:only-child {
+    border-radius: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+button.text-button.image-button.popup {
+    padding-right: 8px;
+    padding-left: 8px;
+}
+
+/* title button - minimize, maxmize, close buttons */
+
+headerbar button.titlebutton,
+.titlebar button.titlebutton,
+windowcontrols > button,
+headerbar button.titlebutton:hover,
+.titlebar button.titlebutton:hover,
+windowcontrols > button:hover,
+headerbar button.titlebutton:active,
+.titlebar button.titlebutton:active,
+windowcontrols > button:active {
+    padding: 0;
+    min-width: 22px;
+    min-height: 22px;
+    box-shadow: none;
+    border: none;
+    border-radius: 50%;
+    color: transparent;
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+headerbar button.titlebutton > image,
+.titlebar button.titlebutton > image,
+windowcontrols > button > image {
+    /* hide hardcoded default icon */
+    opacity: 0;
+}
+
+/* It doesn't seem possible to use -gtk-icon-source to change icon.
+   Only widgets that call gtk_css_style_snapshot_icon() in their
+   snapshot() can support that, which is not the case of Gtk.Image */
+
+headerbar button.titlebutton.close,
+.titlebar button.titlebutton.close,
+windowcontrols > button.close {
+    background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-close.svg"), url("objects/title-buttons/titlebutton-close@2.svg"));
+}
+
+headerbar button.titlebutton.close:backdrop,
+.titlebar button.titlebutton.close:backdrop,
+windowcontrols > button.close:backdrop {
+    background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-close-backdrop.svg"), url("objects/title-buttons/titlebutton-close-backdrop@2.svg"));
+}
+
+headerbar button.titlebutton.close:hover,
+.titlebar button.titlebutton.close:hover,
+windowcontrols > button.close:hover {
+    background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-close-hover.svg"), url("objects/title-buttons/titlebutton-close-hover@2.svg"));
+}
+
+headerbar button.titlebutton.close:active,
+.titlebar button.titlebutton.close:active,
+windowcontrols > button.close:active {
+    background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-close-active.svg"), url("objects/title-buttons/titlebutton-close-active@2.svg"));
+}
+
+headerbar button.titlebutton.maximize,
+.titlebar button.titlebutton.maximize,
+windowcontrols > button.maximize {
+    background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize.svg"), url("objects/title-buttons/titlebutton-maximize@2.svg"));
+}
+
+headerbar button.titlebutton.maximize:backdrop,
+.titlebar button.titlebutton.maximize:backdrop,
+windowcontrols > button.maximize:backdrop {
+    background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize-backdrop.svg"), url("objects/title-buttons/titlebutton-maximize-backdrop@2.svg"));
+}
+
+headerbar button.titlebutton.maximize:hover,
+.titlebar button.titlebutton.maximize:hover,
+windowcontrols > button.maximize:hover {
+    background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize-hover.svg"), url("objects/title-buttons/titlebutton-maximize-hover@2.svg"));
+}
+
+headerbar button.titlebutton.maximize:active,
+.titlebar button.titlebutton.maximize:active,
+windowcontrols > button:active {
+    background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize-active.svg"), url("objects/title-buttons/titlebutton-maximize-active@2.svg"));
+}
+
+headerbar button.titlebutton.minimize,
+.titlebar button.titlebutton.minimize,
+windowcontrols > button.minimize {
+    background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-minimize.svg"), url("objects/title-buttons/titlebutton-minimize@2.svg"));
+}
+
+headerbar button.titlebutton.minimize:backdrop,
+.titlebar button.titlebutton.minimize:backdrop,
+windowcontrols > button.minimize:backdrop {
+    background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-minimize-backdrop.svg"), url("objects/title-buttons/titlebutton-minimize-backdrop@2.svg"));
+}
+
+headerbar button.titlebutton.minimize:hover,
+.titlebar button.titlebutton.minimize:hover,
+windowcontrols > button.minimize:hover {
+    background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-minimize-hover.svg"), url("objects/title-buttons/titlebutton-minimize-hover@2.svg"));
+}
+
+headerbar button.titlebutton.minimize:active,
+.titlebar button.titlebutton.minimize:active,
+windowcontrols > button.minimize:active {
+    background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-minimize-active.svg"), url("objects/title-buttons/titlebutton-minimize-active@2.svg"));
+}
+
+headerbar button.titlebutton.restore,
+.titlebar button.titlebutton.restore,
+windowcontrols > button.restore {
+    background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize.svg"), url("objects/title-buttons/titlebutton-maximize@2.svg"));
+}
+
+headerbar button.titlebutton.restore:backdrop,
+.titlebar button.restore:backdrop,
+windowcontrols > button.titlebutton.restore:backdrop {
+    background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize-backdrop.svg"), url("objects/title-buttons/titlebutton-maximize-backdrop@2.svg"));
+}
+
+headerbar button.titlebutton.restore:hover,
+.titlebar button.titlebutton.restore:hover,
+windowcontrols > button.restore:hover {
+    background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize-hover.svg"), url("objects/title-buttons/titlebutton-maximize-hover@2.svg"));
+}
+
+headerbar button.titlebutton.restore:active,
+.titlebar button.titlebutton.restore:active,
+windowcontrols > button.restore:active {
+    background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize-active.svg"), url("objects/title-buttons/titlebutton-maximize-active@2.svg"));
+}
+
+/* button.osd */
+
+button.osd {
+    color: #BAC3CF;
+    background-color: rgba(53, 57, 69, 0.95);
+    border-color: rgba(35, 38, 46, 0.95);
+}
+
+button.osd:hover {
+    color: @selected_bg_color;
+}
+
+button.osd:active {
+    color: #ffffff;
+    text-shadow:  0 -1px alpha(#ffffff, 0.04),
+                  -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
+    border-color: rgba(26, 28, 34, 0.35);
+    background-color: @selected_bg_color;
+}
+
+button.osd:checked {
+    color: #ffffff;
+    text-shadow:  0 -1px alpha(#ffffff, 0.04),
+                  -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
+    border-color: rgba(26, 28, 34, 0.35);
+    background-color: @selected_bg_color;
+}
+
+button.osd:disabled {
+    color: #5d626e;
+    border-color: rgba(26, 28, 34, 0.35);
+    background-color: rgba(102, 109, 132, 0.2);
+}
+
+button.osd.image-button {
+    padding: 0;
+    min-height: 36px;
+    min-width: 36px;
+}
+
+/* button.circular */
+
+button.circular,
+button.circular-button,
+menubutton.circular > button {
+    padding: 0;
+    min-width: 24px;
+    min-height: 24px;
+    border-radius: 50%;
+}
+
+/* button.suggested-action */
+
+button.suggested-action {
+    background-color: @selected_bg_color;
+    /* background-image: linear-gradient(to bottom,@selected_bg_color,@selected_bg_color); */
+    background-image: none;
+    background-clip: border-box;
+}
+
+button.suggested-action label {
+    color: #ffffff;
+    text-shadow:  0 -1px alpha(#ffffff, 0.04),
+                  -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
+}
+
+button.suggested-action:hover {
+    color: #ffffff;
+    text-shadow:  0 -1px alpha(#ffffff, 0.04),
+                  -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
+    border-color: @selected_bg_color;
+    background-color: #4b86e0;
+    background-image: linear-gradient(to bottom,#4b86e0,#4b86e0);
+    background-clip: border-box;
+}
+
+button.suggested-action:active {
+    color: #ffffff;
+    text-shadow:  0 -1px alpha(#ffffff, 0.04),
+                  -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
+    border-color:  #0277db;
+    background-color: @selected_bg_color;
+    background-image: linear-gradient(to bottom,@selected_bg_color,@selected_bg_color);
+    background-clip: border-box;
+}
+
+button.suggested-action:checked {
+    color: #ffffff;
+    text-shadow:  0 -1px alpha(#ffffff, 0.04),
+                  -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
+    border-color:  #0277db;
+    background-color: @selected_bg_color;
+    background-image: linear-gradient(to bottom,@selected_bg_color,@selected_bg_color);
+    background-clip: border-box;
+}
+
+button.suggested-action.flat:disabled {
+    border-color: transparent;
+    background-color: transparent;
+    background-image: none;
+    color: rgba(92, 97, 108, 0.55);
+}
+
+button.suggested-action:disabled {
+    color: rgba(92, 97, 108, 0.55);
+    border-color: rgba(207, 214, 230, 0.55);
+    background-color: rgba(251, 251, 252, 0.55);
+    background-image: linear-gradient(to bottom, rgba(251, 251, 252, 0.55),
+                                      rgba(251, 251, 252, 0.55));
+}
+
+button.suggested-action:disabled label {
+    color: rgba(92, 97, 108, 0.55);
+}
+
+button.suggested-action.sidebar-button {
+    border-color: transparent;
+    background-color: transparent;
+    background-image: none;
+    color: @fg_color;
+}
+
+button.suggested-action.sidebar-button:disabled {
+    border-color: transparent;
+    background-color: transparent;
+    background-image: none;
+    color: rgba(92, 97, 108, 0.55);
+}
+
+/* button.destructive-action */
+
+button.destructive-action {
+    background-clip: border-box;
+    color: white;
+    text-shadow:  0 -1px alpha(#ffffff, 0.04),
+                  -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
+    background-color: #F04A50;
+    background-image: linear-gradient(to bottom, #F04A50,
+                                      #F04A50);
+    border-color: #F04A50;
+}
+
+button.destructive-action:hover {
+    background-clip: border-box;
+    color: white;
+    text-shadow:  0 -1px alpha(#ffffff, 0.04),
+                  -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
+    background-color: #f3313a;
+    background-image: linear-gradient(to bottom, #f3313a,
+                                      #f3313a);
+    border-color: #f3313a;
+}
+
+button.destructive-action:active {
+    background-clip: border-box;
+    color: white;
+    text-shadow:  0 -1px alpha(#ffffff, 0.04),
+                  -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
+    background-color: #f3313a;
+    background-image: linear-gradient(to bottom, #f3313a,
+                                      #f3313a);
+    border-color: #f3313a;
+}
+
+button.destructive-action:checked {
+    background-clip: border-box;
+    color: white;
+    text-shadow:  0 -1px alpha(#ffffff, 0.04),
+                  -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
+    background-color: #f3313a;
+    background-image: linear-gradient(to bottom, #f3313a,
+                                      #f3313a);
+    border-color: #f3313a;
+}
+
+button.destructive-action:disabled {
+    color: rgba(92, 97, 108, 0.55);
+    background-clip: border-box;
+    background-color: #e3bebf;
+    background-image: linear-gradient(to bottom,#e3bebf,
+                                      #e3bebf);
+    border-color: #e3bebf;
+}
+
+button.destructive-action.flat {
+    border-color: transparent;
+    background-color: transparent;
+    background-image: none;
+    color: #F04A50;
+}
+
+button.destructive-action.flat:disabled {
+    border-color: transparent;
+    background-color: transparent;
+    background-image: none;
+    color: rgba(92, 97, 108, 0.55);
+}
+
+button.destructive-action:disabled label {
+    color: rgba(92, 97, 108, 0.55);
+}
+
+button.destructive-action.sidebar-button {
+    border-color: transparent;
+    background-color: transparent;
+    background-image: none;
+    color: #F04A50;
+}
+
+button.destructive-action.sidebar-button:disabled {
+    border-color: transparent;
+    background-color: transparent;
+    background-image: none;
+    color: rgba(92, 97, 108, 0.55);
+}
+
+/*************************************************/
+/*                CHECK BUTTON                   */
+/*************************************************/
+
+checkbutton.text-button {
+    padding: 2px 0;
+}
+
+/** Unchecked **/
+check {
+    min-width: 16px;
+    min-height: 16px;
+    margin: 0 2px;
+    background-color: transparent;
+    -gtk-icon-source: -gtk-scaled(url("objects/checkbox-objects/checkbox-unchecked.svg"), url("objects/checkbox-objects/checkbox-unchecked@2.svg"));
+}
+
+check:selected {
+    background-color: transparent;  /* Override the default */
+}
+
+check:selected,
+selection check {
+    -gtk-icon-source: -gtk-scaled(url("objects/checkbox-objects/checkbox-unchecked-selected.svg"), url("objects/checkbox-objects/checkbox-unchecked-selected@2.svg"));
+}
+
+check:disabled {
+    -gtk-icon-source: -gtk-scaled(url("objects/checkbox-objects/checkbox-unchecked-insensitive.svg"), url("objects/checkbox-objects/checkbox-unchecked-insensitive@2.svg"));
+}
+
+selection check:disabled {
+    -gtk-icon-source: -gtk-scaled(url("objects/checkbox-objects/checkbox-unchecked-insensitive-selected.svg"), url("objects/checkbox-objects/checkbox-unchecked-insensitive-selected@2.svg"));
+}
+
+/** Checked **/
+check:checked {
+    -gtk-icon-source: -gtk-scaled(url("objects/checkbox-objects/checkbox-checked.svg"), url("objects/checkbox-objects/checkbox-checked@2.svg"));
+}
+
+check:checked:selected,
+selection check:checked {
+    -gtk-icon-source: -gtk-scaled(url("objects/checkbox-objects/checkbox-checked-selectionmode.svg"), url("objects/checkbox-objects/checkbox-checked-selectionmode@2.svg"));
+}
+
+check:checked:disabled {
+    -gtk-icon-source: -gtk-scaled(url("objects/checkbox-objects/checkbox-checked-insensitive.svg"), url("objects/checkbox-objects/checkbox-checked-insensitive@2.svg"));
+}
+
+check:checked:disabled:selected,  
+selection check:checked:disabled {
+    -gtk-icon-source: -gtk-scaled(url("objects/checkbox-objects/checkbox-checked-insensitive-selected.svg"), url("objects/checkbox-objects/checkbox-checked-insensitive-selected@2.svg"));
+}
+
+/** Indeterminate **/  
+check:indeterminate {
+    -gtk-icon-source: -gtk-scaled(url("objects/checkbox-objects/checkbox-mixed.svg"), url("objects/checkbox-objects/checkbox-mixed@2.svg"));
+}
+
+check:indeterminate:selected,
+selection check:indeterminate {
+    -gtk-icon-source: -gtk-scaled(url("objects/checkbox-objects/checkbox-mixed-selected.svg"), url("objects/checkbox-objects/checkbox-mixed-selected@2.svg"));
+}
+
+check:indeterminate:disabled {
+    -gtk-icon-source: -gtk-scaled(url("objects/checkbox-objects/checkbox-mixed-insensitive.svg"), url("objects/checkbox-objects/checkbox-mixed-insensitive@2.svg"));
+}
+
+check:indeterminate:disabled:selected,
+selection check:indeterminate:disabled {
+    -gtk-icon-source: -gtk-scaled(url("objects/checkbox-objects/checkbox-mixed-insensitive-selected.svg"), url("objects/checkbox-objects/checkbox-mixed-insensitive-selected@2.svg"));
+}
+
+checkbutton label:not(:only-child):first-child {
+    margin-left: 4px;
+}
+
+checkbutton label:not(:only-child):last-child {
+    margin-right: 4px;
+}
+
+/* CHECK  SELECTED */
+
+list > row:selected check,
+list > row:focus check,
+menuitem > check:hover,
+modelbutton > check:hover {
+    -gtk-icon-source: -gtk-scaled(url("objects/checkbox-objects/checkbox-unchecked-selected.svg"), url("objects/checkbox-objects/checkbox-unchecked-selected@2.svg"));
+}
+
+list > row:selected check:checked,
+list > row:focus check:checked,
+menuitem > check:checked:hover,
+modelbutton > check:checked:hover {
+    -gtk-icon-source: -gtk-scaled(url("objects/checkbox-objects/checkbox-checked-selectionmode.svg"), url("objects/checkbox-objects/checkbox-checked-selectionmode@2.svg"));
+}
+
+list > row:selected check:checked:disabled:selected,
+list > row:focus check:checked:disabled:selected,
+menuitem > check:checked:disabled:selected:hover,
+modelbutton > check:checked:disabled:selected:hover {
+    -gtk-icon-source: -gtk-scaled(url("objects/checkbox-objects/checkbox-checked-insensitive-selected.svg"), url("objects/checkbox-objects/checkbox-checked-insensitive-selected@2.svg"));
+}
+
+list > row:selected check:indeterminate,
+list > row:focus check:indeterminate,
+menuitem > check:indeterminate:hover,
+modelbutton > check:indeterminate:hover {
+    -gtk-icon-source: -gtk-scaled(url("objects/checkbox-objects/checkbox-mixed-selected.svg"), url("objects/checkbox-objects/checkbox-mixed-selected@2.svg"));
+}
+
+list > row:selected check:indeterminate:disabled,
+list > row:focus check:indeterminate:disabled,
+menuitem > check:indeterminate:disabled:hover,
+modelbutton > check:indeterminate:disabled:hover {
+    -gtk-icon-source: -gtk-scaled(url("objects/checkbox-objects/checkbox-mixed-insensitive-selected.svg"), url("objects/checkbox-objects/checkbox-mixed-insensitive-selected@2.svg"));
+}
+
+/*************************************************/
+/*                RADIO BUTTON                   */
+/*************************************************/
+
+radiobutton.text-button {
+    padding: 2px 0;
+}
+
+/** Unchecked **/
+radio {
+    min-width: 16px;
+    min-height: 16px;
+    margin: 0 2px;
+    border-style: none;
+    -gtk-icon-source: -gtk-scaled(url("objects/radio-objects/radio-unchecked.svg"), url("objects/radio-objects/radio-unchecked@2.svg"));
+}
+
+radio:selected,
+radio:selected:hover {
+    background-color: transparent;  /* Override the default */
+}
+
+radio:selected:hover,
+selection radio {
+    -gtk-icon-source: -gtk-scaled(url("objects/radio-objects/radio-unchecked-selected.svg"), url("objects/radio-objects/radio-unchecked-selected@2.svg"));
+}
+
+radio:disabled {
+    -gtk-icon-source: -gtk-scaled(url("objects/radio-objects/radio-unchecked-insensitive.svg"), url("objects/radio-objects/radio-unchecked-insensitive@2.svg"));
+}
+
+radio:disabled:selected:hover,
+selection radio:disabled {
+    -gtk-icon-source: -gtk-scaled(url("objects/radio-objects/radio-unchecked-insensitive.svg"), url("objects/radio-objects/radio-unchecked-insensitive@2.svg"));
+}
+
+/** Checked **/
+radio:checked {
+    -gtk-icon-source: -gtk-scaled(url("objects/radio-objects/radio-checked.svg"), url("objects/radio-objects/radio-checked@2.svg"));
+}
+
+radio:checked:selected:hover,
+selection check:checked {
+    -gtk-icon-source: -gtk-scaled(url("objects/radio-objects/radio-checked-selected.svg"), url("objects/radio-objects/radio-checked-selected@2.svg"));
+}
+
+radio:checked:disabled {
+    -gtk-icon-source: -gtk-scaled(url("objects/radio-objects/radio-checked-insensitive.svg"), url("objects/radio-objects/radio-checked-insensitive@2.svg"));
+}
+
+radio:checked:disabled:selected:hover {
+    -gtk-icon-source: -gtk-scaled(url("objects/radio-objects/radio-checked-insensitive-selected.svg"), url("objects/radio-objects/radio-checked-insensitive-selected@2.svg"));
+}
+
+/** Indeterminate **/  
+radio:indeterminate {
+    -gtk-icon-source: -gtk-scaled(url("objects/radio-objects/radio-mixed.svg"), url("objects/radio-objects/radio-mixed@2.svg"));
+}
+
+radio:indeterminate:selected:hover,
+selection radio:indeterminate {
+    -gtk-icon-source: -gtk-scaled(url("objects/radio-objects/radio-mixed-selected.svg"), url("objects/radio-objects/radio-mixed-selected@2.svg"));
+}
+
+radio:indeterminate:disabled {
+    -gtk-icon-source: -gtk-scaled(url("objects/radio-objects/radio-mixed-insensitive.svg"), url("objects/radio-objects/radio-mixed-insensitive@2.svg"));
+}
+
+radio:indeterminate:disabled:selected:hover {
+    -gtk-icon-source: -gtk-scaled(url("objects/radio-objects/radio-mixed-insensitive-selected.svg"), url("objects/radio-objects/radio-mixed-insensitive-selected@2.svg"));
+}
+
+radio:only-child {
+    margin: 0;
+}
+
+radiobutton label:not(:only-child):first-child {
+    margin-left: 4px;
+}
+
+radiobutton label:not(:only-child):last-child {
+    margin-right: 4px;
+}
+
+/* RADIO  SELECTED */
+
+list > row:selected radio,
+list > row:focus radio,
+menuitem > radio:hover,
+modelbutton > radio:hover {
+    -gtk-icon-source: -gtk-scaled(url("objects/radio-objects/radio-unchecked-selected.svg"), url("objects/radio-objects/radio-unchecked-selected@2.svg"));
+}
+
+list > row:selected radio:disabled,
+list > row:focus radio:disabled,
+menuitem > radio:disabled:hover,
+modelbutton > radio:disabled:hover {
+    -gtk-icon-source: -gtk-scaled(url("objects/radio-objects/radio-unchecked-insensitive.svg"), url("objects/radio-objects/radio-unchecked-insensitive@2.svg"));
+}        
+
+list > row:selected radio:checked,
+list > row:focus radio:checked,
+menuitem > radio:checked:hover,
+modelbutton > radio:checked:hover {
+    -gtk-icon-source: -gtk-scaled(url("objects/radio-objects/radio-checked-selected.svg"), url("objects/radio-objects/radio-checked-selected@2.svg"));
+}
+
+list > row:selected radio:checked:disabled,
+list > row:focus radio:checked:disabled,
+menuitem > radio:checked:disabled:hover,
+modelbutton > radio:checked:disabled:hover {
+    -gtk-icon-source: -gtk-scaled(url("objects/radio-objects/radio-checked-insensitive-selected.svg"), url("objects/radio-objects/radio-checked-insensitive-selected@2.svg"));
+}
+
+list > row:selected radio:indeterminate,
+list > row:focus radio:indeterminate,
+menuitem > radio:indeterminate:hover, 
+modelbutton > radio:indeterminate:hover {
+    -gtk-icon-source: -gtk-scaled(url("objects/radio-objects/radio-mixed-selected.svg"), url("objects/radio-objects/radio-mixed-selected@2.svg"));
+}
+
+list > row:selected radio:indeterminate:disabled,
+list > row:focus radio:indeterminate:disabled,
+menuitem > radio:indeterminate:disabled:hover,
+modelbutton > radio:indeterminate:disabled:hover {
+    -gtk-icon-source: -gtk-scaled(url("objects/radio-objects/radio-mixed-insensitive-selected.svg"), url("objects/radio-objects/radio-mixed-insensitive-selected@2.svg"));
+}
+
+/*************************************************/
+/*                SPINBUTTON                     */
+/*************************************************/
+
+spinbutton:drop(active) > entry {
+    border-color: #F08437;
+}
+
+spinbutton:disabled {
+    color: rgba(92, 97, 108, 0.55);
+}
+
+spinbutton > button {
+    font-weight: normal;
+    border-radius: 0px;
+    border-color: @border_color;
+}
+
+spinbutton > button:active {
+    color: #ffffff;
+    text-shadow:  0 -1px alpha(#ffffff, 0.04),
+                  -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
+}
+
+spinbutton > text {
+    background-color: @base_color;
+}
+
+spinbutton.horizontal > text {
+    min-width: 28px;
+    padding: 0px 4px;
+    border: 1px solid @border_color;
+    border-right-width: 0px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+spinbutton.horizontal > button.down {
+    border-radius: 0px;
+}
+
+spinbutton.horizontal > button.up {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-left-width: 0px;
+}
+
+spinbutton.vertical > button.up {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+spinbutton.vertical > text {
+    border-radius: 0;
+    border-left: 1px solid @border_color;
+    border-right: 1px solid @border_color;
+    padding: 4px;
+}
+
+spinbutton.vertical > button.down {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+/*************************************************/
+/*                 MENU BUTTON                   */
+/*************************************************/
+
+menubutton {
+    -gtk-icon-source: -gtk-scaled(url("objects/other/open-menu-symbolic.svg"));
+    margin: 0px 10px;
+}
+
+menubutton > button.toggle {
+    min-height: 24px;
+    min-width: 24px;
+    padding: 3px;
+}
+
+menubutton > popover {
+    margin-top: 3px;
+}
+
+/* button.sidebar-button */
+
+button.sidebar-button {
+    color: rgba(37,37,37,0.55);
+    border-radius: 5px;
+    border-right-color: rgba(0,0,0,0.12);
+    border-left-color: rgba(0,0,0,0.12);
+    border-bottom-color: rgba(0, 0, 0, 0.18);
+    border-top-color: rgba(0, 0, 0, 0.08);
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,rgba(255,255,255,1),
+                                      rgba(255,255,255,1));
+}
+
+button.sidebar-button:hover {
+    /*
+  transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-duration: 350ms;
+   */
+}
+
+button.sidebar-button:hover:active {
+    /*transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94); */ }
+
+button.sidebar-button:disabled {
+    border-color: transparent;
+    background-color: transparent;
+    background-image: none;
+}
+
+/* button.osd */
+
+button.osd {
+    color: #BAC3CF;
+    background-color: rgba(53, 57, 69, 0.95);
+    border-color: rgba(35, 38, 46, 0.95);
+}
+
+button.osd:hover {
+    color: @selected_bg_color;
+}
+
+button.osd:active {
+    color: #ffffff;
+    text-shadow:  0 -1px alpha(#ffffff, 0.04),
+                  -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
+    border-color: rgba(26, 28, 34, 0.35);
+    background-color: @selected_bg_color;
+}
+
+button.osd:checked {
+    color: #ffffff;
+    text-shadow:  0 -1px alpha(#ffffff, 0.04),
+                  -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
+    border-color: rgba(26, 28, 34, 0.35);
+    background-color: @selected_bg_color;
+}
+
+button.osd:disabled {
+    color: #5d626e;
+    border-color: rgba(26, 28, 34, 0.35);
+    background-color: rgba(102, 109, 132, 0.2);
+}
+
+button.osd.image-button {
+    padding: 0;
+    min-height: 36px;
+    min-width: 36px;
+}
+
+/* button.suggested-action */
+
+button.suggested-action {
+    color: #ffffff;
+    text-shadow:  0 -1px alpha(#ffffff, 0.04),
+                  -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
+    border-color: #0277db;
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,@selected_bg_color,@selected_bg_color);
+    background-clip: border-box;
+}
+
+button.suggested-action.flat {
+    border-color: transparent;
+    background-color: transparent;
+    background-image: none;
+    color: @fg_color;
+}
+
+button.suggested-action:hover {
+    color: #ffffff;
+    text-shadow:  0 -1px alpha(#ffffff, 0.04),
+                  -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
+    border-color: @selected_bg_color;
+    background-color: #4b86e0;
+    background-image: linear-gradient(to bottom,#4b86e0,#4b86e0);
+    background-clip: border-box;
+}
+
+button.suggested-action:active {
+    color: #ffffff;
+    text-shadow:  0 -1px alpha(#ffffff, 0.04),
+                  -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
+    border-color:  #0277db;
+    background-color: @selected_bg_color;
+    background-image: linear-gradient(to bottom,@selected_bg_color,@selected_bg_color);
+    background-clip: border-box;
+}
+
+button.suggested-action:checked {
+    color: #ffffff;
+    text-shadow:  0 -1px alpha(#ffffff, 0.04),
+                  -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
+    border-color:  #0277db;
+    background-color: @selected_bg_color;
+    background-image: linear-gradient(to bottom,@selected_bg_color,@selected_bg_color);
+    background-clip: border-box;
+}
+
+button.suggested-action.flat:disabled {
+    border-color: transparent;
+    background-color: transparent;
+    background-image: none;
+    color: rgba(92, 97, 108, 0.55);
+}
+
+button.suggested-action:disabled {
+    color: rgba(92, 97, 108, 0.55);
+    border-color: rgba(207, 214, 230, 0.55);
+    background-color: rgba(251, 251, 252, 0.55);
+    background-image: linear-gradient(to bottom, rgba(251, 251, 252, 0.55),
+                                      rgba(251, 251, 252, 0.55));
+}
+
+button.suggested-action:disabled label {
+    color: rgba(92, 97, 108, 0.55);
+}
+
+button.suggested-action.sidebar-button {
+    border-color: transparent;
+    background-color: transparent;
+    background-image: none;
+    color: @fg_color;
+}
+
+button.suggested-action.sidebar-button:disabled {
+    border-color: transparent;
+    background-color: transparent;
+    background-image: none;
+    color: rgba(92, 97, 108, 0.55);
+}
+
+/* button.destructive-action */
+
+button.destructive-action {
+    background-clip: border-box;
+    color: white;
+    text-shadow:  0 -1px alpha(#ffffff, 0.04),
+                  -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
+    background-color: #F04A50;
+    background-image: linear-gradient(to bottom, #F04A50,
+                                      #F04A50);
+    border-color: #F04A50;
+}
+
+button.destructive-action:hover {
+    background-clip: border-box;
+    color: white;
+    text-shadow:  0 -1px alpha(#ffffff, 0.04),
+                  -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
+    background-color: #f3313a;
+    background-image: linear-gradient(to bottom, #f3313a,
+                                      #f3313a);
+    border-color: #f3313a;
+}
+
+button.destructive-action:active {
+    background-clip: border-box;
+    color: white;
+    text-shadow:  0 -1px alpha(#ffffff, 0.04),
+                  -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
+    background-color: #f3313a;
+    background-image: linear-gradient(to bottom, #f3313a,
+                                      #f3313a);
+    border-color: #f3313a;
+}
+
+button.destructive-action:checked {
+    background-clip: border-box;
+    color: white;
+    text-shadow:  0 -1px alpha(#ffffff, 0.04),
+                  -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
+    background-color: #f3313a;
+    background-image: linear-gradient(to bottom, #f3313a,
+                                      #f3313a);
+    border-color: #f3313a;
+}
+
+button.destructive-action:disabled {
+    color: rgba(92, 97, 108, 0.55);
+    background-clip: border-box;
+    background-color: #e3bebf;
+    background-image: linear-gradient(to bottom,#e3bebf,
+                                      #e3bebf);
+    border-color: #e3bebf;
+}
+
+button.destructive-action.flat {
+    border-color: transparent;
+    background-color: transparent;
+    background-image: none;
+    color: #F04A50;
+}
+
+button.destructive-action.flat:disabled {
+    border-color: transparent;
+    background-color: transparent;
+    background-image: none;
+    color: rgba(92, 97, 108, 0.55);
+}
+
+button.destructive-action:disabled label {
+    color: rgba(92, 97, 108, 0.55);
+}
+
+button.destructive-action.sidebar-button {
+    border-color: transparent;
+    background-color: transparent;
+    background-image: none;
+    color: #F04A50;
+}
+
+button.destructive-action.sidebar-button:disabled {
+    border-color: transparent;
+    background-color: transparent;
+    background-image: none;
+    color: rgba(92, 97, 108, 0.55);
+}
+
+/*************************************************/
+/*                   LABEL                       */
+/*************************************************/
+
+label {
+    background-color: transparent;
+}
+
+label selection {
+    color: @selected_fg_color;
+    text-shadow:  0 -1px alpha(@selected_fg_color, 0.04),
+                  -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
+    background-color: @selected_bg_color;
+}
+
+label.warning,
+label.warning selection {
+    color: @warning_color;
+}
+
+label.error,
+label.error selection {
+    color: @error_color;
+}
+
+label:disabled:selected,
+label:disabled selection {
+    color: @insensitive_fg_color;
+}
+
+label.separator {
+    opacity: 0.55;
+}
+
+/*************************************************/
+/*                 PROGRESSBAR                   */
+/*************************************************/
+
+progressbar {
+    padding: 0;
+    font-size: smaller;
+    box-shadow: none;
+}
+
+progressbar trough {
+    border: none;
+    border-radius: 3px;
+    background-color: shade(@base_color, 0.75);
+}
+
+progressbar.horizontal trough {
+    min-width: 32px;
+    min-height: 5px;
+}
+
+progressbar.vertical trough {
+    min-width: 5px;
+    min-height: 32px;
+}
+
+progressbar progress {
+    background-color: @selected_bg_color;
+    box-shadow: none;
+    border-radius: 3px;      
+}
+
+progressbar.horizontal progress {
+    min-height: 5px;
+}
+
+progressbar.vertical progress {
+    min-width: 5px;
+}
+
+/*************************************************/
+/*                    ENTRY                      */
+/*************************************************/
+
+entry {
+    min-height: 24px;
+    padding: 2px 8px;
+    caret-color: currentColor;
+    border-radius: 4px;
+    /*transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);*/
+    border: 1px solid @border_color;
+    background-color: white;
+}
+
+entry.flat {
+    min-height: 0;
+    padding: 2px;
+}
+
+entry.flat:focus {
+    min-height: 0;
+    padding: 2px;
+    background-image: none;
+}
+
+entry:focus {
+    color: @text_color;
+}
+
+entry.warning {
+    color: white;
+    text-shadow:  0 -1px alpha(#ffffff, 0.04),
+                  -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
+    border-color: #F27835;
+    background-color: #f7ae86;
+    /* background-image: linear-gradient(to bottom, #f7ae86, #f7ae86) */
+}
+
+entry.warning:focus {
+    background-color: #F27835;
+    box-shadow: none;
+}
+
+entry.error,
+entry.search-missing {
+    color: white;
+    text-shadow:  0 -1px alpha(#ffffff, 0.04),
+                  -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
+    border-color: #FC4138;
+    /* background-image: linear-gradient(to bottom, #fd8d88, #fd8d88); */
+    background-color: #fd8d88;
+}
+
+entry.error:focus,
+entry.search-missing:focus {
+    background-color: #FC4138;
+    box-shadow: none;
+}
+
+entry:drop(active) {
+    border-color: #F08437;
+    box-shadow: none;
+}
+
+entry image {
+    color: #515151;
+}
+
+entry image.left {
+    padding-left: 0;
+    padding-right: 5px;
+}
+
+entry image.right {
+    padding-right: 0;
+    padding-left: 5px;
+}
+
+entry progress {
+    margin: 0 -6px;
+    border-radius: 0;
+    border-width: 0 0 2px;
+    border-color: @selected_bg_color;
+    border-style: solid;
+    background-image: none;
+    background-color: transparent;
+}
+
+/******************************************************/
+/*                    COMBOBOX                        */
+/******************************************************/
+
+combobox entry.combo:dir(ltr) {
+    /* Below is to make 'entry+button' look like a combobox. but more side-effects
+      box.linked.horizontal:not(.path-bar):dir(ltr) > entry:not(only-child) {
+   */
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right-style: none;
+}
+
+combobox entry.combo:dir(rtl) {
+    /* box.linked.horizontal:not(.path-bar):dir(rtl) > entry:not(only-child) { */
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left-style: none;
+}
+
+combobox button.combo {
+    min-height: 0px;
+    min-width: 0px;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 3px;
+    padding-bottom:3px;
+}
+
+/* For the combobox with an entry, remove button's left/right radius. */
+combobox entry.combo:dir(ltr) + button.combo,
+box.linked.horizontal:not(.path-bar) > entry:dir(ltr) + button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+combobox entry.combo:dir(rtl) + button.combo,
+box.linked.horizontal:not(.path-bar) > entry:dir(rtl) + button {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+combobox arrow {
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+    min-height: 16px;
+    min-width: 16px;
+}
+
+/*************************************************/
+/*                    SWITCH                     */
+/*************************************************/
+
+switch {
+    transition: all 0.3s cubic-bezier(0, 0, 0.2, 1);
+    min-width: 16px;
+    min-height: 16px;
+    border-radius:100px;
+    background-color: shade(@base_color, 0.7);      
+    /* background-color: alpha(currentColor, 0.3); */
+    background-clip: padding-box;
+    font-size: 0;
+}
+
+switch:disabled {
+    color: alpha(currentColor, 0.4);
+}
+
+switch:checked {
+    background-color: @selected_bg_color;
+}
+
+switch slider {
+    transition: all 0.3s cubic-bezier(0, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0, 0, 0.2, 1);
+    border-image: none;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    background-color: #fcfcfc;
+    color: rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0, 0, 0.2, 1), margin 0;
+    min-width: 16px;
+    min-height: 16px;
+    margin: 2px 0 2px 3px;
+    border-radius: 100px;
+}
+
+switch:hover slider {
+    border-image: none;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16), 0 3px 3px rgba(0, 0, 0, 0.23);
+}
+
+switch:checked slider {
+    animation: needs_attention 0.3s cubic-bezier(0, 0, 0.2, 1);
+    margin: 2px 3px 2px 0;
+    background-color: #FFFFFF;
+    color: #71c837;
+}
+
+switch:disabled slider {
+    animation: none;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    background-color: #ffffff;
+}
+
+/* SWITCH SELECTED */
+
+list > row:selected switch:checked,
+list > row:focus switch:checked,
+modelbutton:hover switch {
+    background-color: shade(@selected_bg_color, 1.4);
+}
+
+/*************************************************/
+/*                   SCALE                       */
+/*************************************************/
+
+scale {
+    min-height: 22px;
+    min-width: 15px;
+    padding: 1px;
+}
+
+scale.horizontal trough {
+    padding: 0 4px;
+}
+
+scale.horizontal highlight,
+scale.horizontal fill {
+    margin: 0 -4px;
+}
+
+scale.vertical trough {
+    padding: 4px 0;
+}
+
+scale.vertical highlight,
+scale.vertical fill {
+    margin: -4px 0;
+}
+
+scale slider {
+    min-height: 14px;
+    min-width: 14px;
+    margin: -6px;
+}
+
+scale.fine-tune slider {
+    margin: -4px;
+}
+
+scale.fine-tune fill,
+scale.fine-tune highlight,
+scale.fine-tune trough {
+    border-radius: 5px;
+}
+
+scale trough {
+    border-radius: 1.5px;
+    background-color: shade(@base_color, 0.75);
+}
+
+scale fill {
+    border-radius: 1.5px;
+    background-color: rgba(82, 148, 226, 0.5);
+}
+
+scale fill:disabled {
+    background-color: transparent;
+}
+
+scale highlight {
+    border-radius: 2.5px;
+    background-color: @selected_bg_color;
+}
+
+scale highlight:disabled {
+    background-color: @selected_bg_dark;
+}
+
+scale slider {
+    background-color: #f6f8fa;
+    border: 1px solid #646772;
+    border-radius: 100%;
+}
+
+scale slider:active {
+    background-clip: border-box;
+    border-color: #646772;
+}
+
+scale.marks-after slider,
+scale.marks-after slider:focus,
+scale.marks-before slider,
+scale.marks-before slider:focus {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    transition: none;
+    box-shadow: none;
+    margin: -8px;
+    min-width: 22px;
+    min-height: 22px;
+}
+
+scale.marks-after.horizontal slider {
+    background-image: -gtk-scaled(url("objects/scale-slider-marks/after-horizontal.svg"), url("objects/after-horizontal@2.svg"));
+}
+
+scale.marks-after.horizontal slider:active {
+    background-image: -gtk-scaled(url("objects/scale-slider-marks/after-horizontal-active.svg"), url("objects/scale-slider-marks/after-horizontal-active@2.svg"));
+}
+
+scale.marks-after.horizontal slider:focus {
+    background-image: -gtk-scaled(url("objects/scale-slider-marks/after-horizontal.svg"), url("objects/scale-slider-marks/after-horizontal@2.svg"));
+}
+
+scale.marks-after.horizontal slider:focus:active {
+    background-image: -gtk-scaled(url("objects/scale-slider-marks/after-horizontal-active.svg"), url("objects/scale-slider-marks/after-horizontal-active@2.svg"));
+}
+
+scale.marks-after.horizontal slider:disabled {
+    background-image: -gtk-scaled(url("objects/scale-slider-marks/after-horizontal-insensitive.svg"), url("objects/scale-slider-marks/after-horizontal-insensitive@2.svg"));
+}
+
+scale.marks-after.vertical slider {
+    background-image: -gtk-scaled(url("objects/scale-slider-marks/after-vertical.svg"), url("objects/scale-slider-marks/after-vertical@2.svg"));
+}
+
+scale.marks-after.vertical slider:active {
+    background-image: -gtk-scaled(url("objects/scale-slider-marks/after-vertical-active.svg"), url("objects/scale-slider-marks/after-vertical-active@2.svg"));
+}
+
+scale.marks-after.vertical slider:focus {
+    background-image: -gtk-scaled(url("objects/scale-slider-marks/after-vertical.svg"), url("objects/scale-slider-marks/after-vertical@2.svg"));
+}
+
+scale.marks-after.vertical slider:focus:active {
+    background-image: -gtk-scaled(url("objects/scale-slider-marks/after-vertical-active.svg"), url("objects/scale-slider-marks/after-vertical-active@2.svg"));
+}
+
+scale.marks-after.vertical slider:disabled {
+    background-image: -gtk-scaled(url("objects/scale-slider-marks/after-vertical-insensitive.svg"), url("objects/scale-slider-marks/after-vertical-insensitive@2.svg"));
+}
+
+scale.marks-before.horizontal slider {
+    background-image: -gtk-scaled(url("objects/scale-slider-marks/before-horizontal.svg"), url("objects/scale-slider-marks/before-horizontal@2.svg"));
+}
+
+scale.marks-before.horizontal slider:active {
+    background-image: -gtk-scaled(url("objects/scale-slider-marks/before-horizontal-active.svg"), url("objects/scale-slider-marks/before-horizontal-active@2.svg"));
+}
+
+scale.marks-before.horizontal slider:focus {
+    background-image: -gtk-scaled(url("objects/scale-slider-marks/before-horizontal.svg"), url("objects/scale-slider-marks/before-horizontal@2.svg"));
+}
+
+scale.marks-before.horizontal slider:focus:active {
+    background-image: -gtk-scaled(url("objects/scale-slider-marks/before-horizontal-active.svg"), url("objects/scale-slider-marks/before-horizontal-active@2.svg"));
+}
+
+scale.marks-before.horizontal slider:disabled {
+    background-image: -gtk-scaled(url("objects/scale-slider-marks/before-horizontal-insensitive.svg"), url("objects/scale-slider-marks/before-horizontal-insensitive@2.svg"));
+}
+
+scale.marks-before.vertical slider {
+    background-image: -gtk-scaled(url("objects/scale-slider-marks/before-vertical.svg"), url("objects/scale-slider-marks/before-vertical@2.svg"));
+}
+
+scale.marks-before.vertical slider:active {
+    background-image: -gtk-scaled(url("objects/scale-slider-marks/before-vertical-active.svg"), url("objects/scale-slider-marks/before-vertical-active@2.svg"));
+}
+
+scale.marks-before.vertical slider:focus {
+    background-image: -gtk-scaled(url("objects/scale-slider-marks/before-vertical.svg"), url("objects/scale-slider-marks/before-vertical@2.svg"));
+}
+
+scale.marks-before.vertical slider:focus:active {
+    background-image: -gtk-scaled(url("objects/scale-slider-marks/before-vertical-active.svg"), url("objects/scale-slider-marks/before-vertical-active@2.svg"));
+}
+
+scale.marks-before.vertical slider:disabled {
+    background-image: -gtk-scaled(url("objects/scale-slider-marks/before-vertical-insensitive.svg"), url("objects/scale-slider-marks/before-vertical-insensitive@2.svg"));
+}
+
+scale value,
+scale marks {
+    color: #929292;
+}
+
+scale value {
+    padding-bottom: 12px;
+}
+
+scale marks.top {
+    margin-bottom: 6px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+scale marks.bottom {
+    margin-top: 6px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+scale.horizontal indicator {
+    min-height: 3px;
+    min-width: 1px;
+}
+
+scale.vertical indicator {
+    min-height: 1px;
+    min-width: 3px;
+}
+
+/* SCALE SELECTED */
+
+list > row:selected scale highlight,
+list > row:focus scale highlight,
+modelbutton:hover scale highlight {
+    background-color: shade(@selected_bg_color, 1.5);
+}
+
+/*************************************************/
+/*                   LEVELBAR                    */
+/*************************************************/
+
+levelbar trough {
+    border: 1px solid @border_color;
+    padding: 3px;
+    border-radius: 5px;
+    background-color: transparent;      
+}
+
+levelbar.horizontal block {
+    min-width: 32px;
+    min-height: 5px;
+    border: none;      
+}
+
+levelbar.vertical block {
+    min-width: 5px;
+    min-height: 32px;
+    border: none;      
+}
+
+levelbar.horizontal.discrete block {
+    margin: 0 2px;
+}
+
+levelbar.vertical.discrete block {
+    margin: 2px 0;
+}
+
+levelbar block:not(.empty) {
+    background-color: @selected_bg_color;
+    border-radius: 2px;
+}
+
+levelbar block.low {
+    background-color: #F27835;
+}
+
+levelbar block.high {
+    background-color: @selected_bg_color;
+}
+
+levelbar block.full {
+    background-color: #73d216;
+}
+
+levelbar block.empty {
+    background-color: shade(@base_color, 0.75);
+}
+
+/*************************************************/
+/*                   EXPANDER                    */
+/*************************************************/
+
+expander {
+    min-width: 16px;
+    min-height: 16px;
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+}
+
+expander:dir(rtl) {
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
+}
+
+expander:checked {
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+}
+
+/*************************************************/
+/*                  SEPARATOR                    */
+/*************************************************/
+
+separator {
+    background-color: @border_color;
+}
+
+separator.vertical {
+    min-width: 1px;
+    margin: 0px 3px;
+}
+
+separator.horizontal {
+    min-height: 1px;
+    margin: 3px 0px;
+}
+
+/*************************************************/
+/*                  SPINNER                      */
+/*************************************************/
+
+@keyframes spin {
+    to {
+        -gtk-icon-transform: rotate(1turn); } }
+
+spinner {
+    background: none;
+    opacity: 0;
+    -gtk-icon-source: -gtk-icontheme("process-working-symbolic");
+}
+
+spinner:checked {
+    opacity: 1;
+    animation: spin 1s linear infinite;
+}
+
+spinner:checked:disabled {
+    opacity: 0.5;
+}
+
+/*************************************************/
+/*                RUBBERBAND                     */
+/*************************************************/
+
+rubberband,
+.rubberband {
+    border: 1px solid @rubberband_border;
+    background-color: @rubberband_bg;
+}
+
+/*************************************************/
+/*                  TOOLTIP                      */
+/*************************************************/
+
+tooltip {
+    border-radius: 5px;
+    text-shadow:  none;
+    background-color: rgba(0,0,0,0.75);
+    background-clip: padding-box;
+    color: white;
+    padding: 6px;
+}
+
+tooltip * {
+    background-color: inherit;
+}
+
+/*************************************************/
+/*                    ARROW                      */
+/*************************************************/
+
+arrow {
+    min-height: 16px;
+    min-width: 16px;
+}
+
+arrow:dir(ltr) {
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+    margin-left: 10px;
+}
+
+arrow:dir(rtl) {
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
+    margin-right: 10px;
+}
+
+/* ARROW  SELECTED */
+
+menuitem > arrow:hover,
+modelbutton > arrow:hover {
+    color: @selected_fg_color;
+}
+
+/*************************************************/
+/*                 ACCELERATOR                   */
+/*************************************************/
+
+accelerator {
+    color: alpha(currentColor,0.55);
+}
+
+/*************************************************/
+/*                     LIST                      */
+/*************************************************/
+
+list {
+    background-color: @base_color;
+}
+
+list > row {
+    padding: 5px;
+}
+
+list > row:selected,
+list > row:focus {
+    background-color: @selected_bg_color;
+    color: @selected_fg_color;
+}
+
+list separator.horizontal {
+    margin: 0px;
+}
+
+controls.osd  {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: @selected_fg_color;
+    padding: 5px;
+}
+
+controls.osd button.image-button {
+    min-width: 16px;
+    min-height: 16px;
+    border-radius: 50%;
+}
+
+/*************************************************/
+/*                  POPOVER                      */
+/*************************************************/
+
+popover > contents {
+    color: @fg_color;
+    background-color: @base_color;
+    border-radius: 5px;
+    /* background-image:linear-gradient(to bottom left,rgba(242,243,246,1),rgba(213,218,224,1),rgba(213,218,224,1)); */
+    padding: 5px;
+    box-shadow: 0  2px 5px 2px rgba(0, 0, 0, 0.4);
+}
+
+popover scrolledwindow {
+    border: none;
+    background-color: transparent;
+}
+
+popover > list,
+popover > .view,
+popover > iconview,
+popover > .inline-toolbar,
+popover > toolbar {
+    border-style: none;
+}
+
+popover.menu separator {
+
+}
+
+popover.messagepopover .popover-content-area {
+    margin: 16px;
+}
+
+popover.messagepopover .popover-action-area {
+    margin: 8px;
+}
+
+popover.messagepopover .popover-action-area button:not(:first-child):not(:last-child) {
+    margin: 0 4px;
+}
+
+popover.popover-selector {
+    padding: 0;
+}
+
+popover.popover-selector list row {
+    padding: 5px 0;
+}
+
+popover.popover-selector list row image {
+    margin-left: 3px;
+    margin-right: 10px;
+}
+
+popover.magnifier {
+    color: @fg_color;
+    border: none;
+    background-color: rgba(240, 242, 248, 0.85);
+    background-clip: padding-box;
+    box-shadow: none;
+}
+
+/* modelbutton */
+
+modelbutton,
+popover.menu button.model {
+    padding: 4px;
+    border-radius: 4px;
+}
+
+/* override the default */
+modelbutton:selected,
+popover.menu button.model:selected {
+    color: currentColor;
+    background-color: transparent;
+}
+
+modelbutton:hover,
+popover.menu button.model:hover {
+    color: @selected_fg_color;
+    background-color: @selected_bg_dark;
+}
+
+modelbutton accelerator {
+    margin-left: 20px;
+}
+
+modelbutton:hover label,
+modelbutton:hover image,
+popover.menu button.model:hover label,
+popover.menu button.model:hover image {
+    color: @selected_fg_color;
+}
+
+modelbutton check {
+    text-shadow: none;
+    min-height: 16px;
+    min-width: 16px;
+    margin-right: 6px;
+    margin-left: 3px;        
+}
+
+modelbutton check:dir(rtl) {
+    margin-left:3px;
+    margin-right: 6px;
+}
+
+modelbutton radio {
+    text-shadow: none;
+    min-height: 16px;
+    min-width: 16px;
+    margin-right: 6px;
+    margin-left: 3px;
+}
+
+modelbutton check:dir(rtl) {
+    margin-left:3px;
+    margin-right: 6px;
+}
+
+/*************************************************/
+/*                  HEADERBAR                    */
+/*************************************************/
+
+headerbar {
+    min-height: 38px;
+    padding: 5px 10px;
+    border-bottom: 1px solid @border_color;
+    background-color: transparent;
+    background-image: linear-gradient(to bottom, #ced2d9, #999ca1);
+}
+
+headerbar > * {
+    background-color: transparent;
+}
+
+headerbar .title {
+    text-shadow: 0 1px alpha(#ffffff, 0.35);
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+headerbar .subtitle {
+    text-shadow: 0 1px alpha(#ffffff, 0.35);
+    opacity: 0.75;
+    font-size: smaller;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+/* HEADERBAR BUTTON */
+
+headerbar button {
+}
+
+/*************************************************/
+/*                    MENUBAR                    */
+/*************************************************/
+
+menubar {
+    padding: 2px 6px;
+    background-color: @menubar_bg;
+    border-bottom: 1px solid #7e8185;
+}
+
+/* MENU > ITEM */
+
+menubar > item {
+    min-height: 16px;
+    min-width: 42px;
+    padding: 4px 5px;
+}
+
+menubar > item > label {
+    text-shadow: 0 1px alpha(#ffffff, 0.35);
+}
+
+/* 'selected' seems like it :hover even with focus */
+menubar > item:selected,
+menubar > item:selected:hover {
+    background-color: @selected_bg_dark;
+    color: @selected_fg_color;
+}
+
+menubar > item:selected > label,
+menubar > item:selected:hover > label,
+menubar > item:selected cellview,
+menubar > item:selected:hover cellview {
+    /* color: @selected_fg_color; */
+    text-shadow:  0 -1px alpha(#000000, 0.04);
+}
+
+menubar > item:disabled {
+    color: @insensitive_fg_color;
+}
+
+/* CONTEXT MENU  */
+
+.context-menu {
+    /*padding: 4px 0px;*/
+    font: initial;
+    background-color: @base_color;
+    background-image: none;      
+}
+
+/*************************************************/
+/*                   TOOLBAR                     */
+/*************************************************/
+
+box.toolbar {
+    padding: 6px 4px;
+    background-image: linear-gradient(to top, #7e8185 1px, #999ca1 1px, #b5b8be);
+    /* border-bottom: 1px solid @border_color; */
+}
+
+box.toolbar > button.image-button {
+    /* nothing to add */
+}
+
+box.toolbar separator {
+    background: none;
+}
+
+box.toolbar.horizontal separator {
+    margin: 0 6px;
+}
+
+box.toolbar.vertical separator {
+    margin: 6px 0;
+}
+
+box.toolbar:not(.inline-toolbar) switch {
+    margin-right: 1px;
+    margin-bottom: 1px;
+}
+
+box.toolbar:not(.inline-toolbar) scale {
+    margin-right: 1px;
+    margin-bottom: 1px;
+}
+
+box.toolbar:not(.inline-toolbar) entry {
+    margin-right: 1px;
+    margin-bottom: 1px;
+}
+
+box.toolbar:not(.inline-toolbar) spinbutton {
+    margin-right: 1px;
+    margin-bottom: 1px;
+}
+
+box.toolbar:not(.inline-toolbar) button {
+    margin-right: 1px;
+    margin-bottom: 1px;
+}
+
+box.toolbar:not(.inline-toolbar) .linked > button,
+box.inline-toolbar .linked > button {
+    margin-right: 0;
+}
+
+box.toolbar:not(.inline-toolbar) .linked > entry,
+box.inline-toolbar .linked > entry {
+    margin-right: 0;
+}
+
+box.toolbar.osd {
+    padding: 7px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    background-color: rgba(53, 57, 69, 0.85);
+}
+
+box.toolbar.osd.left {
+    border-radius: 0;
+}
+
+box.toolbar.osd.right {
+    border-radius: 0;
+}
+
+box.toolbar.osd.top {
+    border-radius: 0;
+}
+
+box.toolbar.osd.bottom {
+    border-radius: 0;
+}
+
+box.toolbar.osd.top {
+    border-width: 0 0 1px 0;
+}
+
+box.toolbar.osd.bottom {
+    border-width: 1px 0 0 0;
+}
+
+box.toolbar.osd.left {
+    border-width: 0 1px 0 0;
+}
+
+box.toolbar.osd.right {
+    border-width: 0 0 0 1px;
+}
+
+.osd .toolbar {
+    background-color: transparent;
+}
+
+box.toolbar.secondary-toolbar {
+    padding: 3px;
+    border-bottom: 1px solid @light_border_color;
+}
+
+box.toolbar.secondary-toolbar button {
+    padding: 0 3px 0 3px;
+}
+
+box.toolbar.bottom-toolbar,
+box.bottom-toolbar.inline-toolbar {
+    padding: 5px;
+    border-width: 1px 0 1px 0;
+    border-style: solid;
+    border-color: @border_color;
+    background-color: @bg_color;
+}
+
+/* PRIMARY TOOLBAR */
+
+.primary-toolbar:not(.libreoffice-toolbar) {
+    min-height: 20px;
+    box-shadow: none;
+    border-width: 0 0 1px 0;
+    border-style: solid;
+    background-image: linear-gradient(to top, #7e8185 1px, #999ca1 1px, #b5b8be);
+}
+
+.primary-toolbar button {
+    -gtk-icon-style: symbolic;
+    min-height: 16px;
+    background-image: none;
+}
+
+.primary-toolbar button:hover {
+    color: @text_color;
+}
+
+/* INLINE-TOOLBAR */
+
+inline-toolbar, /* no such a css node? */
+.inline-toolbar {
+    background-image: none;
+    background-color: @bg_color;      
+    border-style: solid;
+    border-color: @border_color;
+    border-width: 0 1px 1px;
+    padding: 4px;
+}
+
+.inline-toolbar separator {
+    background: none;
+}
+
+.inline-toolbar.horizontal separator {
+    margin: 0 6px;
+}
+
+.inline-toolbar.vertical separator {
+    margin: 6px 0;
+}
+
+/* INLINE-TOOLBAR BUTTON */
+
+.inline-toolbar button {
+    border-radius: 0px;
+}
+
+.inline-toolbar button:first-child {
+    border-top-right-radius:0px;
+    border-bottom-right-radius:0px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    margin-left: 0px;
+}
+
+.inline-toolbar button:last-child {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    margin-left:-1px;
+}
+
+.inline-toolbar button:only-child {
+    border-radius: 4px;
+}
+
+/* INLINE-TOOLBAR TOOLBUTTON */
+
+.inline-toolbar toolbutton {
+    border-radius: 0px;
+    box-shadow: none;
+}
+
+.inline-toolbar toolbutton:first-child > button {
+    border-top-right-radius:0px;
+    border-bottom-right-radius:0px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    margin-left: 0px;
+}
+
+.inline-toolbar toolbutton:last-child > button {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    margin-left:-1px;
+}
+
+.inline-toolbar toolbutton:only-child > button {
+    border-radius: 4px;
+}
+
+/*************************************************/
+/*                   INFOBAR                     */
+/*************************************************/
+
+infobar {
+    border: 1px solid @border_color;
+    border-radius: 4px;
+}
+
+/*************************************************/
+/*                 ACTIONBAR                     */
+/*************************************************/
+
+actionbar {
+    padding: 6px;
+}
+
+/*************************************************/
+/*                 SEARCHBAR                     */
+/*************************************************/
+
+searchbar {
+    /*background-color: #ebf0f4;
+  border-style: solid;
+  border-color: @light_border_color;
+  border-width: 0 0 1px;*/
+    padding: 3px;
+}
+
+/*************************************************/
+/*                   SCROLLBAR                   */
+/*************************************************/
+
+scrollbar {
+    background-color: #fcfcfc;
+    /*transition: 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94);*/ }
+
+scrollbar.top {
+    border-bottom: 1px solid @light_border_color;
+}
+
+scrollbar.bottom {
+    border-top: 1px solid @light_border_color;
+}
+
+scrollbar.left {
+    border-right: 1px solid @light_border_color;
+}
+
+scrollbar.right {
+    border-left: 1px solid @light_border_color;
+}
+
+scrollbar button {
+    border: none;
+}
+
+scrollbar.vertical button.down {
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+}
+
+scrollbar.vertical button.up {
+    -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
+}
+
+scrollbar.horizontal button.down {
+    -gtk-icon-source: -gtk-icontheme("pan-right-symbolic");
+}
+
+scrollbar.horizontal button.up {
+    -gtk-icon-source: -gtk-icontheme("pan-left-symbolic");
+}
+
+scrollbar slider {
+    margin: -1px;
+    border: 4px solid transparent;
+    border-radius: 8px;
+    background-clip: padding-box;
+    background-color: #a2a2a2;
+}
+
+scrollbar.horizontal slider {
+    min-width: 40px;
+    min-height: 6px;
+    border-width: 5px 4px;
+}
+
+scrollbar.vertical slider {
+    min-width: 6px;
+    min-height: 40px;
+    border-width: 4px 5px;
+}
+
+scrollbar slider:active {
+    background-color: @selected_bg_color;
+}
+
+scrollbar slider:disabled {
+    background-color: transparent;
+}
+
+scrollbar.fine-tune slider {
+    min-width: 4px;
+    min-height: 4px;
+}
+
+scrollbar.overlay-indicator:not(.dragging):not(.hovering) {
+    opacity: 0.4;
+    border-color: transparent;
+    background-color: transparent;
+}
+
+scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider {
+    margin: 0;
+    min-width: 4px;
+    min-height: 4px;
+    background-color: #636363;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+scrollbar.overlay-indicator:not(.dragging):not(.hovering).horizontal slider {
+    margin: 0 2px;
+    min-width: 40px;
+}
+
+scrollbar.overlay-indicator:not(.dragging):not(.hovering).vertical slider {
+    margin: 2px 0;
+    min-height: 40px;
+}
+
+scrollbar.overlay-indicator.dragging,
+scrollbar.overlay-indicator.hovering {
+    opacity: 0.99;
+}
+
+/*************************************************/
+/*                   REVEALER                    */
+/*************************************************/
+
+revealer > frame {
+    border: 1px solid @border_color;
+    border-radius: 6px;
+    background-color: @base_color;
+    padding: 8px 10px;
+}
+
+/*************************************************/
+/*                      BOX                      */
+/*************************************************/
+
+box {
+    color: inherit;
+    background-color: inherit;
+}
+
+box.osd {
+    background-color: @base_color;
+    border-radius: 5px;
+    background-image: linear-gradient(to top, #7e8185 1px, #999ca1 1px, #b5b8be);
+    /* 밝은 색
+      background-image:linear-gradient(to bottom,rgba(242,243,246,1),rgba(213,218,224,1),rgba(213,218,224,1)); */
+    padding: 8px;
+    border: 1px solid @border_color;
+}
+
+/*************************************************/
+/*                      PANED                    */
+/*************************************************/
+
+paned .sidebar {
+    border-style: none;
+}
+
+/* PANED SEPARATOR */
+
+paned > separator {
+    /* Required. without this, some noise appears. dunno why */
+    -gtk-icon-source: none;
+    border-style: solid;
+    border-color: transparent;
+}
+
+paned.horizontal > separator { /* separator.vertical */
+    min-width: 1px;
+    margin: 2px 0px;
+    border-width: 0px 2px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+paned.horizontal > separator.wide {
+    margin: 50px 1px;
+    border-color: darker(@border_color);
+    border-radius: 4px;
+    background-color: darker(@border_color);
+}
+
+paned.horizontal > separator.wide:hover {
+    border-color: @selected_bg_color;
+    border-radius: 4px;
+    background-color: @selected_bg_color;
+}
+
+paned.vertical > separator { /* separator.horizontal */
+    min-height: 1px;
+    margin: 0px 2px;
+    border-width: 2px 0px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+paned.vertical > separator.wide {
+    margin: 1px 50px;
+    border-color: darker(@border_color);
+    border-radius: 4px;
+    background-color: darker(@border_color);
+}
+
+paned.vertical > separator.wide:hover {
+    border-color: @selected_bg_color;
+    border-radius: 4px;
+    background-color: @selected_bg_color;
+}
+
+paned > separator.sidebar,
+paned > .sidebar + separator,
+paned > placessidebar + separator {
+    margin: 0px;
+    border-width: 0px;
+}
+
+/*************************************************/
+/*                  TEXTVIEW                     */
+/*************************************************/
+
+textview {
+    background-color: @base_color;
+    outline: 1px solid @light_border_color;      
+}
+
+textview:focus {
+    background-color: white;
+}
+
+/*************************************************/
+/*                  ICONVIEW                     */
+/*************************************************/
+
+iconview {
+    background-color: @base_color;
+}
+
+/*************************************************/
+/*            TREEVIEW  & COLUMNVIEW             */
+/*************************************************/
+
+treeview.view,
+columnview {
+    background-color: @base_color;
+    border-color: @border_color;
+}
+
+treeview.view:selected,
+columnview:selected {
+    background-color: @selected_bg_color;
+    color: @selected_fg_color;
+}
+
+treeview.view:hover:not(:selected),
+columnview:hover:not(:selected) {
+    background-color: @hover_bg;
+}
+
+treeview.view:disabled:selected,
+columnview:disabled:selected {
+    color: #79a6e8;
+}
+
+treeview.view:disabled:selected:focus,
+columnview:disabled:selected:focus {
+    color: #90b5ec;
+}
+
+treeview.view:drop(active),
+columnview:drop(active) {
+    border-style: solid none;
+    border-width: 1px;
+    border-color: @selected_bg_color;
+}
+
+columnview.view > dndtarget.after:drop(active),
+treeview.view > dndtarget.after:drop(active) {
+    border-top-style: none;
+}
+columnview.view > dndtarget.before:drop(active),
+treeview.view > dndtarget.before:drop(active) {
+    border-bottom-style: none;
+}
+
+treeview.view:drop(active).after,
+columnview:drop(active).after {
+    border-top-style: none;
+}
+
+treeview.view:drop(active).before,
+columnview:drop(active).before {
+    border-bottom-style: none;
+}
+
+/* TREEVIEW HEADER BUTTON */
+
+columnview > header button,
+treeview > header > button {
+    min-height: 0;
+    min-width: 0;
+    padding: 3px 6px;
+    font-weight: normal;
+    /* color: @fg_color; */
+    background-color: @button_bg;
+    background-image: none;
+    border-color: @border_color;
+    border-style: none solid solid none;
+    border-radius: 0;
+}
+
+columnview > header button:focus,
+treeview > header > button:focus {
+    box-shadow: none;
+}
+
+columnview > header button:last-child,
+treeview > header button:last-child {
+    border-right-style: none;
+}
+
+columnview > header button:active,
+treeview > header > button:active {
+    background-color: @button_active_bg;
+}
+
+columnview > header button:hover,
+treeview > header > button:hover {
+    background-color: shade(@button_bg, 0.9);
+}
+
+columnview > header button.dnd,
+treeview header.button.dnd {
+    padding: 0 6px;
+    transition: none;
+    color: @selected_fg_color;
+    /*
+       text-shadow:  0 -1px alpha(#ffffff, 0.04),
+                     -1px  0px alpha(@fg_color, 0.05),
+                     1px  0px alpha(@fg_color, 0.05),
+                     0px  1px alpha(@fg_color, 0.3),
+                     0px  2px alpha(@fg_color, 0.05); */
+    background-color: @selected_bg_color;
+    border-radius: 0;
+    border-style: none;
+    box-shadow: inset 0 0 0 1px @selected_fg_color;
+}
+/* other stuff */
+
+columnview.expander,
+treeview.expander {
+    min-width: 16px;
+    min-height: 16px;
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+}
+
+columnview.view.expander:dir(rtl),
+treeview.view.expander:dir(rtl) {
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
+}
+
+columnview.expander:checked,
+treeview.expander:checked {
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+}
+
+
+treeview entry,
+treeview entry.flat {
+    border-radius: 0;
+}
+
+treeview entry:focus,
+treeview entry.flat:focus
+{
+    border-color: @selected_bg_color;
+}
+
+/*************************************************/
+/*                  LISTVIEW                     */
+/*************************************************/
+
+/*************************************************/
+/*                  NOTEBOOK                     */
+/*************************************************/
+
+notebook {
+    padding: 0px;
+}
+
+notebook > header {
+    padding: 2px;
+    background-color: @bg_color;
+}
+
+notebook > header.top,
+notebook > header.bottom {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+notebook > header.left,
+notebook > header.right {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* gtk3에서 사용했던 header와 stack의 접촉면 border 숨기기는 잘 안됨.
+   stack이 먼저 그려지고 header가 나중에 그려지는 header.bottom이나 header.right는
+   gtk3 방식이 작도하나 반대인 top과 left는 안됨.
+   stack에 header 위치 클래스가 붙어 있으면 좋을텐데 아쉽게도 없음.
+   일단 임시책으로 두 부류를 나눠서 처리함 */
+
+notebook > header.top {
+    /*margin-bottom: -1px; */
+    box-shadow: inset 0 -1px @border_color;
+}
+
+notebook > header.left {
+    /* margin-right: -1px; */
+    box-shadow: inset -1px 0 @border_color;
+}
+
+notebook > header.bottom {
+    margin-top: -1px;
+    box-shadow: inset 0 1px @border_color;
+}
+
+notebook > header.right {
+    margin-left: -1px;
+    box-shadow: inset 1px 0 @border_color;
+}
+
+notebook > stack:not(:only-child) {
+    background-color: @base_color;
+    border: 1px solid @border_color;
+}
+
+notebook > header.top + stack:not(:only-child) {
+    border-top: none;
+}
+
+notebook > header.bottom + stack:not(:only-child) {
+    border-bottom: none;
+}
+
+notebook > header.right + stack:not(:only-child) {
+    border-right: none;
+}
+
+notebook > header.left + stack:not(:only-child) {
+    border-left: none;
+}
+
+notebook > header.top {
+    padding-bottom: 0;
+}
+
+notebook > header.top > tabs > tab {
+    padding: 4px 10px;
+    min-width: 20px;
+    min-height: 20px;
+    border: 1px solid @border_color;
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+}
+
+notebook > header.top > tabs > tab + tab {
+    margin-left: -1px;
+}
+
+notebook > header.bottom {
+    padding-top: 0;
+}
+
+notebook > header.bottom > tabs > tab {
+    padding: 4px 10px;
+    min-width: 20px;
+    min-height: 20px;
+    border: 1px solid @border_color;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+}
+
+notebook > header.bottom > tabs > tab + tab {
+    margin-left: -1px;
+}
+
+notebook > header.right {
+    padding-left: 0;
+}
+
+notebook > header.right > tabs > tab {
+    padding: 6px 10px;
+    min-width: 20px;
+    min-height: 20px;
+    border: 1px solid @border_color;
+    border-left: none;
+    border-radius: 0 4px 4px 0;
+}
+
+notebook > header.right > tabs > tab + tab {
+    margin-top: -1px;
+}
+
+notebook > header.left {
+    padding-right: 0;
+}
+
+notebook > header.left > tabs > tab {
+    padding: 6px 10px;
+    min-width: 20px;
+    min-height: 20px;
+    border: 1px solid @border_color;
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+}
+
+notebook > header.left > tabs > tab + tab {
+    margin-top: -1px;
+}
+
+notebook > header.bottom > tabs > arrow.up {
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+}
+
+notebook > header.top > tabs > arrow.up {
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+}
+
+notebook > header.top > tabs > arrow.up:last-child {
+    margin-left: 2px;
+}
+
+notebook > header.bottom > tabs > arrow.up:last-child {
+    margin-left: 2px;
+}
+
+notebook > header.top > tabs > arrow.down {
+    -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
+}
+
+notebook > header.bottom > tabs > arrow.down {
+    -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
+}
+
+notebook > header.top > tabs > arrow.down:first-child {
+    margin-right: 2px;
+}
+
+notebook > header.bottom > tabs > arrow.down:first-child {
+    margin-right: 2px;
+}
+
+notebook > header.left > tabs > arrow.up,
+notebook > header.right > tabs > arrow.up {
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+}
+
+notebook > header.left > tabs > arrow.up:last-child,
+notebook > header.right > tabs > arrow.up:last-child {
+    margin-top: 2px;
+}
+
+notebook > header.left > tabs > arrow.down,
+notebook > header.right > tabs > arrow.down {
+    -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
+}
+
+notebook > header.left > tabs > arrow.down:first-child,
+notebook > header.right > tabs > arrow.down:first-child {
+    margin-bottom: 2px;
+}
+
+notebook > header > tabs > arrow,
+notebook > header > tabs > arrow:hover {
+    color: rgba(37, 37, 37, 0.55);
+}
+
+notebook > header > tabs > arrow:active {
+    color: @fg_color;
+}
+
+notebook > header > tabs > arrow:disabled {
+    color: rgba(37, 37, 37, 0.25);
+}
+
+notebook > header.top > tabs > tab:hover:not(:checked) {
+    box-shadow: inset 0 -1px @light_border_color;
+}
+
+notebook > header.bottom > tabs > tab:hover:not(:checked) {
+    box-shadow: inset 0 1px @light_border_color;
+}
+
+notebook > header.left > tabs > tab:hover:not(:checked) {
+    box-shadow: inset -1px 0 @light_border_color;
+}
+
+notebook > header.right > tabs > tab:hover:not(:checked) {
+    box-shadow: inset 1px 0 @light_border_color;
+}
+
+notebook > header > tabs > tab:hover:not(:checked) {
+    background-color: @button_bg;  /* similar to shade(@bg_color, 1.1) */ }
+
+notebook > header > tabs > tab:checked {
+    color: @text_color;
+    background-color: @base_color;
+}
+
+notebook > header.top > tabs > tab:checked {
+    border-top: 3px solid @selected_bg_color;
+}
+
+notebook > header.bottom > tabs > tab:checked {
+    border-bottom: 3px solid @selected_bg_color;
+}
+
+notebook > header.left > tabs > tab:checked {
+    border-left: 3px solid @selected_bg_color;
+}
+
+notebook > header.right > tabs > tab:checked {
+    border-right: 3px solid @selected_bg_color;
+}
+
+/*remove border of button--esp, close button--'s border */
+notebook > header > tabs > tab button {
+    min-height: 16px;
+    min-width: 16px;      
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    margin: 0px;
+    padding: 0px;
+    opacity: 0.5;
+}
+
+notebook > header > tabs > tab button:dir(ltr) {
+    margin-left: 3px;
+}
+
+notebook > header > tabs > tab button:dir(rtl) {
+    margin-right: 3px;
+}
+
+notebook > header > tabs > tab button:hover {
+    opacity: 1.0;
+}
+
+/******************************************************/
+/*                 STACK SWITCHER                     */
+/******************************************************/
+
+stackswitcher > button {
+    background-color: transparent;
+    background-image: linear-gradient(to bottom, rgba(255,255,255,1), rgba(228,233,239,1));
+    border-radius: 0px;
+}
+
+stackswitcher > button:hover {
+    background-color: shade(rgba(228,233,239,1), 0.95);
+    background-image: none;
+}
+
+stackswitcher > button:checked,
+stackswitcher > button:checked:hover {
+    color: @selected_fg_color;
+    background-color: @selected_bg_color;
+    background-image: none;
+}
+
+stackswitcher > button:only-child {
+    border-radius: 4px;
+}
+
+stackswitcher > button:not(only-child):first-child {
+    border-radius: 4px 0px 0px 4px;
+}
+
+stackswitcher > button:not(only-child):last-child {
+    border-radius: 0px 4px 4px 0px;
+}
+
+stackswitcher > button + button {
+    border-left-style: none;
+}
+
+buttonbox,
+box.dialog-action-area.horizontal {
+    padding: 10px 30px 20px 30px;
+}
+
+buttonbox > button:not(:last-child),
+box.dialog-action-area.horizontal > button:not(:last-child)   {
+    margin-right: 15px;
+}
+
+buttonbox > button:focus,
+box.dialog-action-area.horizontal > button:focus {
+    box-shadow: 0px 0px 0px 1.3px @selected_bg_color inset;
+}
+
+flowboxchild {
+    background-color: transparent;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+flowboxchild:selected {
+    background-color: transparent;
+    box-shadow: 0px 0px 0px 2px @selected_bg_color inset;
+}
+
+/*************************************************/
+/*                   SIDEBAR                     */
+/*************************************************/
+
+.sidebar {
+    background-color: @placessidebar_bg;
+}
+
+.sidebar treeview {
+    background-color: @placessidebar_bg;
+}
+
+.sidebar treeview:selected {
+    color: @selected_fg_color;
+    background-color: @selected_bg_dark;
+}
+
+.sidebar treeview:hover:not(:selected) {
+    background-color: shade(@placessidebar, 1.1);
+}
+
+/* STACKSIDEBAR */
+/*
+stacksidebar row {
+    padding: 10px 4px;
+}
+
+stacksidebar row > label {
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+stacksidebar row.needs-attention > label {
+    background-size: 6px 6px;
+} */
+
+/* PLACESSIDEBAR */
+
+placessidebar {
+    -gtk-icon-style: symbolic;
+    min-width: 176px;
+    border-style: none;
+    background-color: @placessidebar_bg;
+}
+
+placessidebar > viewport.frame {
+    border-style: none;
+    border-right: 1px solid @light_border_color;
+}
+
+placessidebar row,
+row.sidebar-row {
+    min-height: 30px;
+    padding: 0px;
+}
+
+placessidebar row > revealer,
+row.sidebar-row > revealer {
+    padding: 0 10px;
+}
+
+placessidebar row image.sidebar-icon:dir(ltr) {
+    padding-right: 8px;
+}
+
+placessidebar row image.sidebar-icon:dir(rtl) {
+    padding-left: 8px;
+}
+
+placessidebar row label.sidebar-label:dir(ltr) {
+    padding-right: 2px;
+}
+
+placessidebar row label.sidebar-label:dir(rtl) {
+    padding-left: 2px;
+}
+
+/* button.sidebar-button */
+
+button.sidebar-button {
+    color: rgba(37,37,37,0.55);
+    border-radius: 5px;
+    border-right-color: rgba(0,0,0,0.12);
+    border-left-color: rgba(0,0,0,0.12);
+    border-bottom-color: rgba(0, 0, 0, 0.18);
+    border-top-color: rgba(0, 0, 0, 0.08);
+    background-color: transparent;
+    background-image: linear-gradient(to bottom,rgba(255,255,255,1),
+                                      rgba(255,255,255,1));
+}
+
+button.sidebar-button:hover {
+    /*
+  transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-duration: 350ms;
+   */
+}
+
+button.sidebar-button:hover:active {
+    /*transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94); */ }
+
+button.sidebar-button:disabled {
+    border-color: transparent;
+    background-color: transparent;
+    background-image: none;
+}
+
+/*************************************************/
+/*                 WINDOW                        */
+/*************************************************/
+window {
+    color: @fg_color;
+    background-color: @bg_color;
+    box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.4);
+    border: 1px solid @border_color;
+    border-radius: 6px 6px 0px 0px;
+}
+
+window:backdrop {
+    /* if set box-shadow to none, window changes it position
+       and size by the size of box-shadow. So just make it transparent
+       by setting the alpah to zero */
+    box-shadow: 0px 0px 4px 2px rgba(0,0,0,0);
+}
+
+window.maximized,
+window.fullscreen {
+    border-radius: 0px;
+    box-shadow: none;
+}
+
+/* .titlebar class를 가진 widget은 window의 child node일 수도 있고,
+   headerbar.titlebar일 수도 있다.  그러나 대부분의 경우, 하나의 app에서
+   .titlebar class를 가진 widget은 하나이고 둘 다인 경우는 드뭄 */
+.titlebar {
+    border-radius: 8px 8px 0px 0px;
+    padding: 5px 10px;
+}
+
+/*************************************************/
+/*               SCROLLED WINDOWS                */
+/*************************************************/
+
+scrolledwindow {
+    background-color: @bg_color;
+    border: 1px solid @border_color;
+}
+
+/* overshoot is a visual hint that happen when scrolling is attempted
+       past the limits of a scrollable area. */
+
+scrolledwindow > overshoot.top {
+    /* background-image: radial-gradient(farthest-side at top, #b6aea5 85%, rgba(182, 174, 165, 0)), radial-gradient(farthest-side at top, rgba(46, 52, 54, 0.07), rgba(46, 52, 54, 0)); */
+    background-image: radial-gradient(farthest-side at top, rgba(82, 148, 226, 0.2), rgba(82, 148, 226, 0)), radial-gradient(farthest-side at top, rgba(82, 148, 226, 0.13), rgba(82, 148, 226, 0));      
+    background-size: 100% 3%, 100% 50%;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+scrolledwindow > overshoot.bottom {
+    /* background-image: radial-gradient(farthest-side at bottom, #b6aea5 85%, rgba(182, 174, 165, 0)), radial-gradient(farthest-side at bottom, rgba(46, 52, 54, 0.07), rgba(46, 52, 54, 0)); */
+    background-image: radial-gradient(farthest-side at bottom, rgba(82, 148, 226, 0.2), rgba(82, 148, 226, 0)), radial-gradient(farthest-side at bottom, rgba(82, 148, 226, 0.13), rgba(82, 148, 226, 0));           
+    background-size: 100% 3%, 100% 50%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+scrolledwindow > overshoot.left {
+    background-image: radial-gradient(farthest-side at left, #b6aea5 85%, rgba(182, 174, 165, 0)), radial-gradient(farthest-side at left, rgba(46, 52, 54, 0.07), rgba(46, 52, 54, 0));
+    background-size: 3% 100%, 50% 100%;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+scrolledwindow > overshoot.right {
+    background-image: radial-gradient(farthest-side at right, #b6aea5 85%, rgba(182, 174, 165, 0)), radial-gradient(farthest-side at right, rgba(46, 52, 54, 0.07), rgba(46, 52, 54, 0));
+    background-size: 3% 100%, 50% 100%;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+scrolledwindow undershoot {
+    background-color: transparent;
+    background-origin: content-box;
+    border: none;
+}
+
+scrolledwindow undershoot.top {
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0.2) 50%);
+    padding-top: 1px;
+    background-size: 10px 1px;
+    background-repeat: repeat-x;
+    background-position: center top;
+}
+
+scrolledwindow undershoot.bottom {
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0.2) 50%);
+    padding-bottom: 1px;
+    background-size: 10px 1px;
+    background-repeat: repeat-x;
+    background-position: center bottom;
+}
+
+scrolledwindow undershoot.left {
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0.2) 50%);
+    padding-left: 1px;
+    background-size: 1px 10px;
+    background-repeat: repeat-y;
+    background-position: left center;
+}
+
+scrolledwindow undershoot.right {
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0.2) 50%);
+    padding-right: 1px;
+    background-size: 1px 10px;
+    background-repeat: repeat-y;
+    background-position: right center;
+}
+
+scrolledwindow > junction {
+    background: #cdc7c2, linear-gradient(to bottom, transparent 1px, #cecece 1px), linear-gradient(to right, transparent 1px, #cecece 1px);
+}
+
+scrolledwindow > junction:dir(rtl) {
+    background: #cdc7c2, linear-gradient(to bottom, transparent 1px, #cecece 1px), linear-gradient(to left, transparent 1px, #cecece 1px);
+}
+
+/*************************************************/
+/*                    DIALOG                     */
+/*************************************************/
+
+window.dialog,
+dialog {
+    background-color: @bg_color;
+}
+
+window.dialog > decoration,
+dialog > decoration {
+    border: 1px solid @border_color;
+    box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.4);
+    /* margin is required to display window resize handle */
+    margin: 4px;
+    border-radius: 6px 6px 0px 0px;
+}
+
+/*************************************************/
+/*               FILECHOOSER                     */
+/*************************************************/
+
+window.filechooser.vertical > box.vertical:not(.search-bar) {
+    border-top: 1px solid @light_border_color;
+    border-bottom: 1px solid @light_border_color;
+}
+
+/*************************************************/
+/*                 PRINT DIALOG                  */
+/*************************************************/
+
+printdialog paper {
+    border: 1px solid @light_border_color;
+    background: white;
+    padding: 0;
+}
+
+/*************************************************/
+/*                MESSAGE DIALOG                 */
+/*************************************************/
+
+messagedialog,
+alertdialog {
+    /* nothing special */
+}
+
+messagedialog .titlebar {
+    min-height: 10px;
+}
+
+/*************************************************/
+/*                  CALENDER                     */
+/*************************************************/
+
+calendar {
+    color: @fg_color;
+    background-color: @base_color;
+    border: 1px solid @light_border_color;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+calendar:selected {
+    color: #ffffff;
+    background-color: @selected_bg_color;
+    border-radius: 1.5px;
+}
+
+calendar:indeterminate {
+    color: alpha(currentColor,0.55);
+}
+
+calendar.highlight {
+    color: @fg_color;
+}
+
+calendar:disabled:selected {
+    color: #90b5ec;
+}
+
+calendar > header {
+    color: @fg_color;
+    background-color: @menubar_bg;
+    border: none;
+    padding: 3px;
+}
+
+calendar > header > button.image-button {
+    padding: 0px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
+    color: black;
+}
+
+calendar > header > button.image-button:hover {
+    background-color: shade(@menubar_bg, 1.2);
+}
+
+calendar > header > button:disabled {
+    color: @insensitive_fg_color;
+}
+
+calendar > grid > label.other-month {
+    color: @insensitive_fg_color;
+}
+
+/*************************************************/
+/*                 COLORSWATCH                   */
+/*************************************************/
+
+colorswatch,
+colorswatch:drop(active) {
+    border-style: none;
+}
+
+colorswatch.top {
+    border-top-left-radius: 2.5px;
+    border-top-right-radius: 2.5px;
+}
+
+colorswatch.top overlay {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+colorswatch.bottom {
+    border-bottom-left-radius: 2.5px;
+    border-bottom-right-radius: 2.5px;
+}
+
+colorswatch.bottom overlay {
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+colorswatch.left,
+colorswatch:first-child:not(.top) {
+    border-top-right-radius:0px;
+    border-bottom-right-radius:0px;
+    border-top-left-radius: 2.5px;
+    border-bottom-left-radius: 2.5px;
+}
+
+colorswatch.left overlay,
+colorswatch:first-child:not(.top) overlay {
+    border-top-right-radius:0px;
+    border-bottom-right-radius:0px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+colorswatch.right,
+colorswatch:last-child:not(.bottom) {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 2.5px;
+    border-bottom-right-radius: 2.5px;
+}
+
+colorswatch.right overlay,
+colorswatch:last-child:not(.bottom) overlay {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+colorswatch.dark overlay {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+colorswatch.dark overlay:hover {
+    border-color: rgba(0, 0, 0, 0.5);
+}
+
+colorswatch.light overlay {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+colorswatch.light overlay:hover {
+    border-color: rgba(0, 0, 0, 0.3);
+}
+
+colorswatch overlay {
+    border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+colorswatch overlay:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+colorswatch:disabled {
+    opacity: 0.5;
+}
+
+colorswatch:disabled overlay {
+    border-color: rgba(0, 0, 0, 0.6);
+    box-shadow: none;
+}
+
+colorswatch#add-color-button {
+    border-style: solid;
+    border-width: 1px;
+    color: @fg_color;
+    border-color: rgba(0, 0, 0, 0.2);
+    background-color: white;
+}
+
+colorswatch#add-color-button:hover {
+    color: @fg_color;
+    border-color: rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+colorswatch#add-color-button overlay {
+    border-color: transparent;
+    background-color: transparent;
+    background-image: none;
+}
+
+button.color {
+    padding: 0;
+}
+
+button.color colorswatch:first-child:last-child {
+    margin: 4px;
+    border-radius: 0;
+}
+
+button.color colorswatch:first-child:last-child overlay {
+    margin: 4px;
+    border-radius: 0;
+}
+
+@import url("apps.css");

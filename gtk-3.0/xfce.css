@@ -3,21 +3,21 @@
 /*************************************************/
 
 XfdesktopIconView.view {
-	background-color: transparent;
-	color: white; }
+    background-color: transparent;
+    color: white; }
 
 XfdesktopIconView.view:active {
-	background-color: @selected_bg_color;
-	color:  rgba(57,142,231,0.75);
-	border-radius: 5px; }
+    background-color: @selected_bg_color;
+    color:  rgba(57,142,231,0.75);
+    border-radius: 5px; }
 
 XfdesktopIconView.rubberband {
-	background-color:  rgba(25, 84, 173, 0.2); }
+    background-color:  rgba(25, 84, 173, 0.2); }
 
 XfdesktopIconView.view.label,
 XfdesktopIconView.view.label:active {
-	color: white;
-	text-shadow: 1px 2px black; }
+    color: white;
+    text-shadow: 1px 2px black; }
 
 
 /*************************************************/
@@ -56,57 +56,57 @@ XfceHeading {
 
 #XfcePanelWindowWrapper,
 .xfce4-panel.background {
-	background-color: @panel_bg;
-	color: @fg_color;
-	/*
-	text-shadow:  0 -1px alpha(#333333, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.5),
-				  0px  2px alpha(@fg_color, 0.05);
-    */
-	font-weight: normal; }
-
-.xfce4-panel.background button {
-	color: @fg_color;
-	background-image: none;
-	background-color: transparent;
-	border-radius: 0;
-	border: none;
-	box-shadow: none;
-	margin: 2px 3px;
-	padding: 1px;
-	text-shadow: none;
+    background-color: @panel_bg;
+    color: @fg_color;
     /*
     text-shadow:  0 -1px alpha(#333333, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.5),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.5),
+                  0px  2px alpha(@fg_color, 0.05);
+    */
+    font-weight: normal; }
+
+.xfce4-panel.background button {
+    color: @fg_color;
+    background-image: none;
+    background-color: transparent;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    margin: 2px 3px;
+    padding: 1px;
+    text-shadow: none;
+    /*
+    text-shadow:  0 -1px alpha(#333333, 0.04),
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.5),
+                  0px  2px alpha(@fg_color, 0.05);
     */
 }
 
 .xfce4-panel.background button:active,
 .xfce4-panel.background button:checked {
-	background-image: none;
-	background-color: @button_active_bg;
-	border: none;
-	border-radius: 4px;
-	color: @selected_fg_color;
-	text-shadow: none;
+    background-image: none;
+    background-color: @button_active_bg;
+    border: none;
+    border-radius: 4px;
+    color: @selected_fg_color;
+    text-shadow: none;
     /*
     text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.5),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.5),
+                  0px  2px alpha(@fg_color, 0.05);
     */
  }
 
 .xfce4-panel.background button:hover, 
 .xfce4-panel.background button:active:hover,
 .xfce4-panel.background button:checked:hover {
-	-gtk-icon-effect: highlight; }
+    -gtk-icon-effect: highlight; }
 
 /*** xfce4-menu ***/
 
@@ -172,8 +172,8 @@ XfceHeading {
 #systray-6,
 #sn-button {
     color: lighter(@fg_color);
-	-gtk-icon-shadow: none;
-	/* -gtk-icon-style: symbolic; */ }
+    -gtk-icon-shadow: none;
+    /* -gtk-icon-style: symbolic; */ }
 
 /*
 #sn-button-box > image {
@@ -184,63 +184,93 @@ XfceHeading {
 /*                Whisker Menu                   */
 /*************************************************/
 
+/* whisker menu button on the panel */
+#whiskermenu-button image {
+    -gtk-icon-transform:scale(0.9);
+    padding: 5px;
+}
+
 #whiskermenu-window {
-	background-color: @bg_color;
-	color: @fg_color;
-    box-shadow: 1px 7px 7px 7px rgba(0, 0, 0, 0.26); }
+    border-radius: 0px 0px 6px 6px;
+    box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.3);
+}
+
+#whiskermenu-window box.title-area {
+    /* Nothing special */
+}
+
+#whiskermenu-window box.title-area button.command-button {
+    /* background-color: transparent; */
+    background-image: none;
+    border: none;
+}
+
+#whiskermenu-window box.search-area {
+    /* Nothing special */
+}
+
+#whiskermenu-window box.search-area entry,
+#whiskermenu-window box.search-area entry:focus {
+    margin: 4px 5px;
+    border: 1px solid;
+    border-color:rgba(0, 0, 0, 0.12);
+    border-bottom-color: rgba(0, 0, 0, 0.18);
+    border-top-color: rgba(0, 0, 0, 0.08);
+    background-color: @base_color;
+}
+
+/* catergory pane */
+#whiskermenu-window scrolledwindow:not(.launchers-pane) {
+    border: none;
+}
 
 #whiskermenu-window box.vertical {
-    margin-top: 5px; }
+    margin-top: 5px;
+}
 
-#whiskermenu-window button { /* left-side */
+#whiskermenu-window button.category-button {
     margin-right: 4px;
     margin-left: 4px;
     padding-left: 4px;
     padding-right: 4px;
-	transition: none;
+    transition: none;
     border: none;
-	background-color: transparent;
-	background-image: none;
-	color: @fg_color; }
+    background-color: transparent;
+    background-image: none;
+}
 
 /* slow change or afterimage of background color is not from the transition property.
  * It is from "switch categories by hovering" option.
- * So, the problem is on cpu not theme -- added by dks */
-#whiskermenu-window button:hover,
-#whiskermenu-window button:checked {
-	background-color: @selected_bg_dark;
-	color: @selected_fg_color;
+ * So, the problem is not theme -- added by dks */
+#whiskermenu-window button.category-button:hover,
+#whiskermenu-window button.category-button:checked {
+    background-color: @selected_bg_dark;
+    color: @selected_fg_color;
 }
 
-#whiskermenu-window scrolledwindow.frame {
-	border-color: @light_border_color;
-	border-radius: 6px;
-	margin-right: 5px;
+#whiskermenu-window button.category-button:hover label,
+#whiskermenu-window button.category-button:checked label {
+    color: @selected_fg_color;
 }
 
-#whiskermenu-window treeview { /* right-side */
-	background-color: @placessidebar_bg;
-	border-radius: 6px;
+/* launchers pane */
+#whiskermenu-window scrolledwindow.launchers-pane {
+    border-color: @light_border_color;
+    border-radius: 6px;
+    margin-right: 5px;
+}
+
+#whiskermenu-window scrolledwindow.launchers-pane treeview {
+    background-color: @placessidebar_bg;
+    border-radius: 6px;
     padding: 1px 5px;
-	color: @fg_color; }
+    color: @fg_color;
+}
 
-#whiskermenu-window treeview:hover {
-	background-color: @selected_bg_color;
-	color: @selected_fg_color; }
-
-#whiskermenu-window entry,
-#whiskermenu-window entry:focus {
-	margin: 4px 5px;
-	border: 1px solid;
-	border-color:rgba(0, 0, 0, 0.12);
-	border-bottom-color: rgba(0, 0, 0, 0.18);
-	border-top-color: rgba(0, 0, 0, 0.08);
-	background-color: @base_color; }
-
-/* whisker menu button on the panel */
-#whiskermenu-button image {
-	-gtk-icon-transform:scale(0.9);
-	padding: 5px; }
+#whiskermenu-window scrolledwindow.launchers-pane treeview:hover {
+    background-color: @selected_bg_color;
+    color: @selected_fg_color;
+}
 
 
 /*************************************************/
@@ -248,11 +278,15 @@ XfceHeading {
 /*************************************************/
 
 #XfceNotifyWindow {
-    background-color:transparent;
+    background-color: transparent;
     background-image: linear-gradient(to bottom,rgba(0,0,0,0.75),rgba(0,0,0,0.75));
     color: #fcfcfc;
     border: 1px solid shade(#46484f, 0.8);
     border-radius: 8px;
+}
+
+#XfceNotifyWindow > box {
+    background-color: transparent;
 }
 
 #XfceNotifyWindow button {
@@ -260,20 +294,24 @@ XfceHeading {
     background-color: #46484f;
     color: #fcfcfc;
     border-color: #fcfcfc;
-    border-radius: 3px; }
+    border-radius: 3px;
+}
 
 #XfceNotifyWindow label#summary {
-    font-weight: bold; }
+    font-weight: bold;
+}
 
 #XfceNotifyWindow progressbar {
     min-height: 6px;
-    border-radius: 3px; }
+    border-radius: 3px;
+}
 
 #XfceNotifyWindow progressbar progress {
     background-image: none;
     background-color: #fcfcfc;
     border: none;
-    box-shadow: none; }
+    box-shadow: none;
+}
 
 #XfceNotifyWindow progressbar trough {
     background-image: linear-gradient(to bottom,
@@ -282,7 +320,17 @@ XfceHeading {
                                       );
     border: 1px solid shade(#46484f, 0.2);
     border-radius: 3px;
-    padding: 1px 0; }
+    padding: 1px 0;
+}
+
+
+/*************************************************/
+/*                LOGOUT DIALOG                  */
+/*************************************************/
+
+dialog.xfsm-logout-dialog button:focus {
+    box-shadow: 0px 0px 0px 1.3px @selected_bg_color inset;
+}
 
 
 /*************************************************/
@@ -294,7 +342,8 @@ XfceHeading {
   -GtkWidget-window-dragging: true;
   padding: 0px;
   background-color: transparent;
-  background-image: linear-gradient(to top, #7e8185 1px, #b5b8be 1px, #b6b9c0); }
+  background-image: linear-gradient(to top, #7e8185 1px, #b5b8be 1px, #b6b9c0);
+}
 
 .thunar toolbar {
   margin-top: 0px;
@@ -302,7 +351,8 @@ XfceHeading {
   padding-left: 2px;
   padding-right: 8px;
   background-color: transparent;
-  background-image: linear-gradient(to top, #7e8185 1px, #999ca1 1px, #b5b8be); }
+  background-image: linear-gradient(to top, #7e8185 1px, #999ca1 1px, #b5b8be);
+}
 
 .thunar toolbar button {
   padding-top: 0px;
@@ -320,7 +370,8 @@ XfceHeading {
   font-weight: normal;
   min-height: 18px;
   min-width: 16px;
-  -gtk-icon-shadow: 0 1px rgba(255,255,255, 0.4); }
+  -gtk-icon-shadow: 0 1px rgba(255,255,255, 0.4);
+}
 
 .thunar toolbar button:hover,
 .thunar toolbar button:active,
@@ -329,14 +380,16 @@ XfceHeading {
   text-shadow: none;
   border: none;
   background-image: none;
-  border: 1px transparent; }
+  border: 1px transparent;
+}
 
 .thunar toolbar button:disabled {
   color: @insensitive_fg_color;
   text-shadow: none;
   border: none;
   background-image: none;
-  border: 1px transparent; }
+  border: 1px transparent;
+}
 
 .thunar toolbar .linked:not(.vertical).path-bar > button {
   min-height: 24px;
@@ -351,21 +404,23 @@ XfceHeading {
   border-bottom-color: rgba(0, 0, 0, 0.2);
   border-top-color: rgba(0, 0, 0, 0.08);
   background-color: transparent;
-  background-image: linear-gradient(to bottom, rgba(254,255,255,1),rgba(245,247,249,1),rgba(232,236,242,1)); }
+  background-image: linear-gradient(to bottom, rgba(254,255,255,1),rgba(245,247,249,1),rgba(232,236,242,1));
+}
 
 .thunar toolbar .linked:not(.vertical).path-bar > button:hover {
   background-color: transparent;
-  background-image: linear-gradient(to bottom, rgba(254,255,255,1),rgba(254,255,255,1)); }
+  background-image: linear-gradient(to bottom, rgba(254,255,255,1),rgba(254,255,255,1));
+}
 
 .thunar toolbar .linked:not(.vertical).path-bar > button:active:hover,
 .thunar toolbar .linked:not(.vertical).path-bar > button:active {
   font-style: normal;
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   
   border-right-color: rgba(0,0,0,0.12);
   border-left-color: rgba(0,0,0,0.12);
@@ -373,17 +428,18 @@ XfceHeading {
   border-top-color: rgba(0, 0, 0, 0.08);
   background-image: linear-gradient(to bottom, #646772,
                                                #646772);
-  background-color: transparent; }
+  background-color: transparent;
+}
 
 .thunar toolbar .linked:not(.vertical).path-bar > button:checked:hover,
 .thunar toolbar .linked:not(.vertical).path-bar > button:checked {
   font-style: normal;
   color: #ffffff;
   text-shadow:  0 -1px alpha(#ffffff, 0.04),
-				 -1px  0px alpha(@fg_color, 0.05),
-				  1px  0px alpha(@fg_color, 0.05),
-				  0px  1px alpha(@fg_color, 0.3),
-				  0px  2px alpha(@fg_color, 0.05);
+                 -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
   
   border-right-color: rgba(0,0,0,0.12);
   border-left-color: rgba(0,0,0,0.12);
@@ -391,7 +447,8 @@ XfceHeading {
   border-top-color: rgba(0, 0, 0, 0.08);
   background-image: linear-gradient(to bottom, #646772,
                                                #646772);
-  background-color: transparent; }
+  background-color: transparent;
+}
 
 .thunar toolbar .linked:not(.vertical).path-bar > button:disabled {
   color: rgba(41, 33, 33, 0.4);
@@ -400,7 +457,8 @@ XfceHeading {
   border-bottom-color: rgba(0, 0, 0, 0.2);
   border-top-color: rgba(0, 0, 0, 0.08);
   background-color: transparent;
-  background-image: linear-gradient(to bottom, rgba(254,255,255,1),rgba(245,247,249,1),rgba(232,236,242,1)); }
+  background-image: linear-gradient(to bottom, rgba(254,255,255,1),rgba(245,247,249,1),rgba(232,236,242,1));
+}
 
 .thunar toolbar .linked:not(.vertical).path-bar > button:first-child {
   border-top-right-radius:0px;
@@ -409,11 +467,13 @@ XfceHeading {
   border-bottom-left-radius: 5px;
   margin-left: 0px;
   border-style: solid;
-  border-right-style: none; }
+  border-right-style: none;
+}
 
 .thunar toolbar .linked:not(.vertical).path-bar > button:only-child {
   border-radius: 5px;
-  border-style: solid; }
+  border-style: solid;
+}
 
 .thunar toolbar .linked:not(.vertical).path-bar > button:last-child {
   border-top-left-radius: 0px;
@@ -421,23 +481,22 @@ XfceHeading {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   margin-left: 0px;
-  border-style: solid; }
+  border-style: solid;
+}
 
 .thunar toolbar.horizontal button image {
-	-gtk-icon-transform:scale(0.8); }
+    -gtk-icon-transform:scale(0.8);
+}
 
 /* left panel */
 .thunar .shortcuts-pane { 
   background-color: @placessidebar_bg;
   -gtk-icon-style: symbolic;
-  padding: 0; }
+  padding: 0;
+}
 
  /* right pannel */
 .thunar notebook .view:active {
   color: @selected_fg_color;
-  background-color: @selected_bg_color; }
-
- /* detailed list view */
-.thunar notebook treeview.view:hover:not(:selected) {
-  color: @fg_color;
-  background-color: @hover_bg; }
+  background-color: @selected_bg_color;
+}

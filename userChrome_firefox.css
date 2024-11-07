@@ -11,31 +11,6 @@
  */
 
 
-/****** Global settings ******/
-
-*|*:root {
-    --fg_color: #202020;
-    --text_color: black;
-    --selected_fg: white;
-
-    --bg_color: #d4d4d4;
-    --base_color: #f2f2f2;
-    --selected_bg:#486d9d;
-    --selected_bg_dark: #3a3c41;
-    --menubar_bg: #b5b8be;
-    --foldertree_bg: #dde2e7;
-
-    --border_light: rgba(105, 105, 105, 0.3);
-    --border_dark: #808080;
-
-    --toolbox-border-bottom-color: var(--border_dark) !important;
-    --toolbarbutton-border-radius: 4px !important;
-
-    --tab_border_radius: 10px;
-    --tab_border_width: 1px;
-    --tab_border_style: solid;
-}
-
 /* remove focus rings in dialog window
    esp, for the radio button label in open/save dialog */
 window {
@@ -53,8 +28,4 @@ menuseparator {
 /* application menu on the right of search bar. three horizontal bars */
 #appMenu-popup toolbarbutton {
     --arrowpanel-menuitem-padding: 4px 8px;
-}
-
-#nav-bar {
-    border-top: 0.1px solid var(--border_dark) !important;
 }
