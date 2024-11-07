@@ -2967,7 +2967,7 @@ notebook > header.right > tabs > arrow.down:first-child {
 
 notebook > header > tabs > arrow,
 notebook > header > tabs > arrow:hover {
-    color: rgba(37, 37, 37, 0.55);
+    color: @fg_color;
 }
 
 notebook > header > tabs > arrow:active {

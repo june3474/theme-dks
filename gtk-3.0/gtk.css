@@ -3855,6 +3855,16 @@ box {
     background-color: inherit;
 }
 
+box.osd {
+    background-color: @base_color;
+    border-radius: 5px;
+    background-image: linear-gradient(to top, #7e8185 1px, #999ca1 1px, #b5b8be);
+      /* 밝은 색
+        background-image:linear-gradient(to bottom,rgba(242,243,246,1),rgba(213,218,224,1),rgba(213,218,224,1)); */
+    padding: 8px;
+    border: 1px solid @border_color;
+}
+
 /*************************************************/
 /*                      PANED                    */
 /*************************************************/
@@ -4100,171 +4110,91 @@ treeview entry.flat:focus
 /*************************************************/
 
 notebook {
-    padding: 0px;
+    padding: 8px 5px;
+    border: 1px solid @border_color;
+    background-color: @base_color;
 }
 
 notebook > header {
-    padding: 2px;
-    background-color: @bg_color;
+    background-color: transparent;
 }
 
-notebook > header.top,
-notebook > header.bottom {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-/* gtk3에서는 header의 margin을 -1로 해서 header와 접한 stack의 border가
-   header 밑으로 깔리게 해서 해당 border를 안보이게 함.
-   접촉면에 보이는 border는 header의 box-shadow임 */
 notebook > header.top {
-    margin-bottom: -1px;
-    box-shadow: inset 0 -1px @border_color;
+    padding: 0px 5px 5px 0px;
+    border-bottom: 1px solid @border_color;
+    margin-bottom: 5px;
 }
 
 notebook > header.bottom {
-    margin-top: -1px;
-    box-shadow: inset 0 1px @border_color;      
-}
-
-notebook > header.left,
-notebook > header.right {
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 5px 5px 0px 0px;
+    border-top: 1px solid @border_color;
+    margin-top: 5px;
 }
 
 notebook > header.left {
-    margin-right: -1px;
-    box-shadow: inset -1px 0 @border_color;
+    padding: 0px 5px 5px 0px;
+    border-right: 1px solid @border_color;
+    margin-right: 5px;
 }
 
 notebook > header.right {
-    margin-left: -1px;
-    box-shadow: inset 1px 0 @border_color;      
+    padding: 0px 0px 5px 5px;
+    border-left: 1px solid @border_color;
+    margin-left: 5px;
 }
 
 notebook > stack:not(:only-child) {
-    background-color: @base_color;
+    background-color: transparent;
+    /* border: 1px solid @border_color; */
+}
+
+notebook > header > tabs > tab {
+    min-width: 20px;
+    min-height: 20px;
+    background-color: transparent;
+    background-image: linear-gradient(to bottom, rgba(255,255,255,1), rgba(228,233,239,1));      
     border: 1px solid @border_color;
-}
-
-
-notebook > header.top {
-    padding-bottom: 0;
-}
-
-notebook > header.top > tabs > tab {
+    border-radius: 4px;
     padding: 4px 10px;
-    min-width: 20px;
-    min-height: 20px;
-    border: 1px solid @border_color;
-    border-bottom: none;
-    border-radius: 4px 4px 0 0;
 }
 
-notebook > header.top > tabs > tab + tab {
-    margin-left: -1px;
-}
-
-notebook > header.top > tabs > tab:hover:not(:checked) {
-    box-shadow: inset 0 -1px @light_border_color;
-}
-
-notebook > header.bottom {
-    padding-top: 0;
-}
-
-notebook > header.bottom > tabs > tab {
-    padding: 4px 10px;
-    min-width: 20px;
-    min-height: 20px;
-    border: 1px solid @border_color;
-    border-top: none;
-    border-radius: 0 0 4px 4px;
-}
-
-notebook > header.bottom > tabs > tab + tab {
-    margin-left: -1px;
-}
-
-notebook > header.bottom > tabs > tab:hover:not(:checked) {
-    box-shadow: inset 0 1px @light_border_color;
-}  
-
-notebook > header.right {
-    padding-left: 0;
-}
-
-notebook > header.right > tabs > tab {
-    padding: 6px 10px;
-    min-width: 20px;
-    min-height: 20px;
-    border: 1px solid @border_color;
-    border-left: none;
-    border-radius: 0 4px 4px 0;
-}
-
-notebook > header.right > tabs > tab + tab {
-    margin-top: -1px;
-}
-
-notebook > header.right > tabs > tab:hover:not(:checked) {
-    box-shadow: inset 1px 0 @light_border_color;
-}
-
-notebook > header.left {
-    padding-right: 0;
-}
-
-notebook > header.left > tabs > tab {
-    padding: 6px 10px;
-    min-width: 20px;
-    min-height: 20px;
-    border: 1px solid @border_color;
-    border-right: none;
-    border-radius: 4px 0 0 4px;
-}
-
-notebook > header.left > tabs > tab + tab {
-    margin-top: -1px;
-}
-
-notebook > header.left > tabs > tab:hover:not(:checked) {
-    box-shadow: inset -1px 0 @light_border_color;
+notebook > header > tabs > tab:checked {
+    color: @selected_fg_color;
+    background-color: @selected_bg_color;
+    background-image: none;
 }
 
 notebook > header > tabs > tab:hover:not(:checked) {
-    background-color: @button_bg;  /* similar to shade(@bg_color, 1.1) */
+    background-color: shade(rgba(228,233,239,1), 0.95);
+    background-image: none;      
 }
 
-notebook > header.bottom > tabs > arrow.up {
-    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+notebook > header.bottom > tabs > tab,
+notebook > header.top > tabs > tab {
+    margin-right: 5px;
 }
 
+notebook > header.left > tabs > tab,
+notebook > header.right > tabs > tab {  
+    margin-bottom: 5px;
+}
+
+notebook > header.bottom > tabs > arrow.up,
 notebook > header.top > tabs > arrow.up {
     -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
 }
 
-notebook > header.top > tabs > arrow.up:last-child {
-    margin-left: 2px;
-}
-
+notebook > header.top > tabs > arrow.up:last-child,
 notebook > header.bottom > tabs > arrow.up:last-child {
     margin-left: 2px;
 }
 
-notebook > header.top > tabs > arrow.down {
-    -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
-}
-
+notebook > header.top > tabs > arrow.down,
 notebook > header.bottom > tabs > arrow.down {
     -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
 }
 
-notebook > header.top > tabs > arrow.down:first-child {
-    margin-right: 2px;
-}
-
+notebook > header.top > tabs > arrow.down:first-child,
 notebook > header.bottom > tabs > arrow.down:first-child {
     margin-right: 2px;
 }
@@ -4290,38 +4220,13 @@ notebook > header.right > tabs > arrow.down:first-child {
 }
 
 notebook > header > tabs > arrow,
-notebook > header > tabs > arrow:hover {
-    color: rgba(37, 37, 37, 0.775);
-}
-
+notebook > header > tabs > arrow:hover,
 notebook > header > tabs > arrow:active {
     color: @fg_color;
 }
 
 notebook > header > tabs > arrow:disabled {
     color: rgba(37, 37, 37, 0.25);
-}
-
-
-notebook > header > tabs > tab:checked {
-    color: @text_color;
-    background-color: @base_color;
-}
-
-notebook > header.top > tabs > tab:checked {
-    border-top: 3px solid @selected_bg_color;
-}
-
-notebook > header.bottom > tabs > tab:checked {
-    border-bottom: 3px solid @selected_bg_color;
-}
-
-notebook > header.left > tabs > tab:checked {
-    border-left: 3px solid @selected_bg_color;
-}
-
-notebook > header.right > tabs > tab:checked {
-    border-right: 3px solid @selected_bg_color;
 }
 
 notebook > header > tabs > tab button {
@@ -4333,7 +4238,7 @@ notebook > header > tabs > tab button {
     border-radius: 50%;
     margin: 0px;
     padding: 0px;
-    opacity: 0.5;
+    opacity: 0.7;
 }
 
 notebook > header > tabs > tab button:dir(ltr) {
