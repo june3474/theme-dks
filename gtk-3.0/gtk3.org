@@ -4627,12 +4627,14 @@ notebook
   /*************************************************/
 
   notebook {
-      padding: 8px 5px;
       border: 1px solid @border_color;
       background-color: @base_color;
   }
 
   notebook > header {
+      /* margin을 notebook에 설정하면, xfce4-terminal과 같은 notebook을 사용하는
+         application들에 바로 바로 영향이 나타난다. */
+      margin: 8px 5px;
       background-color: transparent;
   }
 
@@ -4661,6 +4663,7 @@ notebook
   }
 
   notebook > stack:not(:only-child) {
+      margin: 8px 5px;
       background-color: transparent;
       /* border: 1px solid @border_color; */
   }
