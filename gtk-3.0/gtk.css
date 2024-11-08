@@ -42,6 +42,70 @@
     color: @link_visited;
 }
 
+/* ICON & IMAGE */
+
+.normal-icons {
+    min-height: 16px;
+    min-width: 16px;
+}
+
+.large-icons {
+    min-height: 32px;
+    min-width: 32px;      
+}
+
+*:checked image,
+*:selected image {
+    color: @selected_fg_color;
+}
+
+image:disabled {
+    opacity: 0.6;
+}
+
+picture:disabled {
+    opacity: 0.6;
+}
+
+/* Typography */
+
+.large-title {
+    font-weight: 300;
+    font-size: 240%;
+}
+.title-1 {
+    font-weight: 800;
+    font-size: 200%;
+}
+.title-2 {
+    font-weight: 800;
+    font-size: 150%;
+}
+.title-3 {
+    font-weight: 700;
+    font-size: 150%;
+}
+.title-4 {
+    font-weight: 700;
+    font-size: 130%;
+}
+.heading {
+    font-weight: 700;
+    font-size: 110%;
+}
+.body {
+    font-weight: 400;
+    font-size: 110%;
+}
+.caption-heading {
+    font-weight: 700;
+    font-size: 90%;
+}
+.caption {
+    font-weight: 400;
+    font-size: 90%;
+}
+
 /*************************************************/
 /*                 SELECTION                     */
 /*************************************************/
@@ -75,8 +139,51 @@ selection:disabled {
 }
 
 /*************************************************/
+/*                   LABEL                       */
+/*************************************************/
+
+label {
+    color: inherit;
+    background-color: inherit;
+}
+
+label selection {
+    color: @selected_fg_color;
+    text-shadow:  0 -1px alpha(@selected_fg_color, 0.04),
+                  -1px  0px alpha(@fg_color, 0.05),
+                  1px  0px alpha(@fg_color, 0.05),
+                  0px  1px alpha(@fg_color, 0.3),
+                  0px  2px alpha(@fg_color, 0.05);
+    background-color: @selected_bg_color;
+}
+
+label.warning,
+label.warning selection {
+    color: @warning_color;
+}
+
+label.error,
+label.error selection {
+    color: @error_color;
+}
+
+label:disabled:selected,
+label:disabled selection {
+    color: @insensitive_fg_color;
+}
+
+label.separator {
+    opacity: 0.55;
+}
+
+/*************************************************/
 /*                    BUTTON                     */
 /*************************************************/
+
+.small-button {
+    min-height: 16px;
+    min-width: 16px;
+}
 
 button {
     background-clip: border-box;
@@ -175,8 +282,10 @@ button.image-button:not(.text-button) {
     padding: 3px;
 }
 
-button.image-button.radio:checked > image {
-    color: white;
+button.image-button:active:hover image,
+button.image-button:checked image,
+button.image-button.radio:checked image {
+    color: @selected_fg_color;
 }
 
 /* text & image button */
@@ -920,64 +1029,22 @@ spinbutton.vertical > button.down {
 }
 
 /*************************************************/
-/*                   LABEL                       */
+/*                    ARROW                      */
 /*************************************************/
 
-label {
-    color: inherit;
-    background-color: inherit;
+arrow {
+    min-height: 16px;
+    min-width: 16px;
 }
 
-label selection {
-    color: @selected_fg_color;
-    text-shadow:  0 -1px alpha(@selected_fg_color, 0.04),
-                  -1px  0px alpha(@fg_color, 0.05),
-                  1px  0px alpha(@fg_color, 0.05),
-                  0px  1px alpha(@fg_color, 0.3),
-                  0px  2px alpha(@fg_color, 0.05);
-    background-color: @selected_bg_color;
+arrow:dir(ltr) {
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+    margin-left: 10px;
 }
 
-label.warning,
-label.warning selection {
-    color: @warning_color;
-}
-
-label.error,
-label.error selection {
-    color: @error_color;
-}
-
-label:disabled:selected,
-label:disabled selection {
-    color: @insensitive_fg_color;
-}
-
-label.separator {
-    opacity: 0.55;
-}
-
-/*************************************************/
-/*                 PROGRESSBAR                   */
-/*************************************************/
-
-progressbar {
-    padding: 0;
-    font-size: smaller;
-    color: rgba(92, 97, 108, 0.7);
-    box-shadow: none;
-}
-
-progressbar trough {
-    border: none;
-    border-radius: 3px;
-    background-color: shade(@base_color, 0.75);
-}
-
-progressbar progress {
-    background-color: @selected_bg_color;
-    box-shadow: none;
-    border-radius: 3px;
+arrow:dir(rtl) {
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
+    margin-right: 10px;
 }
 
 /*************************************************/
@@ -1116,7 +1183,8 @@ box.linked.horizontal:not(.path-bar) > entry:dir(rtl) + button {
     border-bottom-right-radius: 0;
 }
 
-combobox arrow {
+combobox button arrow:dir(ltr),
+combobox button arrow:dir(rtl) {
     -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
     min-height: 16px;
     min-width: 16px;
@@ -1404,58 +1472,6 @@ modelbutton:hover scale highlight {
 }
 
 /*************************************************/
-/*                   LEVELBAR                    */
-/*************************************************/
-
-levelbar trough {
-    border: 1px solid @border_color;
-    padding: 3px;
-    border-radius: 3px;
-    background-color: transparent;      
-}
-
-levelbar.horizontal block {
-    min-width: 32px;
-    min-height: 5px;
-    border: none;
-}
-
-levelbar.vertical block {
-    min-width: 5px;
-    min-height: 32px;
-    border: none;
-}
-
-levelbar.horizontal.discrete block {
-    margin: 0 2px;
-}
-
-levelbar.vertical.discrete block {
-    margin: 2px 0;
-}
-
-levelbar block:not(.empty) {
-    background-color: @selected_bg_color;
-    border-radius: 2px;
-}
-
-levelbar block.low {
-    background-color: #F27835;
-}
-
-levelbar block.high {
-    background-color: @selected_bg_color;
-}
-
-levelbar block.full {
-    background-color: #73d216;
-}
-
-levelbar block.empty {
-    background-color: shade(@base_color, 0.75);
-}
-
-/*************************************************/
 /*                   EXPANDER                    */
 /*************************************************/
 
@@ -1547,37 +1563,86 @@ tooltip * {
 }
 
 /*************************************************/
-/*                    ARROW                      */
-/*************************************************/
-
-arrow {
-    min-height: 16px;
-    min-width: 16px;
-}
-
-arrow:dir(ltr) {
-    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
-    margin-left: 10px;
-}
-
-arrow:dir(rtl) {
-    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
-    margin-right: 10px;
-}
-
-/* ARROW  SELECTED */
-
-menuitem > arrow:hover,
-modelbutton > arrow:hover {
-    color: @selected_fg_color;
-}
-
-/*************************************************/
 /*                 ACCELERATOR                   */
 /*************************************************/
 
 accelerator {
     color: alpha(currentColor,0.55);
+}
+
+/*************************************************/
+/*                 PROGRESSBAR                   */
+/*************************************************/
+
+progressbar {
+    padding: 0;
+    font-size: smaller;
+    color: rgba(92, 97, 108, 0.7);
+    box-shadow: none;
+}
+
+progressbar trough {
+    border: none;
+    border-radius: 3px;
+    background-color: shade(@base_color, 0.75);
+}
+
+progressbar progress {
+    background-color: @selected_bg_color;
+    box-shadow: none;
+    border-radius: 3px;
+}
+
+/*************************************************/
+/*                   LEVELBAR                    */
+/*************************************************/
+
+levelbar trough {
+    border: 1px solid @border_color;
+    padding: 3px;
+    border-radius: 3px;
+    background-color: transparent;      
+}
+
+levelbar.horizontal block {
+    min-width: 32px;
+    min-height: 5px;
+    border: none;
+}
+
+levelbar.vertical block {
+    min-width: 5px;
+    min-height: 32px;
+    border: none;
+}
+
+levelbar.horizontal.discrete block {
+    margin: 0 2px;
+}
+
+levelbar.vertical.discrete block {
+    margin: 2px 0;
+}
+
+levelbar block:not(.empty) {
+    background-color: @selected_bg_color;
+    border-radius: 2px;
+}
+
+levelbar block.low {
+    background-color: #F27835;
+}
+
+levelbar block.high {
+    background-color: @selected_bg_color;
+}
+
+levelbar block.full {
+    background-color: #73d216;
+}
+
+levelbar block.empty {
+    background-color: shade(@base_color, 0.75);
 }
 
 /*************************************************/
@@ -1709,6 +1774,10 @@ modelbutton > radio:dir(rtl) {
     margin-right: 6px;
 }
 
+modelbutton > arrow:hover {
+    color: @selected_fg_color;
+}
+
 /*************************************************/
 /*                  HEADERBAR                    */
 /*************************************************/
@@ -1824,6 +1893,10 @@ menuitem > radio {
 menuitem > radio:dir(rtl) {
     margin-left:3px;
     margin-right: 6px;
+}
+
+menuitem > arrow:hover {
+    color: @selected_fg_color;
 }
 
 /* CONTEXT MENU  */
@@ -4161,14 +4234,15 @@ notebook > header > tabs > tab {
     padding: 4px 10px;
 }
 
-notebook > header > tabs > tab:checked {
+notebook > header > tabs > tab:checked,
+notebook > header > tabs > tab:checked box {
     color: @selected_fg_color;
     background-color: @selected_bg_color;
     background-image: none;
 }
 
 notebook > header > tabs > tab:hover:not(:checked) {
-    background-color: shade(rgba(228,233,239,1), 0.95);
+    background-color: shade(rgba(228,233,239,1), 1.1);
     background-image: none;      
 }
 
@@ -4237,7 +4311,7 @@ notebook > header > tabs > tab button {
     min-width: 16px;
     background-color: transparent;
     background-image: none;
-    border: 1px solid transparent;      
+    border: none;
     border-radius: 50%;
     margin: 0px;
     padding: 0px;
@@ -4253,6 +4327,8 @@ notebook > header > tabs > tab button:dir(rtl) {
 }
 
 notebook > header > tabs > tab button:hover {
+    background-color: transparent;
+    background-image: none;      
     opacity: 1.0;
 }
 

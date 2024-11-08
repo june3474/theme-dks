@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="24"
+   height="24"
+   viewBox="0 0 24 24"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25, custom)"
+   sodipodi:docname="tab.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <title
+     id="title5">tab</title>
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="true"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="pc"
+     showgrid="true"
+     inkscape:zoom="23.055245"
+     inkscape:cx="15.701416"
+     inkscape:cy="12.01462"
+     inkscape:window-width="1920"
+     inkscape:window-height="992"
+     inkscape:window-x="0"
+     inkscape:window-y="31"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showguides="true">
+    <inkscape:grid
+       id="grid1"
+       units="px"
+       originx="0"
+       originy="0"
+       spacingx="1"
+       spacingy="1"
+       empcolor="#0000ff"
+       empopacity="0.25098039"
+       color="#0000ff"
+       opacity="0.1254902"
+       empspacing="5"
+       dotted="false"
+       gridanglex="30"
+       gridanglez="30"
+       visible="true" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1">
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect3"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,2.0518253,0,1 @ F,0,0,1,0,0.78516995,0,1 @ F,0,0,1,0,0,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect1"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,2.0518253,0,1 @ F,0,0,1,0,0.78516995,0,1 @ F,0,0,1,0,0,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path3"
+       style="color:#000000;fill:#808080;fill-opacity:1;fill-rule:evenodd;stroke-width:0.983029;-inkscape-stroke:none"
+       d="m 16.001957,0 c 0.781817,0.002267 1.42631,0.41554883 1.924478,0.89069396 0.498168,0.47514514 0.8747,1.03379284 1.131927,1.46945704 0.282381,0.478268 0.445995,1.1205454 0.496322,1.6160271 l 1.779304,17.5244979 c 0.0887,0.873229 0.84571,1.533423 1.761647,1.535226 L 24,23.037802 l -0.002,0.9621 -0.904365,-0.0019 c -1.423516,-0.0028 -2.622287,-1.046194 -2.760138,-2.403371 L 18.554194,4.0701331 C 18.520167,3.735132 18.331698,3.0814948 18.185385,2.8336846 17.955589,2.4444786 17.612907,1.9473514 17.218244,1.5709285 16.823583,1.1945057 16.402071,0.96326565 16,0.9620998 Z M 8.0039063,0 8,0.97265625 15.996094,1 16,0.02734375 Z m -0.00562,0 C 7.2164698,0.00226695 6.5719763,0.41554883 6.0738085,0.89069396 5.5756408,1.3658391 5.1991079,1.9244868 4.9418811,2.360151 4.6595002,2.838419 4.4958864,3.4806964 4.4455594,3.976178 L 2.6662558,21.500676 c -0.088696,0.873229 -0.8457105,1.533423 -1.76164783,1.535226 l -0.9043648907,0.0019 0.001961721,0.9621 0.90436491,-0.0019 C 2.3301239,23.995211 3.5288954,22.951808 3.6667463,21.594631 L 5.4460498,4.0701331 C 5.4800765,3.735132 5.668545,3.0814947 5.814858,2.8336845 6.0446548,2.4444785 6.3873368,1.9473514 6.7819989,1.5709285 7.1766608,1.1945057 7.5981727,0.96326565 8.0002431,0.9620998 Z" />
+  </g>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>tab</dc:title>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>dks</dc:title>
+          </cc:Agent>
+        </dc:creator>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

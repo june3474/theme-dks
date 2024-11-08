@@ -33,12 +33,17 @@
     -gtk-icon-size: 32px;
 }
 
+*:checked image,
+*:selected image {
+    color: @selected_fg_color;
+}
+
 image:disabled {
-    -gtk-icon-filter: opacity(0.5);
+    -gtk-icon-filter: opacity(0.6);
 }
 
 picture:disabled {
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
 /* Typography */
@@ -113,40 +118,50 @@ selection:disabled {
 }
 
 /*************************************************/
-/*                 SELECTION                     */
+/*                   LABEL                       */
 /*************************************************/
 
-selection {
+label {
+    background-color: transparent;
+}
+
+label selection {
     color: @selected_fg_color;
-    background-color: @selected_bg_color;
-    /*
-    text-shadow:  0 -1px alpha(#ffffff, 0.04),
+    text-shadow:  0 -1px alpha(@selected_fg_color, 0.04),
                   -1px  0px alpha(@fg_color, 0.05),
                   1px  0px alpha(@fg_color, 0.05),
                   0px  1px alpha(@fg_color, 0.3),
                   0px  2px alpha(@fg_color, 0.05);
-   */
+    background-color: @selected_bg_color;
 }
 
-selection:disabled {
-    color: #90b5ec;
+label.warning,
+label.warning selection {
+    color: @warning_color;
 }
 
-*.error selection,
-*.search-missing selection {
-    background-color: white;
-    color: #FC4138;
+label.error,
+label.error selection {
+    color: @error_color;
 }
 
-*.warning selection {
-    background-color: white;
-    /* background-image: linear-gradient(to bottom, #ffffff, #ffffff); */
-    color: #F27835;
+label:disabled:selected,
+label:disabled selection {
+    color: @insensitive_fg_color;
+}
+
+label.separator {
+    opacity: 0.55;
 }
 
 /*************************************************/
 /*                    BUTTON                     */
 /*************************************************/
+
+.small-button {
+    min-height: 16px;
+    min-width: 16px;
+}
 
 button {
     background-clip: border-box;      
@@ -246,7 +261,9 @@ button.image-button:not(.text-button) {
     padding: 3px;
 }
 
-button.image-button.radio:checked > image {
+button.image-button:active:hover image,
+button.image-button:checked image,
+button.image-button.radio:checked image {
     color: white;
 }
 
@@ -1255,80 +1272,29 @@ button.destructive-action.sidebar-button:disabled {
 }
 
 /*************************************************/
-/*                   LABEL                       */
+/*                    ARROW                      */
 /*************************************************/
 
-label {
-    background-color: transparent;
+arrow {
+    min-height: 16px;
+    min-width: 16px;
 }
 
-label selection {
+arrow:dir(ltr) {
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+    margin-left: 10px;
+}
+
+arrow:dir(rtl) {
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
+    margin-right: 10px;
+}
+
+/* ARROW  SELECTED */
+
+menuitem > arrow:hover,
+modelbutton > arrow:hover {
     color: @selected_fg_color;
-    text-shadow:  0 -1px alpha(@selected_fg_color, 0.04),
-                  -1px  0px alpha(@fg_color, 0.05),
-                  1px  0px alpha(@fg_color, 0.05),
-                  0px  1px alpha(@fg_color, 0.3),
-                  0px  2px alpha(@fg_color, 0.05);
-    background-color: @selected_bg_color;
-}
-
-label.warning,
-label.warning selection {
-    color: @warning_color;
-}
-
-label.error,
-label.error selection {
-    color: @error_color;
-}
-
-label:disabled:selected,
-label:disabled selection {
-    color: @insensitive_fg_color;
-}
-
-label.separator {
-    opacity: 0.55;
-}
-
-/*************************************************/
-/*                 PROGRESSBAR                   */
-/*************************************************/
-
-progressbar {
-    padding: 0;
-    font-size: smaller;
-    box-shadow: none;
-}
-
-progressbar trough {
-    border: none;
-    border-radius: 3px;
-    background-color: shade(@base_color, 0.75);
-}
-
-progressbar.horizontal trough {
-    min-width: 32px;
-    min-height: 5px;
-}
-
-progressbar.vertical trough {
-    min-width: 5px;
-    min-height: 32px;
-}
-
-progressbar progress {
-    background-color: @selected_bg_color;
-    box-shadow: none;
-    border-radius: 3px;      
-}
-
-progressbar.horizontal progress {
-    min-height: 5px;
-}
-
-progressbar.vertical progress {
-    min-width: 5px;
 }
 
 /*************************************************/
@@ -1467,7 +1433,8 @@ box.linked.horizontal:not(.path-bar) > entry:dir(rtl) + button {
     border-bottom-right-radius: 0;
 }
 
-combobox arrow {
+combobox button arrow:dir(ltr),
+combobox button arrow:dir(rtl) {
     -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
     min-height: 16px;
     min-width: 16px;
@@ -1749,58 +1716,6 @@ modelbutton:hover scale highlight {
 }
 
 /*************************************************/
-/*                   LEVELBAR                    */
-/*************************************************/
-
-levelbar trough {
-    border: 1px solid @border_color;
-    padding: 3px;
-    border-radius: 5px;
-    background-color: transparent;      
-}
-
-levelbar.horizontal block {
-    min-width: 32px;
-    min-height: 5px;
-    border: none;      
-}
-
-levelbar.vertical block {
-    min-width: 5px;
-    min-height: 32px;
-    border: none;      
-}
-
-levelbar.horizontal.discrete block {
-    margin: 0 2px;
-}
-
-levelbar.vertical.discrete block {
-    margin: 2px 0;
-}
-
-levelbar block:not(.empty) {
-    background-color: @selected_bg_color;
-    border-radius: 2px;
-}
-
-levelbar block.low {
-    background-color: #F27835;
-}
-
-levelbar block.high {
-    background-color: @selected_bg_color;
-}
-
-levelbar block.full {
-    background-color: #73d216;
-}
-
-levelbar block.empty {
-    background-color: shade(@base_color, 0.75);
-}
-
-/*************************************************/
 /*                   EXPANDER                    */
 /*************************************************/
 
@@ -1887,37 +1802,103 @@ tooltip * {
 }
 
 /*************************************************/
-/*                    ARROW                      */
-/*************************************************/
-
-arrow {
-    min-height: 16px;
-    min-width: 16px;
-}
-
-arrow:dir(ltr) {
-    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
-    margin-left: 10px;
-}
-
-arrow:dir(rtl) {
-    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
-    margin-right: 10px;
-}
-
-/* ARROW  SELECTED */
-
-menuitem > arrow:hover,
-modelbutton > arrow:hover {
-    color: @selected_fg_color;
-}
-
-/*************************************************/
 /*                 ACCELERATOR                   */
 /*************************************************/
 
 accelerator {
     color: alpha(currentColor,0.55);
+}
+
+/*************************************************/
+/*                 PROGRESSBAR                   */
+/*************************************************/
+
+progressbar {
+    padding: 0;
+    font-size: smaller;
+    box-shadow: none;
+}
+
+progressbar trough {
+    border: none;
+    border-radius: 3px;
+    background-color: shade(@base_color, 0.75);
+}
+
+progressbar.horizontal trough {
+    min-width: 32px;
+    min-height: 5px;
+}
+
+progressbar.vertical trough {
+    min-width: 5px;
+    min-height: 32px;
+}
+
+progressbar progress {
+    background-color: @selected_bg_color;
+    box-shadow: none;
+    border-radius: 3px;      
+}
+
+progressbar.horizontal progress {
+    min-height: 5px;
+}
+
+progressbar.vertical progress {
+    min-width: 5px;
+}
+
+/*************************************************/
+/*                   LEVELBAR                    */
+/*************************************************/
+
+levelbar trough {
+    border: 1px solid @border_color;
+    padding: 3px;
+    border-radius: 5px;
+    background-color: transparent;      
+}
+
+levelbar.horizontal block {
+    min-width: 32px;
+    min-height: 5px;
+    border: none;      
+}
+
+levelbar.vertical block {
+    min-width: 5px;
+    min-height: 32px;
+    border: none;      
+}
+
+levelbar.horizontal.discrete block {
+    margin: 0 2px;
+}
+
+levelbar.vertical.discrete block {
+    margin: 2px 0;
+}
+
+levelbar block:not(.empty) {
+    background-color: @selected_bg_color;
+    border-radius: 2px;
+}
+
+levelbar block.low {
+    background-color: #F27835;
+}
+
+levelbar block.high {
+    background-color: @selected_bg_color;
+}
+
+levelbar block.full {
+    background-color: #73d216;
+}
+
+levelbar block.empty {
+    background-color: shade(@base_color, 0.75);
 }
 
 /*************************************************/

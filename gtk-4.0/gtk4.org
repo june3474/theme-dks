@@ -41,7 +41,7 @@
 #+end_src
 *** icon & image
 #+begin_src css
-  
+
   /* ICON & IMAGE */
 
   .normal-icons {
@@ -52,12 +52,17 @@
       -gtk-icon-size: 32px;
   }
 
+  ,*:checked image,
+  ,*:selected image {
+      color: @selected_fg_color;
+  }
+
   image:disabled {
-      -gtk-icon-filter: opacity(0.5);
+      -gtk-icon-filter: opacity(0.6);
   }
 
   picture:disabled {
-      opacity: 0.5;
+      opacity: 0.6;
   }
 
 #+end_src
@@ -153,52 +158,53 @@ text[.read-only]
   }
 #+end_src
 * Basic Controls
-** selection
-selection is not a widget but a css subnode when a widget--such as GtkText(text) and
-GtkLabel(label)--has a selection.
-Below are the css nodes of text widget.
+** label
+The GtkLabel widget displays a small amount of text.
 
-text[.read-only]
-├── placeholder
-├── undershoot.left
-├── undershoot.right
+label
 ├── [selection]
-├── [block-cursor]
-╰── [window.popup]
-[[https://docs.gtk.org/gtk4/class.Text.html][link]]
+├── [link]
+┊
+╰── [link]
+[[https://docs.gtk.org/gtk4/class.Label.html][link]]
 
 #+begin_src css
 
   /*************************************************/
-  /*                 SELECTION                     */
+  /*                   LABEL                       */
   /*************************************************/
 
-  selection {
+  label {
+      background-color: transparent;
+  }
+
+  label selection {
       color: @selected_fg_color;
-      background-color: @selected_bg_color;
-      /*
-      text-shadow:  0 -1px alpha(#ffffff, 0.04),
+      text-shadow:  0 -1px alpha(@selected_fg_color, 0.04),
                     -1px  0px alpha(@fg_color, 0.05),
                     1px  0px alpha(@fg_color, 0.05),
                     0px  1px alpha(@fg_color, 0.3),
                     0px  2px alpha(@fg_color, 0.05);
-     ,*/
+      background-color: @selected_bg_color;
   }
 
-  selection:disabled {
-      color: #90b5ec;
+  label.warning,
+  label.warning selection {
+      color: @warning_color;
   }
 
-  ,*.error selection,
-  ,*.search-missing selection {
-      background-color: white;
-      color: #FC4138;
+  label.error,
+  label.error selection {
+      color: @error_color;
   }
 
-  ,*.warning selection {
-      background-color: white;
-      /* background-image: linear-gradient(to bottom, #ffffff, #ffffff); */
-      color: #F27835;
+  label:disabled:selected,
+  label:disabled selection {
+      color: @insensitive_fg_color;
+  }
+
+  label.separator {
+      opacity: 0.55;
   }
 #+end_src
 ** button
@@ -213,6 +219,11 @@ Button-like widgets like GtkToggleButton, GtkMenuButton, GtkVolumeButton, GtkLoc
   /*                    BUTTON                     */
   /*************************************************/
 
+  .small-button {
+      min-height: 16px;
+      min-width: 16px;
+  }
+  
   button {
       background-clip: border-box;      
       min-height: 24px;
@@ -317,7 +328,9 @@ Button-like widgets like GtkToggleButton, GtkMenuButton, GtkVolumeButton, GtkLoc
       padding: 3px;
   }
 
-  button.image-button.radio:checked > image {
+  button.image-button:active:hover image,
+  button.image-button:checked image,
+  button.image-button.radio:checked image {
       color: white;
   }
 #+end_src
@@ -1423,105 +1436,39 @@ menubutton
       color: rgba(92, 97, 108, 0.55);
   }
 #+end_src
-** label
-The GtkLabel widget displays a small amount of text.
-
-label
-├── [selection]
-├── [link]
-┊
-╰── [link]
-[[https://docs.gtk.org/gtk4/class.Label.html][link]]
-
+** arrow
 #+begin_src css
 
   /*************************************************/
-  /*                   LABEL                       */
+  /*                    ARROW                      */
   /*************************************************/
 
-  label {
-      background-color: transparent;
+  arrow {
+      min-height: 16px;
+      min-width: 16px;
   }
 
-  label selection {
-      color: @selected_fg_color;
-      text-shadow:  0 -1px alpha(@selected_fg_color, 0.04),
-                    -1px  0px alpha(@fg_color, 0.05),
-                    1px  0px alpha(@fg_color, 0.05),
-                    0px  1px alpha(@fg_color, 0.3),
-                    0px  2px alpha(@fg_color, 0.05);
-      background-color: @selected_bg_color;
+  arrow:dir(ltr) {
+      -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+      margin-left: 10px;
   }
 
-  label.warning,
-  label.warning selection {
-      color: @warning_color;
+  arrow:dir(rtl) {
+      -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
+      margin-right: 10px;
   }
 
-  label.error,
-  label.error selection {
-      color: @error_color;
-  }
-
-  label:disabled:selected,
-  label:disabled selection {
-      color: @insensitive_fg_color;
-  }
-
-  label.separator {
-      opacity: 0.55;
-  }
 #+end_src
-** progressbar
-GtkProgressBar displays the progress of a long running operation.
-
-progressbar[.osd]
-├── [text]
-╰── trough[.empty][.full]
-╰── progress[.pulse]
-[[https://docs.gtk.org/gtk4/class.ProgressBar.html][link]]
-
+*** arrow selected
 #+begin_src css
 
-  /*************************************************/
-  /*                 PROGRESSBAR                   */
-  /*************************************************/
+  /* ARROW  SELECTED */
 
-  progressbar {
-      padding: 0;
-      font-size: smaller;
-      box-shadow: none;
+  menuitem > arrow:hover,
+  modelbutton > arrow:hover {
+      color: @selected_fg_color;
   }
 
-  progressbar trough {
-      border: none;
-      border-radius: 3px;
-      background-color: shade(@base_color, 0.75);
-  }
-
-  progressbar.horizontal trough {
-      min-width: 32px;
-      min-height: 5px;
-  }
-
-  progressbar.vertical trough {
-      min-width: 5px;
-      min-height: 32px;
-  }
-
-  progressbar progress {
-      background-color: @selected_bg_color;
-      box-shadow: none;
-      border-radius: 3px;      
-  }
-
-  progressbar.horizontal progress {
-      min-height: 5px;
-  }
-
-  progressbar.vertical progress {
-      min-width: 5px;
-  }
 #+end_src
 ** entry
 A single line text entry widget.
@@ -1650,7 +1597,7 @@ combobox
 [[https://docs.gtk.org/gtk4/class.ComboBox.html][link]]
 
 #+begin_src css
-  
+
   /******************************************************/
   /*                    COMBOBOX                        */
   /******************************************************/
@@ -1692,8 +1639,9 @@ combobox
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
   }
-
-  combobox arrow {
+  
+  combobox button arrow:dir(ltr),
+  combobox button arrow:dir(rtl) {
       -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
       min-height: 16px;
       min-width: 16px;
@@ -2019,71 +1967,6 @@ scale[.fine-tune][.marks-before][.marks-after]
   }
 
 #+end_src
-** levelbar
-Widget that can be used as a level indicator.
-
-levelbar[.discrete]
-╰── trough
-├── block.filled.level-name
-┊
-├── block.empty
-┊
-[[https://docs.gtk.org/gtk4/class.LevelBar.html][link]]
-
-#+begin_src css
-
-  /*************************************************/
-  /*                   LEVELBAR                    */
-  /*************************************************/
-
-  levelbar trough {
-      border: 1px solid @border_color;
-      padding: 3px;
-      border-radius: 5px;
-      background-color: transparent;      
-  }
-
-  levelbar.horizontal block {
-      min-width: 32px;
-      min-height: 5px;
-      border: none;      
-  }
-
-  levelbar.vertical block {
-      min-width: 5px;
-      min-height: 32px;
-      border: none;      
-  }
-
-  levelbar.horizontal.discrete block {
-      margin: 0 2px;
-  }
-
-  levelbar.vertical.discrete block {
-      margin: 2px 0;
-  }
-
-  levelbar block:not(.empty) {
-      background-color: @selected_bg_color;
-      border-radius: 2px;
-  }
-
-  levelbar block.low {
-      background-color: #F27835;
-  }
-
-  levelbar block.high {
-      background-color: @selected_bg_color;
-  }
-
-  levelbar block.full {
-      background-color: #73d216;
-  }
-
-  levelbar block.empty {
-      background-color: shade(@base_color, 0.75);
-  }
-#+end_src
 ** expander
 GtkExpander allows the user to reveal its child by clicking on an expander triangle.
 *Note: css nodes were changed in gtk4*
@@ -2230,40 +2113,6 @@ No css info is available.
       background-color: inherit;
   }
 #+end_src
-** arrow
-#+begin_src css
-
-  /*************************************************/
-  /*                    ARROW                      */
-  /*************************************************/
-
-  arrow {
-      min-height: 16px;
-      min-width: 16px;
-  }
-
-  arrow:dir(ltr) {
-      -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
-      margin-left: 10px;
-  }
-
-  arrow:dir(rtl) {
-      -gtk-icon-source: -gtk-icontheme("pan-end-symbolic-rtl");
-      margin-right: 10px;
-  }
-
-#+end_src
-*** arrow selected
-#+begin_src css
-
-  /* ARROW  SELECTED */
-
-  menuitem > arrow:hover,
-  modelbutton > arrow:hover {
-      color: @selected_fg_color;
-  }
-
-#+end_src
 ** accelerator
 #+begin_src css
 
@@ -2275,6 +2124,122 @@ No css info is available.
       color: alpha(currentColor,0.55);
   }
 
+#+end_src
+** progressbar
+GtkProgressBar displays the progress of a long running operation.
+
+progressbar[.osd]
+├── [text]
+╰── trough[.empty][.full]
+╰── progress[.pulse]
+[[https://docs.gtk.org/gtk4/class.ProgressBar.html][link]]
+
+#+begin_src css
+
+  /*************************************************/
+  /*                 PROGRESSBAR                   */
+  /*************************************************/
+
+  progressbar {
+      padding: 0;
+      font-size: smaller;
+      box-shadow: none;
+  }
+
+  progressbar trough {
+      border: none;
+      border-radius: 3px;
+      background-color: shade(@base_color, 0.75);
+  }
+
+  progressbar.horizontal trough {
+      min-width: 32px;
+      min-height: 5px;
+  }
+
+  progressbar.vertical trough {
+      min-width: 5px;
+      min-height: 32px;
+  }
+
+  progressbar progress {
+      background-color: @selected_bg_color;
+      box-shadow: none;
+      border-radius: 3px;      
+  }
+
+  progressbar.horizontal progress {
+      min-height: 5px;
+  }
+
+  progressbar.vertical progress {
+      min-width: 5px;
+  }
+#+end_src
+** levelbar
+Widget that can be used as a level indicator.
+
+levelbar[.discrete]
+╰── trough
+├── block.filled.level-name
+┊
+├── block.empty
+┊
+[[https://docs.gtk.org/gtk4/class.LevelBar.html][link]]
+
+#+begin_src css
+
+  /*************************************************/
+  /*                   LEVELBAR                    */
+  /*************************************************/
+
+  levelbar trough {
+      border: 1px solid @border_color;
+      padding: 3px;
+      border-radius: 5px;
+      background-color: transparent;      
+  }
+
+  levelbar.horizontal block {
+      min-width: 32px;
+      min-height: 5px;
+      border: none;      
+  }
+
+  levelbar.vertical block {
+      min-width: 5px;
+      min-height: 32px;
+      border: none;      
+  }
+
+  levelbar.horizontal.discrete block {
+      margin: 0 2px;
+  }
+
+  levelbar.vertical.discrete block {
+      margin: 2px 0;
+  }
+
+  levelbar block:not(.empty) {
+      background-color: @selected_bg_color;
+      border-radius: 2px;
+  }
+
+  levelbar block.low {
+      background-color: #F27835;
+  }
+
+  levelbar block.high {
+      background-color: @selected_bg_color;
+  }
+
+  levelbar block.full {
+      background-color: #73d216;
+  }
+
+  levelbar block.empty {
+      background-color: shade(@base_color, 0.75);
+  }
 #+end_src
 * Container Widgets
 두 가지 방식을 생각해 볼 수 있다: bottom-up과 top-down.
