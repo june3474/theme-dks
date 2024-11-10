@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="32"
    height="32"
    version="1.1"
    style="enable-background:new"
    id="svg8"
    sodipodi:docname="titlebutton-maximize@2.svg"
-   inkscape:version="0.92.1 r15371">
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <metadata
      id="metadata14">
     <rdf:RDF>
@@ -23,7 +23,6 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -89,16 +88,6 @@
        xlink:href="#linearGradient3587-6-5"
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(0.75424723,0.75424723,-0.75424723,0.75424723,-13.232122,-10.317065)" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient3587-6-5"
-       id="linearGradient4152"
-       x1="7.6759224"
-       y1="1040.3982"
-       x2="7.6657691"
-       y2="1042.2922"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(3.9177134,0,0,4.5053702,-14.563527,-4675.7713)" />
   </defs>
   <sodipodi:namedview
      pagecolor="#ffffff"
@@ -109,24 +98,33 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1920"
-     inkscape:window-height="956"
+     inkscape:window-width="1914"
+     inkscape:window-height="989"
      id="namedview10"
      showgrid="true"
      inkscape:zoom="19.555922"
-     inkscape:cx="7.7845578"
-     inkscape:cy="16.924234"
+     inkscape:cx="7.7725816"
+     inkscape:cy="16.925819"
      inkscape:window-x="0"
-     inkscape:window-y="27"
+     inkscape:window-y="31"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg8"
-     showguides="true">
+     showguides="true"
+     inkscape:showpageshadow="2"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1">
     <inkscape:grid
        type="xygrid"
-       id="grid4498" />
+       id="grid4498"
+       originx="0"
+       originy="0"
+       spacingy="1"
+       spacingx="1"
+       units="px"
+       visible="true" />
   </sodipodi:namedview>
   <path
-     style="opacity:0.7;fill:url(#linearGradient4152);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.13333344px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
+     style="opacity:0.7;fill:#02020f;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:2.13333344px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;enable-background:new"
      d="m 13.85,7.4833318 v 6.4000002 h -6.4 v 4.266667 h 6.4 V 24.55 h 4.266667 v -6.400001 h 6.400001 V 13.883332 H 18.116667 V 7.4833318 Z"
      id="rect3336"
      inkscape:connector-curvature="0" />

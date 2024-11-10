@@ -355,7 +355,10 @@ windowcontrols button.titlebutton.close:backdrop {
 
 headerbar button.titlebutton.close:hover,
 .titlebar button.titlebutton.close:hover,
-windowcontrols button.titlebutton.close:hover {
+windowcontrols button.titlebutton.close:hover,
+headerbar button.titlebutton.close:backdrop:hover,
+.titlebar button.titlebutton.close:backdrop:hover,
+windowcontrols button.titlebutton.close:backdrop:hover {
     background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-close-hover.svg"), url("objects/title-buttons/titlebutton-close-hover@2.svg"));
 }
 
@@ -379,7 +382,10 @@ windowcontrols button.titlebutton.maximize:backdrop {
 
 headerbar button.titlebutton.maximize:hover,
 .titlebar button.titlebutton.maximize:hover,
-windowcontrols button.titlebutton.maximize:hover {
+windowcontrols button.titlebutton.maximize:hover,
+headerbar button.titlebutton.maximize:backdrop:hover,
+.titlebar button.titlebutton.maximize:backdrop:hover,
+windowcontrols button.titlebutton.maximize:backdrop:hover {
     background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize-hover.svg"), url("objects/title-buttons/titlebutton-maximize-hover@2.svg"));
 }
 
@@ -403,7 +409,10 @@ windowcontrols button.titlebutton.minimize:backdrop {
 
 headerbar button.titlebutton.minimize:hover,
 .titlebar button.titlebutton.minimize:hover,
-windowcontrols button.titlebutton.minimize:hover {
+windowcontrols button.titlebutton.minimize:hover,
+headerbar button.titlebutton.minimize:backdrop:hover,
+.titlebar button.titlebutton.minimize:backdrop:hover,
+windowcontrols button.titlebutton.minimize:backdrop:hover {
     background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-minimize-hover.svg"), url("objects/title-buttons/titlebutton-minimize-hover@2.svg"));
 }
 
@@ -427,7 +436,10 @@ windowcontrols button.titlebutton.restore:backdrop {
 
 headerbar button.titlebutton.restore:hover,
 .titlebar button.titlebutton.restore:hover,
-windowcontrols button.titlebutton.restore:hover {
+windowcontrols button.titlebutton.restore:hover,
+headerbar button.titlebutton.restore:backdrop:hover,
+.titlebar button.titlebutton.restore:backdrop:hover,
+windowcontrols button.titlebutton.restore:backdrop:hover {
     background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize-hover.svg"), url("objects/title-buttons/titlebutton-maximize-hover@2.svg"));
 }
 
@@ -4686,21 +4698,20 @@ printdialog paper {
 /*                MESSAGE DIALOG                 */
 /*************************************************/
 
-messagedialog,
-alertdialog {
+messagedialog > decoration,
+alertdialog > decoration {
     background-color: @bg_color;
+    border: 1px solid @border_color;
+    border-radius: 6px;
+    box-shadow: 0  2px 5px 2px rgba(0, 0, 0, 0.4);      
 }
 
 messagedialog .titlebar {
-    /* show titlebar */
-    /*
-  min-height: 24px;
-  background-color: @menubar_bg;
+  min-height: 16px;
+  background-image: linear-gradient(to top, #7e8185 1px, #999ca1 1px, #b5b8be);    
   border-bottom: 1px solid @border_color;
-   */
-
-    /* hide titlebar */
-    min-height: 10px;
+  font-weight: 900;
+  text-shadow: 0 1px alpha(#ffffff, 0.35);    
 }
 
 /*************************************************/

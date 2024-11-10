@@ -416,9 +416,13 @@ minimize, maxmize, close buttons
       background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-close-backdrop.svg"), url("objects/title-buttons/titlebutton-close-backdrop@2.svg"));
   }
 
+
   headerbar button.titlebutton.close:hover,
   .titlebar button.titlebutton.close:hover,
-  windowcontrols > button.close:hover {
+  windowcontrols button.titlebutton.close:hover,
+  headerbar button.titlebutton.close:backdrop:hover,
+  .titlebar button.titlebutton.close:backdrop:hover,
+  windowcontrols button.titlebutton.close:backdrop:hover {
       background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-close-hover.svg"), url("objects/title-buttons/titlebutton-close-hover@2.svg"));
   }
 
@@ -442,7 +446,10 @@ minimize, maxmize, close buttons
 
   headerbar button.titlebutton.maximize:hover,
   .titlebar button.titlebutton.maximize:hover,
-  windowcontrols > button.maximize:hover {
+  windowcontrols button.titlebutton.maximize:hover,
+  headerbar button.titlebutton.maximize:backdrop:hover,
+  .titlebar button.titlebutton.maximize:backdrop:hover,
+  windowcontrols button.titlebutton.maximize:backdrop:hover {
       background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize-hover.svg"), url("objects/title-buttons/titlebutton-maximize-hover@2.svg"));
   }
 
@@ -466,7 +473,10 @@ minimize, maxmize, close buttons
 
   headerbar button.titlebutton.minimize:hover,
   .titlebar button.titlebutton.minimize:hover,
-  windowcontrols > button.minimize:hover {
+  windowcontrols button.titlebutton.minimize:hover,
+  headerbar button.titlebutton.minimize:backdrop:hover,
+  .titlebar button.titlebutton.minimize:backdrop:hover,
+  windowcontrols button.titlebutton.minimize:backdrop:hover {
       background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-minimize-hover.svg"), url("objects/title-buttons/titlebutton-minimize-hover@2.svg"));
   }
 
@@ -490,7 +500,10 @@ minimize, maxmize, close buttons
 
   headerbar button.titlebutton.restore:hover,
   .titlebar button.titlebutton.restore:hover,
-  windowcontrols > button.restore:hover {
+  windowcontrols button.titlebutton.restore:hover,
+  headerbar button.titlebutton.restore:backdrop:hover,
+  .titlebar button.titlebutton.restore:backdrop:hover,
+  windowcontrols button.titlebutton.restore:backdrop:hover {  
       background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize-hover.svg"), url("objects/title-buttons/titlebutton-maximize-hover@2.svg"));
   }
 
@@ -3309,29 +3322,6 @@ columnview[.column-separators][.rich-list][.navigation-sidebar][.data-table]
       border-color: @selected_bg_color;
   }
 #+end_src
-*** listview
-GtkListView presents a large dynamic list of items.
-GtkListView uses its factory to generate one row widget for each visible item and shows them in a linear display, either vertically or horizontally.
-The GtkListView:show-separators property offers a simple way to display separators between the rows.
-
-GtkListView uses a single CSS node named listview. It may carry the .separators style class, when GtkListView:show-separators property is set. Each child widget uses a single CSS node named row. If the GtkListItem:activatable property is set, the corresponding row will have the .activatable style class. For rubberband selection, a node with name rubberband is used.
-
-listview[.separators][.rich-list][.navigation-sidebar][.data-table]
-├── row[.activatable]
-│
-├── row[.activatable]
-│
-┊
-╰── [rubberband]
-[[https://docs.gtk.org/gtk4/class.ListView.html][link]]
-#+begin_src css
-
-  /*************************************************/
-  /*                  LISTVIEW                     */
-  /*************************************************/
-
-
-#+end_src
 *** notebook
 Container whose children are pages switched between using tabs.
 
@@ -3361,169 +3351,95 @@ notebook
   /*************************************************/
 
   notebook {
-      padding: 0px;
+      border: 1px solid @border_color;
+      background-color: @base_color;
   }
 
   notebook > header {
-      padding: 2px;
-      background-color: @bg_color;
+      /* margin을 notebook에 설정하면, xfce4-terminal과 같은 notebook을 사용하는
+         application들에 바로 바로 영향이 나타난다. */
+      margin: 8px 5px;
+      background-color: transparent;
   }
-
-  notebook > header.top,
-  notebook > header.bottom {
-      padding-left: 0;
-      padding-right: 0;
-  }
-
-  notebook > header.left,
-  notebook > header.right {
-      padding-top: 0;
-      padding-bottom: 0;
-  }
-
-  /* gtk3에서 사용했던 header와 stack의 접촉면 border 숨기기는 잘 안됨.
-     stack이 먼저 그려지고 header가 나중에 그려지는 header.bottom이나 header.right는
-     gtk3 방식이 작도하나 반대인 top과 left는 안됨.
-     stack에 header 위치 클래스가 붙어 있으면 좋을텐데 아쉽게도 없음.
-     일단 임시책으로 두 부류를 나눠서 처리함 */
 
   notebook > header.top {
-      /*margin-bottom: -1px; */
-      box-shadow: inset 0 -1px @border_color;
+      padding: 0px 5px 5px 0px;
+      border-bottom: 1px solid @border_color;
+      margin-bottom: 5px;
+  }
+
+  notebook > header.bottom {
+      padding: 5px 5px 0px 0px;
+      border-top: 1px solid @border_color;
+      margin-top: 5px;
   }
 
   notebook > header.left {
-      /* margin-right: -1px; */
-      box-shadow: inset -1px 0 @border_color;
-  }
-
-  notebook > header.bottom {
-      margin-top: -1px;
-      box-shadow: inset 0 1px @border_color;
+      padding: 0px 5px 5px 0px;
+      border-right: 1px solid @border_color;
+      margin-right: 5px;
   }
 
   notebook > header.right {
-      margin-left: -1px;
-      box-shadow: inset 1px 0 @border_color;
+      padding: 0px 0px 5px 5px;
+      border-left: 1px solid @border_color;
+      margin-left: 5px;
   }
 
   notebook > stack:not(:only-child) {
-      background-color: @base_color;
+      margin: 8px 5px;
+      background-color: transparent;
+      /* border: 1px solid @border_color; */
+  }
+
+  notebook > header > tabs > tab {
+      min-width: 20px;
+      min-height: 20px;
+      background-color: transparent;
+      background-image: linear-gradient(to bottom, rgba(255,255,255,1), rgba(228,233,239,1));      
       border: 1px solid @border_color;
+      border-radius: 4px;
+      padding: 4px 10px;
   }
 
-  notebook > header.top + stack:not(:only-child) {
-      border-top: none;
+  notebook > header > tabs > tab:checked,
+  notebook > header > tabs > tab:checked box {
+      color: @selected_fg_color;
+      background-color: @selected_bg_color;
+      background-image: none;
   }
 
-  notebook > header.bottom + stack:not(:only-child) {
-      border-bottom: none;
+  notebook > header > tabs > tab:hover:not(:checked) {
+      background-color: shade(rgba(228,233,239,1), 1.1);
+      background-image: none;      
   }
 
-  notebook > header.right + stack:not(:only-child) {
-      border-right: none;
-  }
-
-  notebook > header.left + stack:not(:only-child) {
-      border-left: none;
-  }
-
-  notebook > header.top {
-      padding-bottom: 0;
-  }
-
+  notebook > header.bottom > tabs > tab,
   notebook > header.top > tabs > tab {
-      padding: 4px 10px;
-      min-width: 20px;
-      min-height: 20px;
-      border: 1px solid @border_color;
-      border-bottom: none;
-      border-radius: 4px 4px 0 0;
+      margin-right: 5px;
   }
 
-  notebook > header.top > tabs > tab + tab {
-      margin-left: -1px;
+  notebook > header.left > tabs > tab,
+  notebook > header.right > tabs > tab {  
+      margin-bottom: 5px;
   }
 
-  notebook > header.bottom {
-      padding-top: 0;
-  }
-
-  notebook > header.bottom > tabs > tab {
-      padding: 4px 10px;
-      min-width: 20px;
-      min-height: 20px;
-      border: 1px solid @border_color;
-      border-top: none;
-      border-radius: 0 0 4px 4px;
-  }
-
-  notebook > header.bottom > tabs > tab + tab {
-      margin-left: -1px;
-  }
-
-  notebook > header.right {
-      padding-left: 0;
-  }
-
-  notebook > header.right > tabs > tab {
-      padding: 6px 10px;
-      min-width: 20px;
-      min-height: 20px;
-      border: 1px solid @border_color;
-      border-left: none;
-      border-radius: 0 4px 4px 0;
-  }
-
-  notebook > header.right > tabs > tab + tab {
-      margin-top: -1px;
-  }
-
-  notebook > header.left {
-      padding-right: 0;
-  }
-
-  notebook > header.left > tabs > tab {
-      padding: 6px 10px;
-      min-width: 20px;
-      min-height: 20px;
-      border: 1px solid @border_color;
-      border-right: none;
-      border-radius: 4px 0 0 4px;
-  }
-
-  notebook > header.left > tabs > tab + tab {
-      margin-top: -1px;
-  }
-
-  notebook > header.bottom > tabs > arrow.up {
-      -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
-  }
-
+  notebook > header.bottom > tabs > arrow.up,
   notebook > header.top > tabs > arrow.up {
       -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
   }
 
-  notebook > header.top > tabs > arrow.up:last-child {
-      margin-left: 2px;
-  }
-
+  notebook > header.top > tabs > arrow.up:last-child,
   notebook > header.bottom > tabs > arrow.up:last-child {
       margin-left: 2px;
   }
 
-  notebook > header.top > tabs > arrow.down {
-      -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
-  }
-
+  notebook > header.top > tabs > arrow.down,
   notebook > header.bottom > tabs > arrow.down {
       -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
   }
 
-  notebook > header.top > tabs > arrow.down:first-child {
-      margin-right: 2px;
-  }
-
+  notebook > header.top > tabs > arrow.down:first-child,
   notebook > header.bottom > tabs > arrow.down:first-child {
       margin-right: 2px;
   }
@@ -3549,10 +3465,7 @@ notebook
   }
 
   notebook > header > tabs > arrow,
-  notebook > header > tabs > arrow:hover {
-      color: @fg_color;
-  }
-
+  notebook > header > tabs > arrow:hover,
   notebook > header > tabs > arrow:active {
       color: @fg_color;
   }
@@ -3561,57 +3474,16 @@ notebook
       color: rgba(37, 37, 37, 0.25);
   }
 
-  notebook > header.top > tabs > tab:hover:not(:checked) {
-      box-shadow: inset 0 -1px @light_border_color;
-  }
-
-  notebook > header.bottom > tabs > tab:hover:not(:checked) {
-      box-shadow: inset 0 1px @light_border_color;
-  }
-
-  notebook > header.left > tabs > tab:hover:not(:checked) {
-      box-shadow: inset -1px 0 @light_border_color;
-  }
-
-  notebook > header.right > tabs > tab:hover:not(:checked) {
-      box-shadow: inset 1px 0 @light_border_color;
-  }
-
-  notebook > header > tabs > tab:hover:not(:checked) {
-      background-color: @button_bg;  /* similar to shade(@bg_color, 1.1) */ }
-
-  notebook > header > tabs > tab:checked {
-      color: @text_color;
-      background-color: @base_color;
-  }
-
-  notebook > header.top > tabs > tab:checked {
-      border-top: 3px solid @selected_bg_color;
-  }
-
-  notebook > header.bottom > tabs > tab:checked {
-      border-bottom: 3px solid @selected_bg_color;
-  }
-
-  notebook > header.left > tabs > tab:checked {
-      border-left: 3px solid @selected_bg_color;
-  }
-
-  notebook > header.right > tabs > tab:checked {
-      border-right: 3px solid @selected_bg_color;
-  }
-
-  /*remove border of button--esp, close button--'s border */
   notebook > header > tabs > tab button {
       min-height: 16px;
-      min-width: 16px;      
+      min-width: 16px;
       background-color: transparent;
       background-image: none;
-      border: 1px solid transparent;
+      border: none;
       border-radius: 50%;
       margin: 0px;
       padding: 0px;
-      opacity: 0.5;
+      opacity: 0.7;
   }
 
   notebook > header > tabs > tab button:dir(ltr) {
@@ -3623,11 +3495,34 @@ notebook
   }
 
   notebook > header > tabs > tab button:hover {
+      background-color: transparent;
+      background-image: none;      
       opacity: 1.0;
   }
+#+end_src
+*** listview
+GtkListView presents a large dynamic list of items.
+GtkListView uses its factory to generate one row widget for each visible item and shows them in a linear display, either vertically or horizontally.
+The GtkListView:show-separators property offers a simple way to display separators between the rows.
+
+GtkListView uses a single CSS node named listview. It may carry the .separators style class, when GtkListView:show-separators property is set. Each child widget uses a single CSS node named row. If the GtkListItem:activatable property is set, the corresponding row will have the .activatable style class. For rubberband selection, a node with name rubberband is used.
+
+listview[.separators][.rich-list][.navigation-sidebar][.data-table]
+├── row[.activatable]
+│
+├── row[.activatable]
+│
+┊
+╰── [rubberband]
+[[https://docs.gtk.org/gtk4/class.ListView.html][link]]
+#+begin_src css
+
+  /*************************************************/
+  /*                  LISTVIEW                     */
+  /*************************************************/
+
 
 #+end_src
-
 *** stackswitcher
 The GtkStackSwitcher shows a row of buttons to switch between GtkStack pages.
 
@@ -4068,18 +3963,25 @@ GtkMessageDialog presents a dialog with some message text.
 
 #+begin_src css
 
-  /*************************************************/
-  /*                MESSAGE DIALOG                 */
-  /*************************************************/
+    /*************************************************/
+    /*                MESSAGE DIALOG                 */
+    /*************************************************/
 
-  messagedialog,
-  alertdialog {
-      /* nothing special */
-  }
+  messagedialog > decoration,
+    alertdialog > decoration {
+        background-color: @bg_color;
+        border: 1px solid @border_color;
+        border-radius: 6px;
+        box-shadow: 0  2px 5px 2px rgba(0, 0, 0, 0.4);      
+    }
 
-  messagedialog .titlebar {
-      min-height: 10px;
-  }
+    messagedialog .titlebar {
+      min-height: 16px;
+      background-image: linear-gradient(to top, #7e8185 1px, #999ca1 1px, #b5b8be);    
+      border-bottom: 1px solid @border_color;
+      font-weight: 900;
+      text-shadow: 0 1px alpha(#ffffff, 0.35);    
+    }
 #+end_src
 * Other Widgets
 ** calendar
