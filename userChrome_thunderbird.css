@@ -114,7 +114,7 @@ toolbarbutton#spacesPinnedButton[open="true"] {
 #tabs-toolbar {
     box-shadow: none !important;
     padding: .3em !important;
-    background: var(--base_color) !important;
+    background: linear-gradient(to right, #1fa2ff, #12d8fa, #a6ffcb) !important;
     border-bottom: 1px solid var(--border_dark) !important;
 }
 
