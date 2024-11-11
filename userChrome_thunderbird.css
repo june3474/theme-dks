@@ -15,8 +15,9 @@
  * @import url("gtk-3.0/colors.css");
 */
 
-
-/****** Global settings ******/
+/*************************************************/
+/*              GLOBAL SETTINGS                  */
+/*************************************************/
 
 *|*:root {
     --fg_color: #202020;
@@ -24,47 +25,41 @@
     --selected_fg: white;
 
     --bg_color: #d4d4d4;
-    --base_color: #f2f2f2;
+    --base_color: #fafafa;
     --selected_bg:#486d9d;
     --selected_bg_dark: #3a3c41;
     --menubar_bg: #b5b8be;
     --foldertree_bg: #dde2e7;
+    --button_bg: #e6e6e6;  /* same as shade(@base_color, 0.95); */
 
     --border_light: rgba(105, 105, 105, 0.3);
     --border_dark: #808080;
 
     --toolbox-border-bottom-color: var(--border_dark) !important;
-    --toolbarbutton-border-radius: 4px !important;
+    --button-border-radius: 4px !important;
+    --toolbar-button-active-background-color: var(--selected_bg_dark) !important;
 
-    --tab_border_radius: 10px;
+    --tab_border_radius: 8px;
     --tab_border_width: 1px;
     --tab_border_style: solid;
 }
 
-tooltip {
-  background-color: red !important; /* 원하는 배경색으로 변경 */
-  color: black !important; /* 텍스트 색 지정 */
-  border: 1px solid #888 !important; /* 툴팁 테두리 색 지정 */
-  padding: 2px 5px !important; /* 툴팁 여백 조정 */
-}
 
-/***** Title Bar *****/
+/*************************************************/
+/*                 TITLEBAR: TOP                 */
+/*************************************************/
 
 #titlebar {
     background: var(--menubar_bg) !important;
     border-radius: 8px 8px 0px 0px !important;   
 }
 
-#titlebar > unified-toolbar {
-    border-bottom: none !important;
-}
+/*** Menu Bar ***/
 
-
-/***** Menu *****/
-
-/* Position Menu Bar above Unified Toolbar */
+/* position Menu Bar above Unified Toolbar */
 #toolbar-menubar {
     order: -1 !important;
+    border-bottom: var(--tab_border_width) solid var(--border_dark) !important;
 }
 
 #mail-menubar > menu {
@@ -80,41 +75,75 @@ menuseparator {
     margin: 4px 10px !important;
 }
 
-/****** Tab bar *****/
 
-/* 위에 search bar와 아래 menubar를 통합하는 box의 아래에 경계선을 그음 */
-#toolbar-menubar {
-    border-bottom: var(--tab_border_width) solid var(--border_dark) !important;
+/*** Unified-Toolbar ***/
+
+#unifiedToolbar {
+    border-bottom: none !important;
+    background: linear-gradient(to top,  #999ca1 1px, #b5b8be) !important;
 }
 
-/* 아래 탭으로 이루어진 toolbar 셋팅
- * 기본적으로(아마 gtk3 셋팅인듯) 아래 쪽에 box shadow를 그리게 되어 있어 취소
- * background-image를 thunar의 toolbar와 일치하여 gradient로 처리
- * 탭 라인 밑에 따라오는 실제 탭과 거리를 설정하려 했지만 안하는게 자연스러운 듯
- */
+/* search entry */
+input[type="search"] {
+    border-radius: 6px !important;
+    background-color: var(--base_color) !important;
+}
+
+/* buttons */
+toolbarbutton#button-appmenu,
+toolbarbutton#spacesPinnedButton {
+    /* background-image: linear-gradient(to bottom, #f1f1f1, #f0f0f0 48%, #eeeeee 50%, #e6e6e6); */
+    background-color: var(--button_bg) !important;
+    border: 1px solid var(--border_dark) !important;
+}
+
+toolbarbutton#button-appmenu:hover,
+toolbarbutton#spacesPinnedButton:hover {
+    background-color: var(--base_color) !important;
+}
+
+toolbarbutton#button-appmenu[open="true"],
+toolbarbutton#spacesPinnedButton[open="true"] {
+    background-color: var(--selected_bg_dark) !important;
+    color: var(--selected_fg) !important;
+}
+
+/*** Tab Bar ***/
+/* 기본적으로(아마 gtk3 셋팅인듯) 아래 쪽에 box shadow를 그리게 되어 있어 취소. */
+
 #tabs-toolbar {
     box-shadow: none !important;
-    background-image: linear-gradient(to top, #7e8185 1px, #999ca1 1px, #b5b8be) !important;
-    /* padding-top: .7rem !important; */
+    padding: .5rem !important;
+    background: var(--base_color) !important;
+    border-bottom: 1px solid var(--border_dark) !important;
 }
 
-tab.tabmail-tab {
+#tabs-toolbar tab.tabmail-tab {
     position: relative !important;
-    border: var(--tab_border_width) solid var(--border_light) !important;
-    border-bottom: none !important;
-    border-radius: var(--tab_border_radius) var(--tab_border_radius) 0px 0px !important;
-}
-
-tab.tabmail-tab[selected="true"] {
     box-sizing: content-box !important;
-    border-color: var(--border_dark) !important;
-    border-top: 3px solid var(--selected_bg) !important;
+    border: var(--tab_border_width) solid var(--border_dark) !important;
+    border-radius: var(--tab_border_radius) !important;
+    margin-right: 0.5rem !important;
 }
 
-/* As of ver 115.14.0, thunderbird doesn't seem to support ::before/after
- * 향후 참고를 위해 남겨둠
- */
+#tabs-toolbar tab.tabmail-tab[selected="true"] vbox.tab-background {
+    background-color: var(--selected_bg) !important;
+}
 
+#tabs-toolbar tab.tabmail-tab[selected="true"] div.tab-content {
+    color: var(--selected_fg) !important;
+    font-weight: bold !important;
+}
+
+/* seleted item, 특히 tab 위 부분에 나타나는 파란 색 라인
+ * developer tool로 보면 별거 없음. 그냥 tab안에 box(?)?
+ */
+.tab-line {
+    background: transparent !important;
+}
+
+/* 향후 참고를 위해 남겨둠 */
+/*
 tab.tabmail-tab[selected="true"]::before {
       content: '';
       position: absolute;
@@ -136,53 +165,26 @@ tab.tabmail-tab[selected="true"]::after {
       bottom: 0;
       border-bottom: var(--tab-border-width) var(--tab-border-style) red;
 }
-
-.tab-background[selected="true"] {
-    background-color: var(--bg_color) !important;
-}
-
-/* seleted item, 특히 tab 위 부분에 나타나는 파란 색 라인
- * developer tool로 보면 별거 없음. 그냥 tab안에 box(?)?
- */
-.tab-line {
-    background: transparent !important;
-}
-
-/****** Tree Views *****/
-
-/* remove zebra striping */
-treechildren::-moz-tree-row {
-    background-color: transparent !important;
-}
-
-treechildren::-moz-tree-row(selected) {
-    background: var(--selected_bg) !important;
-}
-
-treechildren::-moz-tree-cell-text(selected) {
-    color: var(--selected_fg) !important;
-}
-
-treechildren::-moz-tree-twisty {
-    width: 12px !important;
-    -moz-image-region: rect(0px 12px 12px 0px) !important;
-    -moz-appearance: none !important;
-    list-style-type: image !important;
-}
+*/
 
 
-/****** Folder Pane *****/
+/*************************************************/
+/*            FOLDER PANE: LOVER-LEFT            */
+/*************************************************/
+
 #folderPane {
     background-color: var(--foldertree_bg) !important;
     border-right: 1px solid var(--border_dark) !important;
 }
 
-#folderPaneHeaderBar { /* New Message part */
+/* New Message Button Box */
+
+#folderPaneHeaderBar {
     background-color: transparent !important;
     padding: 15px 0px !important;
     /* for border-bottom below to have left/right spaces */
     margin: 0px 10px !important;
-    border-bottom: 1px solid var(--border_light) !important;
+    border-bottom: 2px solid var(--border_light) !important;
 }
 
 #folderPaneWriteMessage {
@@ -190,28 +192,35 @@ treechildren::-moz-tree-twisty {
     background: var(--selected_bg) !important;
 }
 
-#folderTree {
-    /* -moz-appearance는 Mozilla 계열의 브라우저, 특히 Firefox에서 사용되는 CSS 속성입니다.
-       이 속성은 HTML 요소가 운영 체제나 브라우저의 기본 UI 스타일에 맞춰서 렌더링되도록 해 주는
-       기능을 가지고 있어, 요소가 기본 테마에 맞추어 표시됩니다. 이 기능은 Firefox 전용으로,
-       표준 CSS에는 포함되지 않은 비표준 속성입니다.
+#folderTree.sidebar-panel-scroll {
+    /* -moz-appearance는 Mozilla 계열의 브라우저, 특히 Firefox에서 사용되는 CSS 속성임.
+       이 속성은 HTML 요소가 운영 체제나 브라우저의 기본 UI 스타일에 맞춰서 렌더링되도록
+       해 주는 기능을 가지고 있어, 요소가 기본 테마에 맞추어 표시됨.
+       이 기능은 Firefox 전용으로, 표준 CSS에는 포함되지 않은 비표준 속성임.
 
-       none: 기본 스타일을 없앱니다. -moz-appearance 속성을 비활성화하고, 개발자가 지정한
-             스타일만 적용합니다.*/
+       none: 기본 스타일을 없앰. -moz-appearance 속성을 비활성화하고, 개발자가 지정한
+             스타일만 적용함. */
 
     /* -moz-appearance: none !important; */
     color: var(--fg-color) !important;
-    /* padding-top: 10px !important; */
-}
-
-#folderTree.sidebar-panel-scroll::before {
-    content: "djaskfdjs"
+    padding-top: 10px !important;
+    /* Prevents 4px-height gap between #folderPaneHeaderBar and #folderTree */
+    &::before,
+    &::after {
+      content: none !important;
+    }
 }
 
 #folderTree > treechildren::-moz-tree-row(selected),
 #folderTree li[is="folder-tree-row"][aria-selected="true"] > div.container {
     color: var(--selected_fg) !important;
     background: var(--selected_bg_dark) !important;
+}
+
+#folderTree li[is="folder-tree-row"]:not([aria-selected="true"]) > div.container:hover {
+    border-color: transparent !important;
+    /* outline: none !important; */
+    background: transparent !important;
 }
 
 /* folder icon color */
@@ -225,17 +234,51 @@ treechildren::-moz-tree-twisty {
     font-style: italic !important;
 }
 
+/* remove the small indicator before the selected folder */
+:is(ul, ol)[role="tree"] {
+  & .container {
+    &::before {
+      content: none !important;
+    }
+  }
+}
+
 #folderpane_splitter {
     border-inline-start: 1px solid var(--border_dark) !important;
 }
 
 
-/***** MessagesBox *****/
+/*************************************************/
+/*         MESSAGE BOX: LOWER-RIGHT PART         */
+/*************************************************/
+
+/* total # of messages */
+#threadPaneHeaderBar {
+    background: var(--bg_color) !important;
+}
 
 /* Thread tree, 메일 리스트 */
 #threadTree {
     background: var(--base_color) !important;
     border-bottom: 1px solid var(--border_dark) !important;
+
+    /* treeviw header header height */
+    --tree-header-table-height: 1.5em !important;
+}
+
+/* This does NOT work. Use --tree-header-table-height as above
+#threadTree > table.tree-table > thead.tree-table-header {
+    height: 28px !important;
+}
+*/
+
+#threadTree tbody[is="tree-view-table-body"] > tr[is="thread-row"] {
+  height: 1.7em !important;
+}
+
+/* Cards view - adjust line spacing in message list pane */
+table.tree-table > tbody[is="tree-view-table-body"] > tr[is="thread-card"] {
+  height: 50px !important;
 }
 
 #threadpane-splitter, #attachment-splitter {
@@ -250,11 +293,11 @@ treechildren::-moz-tree-twisty {
 
 /* messagepanebox */
 #messagepane {
-    background: var(--base_color) !important;
     border-bottom: 1px solid var(--border_light) !important;
 }
 
 #attachmentView {
+    /* use default */
 }   
 
 /* status bar */
@@ -274,11 +317,4 @@ treechildren::-moz-tree-twisty {
 #view-task-edit-field:hover,
 #unifinder-task-edit-field:hover {
     border-color: var(--fg_color) !important;
-}
-
-.sidebar-panel-scroll {
-    &::before,
-    &::after {
-      content: none !important;
-    }
 }
