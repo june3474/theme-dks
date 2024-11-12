@@ -19,7 +19,7 @@
 /*              GLOBAL SETTINGS                  */
 /*************************************************/
 
-*|*:root {
+:root {
     --fg_color: #202020;
     --text_color: black;
     --selected_fg: white;
@@ -114,7 +114,8 @@ toolbarbutton#spacesPinnedButton[open="true"] {
 #tabs-toolbar {
     box-shadow: none !important;
     padding: .3em !important;
-    background: linear-gradient(to right, #1fa2ff, #12d8fa, #a6ffcb) !important;
+    /*background: linear-gradient(to right, #1fa2ff, #12d8fa, #a6ffcb) !important;*/
+    background: linear-gradient(to right, #1fa2ff, #49b0c2, #aff6ccf0) !important;
     border-bottom: 1px solid var(--border_dark) !important;
 }
 
@@ -170,7 +171,7 @@ tab.tabmail-tab[selected="true"]::after {
 
 
 /*************************************************/
-/*            FOLDER PANE: LOVER-LEFT            */
+/*            FOLDER PANE: LOWER-LEFT            */
 /*************************************************/
 
 #folderPane {
@@ -250,7 +251,7 @@ tab.tabmail-tab[selected="true"]::after {
 
 
 /*************************************************/
-/*         MESSAGE BOX: LOWER-RIGHT PART         */
+/*          MESSAGE BOX: LOWER-RIGHT             */
 /*************************************************/
 
 /* total # of messages */
@@ -304,6 +305,29 @@ table.tree-table > tbody[is="tree-view-table-body"] > tr[is="thread-card"] {
     border-bottom: 1px solid var(--border_light) !important;
 }
 
+/* reply 등 버튼 */
+#msgHeaderView toolbarbutton.message-header-view-button.toolbarbutton-1,
+#msgHeaderView toolbarbutton.toolbarbutton-menubutton-button {
+    background-clip: border-box !important;
+    transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    border: 1px solid @border_dark !important;
+    border-radius: var(--button-border-radius); /* same as the default */
+    padding: 2px 3px !important;
+    background-color: transparent !important;
+    background-image: linear-gradient(to bottom, #f1f1f1, #f0f0f0 48%, #eeeeee 50%, #e6e6e6) !important;
+}
+
+#msgHeaderView toolbarbutton.message-header-view-button.toolbarbutton-1:hover,
+#msgHeaderView toolbarbutton.toolbarbutton-menubutton-button:hover {
+    background-image: none !important;
+    background-color: white !important;
+}
+
+toolbarbutton#hdrReplyAllButton {
+    border-width: 0px !important;
+    padding: 0px !important;
+}
+
 #messageBrowser  {
 }
 
@@ -328,4 +352,29 @@ table.tree-table > tbody[is="tree-view-table-body"] > tr[is="thread-card"] {
 #view-task-edit-field:hover,
 #unifinder-task-edit-field:hover {
     border-color: var(--fg_color) !important;
+}
+
+/*-----------------------------------------------*/
+
+/*************************************************/
+/*                 WIRTE WINDOW                  */
+/*************************************************/
+
+#compose-toolbox > toolbar.chromeclass-menubar {
+    background: var(--menubar_bg) !important;
+    border-bottom: 1px solid var(--border_dark) !important;
+}
+
+#compose-toolbox > toolbar.chromeclass-toolbar {
+    background: linear-gradient(to top,  #999ca1 1px, #b5b8be) !important;
+}
+
+#toAddrInput,
+#msgSubject {
+    background: var(--base_color) !important;
+}
+
+#MsgHeadersToolbar,
+#FormatToolbox {
+    background: var(--bg_color) !important;
 }
