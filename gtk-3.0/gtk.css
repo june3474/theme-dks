@@ -4684,9 +4684,15 @@ window.popup {
 /*               FILECHOOSER                     */
 /*************************************************/
 
-.filechooser.vertical > box.vertical:not(.search-bar) {
+.filechooser.vertical > box.vertical:not(.search-bar),
+filechooser.vertical > box.vertical:not(.search-bar) {
     border-top: 1px solid @light_border_color;
     border-bottom: 1px solid @light_border_color;
+}
+
+.filechooser.vertical > box.vertical:not(.search-bar) scrolledwindow,
+filechooser.vertical > box.vertical:not(.search-bar) scrolledwindow {
+    border: none;
 }
 
 /*************************************************/

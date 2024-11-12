@@ -3247,9 +3247,16 @@ dialog > decoration {
 /*               FILECHOOSER                     */
 /*************************************************/
 
-window.filechooser.vertical > box.vertical:not(.search-bar) {
+window.filechooser.vertical > box.vertical:not(.search-bar),
+filechooser.vertical > box.vertical:not(.search-bar) {
     border-top: 1px solid @light_border_color;
     border-bottom: 1px solid @light_border_color;
+}
+
+window.filechooser.vertical > box.vertical:not(.search-bar) scrolledwindow,
+filechooser.vertical > box.vertical:not(.search-bar) scrolledwindow {
+    border-left: none;
+    border-right: none;
 }
 
 /*************************************************/

@@ -192,6 +192,7 @@ tab.tabmail-tab[selected="true"]::after {
 #folderPaneWriteMessage {
     border-radius: 18px !important;  /* button height 36 */
     background: var(--selected_bg) !important;
+    font-weight: bold !important;
 }
 
 #folderTree.sidebar-panel-scroll {
@@ -323,7 +324,7 @@ table.tree-table > tbody[is="tree-view-table-body"] > tr[is="thread-card"] {
     background-color: white !important;
 }
 
-toolbarbutton#hdrReplyAllButton {
+#msgHeaderView toolbarbutton#hdrReplyAllButton {
     border-width: 0px !important;
     padding: 0px !important;
 }
@@ -369,7 +370,11 @@ toolbarbutton#hdrReplyAllButton {
     background: linear-gradient(to top,  #999ca1 1px, #b5b8be) !important;
 }
 
-#toAddrInput,
+#toAddrInput {
+    background: var(--base_color) !important;
+    padding: 0px 4px !important;
+}
+
 #msgSubject {
     background: var(--base_color) !important;
 }
@@ -377,4 +382,15 @@ toolbarbutton#hdrReplyAllButton {
 #MsgHeadersToolbar,
 #FormatToolbox {
     background: var(--bg_color) !important;
+}
+
+#FormatToolbar > menulist#ParagraphSelect,
+#FormatToolbar > menulist#FontFaceSelect {
+    background-clip: border-box !important;
+    border: 1px solid @border_dark !important;
+    border-radius: var(--button-border-radius); /* same as the default */
+    background-color: transparent !important;
+    background-image: linear-gradient(to bottom, #f1f1f1, #f0f0f0 48%, #eeeeee 50%, #e6e6e6) !important;
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
 }

@@ -5274,15 +5274,21 @@ Container that makes its child scrollable.
 *Sice v4.10*, GtkFileDialog has replaced it.
 
 #+begin_src css
-  
-  /*************************************************/
-  /*               FILECHOOSER                     */
-  /*************************************************/
 
-  .filechooser.vertical > box.vertical:not(.search-bar) {
-      border-top: 1px solid @light_border_color;
-      border-bottom: 1px solid @light_border_color;
-  }
+   /*************************************************/
+   /*               FILECHOOSER                     */
+   /*************************************************/
+
+   .filechooser.vertical > box.vertical:not(.search-bar),
+   filechooser.vertical > box.vertical:not(.search-bar) {
+       border-top: 1px solid @light_border_color;
+       border-bottom: 1px solid @light_border_color;
+   }
+
+   .filechooser.vertical > box.vertical:not(.search-bar) scrolledwindow,
+   filechooser.vertical > box.vertical:not(.search-bar) scrolledwindow {
+       border: none;
+   }
 #+end_src
 **** print dialog
 GtkPrintDialog object collects the arguments that are needed to present a print dialog to the user, such as a title for the dialog and whether it should be modal.
