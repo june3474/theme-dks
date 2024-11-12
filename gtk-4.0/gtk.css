@@ -1802,16 +1802,20 @@ rubberband,
 /*************************************************/
 
 tooltip {
-    border-radius: 5px;
-    text-shadow:  none;
-    background-color: rgba(0,0,0,0.75);
-    background-clip: padding-box;
-    color: white;
-    padding: 6px;
+    padding: 5px 10px;
+    border-radius: 8px;
+    box-shadow: none;
 }
 
-tooltip * {
-    background-color: inherit;
+tooltip.background {
+    background-color: @tooltip_bg;
+    background-clip: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+tooltip > box {
+    border-spacing: 6px;
 }
 
 /*************************************************/
@@ -3259,24 +3263,24 @@ printdialog paper {
 }
 
 /*************************************************/
-  /*                MESSAGE DIALOG                 */
-  /*************************************************/
+/*                MESSAGE DIALOG                 */
+/*************************************************/
 
 messagedialog > decoration,
-  alertdialog > decoration {
-      background-color: @bg_color;
-      border: 1px solid @border_color;
-      border-radius: 6px;
-      box-shadow: 0  2px 5px 2px rgba(0, 0, 0, 0.4);      
-  }
+alertdialog > decoration {
+    background-color: @bg_color;
+    border: 1px solid @border_color;
+    border-radius: 6px;
+    box-shadow: 0  2px 5px 2px rgba(0, 0, 0, 0.4);      
+}
 
-  messagedialog .titlebar {
+messagedialog .titlebar {
     min-height: 16px;
     background-image: linear-gradient(to top, #7e8185 1px, #999ca1 1px, #b5b8be);    
     border-bottom: 1px solid @border_color;
     font-weight: 900;
     text-shadow: 0 1px alpha(#ffffff, 0.35);    
-  }
+}
 
 /*************************************************/
 /*                  CALENDER                     */

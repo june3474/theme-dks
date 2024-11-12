@@ -223,7 +223,7 @@ Button-like widgets like GtkToggleButton, GtkMenuButton, GtkVolumeButton, GtkLoc
       min-height: 16px;
       min-width: 16px;
   }
-  
+
   button {
       background-clip: border-box;      
       min-height: 24px;
@@ -1652,7 +1652,7 @@ combobox
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
   }
-  
+
   combobox button arrow:dir(ltr),
   combobox button arrow:dir(rtl) {
       -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
@@ -2114,17 +2114,21 @@ No css info is available.
   /*************************************************/
 
   tooltip {
-      border-radius: 5px;
-      text-shadow:  none;
-      background-color: rgba(0,0,0,0.75);
-      background-clip: padding-box;
-      color: white;
-      padding: 6px;
+      padding: 5px 10px;
+      border-radius: 8px;
+      box-shadow: none;
   }
 
-  tooltip * {
-      background-color: inherit;
+  tooltip.background {
+      background-color: @tooltip_bg;
+      background-clip: border-box;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: white;
   }
+  
+  tooltip > box {
+      border-spacing: 6px;
+  }  
 #+end_src
 ** accelerator
 #+begin_src css
@@ -3021,24 +3025,24 @@ GtkRevealer has a single CSS node with name revealer. When styling GtkRevealer u
 *** box
 #+begin_src css
 
-    /*************************************************/
-    /*                      BOX                      */
-    /*************************************************/
+  /*************************************************/
+  /*                      BOX                      */
+  /*************************************************/
 
-    box {
-        color: inherit;
-        background-color: inherit;
-    }
+  box {
+      color: inherit;
+      background-color: inherit;
+  }
 
-    box.osd {
-        background-color: @base_color;
-        border-radius: 5px;
-        background-image: linear-gradient(to top, #7e8185 1px, #999ca1 1px, #b5b8be);
-        /* 밝은 색
-          background-image:linear-gradient(to bottom,rgba(242,243,246,1),rgba(213,218,224,1),rgba(213,218,224,1)); */
-        padding: 8px;
-        border: 1px solid @border_color;
-    }
+  box.osd {
+      background-color: @base_color;
+      border-radius: 5px;
+      background-image: linear-gradient(to top, #7e8185 1px, #999ca1 1px, #b5b8be);
+      /* 밝은 색
+        background-image:linear-gradient(to bottom,rgba(242,243,246,1),rgba(213,218,224,1),rgba(213,218,224,1)); */
+      padding: 8px;
+      border: 1px solid @border_color;
+  }
 
 #+end_src
 *** paned
@@ -3963,25 +3967,25 @@ GtkMessageDialog presents a dialog with some message text.
 
 #+begin_src css
 
-    /*************************************************/
-    /*                MESSAGE DIALOG                 */
-    /*************************************************/
+  /*************************************************/
+  /*                MESSAGE DIALOG                 */
+  /*************************************************/
 
   messagedialog > decoration,
-    alertdialog > decoration {
-        background-color: @bg_color;
-        border: 1px solid @border_color;
-        border-radius: 6px;
-        box-shadow: 0  2px 5px 2px rgba(0, 0, 0, 0.4);      
-    }
+  alertdialog > decoration {
+      background-color: @bg_color;
+      border: 1px solid @border_color;
+      border-radius: 6px;
+      box-shadow: 0  2px 5px 2px rgba(0, 0, 0, 0.4);      
+  }
 
-    messagedialog .titlebar {
+  messagedialog .titlebar {
       min-height: 16px;
       background-image: linear-gradient(to top, #7e8185 1px, #999ca1 1px, #b5b8be);    
       border-bottom: 1px solid @border_color;
       font-weight: 900;
       text-shadow: 0 1px alpha(#ffffff, 0.35);    
-    }
+  }
 #+end_src
 * Other Widgets
 ** calendar

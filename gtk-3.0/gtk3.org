@@ -60,30 +60,30 @@ Note: ,* is converted to * when tangled
 *** icon & image
 #+begin_src css
 
-     /* ICON & IMAGE */
+  /* ICON & IMAGE */
 
-     .normal-icons {
-         min-height: 16px;
-         min-width: 16px;
-     }
+  .normal-icons {
+      min-height: 16px;
+      min-width: 16px;
+  }
 
-     .large-icons {
-         min-height: 32px;
-         min-width: 32px;      
-     }
+  .large-icons {
+      min-height: 32px;
+      min-width: 32px;      
+  }
 
-     ,*:checked image,
-     ,*:selected image {
-         color: @selected_fg_color;
-     }
-     
-     image:disabled {
-         opacity: 0.6;
-     }
+  ,*:checked image,
+  ,*:selected image {
+      color: @selected_fg_color;
+  }
 
-     picture:disabled {
-         opacity: 0.6;
-     }
+  image:disabled {
+      opacity: 0.6;
+  }
+
+  picture:disabled {
+      opacity: 0.6;
+  }
 
 #+end_src
 *** typography
@@ -244,7 +244,7 @@ Button-like widgets like GtkToggleButton, GtkMenuButton, GtkVolumeButton, GtkLoc
       min-height: 16px;
       min-width: 16px;
   }
-  
+
   button {
       background-clip: border-box;
       min-height: 24px;
@@ -389,138 +389,138 @@ Button-like widgets like GtkToggleButton, GtkMenuButton, GtkVolumeButton, GtkLoc
 minimize, maxmize, close buttons
 
 #+begin_src css
-        headerbar button.titlebutton,
-        .titlebar button.titlebutton,
-        windowcontrols button.titlebutton {
-            padding: 0;
-            min-width: 22px;
-            min-height: 22px;
-            box-shadow: none;
-            border: none;
-            color: transparent;
-            background-color: transparent;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
+  headerbar button.titlebutton,
+  .titlebar button.titlebutton,
+  windowcontrols button.titlebutton {
+      padding: 0;
+      min-width: 22px;
+      min-height: 22px;
+      box-shadow: none;
+      border: none;
+      color: transparent;
+      background-color: transparent;
+      background-position: center;
+      background-repeat: no-repeat;
+  }
 
-        headerbar button.titlebutton > image,
-        .titlebar button.titlebutton > image,
-        windowcontrols button.titlebutton {
-            /* hide hardcoded default icon */
-            opacity: 0;
-        }
+  headerbar button.titlebutton > image,
+  .titlebar button.titlebutton > image,
+  windowcontrols button.titlebutton {
+      /* hide hardcoded default icon */
+      opacity: 0;
+  }
 
-        /* It doesn't seem possible to use -gtk-icon-source to change icon.
-           Only widgets that call gtk_css_style_snapshot_icon() in their
-           snapshot() can support that, which is not the case of Gtk.Image */
+  /* It doesn't seem possible to use -gtk-icon-source to change icon.
+     Only widgets that call gtk_css_style_snapshot_icon() in their
+     snapshot() can support that, which is not the case of Gtk.Image */
 
-        headerbar button.titlebutton.close,
-        .titlebar button.titlebutton.close,
-        windowcontrols button.titlebutton.close {
-            background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-close.svg"), url("objects/title-buttons/titlebutton-close@2.svg"));
-        }
+  headerbar button.titlebutton.close,
+  .titlebar button.titlebutton.close,
+  windowcontrols button.titlebutton.close {
+      background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-close.svg"), url("objects/title-buttons/titlebutton-close@2.svg"));
+  }
 
-        headerbar button.titlebutton.close:backdrop,
-        .titlebar button.titlebutton.close:backdrop,
-        windowcontrols button.titlebutton.close:backdrop {
-            background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-close-backdrop.svg"), url("objects/title-buttons/titlebutton-close-backdrop@2.svg"));
-        }
+  headerbar button.titlebutton.close:backdrop,
+  .titlebar button.titlebutton.close:backdrop,
+  windowcontrols button.titlebutton.close:backdrop {
+      background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-close-backdrop.svg"), url("objects/title-buttons/titlebutton-close-backdrop@2.svg"));
+  }
 
-        headerbar button.titlebutton.close:hover,
-        .titlebar button.titlebutton.close:hover,
-        windowcontrols button.titlebutton.close:hover,
-        headerbar button.titlebutton.close:backdrop:hover,
-        .titlebar button.titlebutton.close:backdrop:hover,
-        windowcontrols button.titlebutton.close:backdrop:hover {
-            background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-close-hover.svg"), url("objects/title-buttons/titlebutton-close-hover@2.svg"));
-        }
+  headerbar button.titlebutton.close:hover,
+  .titlebar button.titlebutton.close:hover,
+  windowcontrols button.titlebutton.close:hover,
+  headerbar button.titlebutton.close:backdrop:hover,
+  .titlebar button.titlebutton.close:backdrop:hover,
+  windowcontrols button.titlebutton.close:backdrop:hover {
+      background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-close-hover.svg"), url("objects/title-buttons/titlebutton-close-hover@2.svg"));
+  }
 
-        headerbar button.titlebutton.close:active,
-        .titlebar button.titlebutton.close:active,
-        windowcontrols button.titlebutton.close:active {
-            background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-close-active.svg"), url("objects/title-buttons/titlebutton-close-active@2.svg"));
-        }
+  headerbar button.titlebutton.close:active,
+  .titlebar button.titlebutton.close:active,
+  windowcontrols button.titlebutton.close:active {
+      background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-close-active.svg"), url("objects/title-buttons/titlebutton-close-active@2.svg"));
+  }
 
-        headerbar button.titlebutton.maximize,
-        .titlebar button.titlebutton.maximize,
-        windowcontrols button.titlebutton.maximize {
-            background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize.svg"), url("objects/title-buttons/titlebutton-maximize@2.svg"));
-        }
+  headerbar button.titlebutton.maximize,
+  .titlebar button.titlebutton.maximize,
+  windowcontrols button.titlebutton.maximize {
+      background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize.svg"), url("objects/title-buttons/titlebutton-maximize@2.svg"));
+  }
 
-        headerbar button.titlebutton.maximize:backdrop,
-        .titlebar button.titlebutton.maximize:backdrop,
-        windowcontrols button.titlebutton.maximize:backdrop {
-            background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize-backdrop.svg"), url("objects/title-buttons/titlebutton-maximize-backdrop@2.svg"));
-        }
+  headerbar button.titlebutton.maximize:backdrop,
+  .titlebar button.titlebutton.maximize:backdrop,
+  windowcontrols button.titlebutton.maximize:backdrop {
+      background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize-backdrop.svg"), url("objects/title-buttons/titlebutton-maximize-backdrop@2.svg"));
+  }
 
-        headerbar button.titlebutton.maximize:hover,
-        .titlebar button.titlebutton.maximize:hover,
-        windowcontrols button.titlebutton.maximize:hover,
-        headerbar button.titlebutton.maximize:backdrop:hover,
-        .titlebar button.titlebutton.maximize:backdrop:hover,
-        windowcontrols button.titlebutton.maximize:backdrop:hover {
-            background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize-hover.svg"), url("objects/title-buttons/titlebutton-maximize-hover@2.svg"));
-        }
+  headerbar button.titlebutton.maximize:hover,
+  .titlebar button.titlebutton.maximize:hover,
+  windowcontrols button.titlebutton.maximize:hover,
+  headerbar button.titlebutton.maximize:backdrop:hover,
+  .titlebar button.titlebutton.maximize:backdrop:hover,
+  windowcontrols button.titlebutton.maximize:backdrop:hover {
+      background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize-hover.svg"), url("objects/title-buttons/titlebutton-maximize-hover@2.svg"));
+  }
 
-        headerbar button.titlebutton.maximize:active,
-        .titlebar button.titlebutton.maximize:active,
-        windowcontrols button.titlebutton:active {
-            background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize-active.svg"), url("objects/title-buttons/titlebutton-maximize-active@2.svg"));
-        }
+  headerbar button.titlebutton.maximize:active,
+  .titlebar button.titlebutton.maximize:active,
+  windowcontrols button.titlebutton:active {
+      background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize-active.svg"), url("objects/title-buttons/titlebutton-maximize-active@2.svg"));
+  }
 
-        headerbar button.titlebutton.minimize,
-        .titlebar button.titlebutton.minimize,
-        windowcontrols button.titlebutton.minimize {
-            background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-minimize.svg"), url("objects/title-buttons/titlebutton-minimize@2.svg"));
-        }
+  headerbar button.titlebutton.minimize,
+  .titlebar button.titlebutton.minimize,
+  windowcontrols button.titlebutton.minimize {
+      background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-minimize.svg"), url("objects/title-buttons/titlebutton-minimize@2.svg"));
+  }
 
-        headerbar button.titlebutton.minimize:backdrop,
-        .titlebar button.titlebutton.minimize:backdrop,
-        windowcontrols button.titlebutton.minimize:backdrop {
-            background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-minimize-backdrop.svg"), url("objects/title-buttons/titlebutton-minimize-backdrop@2.svg"));
-        }
+  headerbar button.titlebutton.minimize:backdrop,
+  .titlebar button.titlebutton.minimize:backdrop,
+  windowcontrols button.titlebutton.minimize:backdrop {
+      background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-minimize-backdrop.svg"), url("objects/title-buttons/titlebutton-minimize-backdrop@2.svg"));
+  }
 
-        headerbar button.titlebutton.minimize:hover,
-        .titlebar button.titlebutton.minimize:hover,
-        windowcontrols button.titlebutton.minimize:hover,
-        headerbar button.titlebutton.minimize:backdrop:hover,
-        .titlebar button.titlebutton.minimize:backdrop:hover,
-        windowcontrols button.titlebutton.minimize:backdrop:hover {
-            background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-minimize-hover.svg"), url("objects/title-buttons/titlebutton-minimize-hover@2.svg"));
-        }
+  headerbar button.titlebutton.minimize:hover,
+  .titlebar button.titlebutton.minimize:hover,
+  windowcontrols button.titlebutton.minimize:hover,
+  headerbar button.titlebutton.minimize:backdrop:hover,
+  .titlebar button.titlebutton.minimize:backdrop:hover,
+  windowcontrols button.titlebutton.minimize:backdrop:hover {
+      background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-minimize-hover.svg"), url("objects/title-buttons/titlebutton-minimize-hover@2.svg"));
+  }
 
-        headerbar button.titlebutton.minimize:active,
-        .titlebar button.titlebutton.minimize:active,
-        windowcontrols button.titlebutton.minimize:active {
-            background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-minimize-active.svg"), url("objects/title-buttons/titlebutton-minimize-active@2.svg"));
-        }
+  headerbar button.titlebutton.minimize:active,
+  .titlebar button.titlebutton.minimize:active,
+  windowcontrols button.titlebutton.minimize:active {
+      background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-minimize-active.svg"), url("objects/title-buttons/titlebutton-minimize-active@2.svg"));
+  }
 
-        headerbar button.titlebutton.restore,
-        .titlebar button.titlebutton.restore,
-        windowcontrols button.titlebutton.restore {
-            background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize.svg"), url("objects/title-buttons/titlebutton-maximize@2.svg"));
-        }
+  headerbar button.titlebutton.restore,
+  .titlebar button.titlebutton.restore,
+  windowcontrols button.titlebutton.restore {
+      background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize.svg"), url("objects/title-buttons/titlebutton-maximize@2.svg"));
+  }
 
-        headerbar button.titlebutton.restore:backdrop,
-        .titlebar button.titlebutton.restore:backdrop,
-        windowcontrols button.titlebutton.restore:backdrop {
-            background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize-backdrop.svg"), url("objects/title-buttons/titlebutton-maximize-backdrop@2.svg"));
-        }
+  headerbar button.titlebutton.restore:backdrop,
+  .titlebar button.titlebutton.restore:backdrop,
+  windowcontrols button.titlebutton.restore:backdrop {
+      background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize-backdrop.svg"), url("objects/title-buttons/titlebutton-maximize-backdrop@2.svg"));
+  }
 
-        headerbar button.titlebutton.restore:hover,
-        .titlebar button.titlebutton.restore:hover,
-        windowcontrols button.titlebutton.restore:hover,
-        headerbar button.titlebutton.restore:backdrop:hover,
-        .titlebar button.titlebutton.restore:backdrop:hover,
-        windowcontrols button.titlebutton.restore:backdrop:hover {
-            background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize-hover.svg"), url("objects/title-buttons/titlebutton-maximize-hover@2.svg"));
-        }
+  headerbar button.titlebutton.restore:hover,
+  .titlebar button.titlebutton.restore:hover,
+  windowcontrols button.titlebutton.restore:hover,
+  headerbar button.titlebutton.restore:backdrop:hover,
+  .titlebar button.titlebutton.restore:backdrop:hover,
+  windowcontrols button.titlebutton.restore:backdrop:hover {
+      background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize-hover.svg"), url("objects/title-buttons/titlebutton-maximize-hover@2.svg"));
+  }
 
-        headerbar button.titlebutton.restore:active,
-        .titlebar button.titlebutton.restore:active,
-        windowcontrols button.titlebutton.restore:active {
-            background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize-active.svg"), url("objects/title-buttons/titlebutton-maximize-active@2.svg"));
-        }
+  headerbar button.titlebutton.restore:active,
+  .titlebar button.titlebutton.restore:active,
+  windowcontrols button.titlebutton.restore:active {
+      background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize-active.svg"), url("objects/title-buttons/titlebutton-maximize-active@2.svg"));
+  }
 #+end_src
 **** button.sidebar
 #+begin_src css
@@ -1554,7 +1554,7 @@ scale[.fine-tune][.marks-before][.marks-after]
       border-radius: 2.5px;
       background-color: @selected_bg_color;
   }
-  
+
   scale highlight:disabled {
       background-color: @selected_bg_dark;
   }
@@ -1841,16 +1841,21 @@ No css info is available.
   /*                  TOOLTIP                      */
   /*************************************************/
 
-  tooltip > decoration {
-      background-color: rgba(0,0,0,0.7);
-      border-radius: 5px;
-      text-shadow:  none;
-      padding: 3px 5px;
+  tooltip {
+      padding: 5px 10px;
+      border-radius: 8px;
+      box-shadow: none;
+  }
+
+  tooltip.background {
+      background-color: @tooltip_bg;
+      background-clip: border-box;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: white;
   }
 
   tooltip * {
-      color: white;
-      background-color: inherit;
+      background-color: transparent;
   }
 #+end_src
 ** accelerator
@@ -2133,7 +2138,7 @@ GtkPopoverMenu has menu items with name button and class .model.
       margin-left:3px;
       margin-right: 6px;
   }
-  
+
   modelbutton > arrow:hover {
       color: @selected_fg_color;
   }
@@ -2291,7 +2296,7 @@ menuitem
       margin-left:3px;
       margin-right: 6px;
   }
-  
+
   menuitem > arrow:hover {
       color: @selected_fg_color;
   }
@@ -4400,7 +4405,7 @@ GtkRevealer has a single CSS node with name revealer. When styling GtkRevealer u
       background-color: @base_color;
       border-radius: 5px;
       background-image: linear-gradient(to top, #7e8185 1px, #999ca1 1px, #b5b8be);
-        /* 밝은 색
+      /* 밝은 색
           background-image:linear-gradient(to bottom,rgba(242,243,246,1),rgba(213,218,224,1),rgba(213,218,224,1)); */
       padding: 8px;
       border: 1px solid @border_color;
@@ -5314,11 +5319,11 @@ GtkMessageDialog presents a dialog with some message text.
   }
 
   messagedialog .titlebar {
-    min-height: 16px;
-    background-image: linear-gradient(to top, #7e8185 1px, #999ca1 1px, #b5b8be);    
-    border-bottom: 1px solid @border_color;
-    font-weight: 900;
-    text-shadow: 0 1px alpha(#ffffff, 0.35);    
+      min-height: 16px;
+      background-image: linear-gradient(to top, #7e8185 1px, #999ca1 1px, #b5b8be);    
+      border-bottom: 1px solid @border_color;
+      font-weight: 900;
+      text-shadow: 0 1px alpha(#ffffff, 0.35);    
   }
 #+end_src
 * Other Widgets

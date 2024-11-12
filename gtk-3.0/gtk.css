@@ -1562,16 +1562,21 @@ rubberband,
 /*                  TOOLTIP                      */
 /*************************************************/
 
-tooltip > decoration {
-    background-color: rgba(0,0,0,0.7);
-    border-radius: 5px;
-    text-shadow:  none;
-    padding: 3px 5px;
+tooltip {
+    padding: 5px 10px;
+    border-radius: 8px;
+    box-shadow: none;
+}
+
+tooltip.background {
+    background-color: @tooltip_bg;
+    background-clip: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
 }
 
 tooltip * {
-    color: white;
-    background-color: inherit;
+    background-color: transparent;
 }
 
 /*************************************************/
@@ -3944,7 +3949,7 @@ box.osd {
     background-color: @base_color;
     border-radius: 5px;
     background-image: linear-gradient(to top, #7e8185 1px, #999ca1 1px, #b5b8be);
-      /* 밝은 색
+    /* 밝은 색
         background-image:linear-gradient(to bottom,rgba(242,243,246,1),rgba(213,218,224,1),rgba(213,218,224,1)); */
     padding: 8px;
     border: 1px solid @border_color;
@@ -4707,11 +4712,11 @@ alertdialog > decoration {
 }
 
 messagedialog .titlebar {
-  min-height: 16px;
-  background-image: linear-gradient(to top, #7e8185 1px, #999ca1 1px, #b5b8be);    
-  border-bottom: 1px solid @border_color;
-  font-weight: 900;
-  text-shadow: 0 1px alpha(#ffffff, 0.35);    
+    min-height: 16px;
+    background-image: linear-gradient(to top, #7e8185 1px, #999ca1 1px, #b5b8be);    
+    border-bottom: 1px solid @border_color;
+    font-weight: 900;
+    text-shadow: 0 1px alpha(#ffffff, 0.35);    
 }
 
 /*************************************************/

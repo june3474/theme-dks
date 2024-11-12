@@ -40,6 +40,7 @@
 @define-color menubar_bg #b5b8be;
 @define-color panel_bg #a1a8af;  /* for dark, consider #344952 or #263e50 */
 @define-color selected_bg_dark #3a3c41;
+@define-color tooltip_bg #333333;
 @define-color button_bg #e6e6e6;  /* same as shade(@base_color, 0.95); */
 @define-color hover_bg shade(@base_color, 0.95);
 @define-color button_active_bg #646772;
