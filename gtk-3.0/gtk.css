@@ -1576,7 +1576,7 @@ tooltip.background {
 }
 
 tooltip * {
-    background-color: transparent;
+    background-color: @tooltip_bg;
 }
 
 /*************************************************/

@@ -29,3 +29,5 @@ menuseparator {
 #appMenu-popup toolbarbutton {
     --arrowpanel-menuitem-padding: 4px 8px;
 }
+
+/* tooltip follows the gtk theme, i.e., gtk.css */

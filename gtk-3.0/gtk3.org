@@ -1855,7 +1855,7 @@ No css info is available.
   }
 
   tooltip * {
-      background-color: transparent;
+      background-color: @tooltip_bg;
   }
 #+end_src
 ** accelerator

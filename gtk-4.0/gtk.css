@@ -1818,6 +1818,10 @@ tooltip > box {
     border-spacing: 6px;
 }
 
+tooltip * {
+    background-color: @tooltip_bg;
+}
+
 /*************************************************/
 /*                 ACCELERATOR                   */
 /*************************************************/
@@ -3255,8 +3259,7 @@ filechooser.vertical > box.vertical:not(.search-bar) {
 
 window.filechooser.vertical > box.vertical:not(.search-bar) scrolledwindow,
 filechooser.vertical > box.vertical:not(.search-bar) scrolledwindow {
-    border-left: none;
-    border-right: none;
+    border: none;
 }
 
 /*************************************************/
