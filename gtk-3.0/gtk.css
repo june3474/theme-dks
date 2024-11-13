@@ -4632,6 +4632,10 @@ scrolledwindow junction:dir(rtl) {
     border-image-slice: 0 1 0 0;
 }
 
+/*************************************************/
+/*                    FRAME                      */
+/*************************************************/
+
 frame.border-inset > border {
     border: inset 1px @border_color;
 }
@@ -4646,6 +4650,15 @@ frame.border-groove > border {
 
 frame.border-ridge > border {
     border: ridge 2px @border_color;
+}
+
+/*************************************************/
+/*                 VIEWPORT                      */
+/*************************************************/
+
+viewport {
+    /* background-color makes black outline. dunno why! */
+    background-image: linear-gradient(to bottom, @base_color, @base_color);
 }
 
 /*************************************************/

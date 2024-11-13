@@ -3913,6 +3913,41 @@ If both scrollbars are visible, the area where they meet is drawn with a subnode
   }
 
 #+end_src
+*** frame
+#+begin_src css
+
+  /*************************************************/
+  /*                    FRAME                      */
+  /*************************************************/
+  
+  frame.border-inset > border {
+      border: inset 1px @border_color;
+  }
+
+  frame.border-outset > border {
+      border: outset 1px @border_color;
+  }
+
+  frame.border-groove > border {
+      border: groove 2px @border_color;
+  }
+
+  frame.border-ridge > border {
+      border: ridge 2px @border_color;
+  }
+#+end_src
+*** viewport
+#+begin_src css
+
+  /*************************************************/
+  /*                 VIEWPORT                      */
+  /*************************************************/
+
+  viewport {
+      /* background-color makes black outline. dunno why! */
+      background-image: linear-gradient(to bottom, @base_color, @base_color);
+  }
+#+end_src
 *** dialog
 #+begin_src css
   /*************************************************/

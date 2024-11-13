@@ -3230,6 +3230,35 @@ scrolledwindow > junction:dir(rtl) {
 }
 
 /*************************************************/
+/*                    FRAME                      */
+/*************************************************/
+
+frame.border-inset > border {
+    border: inset 1px @border_color;
+}
+
+frame.border-outset > border {
+    border: outset 1px @border_color;
+}
+
+frame.border-groove > border {
+    border: groove 2px @border_color;
+}
+
+frame.border-ridge > border {
+    border: ridge 2px @border_color;
+}
+
+/*************************************************/
+/*                 VIEWPORT                      */
+/*************************************************/
+
+viewport {
+    /* background-color makes black outline. dunno why! */
+    background-image: linear-gradient(to bottom, @base_color, @base_color);
+}
+
+/*************************************************/
 /*                    DIALOG                     */
 /*************************************************/
 

@@ -5217,6 +5217,11 @@ Container that makes its child scrollable.
 #+end_src
 *** frame
 #+begin_src css
+
+  /*************************************************/
+  /*                    FRAME                      */
+  /*************************************************/
+  
   frame.border-inset > border {
       border: inset 1px @border_color;
   }
@@ -5231,6 +5236,18 @@ Container that makes its child scrollable.
 
   frame.border-ridge > border {
       border: ridge 2px @border_color;
+  }
+#+end_src
+*** viewport
+#+begin_src css
+
+  /*************************************************/
+  /*                 VIEWPORT                      */
+  /*************************************************/
+
+  viewport {
+      /* background-color makes black outline. dunno why! */
+      background-image: linear-gradient(to bottom, @base_color, @base_color);
   }
 #+end_src
 *** dialog & other windows
