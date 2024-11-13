@@ -1,6 +1,6 @@
 /*
- * This file is for thunderbird.
- * Put this file in <profile folder>/chrome/ directory 
+ * For thunderbird 128.
+ * Rename this file to userChrom.css and put in <profile folder>/chrome/ directory.
  */
 
 /*
@@ -13,7 +13,12 @@
 /*
  * This doesn't seems to work. why?
  * @import url("gtk-3.0/colors.css");
-*/
+ */
+
+/*
+ * tooltip follows the gtk theme, i.e., gtk.css
+ */
+
 
 /*************************************************/
 /*              GLOBAL SETTINGS                  */
@@ -109,13 +114,12 @@ toolbarbutton#spacesPinnedButton[open="true"] {
 }
 
 /*** Tab Bar ***/
-/* 기본적으로 아래 쪽에 box shadow를 그리게 되어 있어 취소 필요. */
 
 #tabs-toolbar {
-    box-shadow: none !important;
+    box-shadow: none !important; /* 기본적으로 그리게 되어 있는 box shadow를 취소 */
     padding: .3em !important;
     /*background: linear-gradient(to right, #1fa2ff, #12d8fa, #a6ffcb) !important;*/
-    background: linear-gradient(to right, #1fa2ff, #49b0c2, #aff6ccf0) !important;
+    background: linear-gradient(to right, #2193b0, #49b0c2, #aff6ccf0) !important;
     border-bottom: 1px solid var(--border_dark) !important;
 }
 
@@ -192,6 +196,7 @@ tab.tabmail-tab[selected="true"]::after {
 #folderPaneWriteMessage {
     border-radius: 18px !important;  /* button height 36 */
     background: var(--selected_bg) !important;
+    font-weight: bold !important;
 }
 
 #folderTree.sidebar-panel-scroll {
@@ -206,7 +211,8 @@ tab.tabmail-tab[selected="true"]::after {
     /* -moz-appearance: none !important; */
     color: var(--fg-color) !important;
     padding-top: 10px !important;
-    /* Prevents 4px-height gap between #folderPaneHeaderBar and #folderTree */
+    /* Prevents 4px-height gap between #folderPaneHeaderBar and #folderTree
+       mozilla는 아마도 내부적으로 scss로 preprocess를 하는 듯 */
     &::before,
     &::after {
       content: none !important;
@@ -323,7 +329,7 @@ table.tree-table > tbody[is="tree-view-table-body"] > tr[is="thread-card"] {
     background-color: white !important;
 }
 
-toolbarbutton#hdrReplyAllButton {
+#msgHeaderView toolbarbutton#hdrReplyAllButton {
     border-width: 0px !important;
     padding: 0px !important;
 }
@@ -354,11 +360,13 @@ toolbarbutton#hdrReplyAllButton {
     border-color: var(--fg_color) !important;
 }
 
-/*-----------------------------------------------*/
+/*-----------------------------------------------
+            WIRTE WINDOW - 메일 작성화면
+ ----------------------------------------------*/
 
-/*************************************************/
-/*                 WIRTE WINDOW                  */
-/*************************************************/
+/* 메일 작성화면에서 developer tool을 사용하려면
+   툴바 오른쪽에 있는 화면 분할 모양의 "Select an iframe" 버튼을 사용해야 한다.
+   https://stackoverflow.com/questions/63289427/using-developer-tools-on-a-thuderbird-add-on-dialog */
 
 #compose-toolbox > toolbar.chromeclass-menubar {
     background: var(--menubar_bg) !important;
@@ -369,7 +377,11 @@ toolbarbutton#hdrReplyAllButton {
     background: linear-gradient(to top,  #999ca1 1px, #b5b8be) !important;
 }
 
-#toAddrInput,
+#toAddrInput {
+    background: var(--base_color) !important;
+    padding: 0px 4px !important;
+}
+
 #msgSubject {
     background: var(--base_color) !important;
 }
@@ -377,4 +389,15 @@ toolbarbutton#hdrReplyAllButton {
 #MsgHeadersToolbar,
 #FormatToolbox {
     background: var(--bg_color) !important;
+}
+
+#FormatToolbar > menulist#ParagraphSelect,
+#FormatToolbar > menulist#FontFaceSelect {
+    background-clip: border-box !important;
+    border: 1px solid @border_dark !important;
+    border-radius: var(--button-border-radius); /* same as the default */
+    background-color: transparent !important;
+    background-image: linear-gradient(to bottom, #f1f1f1, #f0f0f0 48%, #eeeeee 50%, #e6e6e6) !important;
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
 }

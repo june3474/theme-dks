@@ -2125,9 +2125,13 @@ No css info is available.
       border: 1px solid rgba(255, 255, 255, 0.1);
       color: white;
   }
-  
+
   tooltip > box {
       border-spacing: 6px;
+  }
+
+  tooltip * {
+      background-color: @tooltip_bg;
   }  
 #+end_src
 ** accelerator
@@ -3935,14 +3939,20 @@ If both scrollbars are visible, the area where they meet is drawn with a subnode
 *Sice v4.10*, GtkFileDialog has replaced it.
 
 #+begin_src css
-  
+
   /*************************************************/
   /*               FILECHOOSER                     */
   /*************************************************/
 
-  window.filechooser.vertical > box.vertical:not(.search-bar) {
+  window.filechooser.vertical > box.vertical:not(.search-bar),
+  filechooser.vertical > box.vertical:not(.search-bar) {
       border-top: 1px solid @light_border_color;
       border-bottom: 1px solid @light_border_color;
+  }
+
+  window.filechooser.vertical > box.vertical:not(.search-bar) scrolledwindow,
+  filechooser.vertical > box.vertical:not(.search-bar) scrolledwindow {
+      border: none;
   }
 #+end_src
 **** print dialog
