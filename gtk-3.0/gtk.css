@@ -42,7 +42,26 @@
     color: @link_visited;
 }
 
-/* ICON & IMAGE */
+/* TEXT */
+
+text {
+    background: inherit;
+}
+
+/* IMAGE & ICON */
+
+image:disabled {
+    opacity: 0.6;
+}
+
+*:checked image,
+*:selected image {
+    color: @selected_fg_color;
+}
+
+picture:disabled {
+    opacity: 0.6;
+}
 
 .normal-icons {
     min-height: 16px;
@@ -52,19 +71,6 @@
 .large-icons {
     min-height: 32px;
     min-width: 32px;      
-}
-
-*:checked image,
-*:selected image {
-    color: @selected_fg_color;
-}
-
-image:disabled {
-    opacity: 0.6;
-}
-
-picture:disabled {
-    opacity: 0.6;
 }
 
 /* Typography */

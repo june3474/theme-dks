@@ -57,10 +57,29 @@ Note: ,* is converted to * when tangled
       color: @link_visited;
   }
 #+end_src
-*** icon & image
+*** text, image & icon
 #+begin_src css
 
-  /* ICON & IMAGE */
+  /* TEXT */
+
+  text {
+      background: inherit;
+  }
+
+  /* IMAGE & ICON */
+  
+  image:disabled {
+      opacity: 0.6;
+  }
+
+  ,*:checked image,
+  ,*:selected image {
+      color: @selected_fg_color;
+  }
+
+  picture:disabled {
+      opacity: 0.6;
+  }
 
   .normal-icons {
       min-height: 16px;
@@ -70,19 +89,6 @@ Note: ,* is converted to * when tangled
   .large-icons {
       min-height: 32px;
       min-width: 32px;      
-  }
-
-  ,*:checked image,
-  ,*:selected image {
-      color: @selected_fg_color;
-  }
-
-  image:disabled {
-      opacity: 0.6;
-  }
-
-  picture:disabled {
-      opacity: 0.6;
   }
 
 #+end_src

@@ -23,14 +23,16 @@
     text-decoration: underline;
 }
 
-/* ICON & IMAGE */
+/* TEXT */
 
-.normal-icons {
-    -gtk-icon-size: 16px;
+text {
+    background: inherit;
 }
 
-.large-icons {
-    -gtk-icon-size: 32px;
+/* IMAGE & ICON */
+
+image:disabled {
+    opacity: 0.6;
 }
 
 *:checked image,
@@ -38,12 +40,18 @@
     color: @selected_fg_color;
 }
 
-image:disabled {
-    -gtk-icon-filter: opacity(0.7);
+picture:disabled {
+    opacity: 0.6;
 }
 
-picture:disabled {
-    opacity: 0.7;
+.normal-icons {
+    min-height: 16px;
+    min-width: 16px;
+}
+
+.large-icons {
+    min-height: 32px;
+    min-width: 32px;      
 }
 
 /* Typography */
