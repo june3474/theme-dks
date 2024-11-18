@@ -39,11 +39,11 @@
 }
 
 image:disabled {
-    -gtk-icon-filter: opacity(0.6);
+    -gtk-icon-filter: opacity(0.7);
 }
 
 picture:disabled {
-    opacity: 0.6;
+    opacity: 0.7;
 }
 
 /* Typography */
@@ -125,7 +125,7 @@ label {
     background-color: transparent;
 }
 
-label selection {
+label:not(:selected) selection {
     color: @selected_fg_color;
     text-shadow:  0 -1px alpha(@selected_fg_color, 0.04),
                   -1px  0px alpha(@fg_color, 0.05),
@@ -166,6 +166,7 @@ label.separator {
 button {
     background-clip: border-box;      
     min-height: 24px;
+    min-width: 24px;
     transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
     font-weight: normal;
     border: 1px solid @border_color;
@@ -249,15 +250,16 @@ button.file separator {
 /* text button */
 
 button.text-button:not(.image-button) {
-    padding-left: 10px;
-    padding-right: 10px;
+   /* nothing to add */
 }
 
 /* image button */
 
 button.image-button:not(.text-button) {
-    /* make it square */ 
+    /* If not min-height/width, Adwaita would override. */ 
+    min-height: 24px;
     min-width: 24px;
+    /* make it square */
     padding: 3px;
 }
 
@@ -269,27 +271,22 @@ button.image-button.radio:checked image {
 
 /* text & image button */
 
+button.image-text-button,
 button.text-button.image-button {
-    padding-left: 6px;
-    padding-right: 6px;
+    /* nothing to add */
 }
 
-button.text-button.image-button label:first-child {
-    padding-left: 8px;
-    padding-right: 2px;
+button.image-text-button image + label,
+button.text-button.image-button image + label {
+    margin-left: 5px;
 }
 
-button.text-button.image-button label:last-child {
-    padding-right: 8px;
-    padding-left: 2px;
+button.image-text-button label + image,
+button.text-button.image-button label + image {
+    margin-left: 5px;
 }
 
-button.text-button.image-button label:only-child {
-    border-radius: 5px;
-    padding-left: 8px;
-    padding-right: 8px;
-}
-
+button.image-text-button.popup
 button.text-button.image-button.popup {
     padding-right: 8px;
     padding-left: 8px;
@@ -1001,7 +998,7 @@ spinbutton.vertical > button.down {
 /*************************************************/
 
 menubutton {
-    -gtk-icon-source: -gtk-scaled(url("objects/other/open-menu-symbolic.svg"));
+    -gtk-icon-source: -gtk-icontheme("open-menu-symbolic");
     margin: 0px 10px;
 }
 
@@ -1940,6 +1937,10 @@ list > row:focus {
     color: @selected_fg_color;
 }
 
+list > row:focus label {
+      color: @selected_fg_color;
+}
+
 list separator.horizontal {
     margin: 0px;
 }
@@ -2044,12 +2045,14 @@ modelbutton accelerator {
     margin-left: 20px;
 }
 
+/*
 modelbutton:hover label,
 modelbutton:hover image,
 popover.menu button.model:hover label,
 popover.menu button.model:hover image {
     color: @selected_fg_color;
 }
+*/
 
 modelbutton check {
     text-shadow: none;
@@ -2110,6 +2113,24 @@ headerbar .subtitle {
 /* HEADERBAR BUTTON */
 
 headerbar button {
+    -gtk-icon-style: symbolic;
+}
+
+headerbar button.image-button:not(.text-button):not(.image-text-button)  {
+    background-color: transparent;
+    background-image: none;
+    border: none;
+}
+
+/* re-color symbolic icon */
+headerbar button.image-button:hover {
+    color: white;
+}      
+
+headerbar button.image-button:checked,
+headerbar button.image-button:checked:hover,
+headerbar button.image-button:checked image {
+    color: @selected_bg_color;
 }
 
 /*************************************************/
@@ -2173,7 +2194,7 @@ box.toolbar {
 }
 
 box.toolbar > button.image-button {
-    /* nothing to add */
+    -gtk-icon-size: 20px;
 }
 
 box.toolbar separator {
@@ -2403,11 +2424,17 @@ actionbar {
 /*************************************************/
 
 searchbar {
-    /*background-color: #ebf0f4;
+  /*background-color: #ebf0f4;
   border-style: solid;
   border-color: @light_border_color;
-  border-width: 0 0 1px;*/
-    padding: 3px;
+  border-width: 0 0 1px;
+  padding: 3px; */
+}
+
+/* searchbar나 revealer에 padding/margin을 주게 되면 searchbar가 활성화
+   되지 않은 상태에서 padding/margin만큼 빈 공간이 보여지게 된다 */ 
+searchbar > revealer entry {
+    margin: 3px 0px;
 }
 
 /*************************************************/

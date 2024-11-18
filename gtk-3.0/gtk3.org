@@ -199,7 +199,7 @@ label
       background-color: inherit;
   }
 
-  label selection {
+  label:not(:selected) selection {
       color: @selected_fg_color;
       text-shadow:  0 -1px alpha(@selected_fg_color, 0.04),
                     -1px  0px alpha(@fg_color, 0.05),
@@ -248,6 +248,7 @@ Button-like widgets like GtkToggleButton, GtkMenuButton, GtkVolumeButton, GtkLoc
   button {
       background-clip: border-box;
       min-height: 24px;
+      min-width: 24px;
       transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
       font-weight: normal;
       border: 1px solid @border_color;
@@ -333,8 +334,7 @@ Button-like widgets like GtkToggleButton, GtkMenuButton, GtkVolumeButton, GtkLoc
   /* text button */
 
   button.text-button:not(.image-button) {
-      padding-left: 10px;
-      padding-right: 10px;
+      /* nothing to add */
   }
 #+end_src
 **** image button
@@ -344,7 +344,6 @@ Button-like widgets like GtkToggleButton, GtkMenuButton, GtkVolumeButton, GtkLoc
 
   button.image-button:not(.text-button) {
       /* make it square */ 
-      min-width: 24px;
       padding: 3px;
   }
 
@@ -359,27 +358,22 @@ Button-like widgets like GtkToggleButton, GtkMenuButton, GtkVolumeButton, GtkLoc
 
   /* text & image button */
 
+  button.image-text-button,
   button.text-button.image-button {
-      padding-left: 6px;
-      padding-right: 6px;
+      /* nothing to add */
   }
 
-  button.text-button.image-button label:first-child {
-      padding-left: 8px;
-      padding-right: 2px;
+  button.image-text-button image + label,
+  button.text-button.image-button image + label {
+      margin-left: 5px;
   }
 
-  button.text-button.image-button label:last-child {
-      padding-right: 8px;
-      padding-left: 2px;
+  button.image-text-button label + image,
+  button.text-button.image-button label + image {
+      margin-left: 5px;
   }
 
-  button.text-button.image-button label:only-child {
-      border-radius: 5px;
-      padding-left: 8px;
-      padding-right: 8px;
-  }
-
+  button.image-text-button.popup
   button.text-button.image-button.popup {
       padding-right: 8px;
       padding-left: 8px;
@@ -389,6 +383,9 @@ Button-like widgets like GtkToggleButton, GtkMenuButton, GtkVolumeButton, GtkLoc
 minimize, maxmize, close buttons
 
 #+begin_src css
+
+  /* titlebutton */
+
   headerbar button.titlebutton,
   .titlebar button.titlebutton,
   windowcontrols button.titlebutton {
@@ -1854,7 +1851,7 @@ No css info is available.
       color: white;
   }
 
-  tooltip * {
+  tooltip box {
       background-color: @tooltip_bg;
   }
 #+end_src
@@ -2002,6 +1999,10 @@ list[.separators][.rich-list][.navigation-sidebar][.boxed-list]
       background-color: @selected_bg_color;
       color: @selected_fg_color;
   }
+
+  list > row:focus label {
+      color: @selected_fg_color;
+  }  
 
   list separator.horizontal {
       margin: 0px;
@@ -2195,10 +2196,28 @@ headerbar
 **** button
 #+begin_src css
 
-  /* HEADERBAR BUTTON */
+   /* HEADERBAR BUTTON */
 
-  headerbar button {
-  }
+   headerbar button {
+       -gtk-icon-style: symbolic;
+   }
+
+   headerbar button.image-button:not(.text-button):not(.image-text-button)  {
+       background-color: transparent;
+       background-image: none;
+       border: none;
+   }
+
+   /* re-color symbolic icon */
+   headerbar button.image-button:hover {
+       color: white;
+   }      
+
+   headerbar button.image-button:checked,
+   headerbar button.image-button:checked:hover,
+   headerbar button.image-button:checked image {
+       color: @selected_bg_color;
+   }  
 #+end_src
 *** menubar & menu
 The GtkMenuBar is a subclass of GtkMenuShell which contains one or more GtkMenuItems.
@@ -2315,7 +2334,7 @@ menuitem
 #+end_src
 *** toolbar
 #+begin_src css
-  
+
   /*************************************************/
   /*                   TOOLBAR                     */
   /*************************************************/
@@ -4231,9 +4250,9 @@ GtkSearchBar is a container made to have a search entry.
 
 searchbar
 ╰── revealer
-╰── box
-├── [child]
-╰── [button.close]
+    ╰── box
+        ├── [child]
+        ╰── [button.close]
 [[https://docs.gtk.org/gtk4/class.SearchBar.html][link]]
 
 #+begin_src css
@@ -4246,8 +4265,8 @@ searchbar
       /*background-color: #ebf0f4;
     border-style: solid;
     border-color: @light_border_color;
-    border-width: 0 0 1px;*/
-      padding: 3px;
+    border-width: 0 0 1px;
+    padding: 3px; */
   }
 #+end_src
 *** scrollbar
@@ -5221,7 +5240,7 @@ Container that makes its child scrollable.
   /*************************************************/
   /*                    FRAME                      */
   /*************************************************/
-  
+
   frame.border-inset > border {
       border: inset 1px @border_color;
   }
@@ -5292,20 +5311,20 @@ Container that makes its child scrollable.
 
 #+begin_src css
 
-   /*************************************************/
-   /*               FILECHOOSER                     */
-   /*************************************************/
+  /*************************************************/
+  /*               FILECHOOSER                     */
+  /*************************************************/
 
-   .filechooser.vertical > box.vertical:not(.search-bar),
-   filechooser.vertical > box.vertical:not(.search-bar) {
-       border-top: 1px solid @light_border_color;
-       border-bottom: 1px solid @light_border_color;
-   }
+  .filechooser.vertical > box.vertical:not(.search-bar),
+  filechooser.vertical > box.vertical:not(.search-bar) {
+      border-top: 1px solid @light_border_color;
+      border-bottom: 1px solid @light_border_color;
+  }
 
-   .filechooser.vertical > box.vertical:not(.search-bar) scrolledwindow,
-   filechooser.vertical > box.vertical:not(.search-bar) scrolledwindow {
-       border: none;
-   }
+  .filechooser.vertical > box.vertical:not(.search-bar) scrolledwindow,
+  filechooser.vertical > box.vertical:not(.search-bar) scrolledwindow {
+      border: none;
+  }
 #+end_src
 **** print dialog
 GtkPrintDialog object collects the arguments that are needed to present a print dialog to the user, such as a title for the dialog and whether it should be modal.
