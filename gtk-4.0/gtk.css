@@ -258,7 +258,7 @@ button.file separator {
 /* text button */
 
 button.text-button:not(.image-button) {
-   /* nothing to add */
+    /* nothing to add */
 }
 
 /* image button */
@@ -1018,6 +1018,35 @@ menubutton > button.toggle {
 
 menubutton > popover {
     margin-top: 3px;
+}
+
+menubutton > button > box {
+    border-spacing: 6px;
+}
+
+menubutton arrow {
+    min-height: 16px;
+    min-width: 16px;
+}
+
+menubutton arrow.none {
+    -gtk-icon-source: -gtk-icontheme("open-menu-symbolic");
+}
+
+menubutton arrow.down {
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+}
+
+menubutton arrow.up {
+    -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
+}
+
+menubutton arrow.left {
+    -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
+}
+
+menubutton arrow.right {
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
 }
 
 /* button.sidebar-button */
@@ -1946,7 +1975,7 @@ list > row:focus {
 }
 
 list > row:focus label {
-      color: @selected_fg_color;
+    color: @selected_fg_color;
 }
 
 list separator.horizontal {
@@ -2432,7 +2461,7 @@ actionbar {
 /*************************************************/
 
 searchbar {
-  /*background-color: #ebf0f4;
+    /*background-color: #ebf0f4;
   border-style: solid;
   border-color: @light_border_color;
   border-width: 0 0 1px;
@@ -2560,6 +2589,14 @@ revealer > frame {
     border-radius: 6px;
     background-color: @base_color;
     padding: 8px 10px;
+}
+
+/*************************************************/
+/*                   STATUSBAR                   */
+/*************************************************/
+
+statusbar {
+    padding: 6px 10px 6px 10px;
 }
 
 /*************************************************/
@@ -2847,7 +2884,7 @@ notebook > header.right {
 }
 
 notebook > stack:not(:only-child) {
-    margin: 8px 5px;
+    padding: 0px 5px 5px 5px;
     background-color: transparent;
     /* border: 1px solid @border_color; */
 }

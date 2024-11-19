@@ -49,7 +49,7 @@
   }
 
   /* IMAGE & ICON */
-  
+
   image:disabled {
       opacity: 0.6;
   }
@@ -185,7 +185,7 @@ label
   label {
       background-color: transparent;
   }
-  
+
   label:not(:selected) selection {
       color: @selected_fg_color;
       text-shadow:  0 -1px alpha(@selected_fg_color, 0.04),
@@ -322,7 +322,7 @@ Button-like widgets like GtkToggleButton, GtkMenuButton, GtkVolumeButton, GtkLoc
   /* text button */
 
   button.text-button:not(.image-button) {
-     /* nothing to add */
+      /* nothing to add */
   }
 #+end_src
 **** image button
@@ -1171,6 +1171,35 @@ menubutton
   menubutton > popover {
       margin-top: 3px;
   }
+
+  menubutton > button > box {
+      border-spacing: 6px;
+  }
+
+  menubutton arrow {
+      min-height: 16px;
+      min-width: 16px;
+  }
+
+  menubutton arrow.none {
+      -gtk-icon-source: -gtk-icontheme("open-menu-symbolic");
+  }
+
+  menubutton arrow.down {
+      -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+  }
+
+  menubutton arrow.up {
+      -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
+  }
+
+  menubutton arrow.left {
+      -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
+  }
+
+  menubutton arrow.right {
+      -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+  }  
 
 #+end_src
 *** sidebar button
@@ -2302,9 +2331,9 @@ list[.separators][.rich-list][.navigation-sidebar][.boxed-list]
   }
 
   list > row:focus label {
-        color: @selected_fg_color;
+      color: @selected_fg_color;
   }
-    
+
   list separator.horizontal {
       margin: 0px;
   }
@@ -2439,7 +2468,7 @@ GtkPopoverMenu has menu items with name button and class .model.
   modelbutton accelerator {
       margin-left: 20px;
   }
-  
+
   /*
   modelbutton:hover label,
   modelbutton:hover image,
@@ -2528,28 +2557,28 @@ headerbar
 **** button
 #+begin_src css
 
-   /* HEADERBAR BUTTON */
+  /* HEADERBAR BUTTON */
 
-   headerbar button {
-       -gtk-icon-style: symbolic;
-   }
+  headerbar button {
+      -gtk-icon-style: symbolic;
+  }
 
-   headerbar button.image-button:not(.text-button):not(.image-text-button)  {
-       background-color: transparent;
-       background-image: none;
-       border: none;
-   }
+  headerbar button.image-button:not(.text-button):not(.image-text-button)  {
+      background-color: transparent;
+      background-image: none;
+      border: none;
+  }
 
-   /* re-color symbolic icon */
-   headerbar button.image-button:hover {
-       color: white;
-   }      
+  /* re-color symbolic icon */
+  headerbar button.image-button:hover {
+      color: white;
+  }      
 
-   headerbar button.image-button:checked,
-   headerbar button.image-button:checked:hover,
-   headerbar button.image-button:checked image {
-       color: @selected_bg_color;
-   }
+  headerbar button.image-button:checked,
+  headerbar button.image-button:checked:hover,
+  headerbar button.image-button:checked image {
+      color: @selected_bg_color;
+  }
 #+end_src
 *** menubar(GtkPopoverMenubar)
 GtkPopoverMenuBar presents a horizontal bar of items that pop up popover menus when clicked.
@@ -2898,9 +2927,9 @@ GtkSearchBar is a container made to have a search entry.
 
 searchbar
 ╰── revealer
-    ╰── box
-        ├── [child]
-        ╰── [button.close]
+╰── box
+├── [child]
+╰── [button.close]
 [[https://docs.gtk.org/gtk4/class.SearchBar.html][link]]
 
 #+begin_src css
@@ -2910,7 +2939,7 @@ searchbar
   /*************************************************/
 
   searchbar {
-    /*background-color: #ebf0f4;
+      /*background-color: #ebf0f4;
     border-style: solid;
     border-color: @light_border_color;
     border-width: 0 0 1px;
@@ -3059,6 +3088,17 @@ GtkRevealer has a single CSS node with name revealer. When styling GtkRevealer u
       border-radius: 6px;
       background-color: @base_color;
       padding: 8px 10px;
+  }
+#+end_src
+*** statusbar
+#+begin_src css
+
+  /*************************************************/
+  /*                   STATUSBAR                   */
+  /*************************************************/
+
+  statusbar {
+      padding: 6px 10px 6px 10px;
   }
 #+end_src
 ** High Lelel(treeview, notebook, etc)
@@ -3431,7 +3471,7 @@ notebook
   }
 
   notebook > stack:not(:only-child) {
-      margin: 8px 5px;
+      padding: 0px 5px 5px 5px;
       background-color: transparent;
       /* border: 1px solid @border_color; */
   }
@@ -3955,7 +3995,7 @@ If both scrollbars are visible, the area where they meet is drawn with a subnode
   /*************************************************/
   /*                    FRAME                      */
   /*************************************************/
-  
+
   frame.border-inset > border {
       border: inset 1px @border_color;
   }
