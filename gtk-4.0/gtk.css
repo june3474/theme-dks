@@ -304,16 +304,10 @@ button.text-button.image-button.popup {
 
 headerbar button.titlebutton,
 .titlebar button.titlebutton,
-windowcontrols > button,
-headerbar button.titlebutton:hover,
-.titlebar button.titlebutton:hover,
-windowcontrols > button:hover,
-headerbar button.titlebutton:active,
-.titlebar button.titlebutton:active,
-windowcontrols > button:active {
+windowcontrols > button {
     padding: 0;
-    min-width: 22px;
-    min-height: 22px;
+    min-width: 20px;
+    min-height: 20px;
     box-shadow: none;
     border: none;
     border-radius: 50%;
@@ -323,16 +317,23 @@ windowcontrols > button:active {
     background-repeat: no-repeat;
 }
 
+headerbar button.titlebutton:not(:last-child),
+.titlebar button.titlebutton:not(:last-child),
+windowcontrols > button:not(:last-child) {
+    margin-right: 3px;
+}
+
 headerbar button.titlebutton > image,
 .titlebar button.titlebutton > image,
 windowcontrols > button > image {
-    /* hide hardcoded default icon */
+    /* hide hardcoded default icon.
+       "-gtk-icon-source: none" does NOT work. */
     opacity: 0;
 }
 
-/* It doesn't seem possible to use -gtk-icon-source to change icon.
-   Only widgets that call gtk_css_style_snapshot_icon() in their
-   snapshot() can support that, which is not the case of Gtk.Image */
+/* It seems impossible to use custom icons with -gtk-icon-source. 
+   Default icons--window-close-symbolic, window-maximize-symbolci etc--
+   are loaded unconditionally. */
 
 headerbar button.titlebutton.close,
 .titlebar button.titlebutton.close,
@@ -346,13 +347,12 @@ windowcontrols > button.close:backdrop {
     background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-close-backdrop.svg"), url("objects/title-buttons/titlebutton-close-backdrop@2.svg"));
 }
 
-
 headerbar button.titlebutton.close:hover,
 .titlebar button.titlebutton.close:hover,
-windowcontrols button.titlebutton.close:hover,
+windowcontrols > button.close:hover,
 headerbar button.titlebutton.close:backdrop:hover,
 .titlebar button.titlebutton.close:backdrop:hover,
-windowcontrols button.titlebutton.close:backdrop:hover {
+windowcontrols > button.close:backdrop:hover {
     background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-close-hover.svg"), url("objects/title-buttons/titlebutton-close-hover@2.svg"));
 }
 
@@ -376,10 +376,10 @@ windowcontrols > button.maximize:backdrop {
 
 headerbar button.titlebutton.maximize:hover,
 .titlebar button.titlebutton.maximize:hover,
-windowcontrols button.titlebutton.maximize:hover,
+windowcontrols > button.maximize:hover,
 headerbar button.titlebutton.maximize:backdrop:hover,
 .titlebar button.titlebutton.maximize:backdrop:hover,
-windowcontrols button.titlebutton.maximize:backdrop:hover {
+windowcontrols > button.maximize:backdrop:hover {
     background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize-hover.svg"), url("objects/title-buttons/titlebutton-maximize-hover@2.svg"));
 }
 
@@ -403,10 +403,10 @@ windowcontrols > button.minimize:backdrop {
 
 headerbar button.titlebutton.minimize:hover,
 .titlebar button.titlebutton.minimize:hover,
-windowcontrols button.titlebutton.minimize:hover,
+windowcontrols > button.minimize:hover,
 headerbar button.titlebutton.minimize:backdrop:hover,
 .titlebar button.titlebutton.minimize:backdrop:hover,
-windowcontrols button.titlebutton.minimize:backdrop:hover {
+windowcontrols > button.minimize:backdrop:hover {
     background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-minimize-hover.svg"), url("objects/title-buttons/titlebutton-minimize-hover@2.svg"));
 }
 
@@ -424,16 +424,16 @@ windowcontrols > button.restore {
 
 headerbar button.titlebutton.restore:backdrop,
 .titlebar button.restore:backdrop,
-windowcontrols > button.titlebutton.restore:backdrop {
+windowcontrols > button.restore:backdrop {
     background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize-backdrop.svg"), url("objects/title-buttons/titlebutton-maximize-backdrop@2.svg"));
 }
 
 headerbar button.titlebutton.restore:hover,
 .titlebar button.titlebutton.restore:hover,
-windowcontrols button.titlebutton.restore:hover,
+windowcontrols > button.restore:hover,
 headerbar button.titlebutton.restore:backdrop:hover,
 .titlebar button.titlebutton.restore:backdrop:hover,
-windowcontrols button.titlebutton.restore:backdrop:hover {  
+windowcontrols > button.restore:backdrop:hover {  
     background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize-hover.svg"), url("objects/title-buttons/titlebutton-maximize-hover@2.svg"));
 }
 
