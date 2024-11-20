@@ -44,7 +44,7 @@
     --button-border-radius: 4px !important;
     --toolbar-button-active-background-color: var(--selected_bg_dark) !important;
 
-    --tab_border_radius: 6px;
+    --tab_border_radius: 4px;
     --tab_border_width: 1px;
     --tab_border_style: solid;
 }
@@ -118,7 +118,7 @@ toolbarbutton#spacesPinnedButton[open="true"] {
 #tabs-toolbar {
     box-shadow: none !important; /* 기본적으로 그리게 되어 있는 box shadow를 취소 */
     padding: .3em !important;
-    /*background: linear-gradient(to right, #1fa2ff, #12d8fa, #a6ffcb) !important;*/
+    /* background: linear-gradient(to right, #1fa2ff, #12d8fa, #a6ffcb) !important;*/
     background: linear-gradient(to right, #2193b0, #49b0c2, #aff6ccf0) !important;
     border-bottom: 1px solid var(--border_dark) !important;
 }
@@ -127,7 +127,7 @@ toolbarbutton#spacesPinnedButton[open="true"] {
     background-color: var(--bg_color) !important;
     position: relative !important;
     box-sizing: content-box !important;
-    border: var(--tab_border_width) solid var(--border_dark) !important;
+    /* border: var(--tab_border_width) solid var(--border_dark) !important; */
     border-radius: var(--tab_border_radius) !important;
     margin-right: 0.5rem !important;
 }
