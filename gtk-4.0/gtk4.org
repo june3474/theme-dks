@@ -2879,9 +2879,31 @@ GtkInfoBar has a single CSS node with name infobar. The node may get one of the 
   /*************************************************/
 
   infobar {
+      background-color: transparent;
       border: 1px solid @border_color;
-      border-radius: 4px;
   }
+
+  infobar.error {
+      color: white;
+      background-image: linear-gradient(to bottom,#f3313a,#f3313a);
+  }
+
+  infobar.warning {
+      background-image: linear-gradient(to bottom,#ff851a,#ff851a);
+  }
+
+  infobar button {
+      min-height: 16px;
+      min-width: 16 px;
+  }
+
+  infobar button.close,
+  infobar button.close:hover,
+  infobar button.close:active {
+      background-color: transparent;
+      background-image: none;
+      border: none;
+  }  
 #+end_src
 *** actionbar
 GtkActionBar is designed to present contextual actions.
@@ -4007,6 +4029,10 @@ If both scrollbars are visible, the area where they meet is drawn with a subnode
   viewport {
       /* background-color makes black outline. dunno why! */
       background-image: linear-gradient(to bottom, @base_color, @base_color);
+  }
+
+  viewport.frame {
+      padding: 5px;
   }
 #+end_src
 *** dialog

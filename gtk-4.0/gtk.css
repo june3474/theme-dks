@@ -2428,8 +2428,30 @@ inline-toolbar, /* no such a css node? */
 /*************************************************/
 
 infobar {
+    background-color: transparent;
     border: 1px solid @border_color;
-    border-radius: 4px;
+}
+
+infobar.error {
+    color: white;
+    background-image: linear-gradient(to bottom,#f3313a,#f3313a);
+}
+
+infobar.warning {
+    background-image: linear-gradient(to bottom,#ff851a,#ff851a);
+}
+
+infobar button {
+    min-height: 16px;
+    min-width: 16 px;
+}
+
+infobar button.close,
+infobar button.close:hover,
+infobar button.close:active {
+    background-color: transparent;
+    background-image: none;
+    border: none;
 }
 
 /*************************************************/
@@ -3312,6 +3334,10 @@ frame.border-ridge > border {
 viewport {
     /* background-color makes black outline. dunno why! */
     background-image: linear-gradient(to bottom, @base_color, @base_color);
+}
+
+viewport.frame {
+    padding: 5px;
 }
 
 /*************************************************/
