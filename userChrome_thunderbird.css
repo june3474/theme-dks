@@ -302,13 +302,14 @@ table.tree-table > tbody[is="tree-view-table-body"] > tr[is="thread-card"] {
 
 /* messagePane */
 #messagePane {
-    background-color:  var(--bg_color) !important; */
+    background-color:  var(--bg_color) !important;
 }
 
 /* message header, 메세지 정보 */
 #singleMessage > #msgHeaderView {
     background: var(--bg_color) !important;
     border-bottom: 1px solid var(--border_light) !important;
+    line-height: 0.9 !important;
 }
 
 /* reply 등 버튼 */
