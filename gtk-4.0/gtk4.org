@@ -1181,18 +1181,11 @@ menubutton
   menubutton arrow.left {
       -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
   }
-<<<<<<< HEAD
   
   menubutton arrow.right {
       -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
   }  
-=======
 
-  menubutton arrow.right {
-      -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
-  }  
-
->>>>>>> master
 #+end_src
 *** sidebar button
 #+begin_src css

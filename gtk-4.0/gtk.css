@@ -986,60 +986,52 @@ spinbutton.vertical > button.down {
 }
 
 /*************************************************/
-  /*                 MENU BUTTON                   */
-  /*************************************************/
+/*                 MENU BUTTON                   */
+/*************************************************/
 
-  menubutton {
-      -gtk-icon-source: -gtk-icontheme("open-menu-symbolic");
-      margin: 0px 10px;
-  }
+menubutton {
+    -gtk-icon-source: -gtk-icontheme("open-menu-symbolic");
+    margin: 0px 10px;
+}
 
-  menubutton > button.toggle {
-      min-height: 24px;
-      min-width: 24px;
-      padding: 3px;
-  }
+menubutton > button.toggle {
+    min-height: 24px;
+    min-width: 24px;
+    padding: 3px;
+}
 
-  menubutton > popover {
-      margin-top: 3px;
-  }
+menubutton > popover {
+    margin-top: 3px;
+}
 
-  menubutton > button > box {
-      border-spacing: 6px;
-  }
+menubutton > button > box {
+    border-spacing: 6px;
+}
 
-  menubutton arrow {
-      min-height: 16px;
-      min-width: 16px;
-  }
+menubutton arrow {
+    min-height: 16px;
+    min-width: 16px;
+}
 
-  menubutton arrow.none {
-      -gtk-icon-source: -gtk-icontheme("open-menu-symbolic");
-  }
+menubutton arrow.none {
+    -gtk-icon-source: -gtk-icontheme("open-menu-symbolic");
+}
 
-  menubutton arrow.down {
-      -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
-  }
+menubutton arrow.down {
+    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+}
 
-  menubutton arrow.up {
-      -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
-  }
+menubutton arrow.up {
+    -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
+}
 
-  menubutton arrow.left {
-      -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
-  }
-<<<<<<< HEAD
-  
-  menubutton arrow.right {
-      -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
-  }  
-=======
+menubutton arrow.left {
+    -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
+}
 
-  menubutton arrow.right {
-      -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
-  }  
-
->>>>>>> master
+menubutton arrow.right {
+    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+}
 
 /* button.sidebar-button */
 
