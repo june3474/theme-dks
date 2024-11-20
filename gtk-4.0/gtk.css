@@ -306,72 +306,65 @@ headerbar button.titlebutton,
 .titlebar button.titlebutton,
 windowcontrols > button {
     padding: 0;
-    min-width: 20px;
-    min-height: 20px;
+    min-width: 18px;
+    min-height: 18px;
     box-shadow: none;
     border: none;
     border-radius: 50%;
     color: transparent;
     background-color: transparent;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-image: none;
 }
 
 headerbar button.titlebutton:not(:last-child),
 .titlebar button.titlebutton:not(:last-child),
 windowcontrols > button:not(:last-child) {
-    margin-right: 3px;
+    margin-right: 5px;
 }
-
-headerbar button.titlebutton > image,
-.titlebar button.titlebutton > image,
-windowcontrols > button > image {
-    /* hide hardcoded default icon.
-       "-gtk-icon-source: none" does NOT work. */
-    opacity: 0;
-}
-
-/* It seems impossible to use custom icons with -gtk-icon-source. 
-   Default icons--window-close-symbolic, window-maximize-symbolci etc--
-   are loaded unconditionally. */
 
 headerbar button.titlebutton.close,
 .titlebar button.titlebutton.close,
 windowcontrols > button.close {
-    background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-close.svg"), url("objects/title-buttons/titlebutton-close@2.svg"));
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(211, 0, 10, 0.7) ;
+    /* It seems impossible to load custom icons with -gtk-icon-source.
+       Gtk loads "window-close/maximize/minimize-symbolic" icon
+       from the current icon theme.
+
+    -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("objects/title-buttons/titlebutton-close.svg")), -gtk-recolor(url("objects/title-buttons/titlebutton-close@2.svg")));
+   */  
 }
 
 headerbar button.titlebutton.close:backdrop,
 .titlebar button.titlebutton.close:backdrop,
 windowcontrols > button.close:backdrop {
-    background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-close-backdrop.svg"), url("objects/title-buttons/titlebutton-close-backdrop@2.svg"));
+    color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(119, 119, 119, 1);
 }
 
 headerbar button.titlebutton.close:hover,
 .titlebar button.titlebutton.close:hover,
-windowcontrols > button.close:hover,
+windowcontrols button:hover,
 headerbar button.titlebutton.close:backdrop:hover,
 .titlebar button.titlebutton.close:backdrop:hover,
-windowcontrols > button.close:backdrop:hover {
-    background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-close-hover.svg"), url("objects/title-buttons/titlebutton-close-hover@2.svg"));
-}
-
-headerbar button.titlebutton.close:active,
-.titlebar button.titlebutton.close:active,
-windowcontrols > button.close:active {
-    background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-close-active.svg"), url("objects/title-buttons/titlebutton-close-active@2.svg"));
+windowcontrols button:backdrop:hover {
+    color: rgba(31, 31, 31, 0.7);
+    background-color: white;
 }
 
 headerbar button.titlebutton.maximize,
 .titlebar button.titlebutton.maximize,
 windowcontrols > button.maximize {
-    background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize.svg"), url("objects/title-buttons/titlebutton-maximize@2.svg"));
+    color: rgba(31, 31, 31, 1);
+    /*
+    -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("objects/title-buttons/titlebutton-maximize.svg")), -gtk-recolor(url("objects/title-buttons/titlebutton-maximize@2.svg")));
+    */
 }
 
 headerbar button.titlebutton.maximize:backdrop,
 .titlebar button.titlebutton.maximize:backdrop,
 windowcontrols > button.maximize:backdrop {
-    background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize-backdrop.svg"), url("objects/title-buttons/titlebutton-maximize-backdrop@2.svg"));
+    color: rgba(31, 31, 31, 0.7);
 }
 
 headerbar button.titlebutton.maximize:hover,
@@ -380,25 +373,23 @@ windowcontrols > button.maximize:hover,
 headerbar button.titlebutton.maximize:backdrop:hover,
 .titlebar button.titlebutton.maximize:backdrop:hover,
 windowcontrols > button.maximize:backdrop:hover {
-    background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize-hover.svg"), url("objects/title-buttons/titlebutton-maximize-hover@2.svg"));
-}
-
-headerbar button.titlebutton.maximize:active,
-.titlebar button.titlebutton.maximize:active,
-windowcontrols > button:active {
-    background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize-active.svg"), url("objects/title-buttons/titlebutton-maximize-active@2.svg"));
+    color: rgba(31, 31, 31, 1);
+    background-color: white;
 }
 
 headerbar button.titlebutton.minimize,
 .titlebar button.titlebutton.minimize,
 windowcontrols > button.minimize {
-    background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-minimize.svg"), url("objects/title-buttons/titlebutton-minimize@2.svg"));
+    color: rgba(31, 31, 31, 1);
+    /*
+    -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("objects/title-buttons/titlebutton-minimize.svg")), -gtk-recolor(url("objects/title-buttons/titlebutton-minimize@2.svg")));
+    */
 }
 
 headerbar button.titlebutton.minimize:backdrop,
 .titlebar button.titlebutton.minimize:backdrop,
 windowcontrols > button.minimize:backdrop {
-    background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-minimize-backdrop.svg"), url("objects/title-buttons/titlebutton-minimize-backdrop@2.svg"));
+    color: rgba(31, 31, 31, 0.7);
 }
 
 headerbar button.titlebutton.minimize:hover,
@@ -407,40 +398,33 @@ windowcontrols > button.minimize:hover,
 headerbar button.titlebutton.minimize:backdrop:hover,
 .titlebar button.titlebutton.minimize:backdrop:hover,
 windowcontrols > button.minimize:backdrop:hover {
-    background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-minimize-hover.svg"), url("objects/title-buttons/titlebutton-minimize-hover@2.svg"));
-}
-
-headerbar button.titlebutton.minimize:active,
-.titlebar button.titlebutton.minimize:active,
-windowcontrols > button.minimize:active {
-    background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-minimize-active.svg"), url("objects/title-buttons/titlebutton-minimize-active@2.svg"));
+    color: rgba(31, 31, 31, 1);
+    background-color: white;
 }
 
 headerbar button.titlebutton.restore,
 .titlebar button.titlebutton.restore,
 windowcontrols > button.restore {
-    background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize.svg"), url("objects/title-buttons/titlebutton-maximize@2.svg"));
+    color: rgba(31, 31, 31, 1);
+    /*
+    -gtk-icon-source: -gtk-recolor(url("objects/title-buttons/titlebutton-maximize.svg")), -gtk-recolor(url("objects/title-buttons/titlebutton-maximize@2.svg")));
+    */
 }
 
 headerbar button.titlebutton.restore:backdrop,
 .titlebar button.restore:backdrop,
-windowcontrols > button.restore:backdrop {
-    background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize-backdrop.svg"), url("objects/title-buttons/titlebutton-maximize-backdrop@2.svg"));
+windowcontrols > button.titlebutton.restore:backdrop {
+    color: rgba(31, 31, 31, 0.7);
 }
 
 headerbar button.titlebutton.restore:hover,
 .titlebar button.titlebutton.restore:hover,
-windowcontrols > button.restore:hover,
+windowcontrols button.titlebutton.restore:hover,
 headerbar button.titlebutton.restore:backdrop:hover,
 .titlebar button.titlebutton.restore:backdrop:hover,
-windowcontrols > button.restore:backdrop:hover {  
-    background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize-hover.svg"), url("objects/title-buttons/titlebutton-maximize-hover@2.svg"));
-}
-
-headerbar button.titlebutton.restore:active,
-.titlebar button.titlebutton.restore:active,
-windowcontrols > button.restore:active {
-    background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize-active.svg"), url("objects/title-buttons/titlebutton-maximize-active@2.svg"));
+windowcontrols button.titlebutton.restore:backdrop:hover {  
+    color: rgba(31, 31, 31, 1);
+    background-color: white;
 }
 
 /* button.osd */
@@ -1002,52 +986,60 @@ spinbutton.vertical > button.down {
 }
 
 /*************************************************/
-/*                 MENU BUTTON                   */
-/*************************************************/
+  /*                 MENU BUTTON                   */
+  /*************************************************/
 
-menubutton {
-    -gtk-icon-source: -gtk-icontheme("open-menu-symbolic");
-    margin: 0px 10px;
-}
+  menubutton {
+      -gtk-icon-source: -gtk-icontheme("open-menu-symbolic");
+      margin: 0px 10px;
+  }
 
-menubutton > button.toggle {
-    min-height: 24px;
-    min-width: 24px;
-    padding: 3px;
-}
+  menubutton > button.toggle {
+      min-height: 24px;
+      min-width: 24px;
+      padding: 3px;
+  }
 
-menubutton > popover {
-    margin-top: 3px;
-}
+  menubutton > popover {
+      margin-top: 3px;
+  }
 
-menubutton > button > box {
-    border-spacing: 6px;
-}
+  menubutton > button > box {
+      border-spacing: 6px;
+  }
 
-menubutton arrow {
-    min-height: 16px;
-    min-width: 16px;
-}
+  menubutton arrow {
+      min-height: 16px;
+      min-width: 16px;
+  }
 
-menubutton arrow.none {
-    -gtk-icon-source: -gtk-icontheme("open-menu-symbolic");
-}
+  menubutton arrow.none {
+      -gtk-icon-source: -gtk-icontheme("open-menu-symbolic");
+  }
 
-menubutton arrow.down {
-    -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
-}
+  menubutton arrow.down {
+      -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+  }
 
-menubutton arrow.up {
-    -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
-}
+  menubutton arrow.up {
+      -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
+  }
 
-menubutton arrow.left {
-    -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
-}
+  menubutton arrow.left {
+      -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
+  }
+<<<<<<< HEAD
+  
+  menubutton arrow.right {
+      -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+  }  
+=======
 
-menubutton arrow.right {
-    -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
-}
+  menubutton arrow.right {
+      -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+  }  
+
+>>>>>>> master
 
 /* button.sidebar-button */
 
@@ -2596,7 +2588,7 @@ revealer > frame {
 /*************************************************/
 
 statusbar {
-    padding: 6px 10px 6px 10px;
+    padding: 4px 6px;
 }
 
 /*************************************************/
