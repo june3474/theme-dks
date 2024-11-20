@@ -1669,7 +1669,7 @@ levelbar block.empty {
 /*************************************************/
 
 list {
-    background-color: @base_color;
+    background-color: transparent;
 }
 
 list > row {
@@ -4499,6 +4499,7 @@ placessidebar {
 placessidebar > viewport.frame {
     border-style: none;
     border-right: 1px solid @light_border_color;
+    background-image: none;
 }
 
 placessidebar row,

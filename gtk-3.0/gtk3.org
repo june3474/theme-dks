@@ -1993,7 +1993,7 @@ list[.separators][.rich-list][.navigation-sidebar][.boxed-list]
   /*************************************************/
 
   list {
-      background-color: @base_color;
+      background-color: transparent;
   }
 
   list > row {
@@ -5052,7 +5052,7 @@ GtkPlacesSidebar does NOT seem to be suppored with gtk4. Not sure though.
 #+end_src
 **** placessidebar
 #+begin_src css
-  
+
   /* PLACESSIDEBAR */
 
   placessidebar {
@@ -5065,6 +5065,7 @@ GtkPlacesSidebar does NOT seem to be suppored with gtk4. Not sure though.
   placessidebar > viewport.frame {
       border-style: none;
       border-right: 1px solid @light_border_color;
+      background-image: none;
   }
 
   placessidebar row,
