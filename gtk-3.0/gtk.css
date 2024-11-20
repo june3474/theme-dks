@@ -3961,6 +3961,13 @@ revealer > frame {
 }
 
 /*************************************************/
+/*                   STATUSBAR                   */
+/*************************************************/
+statusbar {
+    padding: 6px 10px 6px 10px;
+}
+
+/*************************************************/
 /*                      BOX                      */
 /*************************************************/
 
@@ -4260,7 +4267,7 @@ notebook > header.right {
 }
 
 notebook > stack:not(:only-child) {
-    margin: 8px 5px;
+    padding: 0px 5px 5px 5px;
     background-color: transparent;
     /* border: 1px solid @border_color; */
 }

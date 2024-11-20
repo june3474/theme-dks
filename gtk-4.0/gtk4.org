@@ -375,121 +375,132 @@ minimize, maxmize, close buttons
 
 #+begin_src css
 
-  /* title button - minimize, maxmize, close buttons */
+      /* title button - minimize, maxmize, close buttons */
 
-  headerbar button.titlebutton,
-  .titlebar button.titlebutton,
-  windowcontrols > button,
-  headerbar button.titlebutton:hover,
-  .titlebar button.titlebutton:hover,
-  windowcontrols > button:hover,
-  headerbar button.titlebutton:active,
-  .titlebar button.titlebutton:active,
-  windowcontrols > button:active {
-      padding: 0;
-      min-width: 20px;
-      min-height: 20px;
-      box-shadow: none;
-      border: none;
-      border-radius: 50%;
-      color: transparent;
-      background-color: transparent;
-      background-image: none;
-  }
+      headerbar button.titlebutton,
+      .titlebar button.titlebutton,
+      windowcontrols > button {
+          padding: 0;
+          min-width: 18px;
+          min-height: 18px;
+          box-shadow: none;
+          border: none;
+          border-radius: 50%;
+          color: transparent;
+          background-color: transparent;
+          background-image: none;
+      }
 
-  headerbar button.titlebutton.close,
-  .titlebar button.titlebutton.close,
-  windowcontrols > button.close {
-      color: rgba(255, 255, 255, 0.8);
-      background-color: rgba(211, 0, 10, 0.7) ;
-      -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("objects/title-buttons/titlebutton-close.svg")), -gtk-recolor(url("objects/title-buttons/titlebutton-close@2.svg")));      
-  }
+      headerbar button.titlebutton:not(:last-child),
+      .titlebar button.titlebutton:not(:last-child),
+      windowcontrols > button:not(:last-child) {
+          margin-right: 5px;
+      }
 
-  headerbar button.titlebutton.close:backdrop,
-  .titlebar button.titlebutton.close:backdrop,
-  windowcontrols > button.close:backdrop {
-      color: rgba(255, 255, 255, 0.7);
-      background-color: rgba(119, 119, 119, 1);
-  }
+      headerbar button.titlebutton.close,
+      .titlebar button.titlebutton.close,
+      windowcontrols > button.close {
+          color: rgba(255, 255, 255, 1);
+          background-color: rgba(211, 0, 10, 0.7) ;
+          /* It seems impossible to load custom icons with -gtk-icon-source.
+             Gtk loads "window-close/maximize/minimize-symbolic" icon
+             from the current icon theme.
 
-  headerbar button.titlebutton.close:hover,
-  .titlebar button.titlebutton.close:hover,
-  windowcontrols button:hover,
-  headerbar button.titlebutton.close:backdrop:hover,
-  .titlebar button.titlebutton.close:backdrop:hover,
-  windowcontrols button:backdrop:hover {
-      color: rgba(31, 31, 31, 0.7);
-      background-color: white;
-  }
+          -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("objects/title-buttons/titlebutton-close.svg")), -gtk-recolor(url("objects/title-buttons/titlebutton-close@2.svg")));
+         ,*/  
+      }
 
-  headerbar button.titlebutton.maximize,
-  .titlebar button.titlebutton.maximize,
-  windowcontrols > button.maximize {
-      color: rgba(31, 31, 31, 0.7);
-      -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("objects/title-buttons/titlebutton-maximize.svg")), -gtk-recolor(url("objects/title-buttons/titlebutton-maximize@2.svg")));      
-  }
+      headerbar button.titlebutton.close:backdrop,
+      .titlebar button.titlebutton.close:backdrop,
+      windowcontrols > button.close:backdrop {
+          color: rgba(255, 255, 255, 0.7);
+          background-color: rgba(119, 119, 119, 1);
+      }
 
-  headerbar button.titlebutton.maximize:backdrop,
-  .titlebar button.titlebutton.maximize:backdrop,
-  windowcontrols > button.maximize:backdrop {
-      color: rgba(31, 31, 31, 0.5);
-  }
+      headerbar button.titlebutton.close:hover,
+      .titlebar button.titlebutton.close:hover,
+      windowcontrols button:hover,
+      headerbar button.titlebutton.close:backdrop:hover,
+      .titlebar button.titlebutton.close:backdrop:hover,
+      windowcontrols button:backdrop:hover {
+          color: rgba(31, 31, 31, 0.7);
+          background-color: white;
+      }
 
-  headerbar button.titlebutton.maximize:hover,
-  .titlebar button.titlebutton.maximize:hover,
-  windowcontrols > button.maximize:hover,
-  headerbar button.titlebutton.maximize:backdrop:hover,
-  .titlebar button.titlebutton.maximize:backdrop:hover,
-  windowcontrols > button.maximize:backdrop:hover {
-      color: rgba(31, 31, 31, 0.7);
-      background-color: white;
-  }
+      headerbar button.titlebutton.maximize,
+      .titlebar button.titlebutton.maximize,
+      windowcontrols > button.maximize {
+          color: rgba(31, 31, 31, 1);
+          /*
+          -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("objects/title-buttons/titlebutton-maximize.svg")), -gtk-recolor(url("objects/title-buttons/titlebutton-maximize@2.svg")));
+          ,*/
+      }
 
-  headerbar button.titlebutton.minimize,
-  .titlebar button.titlebutton.minimize,
-  windowcontrols > button.minimize {
-      color: rgba(31, 31, 31, 0.7);
-      -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("objects/title-buttons/titlebutton-minimize.svg")), -gtk-recolor(url("objects/title-buttons/titlebutton-minimize@2.svg")));
-  }
+      headerbar button.titlebutton.maximize:backdrop,
+      .titlebar button.titlebutton.maximize:backdrop,
+      windowcontrols > button.maximize:backdrop {
+          color: rgba(31, 31, 31, 0.7);
+      }
 
-  headerbar button.titlebutton.minimize:backdrop,
-  .titlebar button.titlebutton.minimize:backdrop,
-  windowcontrols > button.minimize:backdrop {
-      color: rgba(31, 31, 31, 0.5);
-  }
+      headerbar button.titlebutton.maximize:hover,
+      .titlebar button.titlebutton.maximize:hover,
+      windowcontrols > button.maximize:hover,
+      headerbar button.titlebutton.maximize:backdrop:hover,
+      .titlebar button.titlebutton.maximize:backdrop:hover,
+      windowcontrols > button.maximize:backdrop:hover {
+          color: rgba(31, 31, 31, 1);
+          background-color: white;
+      }
 
-  headerbar button.titlebutton.minimize:hover,
-  .titlebar button.titlebutton.minimize:hover,
-  windowcontrols > button.minimize:hover,
-  headerbar button.titlebutton.minimize:backdrop:hover,
-  .titlebar button.titlebutton.minimize:backdrop:hover,
-  windowcontrols > button.minimize:backdrop:hover {
-      color: rgba(31, 31, 31, 0.7);
-      background-color: white;
-  }
+      headerbar button.titlebutton.minimize,
+      .titlebar button.titlebutton.minimize,
+      windowcontrols > button.minimize {
+          color: rgba(31, 31, 31, 1);
+          /*
+          -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("objects/title-buttons/titlebutton-minimize.svg")), -gtk-recolor(url("objects/title-buttons/titlebutton-minimize@2.svg")));
+          ,*/
+      }
 
-  headerbar button.titlebutton.restore,
-  .titlebar button.titlebutton.restore,
-  windowcontrols > button.restore {
-      color: rgba(31, 31, 31, 0.7);
-      -gtk-icon-source: -gtk-recolor(url("objects/title-buttons/titlebutton-maximize.svg")), -gtk-recolor(url("objects/title-buttons/titlebutton-maximize@2.svg")));
-  }
+      headerbar button.titlebutton.minimize:backdrop,
+      .titlebar button.titlebutton.minimize:backdrop,
+      windowcontrols > button.minimize:backdrop {
+          color: rgba(31, 31, 31, 0.7);
+      }
 
-  headerbar button.titlebutton.restore:backdrop,
-  .titlebar button.restore:backdrop,
-  windowcontrols > button.titlebutton.restore:backdrop {
-      color: rgba(31, 31, 31, 0.5);
-  }
+      headerbar button.titlebutton.minimize:hover,
+      .titlebar button.titlebutton.minimize:hover,
+      windowcontrols > button.minimize:hover,
+      headerbar button.titlebutton.minimize:backdrop:hover,
+      .titlebar button.titlebutton.minimize:backdrop:hover,
+      windowcontrols > button.minimize:backdrop:hover {
+          color: rgba(31, 31, 31, 1);
+          background-color: white;
+      }
 
-  headerbar button.titlebutton.restore:hover,
-  .titlebar button.titlebutton.restore:hover,
-  windowcontrols button.titlebutton.restore:hover,
-  headerbar button.titlebutton.restore:backdrop:hover,
-  .titlebar button.titlebutton.restore:backdrop:hover,
-  windowcontrols button.titlebutton.restore:backdrop:hover {  
-      color: rgba(31, 31, 31, 0.7);
-      background-color: white;
-  }
+      headerbar button.titlebutton.restore,
+      .titlebar button.titlebutton.restore,
+      windowcontrols > button.restore {
+          color: rgba(31, 31, 31, 1);
+          /*
+          -gtk-icon-source: -gtk-recolor(url("objects/title-buttons/titlebutton-maximize.svg")), -gtk-recolor(url("objects/title-buttons/titlebutton-maximize@2.svg")));
+          ,*/
+      }
+
+      headerbar button.titlebutton.restore:backdrop,
+      .titlebar button.restore:backdrop,
+      windowcontrols > button.titlebutton.restore:backdrop {
+          color: rgba(31, 31, 31, 0.7);
+      }
+
+      headerbar button.titlebutton.restore:hover,
+      .titlebar button.titlebutton.restore:hover,
+      windowcontrols button.titlebutton.restore:hover,
+      headerbar button.titlebutton.restore:backdrop:hover,
+      .titlebar button.titlebutton.restore:backdrop:hover,
+      windowcontrols button.titlebutton.restore:backdrop:hover {  
+          color: rgba(31, 31, 31, 1);
+          background-color: white;
+      }
 
 #+end_src
 **** button.osd
@@ -1146,6 +1157,34 @@ menubutton
       margin-top: 3px;
   }
 
+  menubutton > button > box {
+      border-spacing: 6px;
+  }
+
+  menubutton arrow {
+      min-height: 16px;
+      min-width: 16px;
+  }
+
+  menubutton arrow.none {
+      -gtk-icon-source: -gtk-icontheme("open-menu-symbolic");
+  }
+
+  menubutton arrow.down {
+      -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
+  }
+
+  menubutton arrow.up {
+      -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
+  }
+
+  menubutton arrow.left {
+      -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
+  }
+  
+  menubutton arrow.right {
+      -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
+  }  
 #+end_src
 *** sidebar button
 #+begin_src css
@@ -3035,6 +3074,16 @@ GtkRevealer has a single CSS node with name revealer. When styling GtkRevealer u
       padding: 8px 10px;
   }
 #+end_src
+*** statusbar
+#+begin_src css
+
+  /*************************************************/
+  /*                   STATUSBAR                   */
+  /*************************************************/
+  statusbar {
+      padding: 6px 10px 6px 10px;
+  }
+#+end_src
 ** High Lelel(treeview, notebook, etc)
 *** box
 #+begin_src css
@@ -3405,7 +3454,7 @@ notebook
   }
 
   notebook > stack:not(:only-child) {
-      margin: 8px 5px;
+      padding: 0px 5px 5px 5px;
       background-color: transparent;
       /* border: 1px solid @border_color; */
   }

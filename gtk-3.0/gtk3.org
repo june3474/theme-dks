@@ -4413,6 +4413,16 @@ GtkRevealer has a single CSS node with name revealer. When styling GtkRevealer u
   }
 #+end_src
 
+*** statusbar
+#+begin_src css
+
+  /*************************************************/
+  /*                   STATUSBAR                   */
+  /*************************************************/
+  statusbar {
+      padding: 6px 10px 6px 10px;
+  }
+#+end_src
 ** High Lelel(treeview, notebook, etc)
 *** box
 #+begin_src css
@@ -4781,7 +4791,7 @@ notebook
   }
 
   notebook > stack:not(:only-child) {
-      margin: 8px 5px;
+      padding: 0px 5px 5px 5px;
       background-color: transparent;
       /* border: 1px solid @border_color; */
   }
