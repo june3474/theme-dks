@@ -2897,13 +2897,17 @@ GtkInfoBar has a single CSS node with name infobar. The node may get one of the 
       min-width: 16 px;
   }
 
-  infobar button.close,
-  infobar button.close:hover,
-  infobar button.close:active {
+  infobar button.close {
+      padding: 2px;
       background-color: transparent;
       background-image: none;
       border: none;
-  }  
+      border-radius: 50%;
+  }
+
+  infobar button.close:hover {
+      background-color: white;
+  }
 #+end_src
 *** actionbar
 GtkActionBar is designed to present contextual actions.
