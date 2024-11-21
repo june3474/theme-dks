@@ -2857,7 +2857,7 @@ treeview entry.flat:focus
 /*                  NOTEBOOK                     */
 /*************************************************/
 
-notebook {
+notebook.frame {
     border: 1px solid @border_color;
     background-color: @base_color;
 }
@@ -2865,39 +2865,49 @@ notebook {
 notebook > header {
     /* margin을 notebook에 설정하면, xfce4-terminal과 같은 notebook을 사용하는
        application들에 바로 바로 영향이 나타난다. */
-    margin: 8px 5px;
+    margin: 5px;
     background-color: transparent;
 }
 
 notebook > header.top {
-    padding: 0px 5px 5px 0px;
+    padding-bottom: 5px;
     border-bottom: 1px solid @border_color;
-    margin-bottom: 5px;
 }
 
 notebook > header.bottom {
-    padding: 5px 5px 0px 0px;
+    padding-top: 5px;
     border-top: 1px solid @border_color;
-    margin-top: 5px;
 }
 
 notebook > header.left {
-    padding: 0px 5px 5px 0px;
+    padding-right: 5px;
     border-right: 1px solid @border_color;
-    margin-right: 5px;
 }
 
 notebook > header.right {
-    padding: 0px 0px 5px 5px;
+    padding-left: 5px;
     border-left: 1px solid @border_color;
-    margin-left: 5px;
 }
 
-notebook > stack:not(:only-child) {
-    padding: 0px 5px 5px 5px;
+notebook > header.top + stack {
     background-color: transparent;
-    /* border: 1px solid @border_color; */
+    padding: 0px 5px 5px 5px;
 }
+
+notebook > header.bottom + stack {
+    background-color: transparent;
+    padding: 5px 5px 0px 5px;
+}
+
+notebook > header.left + stack {
+    background-color: transparent;
+    padding: 5px 5px 5px 0px;
+}
+
+notebook > header.right + stack {
+    background-color: transparent;
+    padding: 5px 0px 5px 5px;
+}  
 
 notebook > header > tabs > tab {
     min-width: 20px;
