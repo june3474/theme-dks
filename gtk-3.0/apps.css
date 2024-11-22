@@ -197,3 +197,20 @@ window.background:not(.solid-csd) > notebook:not(.frame) > stack {
 #DesktopMainBox #CommandsToolbox {
     background-image: linear-gradient(to top, #7e8185 1px, #999ca1 1px, #b5b8be);
 }
+
+/*************************************************/
+/*             VMWARE WORKSTATION                */
+/*************************************************/
+
+toolbar#fullscreen-toolbar-dynamic + notebook {
+    padding: 0px;
+    margin: 0px;
+    background-color: @menubar_bg;
+    border: none;
+}
+
+toolbar#fullscreen-toolbar-dynamic + notebook > header {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+}

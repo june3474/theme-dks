@@ -2352,12 +2352,9 @@ menuitem
   toolbar {
       -GtkWidget-window-dragging: true;
 
-      padding-left: 4px;
-      padding-right: 4px;
-      padding-top: 6px;
-      padding-bottom: 6px;
+      padding: 6px 4px;
       background-image: linear-gradient(to top, #7e8185 1px, #999ca1 1px, #b5b8be);
-      /* background-color: @bg_color; */
+      /* background-color: @menubar_bg; */
   }
 
   toolbar separator {
@@ -2475,16 +2472,13 @@ menuitem
 #+end_src
 **** .primary-toolbar
 #+begin_src css
-  
+
   /* PRIMARY TOOLBAR */
 
   .primary-toolbar:not(.libreoffice-toolbar) {
       min-height: 20px;
       box-shadow: none;
-      border-width: 0 0 1px 0;
-      border-style: solid;
-      border-image: linear-gradient(to bottom, #dedcdf, rgba(212, 213, 219, 0.95)) 1 0 1 0;
-      background-image: linear-gradient(to top, #7e8185 1px, #999ca1 1px, #b5b8be);
+      border-bottom: 1px solid @border_color;
   }
 
   .primary-toolbar entry {
@@ -4680,7 +4674,7 @@ notebook
       background-color: transparent;
       padding: 5px 5px 5px 0px;
   }
-  
+
   notebook > header.right + stack {
       background-color: transparent;
       padding: 5px 0px 5px 5px;
@@ -4769,6 +4763,7 @@ notebook
   }
 
   notebook > header > tabs > tab button {
+      -gtk-icon-style: symbolic;
       min-height: 16px;
       min-width: 16px;
       background-color: transparent;
@@ -4777,7 +4772,7 @@ notebook
       border-radius: 50%;
       margin: 0px;
       padding: 0px;
-      opacity: 0.7;
+      opacity: 0.8;
   }
 
   notebook > header > tabs > tab button:dir(ltr) {
