@@ -5028,10 +5028,11 @@ window.background
   /* .titlebar class를 가진 widget은 window의 child node일 수도 있고,
      headerbar.titlebar일 수도 있다.  그러나 대부분의 경우, 하나의 app에서
      .titlebar class를 가진 widget은 하나이고 둘 다인 경우는 드뭄 */
-  .titlebar {
+  window .titlebar {
       /* both of decoration and .titlebar should set the same border-radius */
       border-radius: 6px 6px 0px 0px;
       padding: 5px 10px;
+      background-color: transparent;
   }
 #+end_src
 *** scrolledwindow
@@ -5268,7 +5269,8 @@ GtkMessageDialog presents a dialog with some message text.
 
   messagedialog .titlebar {
       min-height: 16px;
-      background-image: linear-gradient(to top, #7e8185 1px, #999ca1 1px, #b5b8be);    
+      background-image: linear-gradient(to top, #7e8185 1px, #999ca1 1px, #b5b8be);
+      background-color: transparent; /* for label inside */
       border-bottom: 1px solid @border_color;
       font-weight: 900;
       text-shadow: 0 1px alpha(#ffffff, 0.35);    

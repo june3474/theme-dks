@@ -2894,7 +2894,7 @@ GtkInfoBar has a single CSS node with name infobar. The node may get one of the 
 
   infobar button {
       min-height: 16px;
-      min-width: 16 px;
+      min-width: 16px;
   }
 
   infobar button.close {
@@ -3894,9 +3894,10 @@ GtkWindow adds the .titlebar and .default-decoration style classes to the widget
   /* .titlebar class를 가진 widget은 window의 child node일 수도 있고,
      headerbar.titlebar일 수도 있다.  그러나 대부분의 경우, 하나의 app에서
      .titlebar class를 가진 widget은 하나이고 둘 다인 경우는 드뭄 */
-  .titlebar {
-      border-radius: 8px 8px 0px 0px;
+  window .titlebar {
+      border-radius: 6px 6px 0px 0px;
       padding: 5px 10px;
+      background-color: transparent;      
   }
 #+end_src
 *** scrolledwindow
