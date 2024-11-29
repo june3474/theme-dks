@@ -179,11 +179,11 @@ button {
     background-clip: border-box;      
     min-height: 24px;
     min-width: 24px;
+    padding: 3px 5px;
     transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
     font-weight: normal;
     border: 1px solid @border_color;
     border-radius: 4px;
-    padding: 3px 6px;
     color: @fg_color;
     background-color: transparent;
     background-image: linear-gradient(to bottom, #f1f1f1, #f0f0f0 48%, #eeeeee 50%, #e6e6e6);
@@ -278,14 +278,14 @@ button.image-button:not(.text-button) {
 button.image-button:active:hover image,
 button.image-button:checked image,
 button.image-button.radio:checked image {
-    color: white;
+    color: @selected_fg_color;
 }
 
 /* text & image button */
 
 button.image-text-button,
 button.text-button.image-button {
-    /* nothing to add */
+    padding: 3px 5px;
 }
 
 button.image-text-button image + label,
