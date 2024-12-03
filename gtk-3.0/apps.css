@@ -202,6 +202,12 @@ window.background:not(.solid-csd) > notebook:not(.frame) > stack {
 /*             VMWARE WORKSTATION                */
 /*************************************************/
 
+menubar#menubar ~ toolbar,
+#fullscreen-toolbar-dynamic {
+    background-color: @menubar_bg;
+    background-image: none;
+}
+
 toolbar#fullscreen-toolbar-dynamic + notebook {
     padding: 0px;
     margin: 0px;
