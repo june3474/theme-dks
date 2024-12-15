@@ -3772,7 +3772,7 @@ GtkPlacesSidebar does NOT seem to be suppored with gtk4. Not sure though.
 #+end_src
 **** placessidebar
 #+begin_src css
-  
+
   /* PLACESSIDEBAR */
 
   placessidebar {
@@ -3798,6 +3798,12 @@ GtkPlacesSidebar does NOT seem to be suppored with gtk4. Not sure though.
       padding: 0 10px;
   }
 
+  placessidebar button.image-button:not(.text-button).sidebar-button {
+      border: none;
+      background-color: transparent;
+      background-image: none;
+  }
+  
   placessidebar row image.sidebar-icon:dir(ltr) {
       padding-right: 8px;
   }
