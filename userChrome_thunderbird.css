@@ -118,8 +118,8 @@ toolbarbutton#spacesPinnedButton[open="true"] {
 #tabs-toolbar {
     box-shadow: none !important; /* 기본적으로 그리게 되어 있는 box shadow를 취소 */
     padding: .3em !important;
-    /* background: linear-gradient(to right, #1fa2ff, #12d8fa, #a6ffcb) !important;*/
-    background: linear-gradient(to right, #2193b0, #49b0c2, #aff6ccf0) !important;
+    /* background: linear-gradient(to right, #1fa2ff, #12d8fa, #a6ffcb) !important; */
+    background: linear-gradient(45deg, #2193b0, #49b0c2, #aff6cc) !important;
     border-bottom: 1px solid var(--border_dark) !important;
 }
 
