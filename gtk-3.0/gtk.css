@@ -3972,9 +3972,14 @@ treeview:selected {
     background-color: @selected_bg_color;
 }
 
+treeview:selected:backdrop {
+    color: @fg_color;
+    background-color: @bg_color;
+}
+
 treeview:disabled:selected {
-    background-color: @insensitive_bg_color;
     color: @insensitive_fg_color;
+    background-color: @insensitive_bg_color;
 }
 
 treeview:drop(active) {

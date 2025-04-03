@@ -15,51 +15,51 @@
 Note: ,* is converted to * when tangled
 #+begin_src css
 
-  /*************************************************/
-  /*                  DEFAULT                      */
-  /*************************************************/
+   /*************************************************/
+   /*                  DEFAULT                      */
+   /*************************************************/
 
-  ,* {
-      background-clip: padding-box;
+   ,* {
+       background-clip: padding-box;
 
-      -GtkToolButton-icon-spacing: 4;
-      -GtkTextView-error-underline-color: @error_color;
-      -GtkScrolledWindow-scrollbar-spacing: 0;
-      -GtkToolItemGroup-expander-size: 11;
-      -GtkWidget-text-handle-width: 20;
-      -GtkWidget-text-handle-height: 20;
+       -GtkToolButton-icon-spacing: 4;
+       -GtkTextView-error-underline-color: @error_color;
+       -GtkScrolledWindow-scrollbar-spacing: 0;
+       -GtkToolItemGroup-expander-size: 11;
+       -GtkWidget-text-handle-width: 20;
+       -GtkWidget-text-handle-height: 20;
 
-      -GtkDialog-button-spacing: 6;
-      -GtkDialog-action-area-border: 0;
+       -GtkDialog-button-spacing: 6;
+       -GtkDialog-action-area-border: 0;
 
-      -GtkScrollbar-has-backward-stepper: false;
-      -GtkScrollbar-has-forward-stepper: false;
+       -GtkScrollbar-has-backward-stepper: false;
+       -GtkScrollbar-has-forward-stepper: false;
 
-      color: @fg_color;
-  }
+       color: @fg_color;
+   }
 
-  ,*:selected {
-      background-color: @selected_bg_color;
-      color: @selected_fg_color;
-  }
+   ,*:selected {
+       background-color: @selected_bg_color;
+       color: @selected_fg_color;
+   }
 
-  ,*:disabled {
-      -gtk-icon-effect: dim;
-      color: @insensitive_fg_color;
-  }
+   ,*:disabled {
+       -gtk-icon-effect: dim;
+       color: @insensitive_fg_color;
+   }
 
-  ,*:hover {
-      -gtk-icon-effect: highlight;
-  }
+   ,*:hover {
+       -gtk-icon-effect: highlight;
+   }
 
-  ,*:link {
-      color: @link_color;
-      text-decoration: underline;
-  }
+   ,*:link {
+       color: @link_color;
+       text-decoration: underline;
+   }
 
-  ,*:visited {
-      color: @link_visited;
-  }
+   ,*:visited {
+       color: @link_visited;
+   }
 #+end_src
 *** text, image & icon
 #+begin_src css
@@ -4468,9 +4468,14 @@ treeview.view
       background-color: @selected_bg_color;
   }
 
+  treeview:selected:backdrop {
+      color: @fg_color;
+      background-color: @bg_color;
+  }
+
   treeview:disabled:selected {
-      background-color: @insensitive_bg_color;
       color: @insensitive_fg_color;
+      background-color: @insensitive_bg_color;
   }
 
   treeview:drop(active) {

@@ -2729,8 +2729,14 @@ columnview {
 
 treeview.view:selected,
 columnview:selected {
-    background-color: @selected_bg_color;
     color: @selected_fg_color;
+    background-color: @selected_bg_color;
+}
+
+treeview.view:selected:backdrop,
+columnview:selected:backdrop {
+    color: @fg_color;
+    background-color: @bg_color;
 }
 
 treeview.view:hover:not(:selected),

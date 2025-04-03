@@ -495,8 +495,7 @@ dialog.xfsm-logout-dialog button:focus {
   padding: 0;
 }
 
- /* right pannel */
-.thunar notebook .view:active {
-  color: @selected_fg_color;
-  background-color: @selected_bg_color;
+/* right pannel */
+.thunar notebook treeview {
+
 }
