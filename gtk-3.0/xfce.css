@@ -24,7 +24,15 @@ XfdesktopIconView.view.label:active {
 /*                    PANEL                      */
 /*************************************************/
 
-/* 
+/*
+    Invoke GTK inspector for xfce4-panel as follows:
+      - shutdown the current panel
+        run "xfce4-panel -q" in terminal
+      - restart panel
+        run "GTK_DEBUG=interactive xfce4-panel", append '&' if necessary.
+*/
+
+/*
    As of version 4.12, xfce4-panel uses gtk2. 
    But some panel plugins(ex, whiskermenu) are gtk3 apps.  
    Thus, setting for xfc4-panel and its bundled plugins(ex, clock; systray)
@@ -34,13 +42,10 @@ XfdesktopIconView.view.label:active {
    refer to the whiskermenu plugin's below.  -- by dks
    
    Object                   Name                   Style class
-   ------------------------------------------------------------------------
-   WrapperPlug            XfcePanelWindowWrapper   .background.panel.xfce4-panel
-     XfcePanelPlugin      whiskermenu-4
-       GtkToggleButton    whiskermenubutton        .flat.toggle
-         GtkBox                                    .horizontal
-           GtkImage
-           GtkLabel    
+   -------------------------------------------------------------------------------
+   window                 XfcePanelWindowWrapper   .background .panel .xfce4-panel
+     widget               whiskermenu-*
+       button                                      .flat .toggle
 */
 
 /*
@@ -55,6 +60,7 @@ XfceHeading {
 */
 
 #XfcePanelWindowWrapper,
+#XfcePanelWindowWrapper > decoration,
 .xfce4-panel.background {
     background-color: @panel_bg;
     color: @fg_color;
@@ -65,7 +71,9 @@ XfceHeading {
                   0px  1px alpha(@fg_color, 0.5),
                   0px  2px alpha(@fg_color, 0.05);
     */
-    font-weight: normal; }
+    font-weight: normal;
+    border: none;
+}
 
 .xfce4-panel.background button {
     color: @fg_color;

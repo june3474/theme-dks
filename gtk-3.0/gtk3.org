@@ -15,51 +15,47 @@
 Note: ,* is converted to * when tangled
 #+begin_src css
 
-   /*************************************************/
-   /*                  DEFAULT                      */
-   /*************************************************/
+  /*************************************************/
+  /*                  DEFAULT                      */
+  /*************************************************/
 
-   ,* {
-       background-clip: padding-box;
+  ,* {
+      background-clip: padding-box;
 
-       -GtkToolButton-icon-spacing: 4;
-       -GtkTextView-error-underline-color: @error_color;
-       -GtkScrolledWindow-scrollbar-spacing: 0;
-       -GtkToolItemGroup-expander-size: 11;
-       -GtkWidget-text-handle-width: 20;
-       -GtkWidget-text-handle-height: 20;
+      -GtkToolButton-icon-spacing: 4;
+      -GtkTextView-error-underline-color: @error_color;
+      -GtkScrolledWindow-scrollbar-spacing: 0;
+      -GtkToolItemGroup-expander-size: 11;
+      -GtkWidget-text-handle-width: 20;
+      -GtkWidget-text-handle-height: 20;
 
-       -GtkDialog-button-spacing: 6;
-       -GtkDialog-action-area-border: 0;
+      -GtkDialog-button-spacing: 6;
+      -GtkDialog-action-area-border: 0;
 
-       -GtkScrollbar-has-backward-stepper: false;
-       -GtkScrollbar-has-forward-stepper: false;
+      -GtkScrollbar-has-backward-stepper: false;
+      -GtkScrollbar-has-forward-stepper: false;
 
-       color: @fg_color;
-   }
+      color: @fg_color;
+  }
 
-   ,*:selected {
-       background-color: @selected_bg_color;
-       color: @selected_fg_color;
-   }
+  ,*:selected {
+      background-color: @selected_bg_color;
+      color: @selected_fg_color;
+  }
 
-   ,*:disabled {
-       -gtk-icon-effect: dim;
-       color: @insensitive_fg_color;
-   }
+  ,*:disabled {
+      -gtk-icon-effect: dim;
+      color: @insensitive_fg_color;
+  }
 
-   ,*:hover {
-       -gtk-icon-effect: highlight;
-   }
+  ,*:link {
+      color: @link_color;
+      text-decoration: underline;
+  }
 
-   ,*:link {
-       color: @link_color;
-       text-decoration: underline;
-   }
-
-   ,*:visited {
-       color: @link_visited;
-   }
+  ,*:visited {
+      color: @link_visited;
+  }
 #+end_src
 *** text, image & icon
 #+begin_src css
@@ -259,11 +255,11 @@ Button-like widgets like GtkToggleButton, GtkMenuButton, GtkVolumeButton, GtkLoc
       background-clip: border-box;
       min-height: 24px;
       min-width: 24px;
-      padding: 3px 5px;      
       transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
       font-weight: normal;
       border: 1px solid @border_color;
       border-radius: 4px;
+      padding: 3px 6px;
       background-color: transparent;
       background-image: linear-gradient(to bottom, #f1f1f1, #f0f0f0 48%, #eeeeee 50%, #e6e6e6);
   }
@@ -344,7 +340,7 @@ Button-like widgets like GtkToggleButton, GtkMenuButton, GtkVolumeButton, GtkLoc
   /* text button */
 
   button.text-button:not(.image-button) {
-      padding: 3px 5px;
+      /* nothing to add */
   }
 #+end_src
 **** image button
@@ -370,7 +366,7 @@ Button-like widgets like GtkToggleButton, GtkMenuButton, GtkVolumeButton, GtkLoc
 
   button.image-text-button,
   button.text-button.image-button {
-      padding: 3px 5px;
+      /* nothing to add */
   }
 
   button.image-text-button image + label,
@@ -618,6 +614,10 @@ minimize, maxmize, close buttons
 
   button.circular,
   button.circular-button {
+      padding: 0;
+      min-width: 16px;
+      min-height: 24px;
+      padding: 2px 6px;
       border-radius: 50%;
   }
 
@@ -2348,9 +2348,12 @@ menuitem
   toolbar {
       -GtkWidget-window-dragging: true;
 
-      padding: 6px 4px;
+      padding-left: 4px;
+      padding-right: 4px;
+      padding-top: 6px;
+      padding-bottom: 6px;
       background-image: linear-gradient(to top, #7e8185 1px, #999ca1 1px, #b5b8be);
-      /* background-color: @menubar_bg; */
+      /* background-color: @bg_color; */
   }
 
   toolbar separator {
@@ -2468,13 +2471,16 @@ menuitem
 #+end_src
 **** .primary-toolbar
 #+begin_src css
-
+  
   /* PRIMARY TOOLBAR */
 
   .primary-toolbar:not(.libreoffice-toolbar) {
       min-height: 20px;
       box-shadow: none;
-      border-bottom: 1px solid @border_color;
+      border-width: 0 0 1px 0;
+      border-style: solid;
+      border-image: linear-gradient(to bottom, #dedcdf, rgba(212, 213, 219, 0.95)) 1 0 1 0;
+      background-image: linear-gradient(to top, #7e8185 1px, #999ca1 1px, #b5b8be);
   }
 
   .primary-toolbar entry {
@@ -4059,42 +4065,167 @@ menuitem
 #+end_src
 *** infobar
 #+begin_src css
-
+  
   /*************************************************/
   /*                   INFOBAR                     */
   /*************************************************/
 
-     infobar {
-         background-color: transparent;
-         border: 1px solid @border_color;      
-     }
+  infobar {
+      border-style: none;
+  }
 
-     infobar.error {
-         color: white;
-         background-image: linear-gradient(to bottom,#f3313a,#f3313a);
-     }
+  infobar.info,
+  infobar.error,
+  infobar.question,
+  infobar.warning {
+      background-color: transparent;
+      color: #ffffff;
+      text-shadow:  0 -1px alpha(#ffffff, 0.04),
+                    -1px  0px alpha(@fg_color, 0.05),
+                    1px  0px alpha(@fg_color, 0.05),
+                    0px  1px alpha(@fg_color, 0.3),
+                    0px  2px alpha(@fg_color, 0.05);
+      background-image: linear-gradient(to bottom,#2b69d2,#2b69d2); }
 
-     infobar.warning {
-         background-color: transparent;
-         background-image: linear-gradient(to bottom,#ff851a,#ff851a);
-     }
+  infobar.error button,
+  infobar.warning button,
+  infobar.question button,
+  infobar.info button {
+      color: #ffffff;
+      text-shadow:  0 -1px alpha(#ffffff, 0.04),
+                    -1px  0px alpha(@fg_color, 0.05),
+                    1px  0px alpha(@fg_color, 0.05),
+                    0px  1px alpha(@fg_color, 0.3),
+                    0px  2px alpha(@fg_color, 0.05);
+      border-color: #265bb3;
+      background-color: transparent;
+      background-image: linear-gradient(to bottom,#2b69d2,#265bb3);
+  }
 
-     infobar button {
-         min-height: 16px;
-         min-width: 16px;
-     }
+  infobar.error button.flat,
+  infobar.warning button.flat,
+  infobar.question button.flat,
+  infobar.info button.flat {
+      color: #ffffff;
+      text-shadow:  0 -1px alpha(#ffffff, 0.04),
+                    -1px  0px alpha(@fg_color, 0.05),
+                    1px  0px alpha(@fg_color, 0.05),
+                    0px  1px alpha(@fg_color, 0.3),
+                    0px  2px alpha(@fg_color, 0.05);
+      border-color: #2b69d2;
+      background-color: transparent;
+      background-image: linear-gradient(to bottom,#2b69d2,#2b69d2);
+  }
 
-     infobar button.close {
-         padding: 2px;
-         background-color: transparent;
-         background-image: none;
-         border: none;
-         border-radius: 50%;
-     }
+  infobar.error button.sidebar-button,
+  infobar.warning button.sidebar-button,
+  infobar.question button.sidebar-button,
+  infobar.info button.sidebar-button {
+      color: #ffffff;
+      text-shadow:  0 -1px alpha(#ffffff, 0.04),
+                    -1px  0px alpha(@fg_color, 0.05),
+                    1px  0px alpha(@fg_color, 0.05),
+                    0px  1px alpha(@fg_color, 0.3),
+                    0px  2px alpha(@fg_color, 0.05);
+      border-color: #265bb3;
+      background-color: transparent;
+      background-image: linear-gradient(to bottom,#2b69d2,#265bb3);
+  }
 
-     infobar button.close:hover {
-         background-color: white;
-     }
+  infobar.info button.flat:disabled,
+  infobar.info button.sidebar-button:disabled,
+  infobar.question button.flat:disabled,
+  infobar.question button.sidebar-button:disabled,
+  infobar.warning button.flat:disabled,
+  infobar.warning button.sidebar-button:disabled,
+  infobar.error button.flat:disabled,
+  infobar.error button.sidebar-button:disabled,
+  infobar.info button.flat:disabled label,
+  infobar.info button.sidebar-button:disabled label,
+  infobar.question button.flat:disabled label,
+  infobar.question button.sidebar-button:disabled label,
+  infobar.warning button.flat:disabled label,
+  infobar.warning button.sidebar-button:disabled label,
+  infobar.error button.flat:disabled label,
+  infobar.error button.sidebar-button:disabled label {
+      color: rgba(255, 255, 255, 0.8);
+  }
+
+  infobar.error selection,
+  infobar.warning selection,
+  infobar.question selection,
+  infobar.info selection,
+  infobar.error button:checked,
+  infobar.warning button:checked,
+  infobar.question button:checked,
+  infobar.info button:checked,
+  infobar.error button:active:hover,
+  infobar.warning button:active:hover,
+  infobar.question button:active:hover,
+  infobar.info button:active:hover,
+  infobar.error button:active,
+  infobar.warning button:active,
+  infobar.question button:active,
+  infobar.info button:active,
+  infobar.error button:hover,
+  infobar.warning button:hover,
+  infobar.question button:hover,
+  infobar.info button:hover {
+      color: #ffffff;
+      text-shadow:  0 -1px alpha(#ffffff, 0.04),
+                    -1px  0px alpha(@fg_color, 0.05),
+                    1px  0px alpha(@fg_color, 0.05),
+                    0px  1px alpha(@fg_color, 0.3),
+                    0px  2px alpha(@fg_color, 0.05);
+      border-color: #265bb3;
+      background-color: transparent;
+      background-image: linear-gradient(to bottom,#2b69d2,#2b69d2);
+  }
+
+  infobar.error button:disabled:checked,
+  infobar.warning button:disabled:checked,
+  infobar.question button:disabled:checked,
+  infobar.info button:disabled:checked,
+  infobar.question button:disabled:active,
+  infobar.warning button:disabled:active,
+  infobar.error button:disabled:active,
+  infobar.info button:disabled:active
+                                   infobar.error button:disabled,
+  infobar.warning button:disabled,
+  infobar.question button:disabled,
+  infobar.info button:disabled {
+      color: rgba(255,255,255,0.8);
+      text-shadow:  0 -1px alpha(#ffffff, 0.04),
+                    -1px  0px alpha(@fg_color, 0.05),
+                    1px  0px alpha(@fg_color, 0.05),
+                    0px  1px alpha(@fg_color, 0.3),
+                    0px  2px alpha(@fg_color, 0.05);
+      border-color: #265bb3;
+      background-color: transparent;
+      background-image: linear-gradient(to bottom,#2b69d2,#2b69d2);
+  }
+
+
+  infobar.info button:disabled label,
+  infobar.question button:disabled label,
+  infobar.warning button:disabled label,
+  infobar.error button:disabled label {
+      color: rgba(255,255,255,0.8);
+  }
+
+  infobar.info *:link,
+  infobar.info button:link,
+  infobar.question *:link,
+  infobar.question button:link,
+  infobar.question button:visited,
+  infobar.warning *:link,
+  infobar.warning button:link,
+  infobar.warning button:visited,
+  infobar.error *:link,
+  infobar.error button:link,
+  infobar.error button:visited {
+      color: #dceaf9;
+  }
 #+end_src
 *** actionbar
 GtkActionBar is designed to present contextual actions.
@@ -4468,14 +4599,9 @@ treeview.view
       background-color: @selected_bg_color;
   }
 
-  treeview:selected:backdrop {
-      color: @fg_color;
-      background-color: @bg_color;
-  }
-
   treeview:disabled:selected {
-      color: @insensitive_fg_color;
       background-color: @insensitive_bg_color;
+      color: @insensitive_fg_color;
   }
 
   treeview:drop(active) {
@@ -4629,7 +4755,7 @@ notebook
   /*                  NOTEBOOK                     */
   /*************************************************/
 
-  notebook.frame {
+  notebook {
       border: 1px solid @border_color;
       background-color: @base_color;
   }
@@ -4637,49 +4763,39 @@ notebook
   notebook > header {
       /* margin을 notebook에 설정하면, xfce4-terminal과 같은 notebook을 사용하는
          application들에 바로 바로 영향이 나타난다. */
-      margin: 5px;
+      margin: 8px 5px;
       background-color: transparent;
   }
 
   notebook > header.top {
-      padding-bottom: 5px;
+      padding: 0px 5px 5px 0px;
       border-bottom: 1px solid @border_color;
+      margin-bottom: 5px;
   }
 
   notebook > header.bottom {
-      padding-top: 5px;
+      padding: 5px 5px 0px 0px;
       border-top: 1px solid @border_color;
+      margin-top: 5px;
   }
 
   notebook > header.left {
-      padding-right: 5px;
+      padding: 0px 5px 5px 0px;
       border-right: 1px solid @border_color;
+      margin-right: 5px;
   }
 
   notebook > header.right {
-      padding-left: 5px;
+      padding: 0px 0px 5px 5px;
       border-left: 1px solid @border_color;
+      margin-left: 5px;
   }
 
-  notebook > header.top + stack {
+  notebook > stack:not(:only-child) {
+      margin: 8px 5px;
       background-color: transparent;
-      padding: 0px 5px 5px 5px;
+      /* border: 1px solid @border_color; */
   }
-
-  notebook > header.bottom + stack {
-      background-color: transparent;
-      padding: 5px 5px 0px 5px;
-  }
-
-  notebook > header.left + stack {
-      background-color: transparent;
-      padding: 5px 5px 5px 0px;
-  }
-
-  notebook > header.right + stack {
-      background-color: transparent;
-      padding: 5px 0px 5px 5px;
-  }  
 
   notebook > header > tabs > tab {
       min-width: 20px;
@@ -4764,7 +4880,6 @@ notebook
   }
 
   notebook > header > tabs > tab button {
-      -gtk-icon-style: symbolic;
       min-height: 16px;
       min-width: 16px;
       background-color: transparent;
@@ -4773,7 +4888,7 @@ notebook
       border-radius: 50%;
       margin: 0px;
       padding: 0px;
-      opacity: 0.8;
+      opacity: 0.7;
   }
 
   notebook > header > tabs > tab button:dir(ltr) {
@@ -4964,12 +5079,6 @@ GtkPlacesSidebar does NOT seem to be suppored with gtk4. Not sure though.
       padding: 0 10px;
   }
 
-  placessidebar button.image-button:not(.text-button).sidebar-button {
-      border: none;
-      background-color: transparent;
-      background-image: none;
-  }
-  
   placessidebar row image.sidebar-icon:dir(ltr) {
       padding-right: 8px;
   }
@@ -5000,47 +5109,96 @@ window.background
 
 #+begin_src css
 
-  /*************************************************/
-  /*                 WINDOW                        */
-  /*************************************************/
+   /*************************************************/
+   /*                 WINDOW                        */
+   /*************************************************/
 
-  window {
-      background-color: @bg_color;
-  }
+   window {
+       background-color: @bg_color;
+       /* decoration node가 없을 경우 fallback */
+       border: 1px solid @border_color;
+       /* border-radius: 6px 6px 0px 0px; */
+       /* 아래에 적은 것처럼 xfce에서는 무시될 가능성이 높지만 해가 될 건 없음.
+          다른 wm을 사용할 경우도 있으니...
+          Anyhow, shadow는 theme 설정과 무관하게 compositor로 그려질 수 있다. */
+       box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.4);      
+   }
 
-  window > decoration {
-      border: 1px solid @border_color;
-      box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.4);
-      /* margin is required to display window resize handle */
-      margin: 4px;
-      border-radius: 6px 6px 0px 0px;
-  }
-  window:backdrop > decoration {
-      /* if set box-shadow to none, window changes it position
-         and size by the size of box-shadow. So just make it transparent
-         by setting the alpah to zero */
-      box-shadow: 0px 0px 4px 2px rgba(0,0,0,0);
-  }
+   window:backdrop {
+       /* if set box-shadow to none, window changes it position
+          and size by the size of box-shadow. So just make it transparent
+          by setting the alpah to zero */
+       box-shadow: 0px 0px 4px 2px rgba(0,0,0,0);
+   }
 
-  window.maximized > decoration,
-  window.fullscreen > decoration {
-      border-radius: 0px;
-      box-shadow: none;
-  }    
+   /*
+      decoration 노드는 Window Manager나 client-side-decoration(csd)가
+      Application에서 활성화(enabled) 여부에 따라 있을 수도 있고 없을 수도 있음.
+      decoration 노드가 있는 경우 window 노드의 property를 오버라이드함.
+      다만, window > decoration은 윈도우의 일부(타이틀바나 외곽선)에만 적용됨.
+      전체 윈도우에 색을 입히고 싶으면 window 스타일이 적용됨.
+      참고로, gtk4는 decoration node가 없고 .csd, .ssd 등이 style class로 사용됨.
 
-  window.popup > decoration {
-      border-radius: 4px;
-  }
+      XFCE의 Xfwm4는 기본적으로 server-side-decoration(ssd)을 사용하기 때문에
+      decoration 노드가 없을 수도 있으나 csd가 활성화 되어 있으면 나타남.
+      XFCE(Xfwm4)는 csd를 부분적으로 지원하며, 많은 경우 제대로 된 그림자, 그림테두리,
+      리사이즈 핸들 등은 제대로 작동하지 않을 수 있음.
 
-  /* .titlebar class를 가진 widget은 window의 child node일 수도 있고,
-     headerbar.titlebar일 수도 있다.  그러나 대부분의 경우, 하나의 app에서
-     .titlebar class를 가진 widget은 하나이고 둘 다인 경우는 드뭄 */
-  window .titlebar {
-      /* both of decoration and .titlebar should set the same border-radius */
-      border-radius: 6px 6px 0px 0px;
-      padding: 5px 10px;
-      background-color: transparent;
-  }
+      ✅ 적용되지 않거나 제한적인 CSS 속성들 -- from ChatGPT 
+      속성      설명        window / decoration에서의 동작
+      padding   내부 여백   무시되거나 시각적으로 영향 없음 (내용에만 영향)
+      margin    외부 여백       무시됨. 윈도우는 "부모"가 없기 때문에 쓸모 없음
+      box-shadow    그림자      많은 경우 무시됨, 특히 Xfwm4/X11 환경
+      border-radius 테두리     CSD 환경에서는 부분적으로 작동, X11에서는 거의 무시됨
+      opacity   투명도      GTK 자체는 지원하지만, WM이 지원 안 하면 무시됨
+      transform 회전,스케일    적용되지 않음. layout 레벨에서만 작동
+      background-image      일부 환경에서는 동작 안 함, 특히 decoration 노드
+      min-width/min-height  최소 크기   window 노드에는 무시됨
+      display   none 등     GTK CSS는 display 속성을 아예 지원하지 않음
+
+      ✅ 반대로 적용 잘 되는 속성들
+      속성               설명
+      border            테두리 (CSD에서 유용)
+      background-color  배경색
+      color             일부 텍스트 색상 (headerbar 등 자식에게 영향)
+      border-image      (제한적이지만) 작동
+      outline           테두리 대체 가능 (border와 별도)
+      visibility        hidden은 되지만 완전히는 숨기지 못할 수 있음
+  ,*/
+
+   window > decoration {
+       border: 1px solid @border_color;
+       box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.4);
+       /* margin is required to display window resize handle */
+       margin: 4px;
+       /* border-radius: 6px 6px 0px 0px; */
+   }
+   
+   window:backdrop > decoration {
+       /* if set box-shadow to none, window changes it position
+          and size by the size of box-shadow. So just make it transparent
+          by setting the alpah to zero */
+       box-shadow: 0px 0px 4px 2px rgba(0,0,0,0);
+   }
+
+   window.maximized > decoration,
+   window.fullscreen > decoration {
+       border-radius: 0px;
+       box-shadow: none;
+   }    
+
+   window.popup > decoration {
+       border-radius: 4px;
+   }
+
+   /* .titlebar class를 가진 widget은 window의 child node일 수도 있고,
+      headerbar.titlebar일 수도 있다.  그러나 대부분의 경우, 하나의 app에서
+      .titlebar class를 가진 widget은 하나이고 둘 다인 경우는 드뭄 */
+   .titlebar {
+       /* both of decoration and .titlebar should set the same border-radius */
+       border-radius: 6px 6px 0px 0px;
+       padding: 5px 10px;
+   }
 #+end_src
 *** scrolledwindow
 Container that makes its child scrollable.
@@ -5178,10 +5336,6 @@ Container that makes its child scrollable.
       /* background-color makes black outline. dunno why! */
       background-image: linear-gradient(to bottom, @base_color, @base_color);
   }
-
-  viewport.frame {
-      padding: 5px;
-  }  
 #+end_src
 *** dialog & other windows
 #+begin_src css
@@ -5262,32 +5416,27 @@ GtkMessageDialog presents a dialog with some message text.
 
 #+begin_src css
 
-  /*************************************************/
-  /*                MESSAGE DIALOG                 */
-  /*************************************************/
+    /*************************************************/
+    /*                MESSAGE DIALOG                 */
+    /*************************************************/
 
-  messagedialog,
-  alertdialog {
-      background-color: @bg_color;
-  }
+    messagedialog,
+    messagedialog > decoration,
+    alertdialog,
+    alertdialog > decoration {
+        background-color: @bg_color;
+        border: 1px solid @border_color;
+        border-radius: 6px;
+        box-shadow: 0  2px 5px 2px rgba(0, 0, 0, 0.4);      
+    }
 
-  messagedialog > decoration,
-  alertdialog > decoration {
-      border: 1px solid @border_color;
-      box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.4);
-      /* margin is required to display window resize handle */
-      margin: 4px;
-      border-radius: 6px 6px 0px 0px;
-  }
-
-  messagedialog .titlebar {
-      min-height: 16px;
-      background-image: linear-gradient(to top, #7e8185 1px, #999ca1 1px, #b5b8be);
-      background-color: transparent; /* for label inside */
-      border-bottom: 1px solid @border_color;
-      font-weight: 900;
-      text-shadow: 0 1px alpha(#ffffff, 0.35);    
-  }
+    messagedialog .titlebar {
+        min-height: 16px;
+        background-image: linear-gradient(to top, #7e8185 1px, #999ca1 1px, #b5b8be);    
+        border-bottom: 1px solid @border_color;
+        font-weight: 900;
+        text-shadow: 0 1px alpha(#ffffff, 0.35);    
+    }
 #+end_src
 * Other Widgets
 ** calendar
