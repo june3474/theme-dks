@@ -4098,9 +4098,9 @@ treeview:hover:not(:selected) {
     background-color: @hover_bg;
 }
 
-treeview:selected {
-    color: @selected_fg_color;
-    background-color: @selected_bg_color;
+treeview:backdrop:selected {
+    color: @fg_color;
+    background-color: @bg_color;
 }
 
 treeview:disabled:selected {
