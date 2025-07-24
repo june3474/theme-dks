@@ -4052,7 +4052,7 @@ paned > placessidebar + separator {
 }
 
 /*************************************************/
-/*                  TREEVIEW                     */
+/*                  TEXTVIEW                     */
 /*************************************************/
 
 textview {
@@ -4077,6 +4077,7 @@ iconview {
 /*************************************************/
 
 treeview {
+    color: @fg_color;
     background-color: @base_color;
     border-color: @border_color;
     padding-left: 3px;
@@ -4093,19 +4094,23 @@ treeview {
 }
 */
 
-treeview:hover:not(:selected) {
-    color: @fg_color;
-    background-color: @hover_bg;
-}
-
-treeview:backdrop:selected {
+treeview:selected:backdrop {
     color: @fg_color;
     background-color: @bg_color;
 }
 
-treeview:disabled:selected {
-    background-color: @insensitive_bg_color;
+treeview:selected:focus {
+    color: @selected_fg_color;
+    background-color: @selected_bg_color;
+}
+
+treeview:selected:disabled {
     color: @insensitive_fg_color;
+    background-color: @insensitive_bg_color;
+}
+
+treeview:hover:not(:selected) {
+    background-color: @hover_bg;
 }
 
 treeview:drop(active) {
@@ -4114,11 +4119,11 @@ treeview:drop(active) {
     border-color: @selected_bg_color;
 }
 
-treeview.view > dndtarget.after:drop(active) {
+treeview > dndtarget.after:drop(active) {
     border-top-style: none;
 }
 
-treeview.view > dndtarget.before:drop(active) {
+treeview > dndtarget.before:drop(active) {
     border-bottom-style: none;
 }
 
@@ -4593,7 +4598,7 @@ placessidebar row label.sidebar-label:dir(rtl) {
      margin: 4px;
      /* border-radius: 6px 6px 0px 0px; */
  }
-
+ 
  window:backdrop > decoration {
      /* if set box-shadow to none, window changes it position
         and size by the size of box-shadow. So just make it transparent

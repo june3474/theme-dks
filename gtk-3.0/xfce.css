@@ -502,7 +502,7 @@ dialog.xfsm-logout-dialog button:focus {
 }
 
 /* left panel */
-.thunar .shortcuts-pane { 
+.thunar .shortcuts-pane.sidebar { 
   background-color: @placessidebar_bg;
   -gtk-icon-style: symbolic;
   padding: 0;
@@ -510,5 +510,9 @@ dialog.xfsm-logout-dialog button:focus {
 
 /* right pannel */
 .thunar notebook treeview {
+  /* nothing special */
+}
 
+.thunar notebook treeview:selected:not(:focus) {
+  color: @fg_color;
 }

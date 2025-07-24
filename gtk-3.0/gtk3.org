@@ -4526,7 +4526,7 @@ paned
 #+begin_src css
 
   /*************************************************/
-  /*                  TREEVIEW                     */
+  /*                  TEXTVIEW                     */
   /*************************************************/
 
   textview {
@@ -4573,6 +4573,7 @@ treeview.view
   /*************************************************/
 
   treeview {
+      color: @fg_color;
       background-color: @base_color;
       border-color: @border_color;
       padding-left: 3px;
@@ -4589,32 +4590,36 @@ treeview.view
   }
   ,*/
 
-  treeview:hover:not(:selected) {
-      color: @fg_color;
-      background-color: @hover_bg;
-  }
-
-  treeview:backdrop:selected {
+  treeview:selected:backdrop {
       color: @fg_color;
       background-color: @bg_color;
   }
 
-  treeview:disabled:selected {
-      background-color: @insensitive_bg_color;
-      color: @insensitive_fg_color;
+  treeview:selected:focus {
+      color: @selected_fg_color;
+      background-color: @selected_bg_color;
   }
 
+  treeview:selected:disabled {
+      color: @insensitive_fg_color;
+      background-color: @insensitive_bg_color;
+  }
+
+  treeview:hover:not(:selected) {
+      background-color: @hover_bg;
+  }
+  
   treeview:drop(active) {
       border-style: solid none;
       border-width: 1px;
       border-color: @selected_bg_color;
   }
 
-  treeview.view > dndtarget.after:drop(active) {
+  treeview > dndtarget.after:drop(active) {
       border-top-style: none;
   }
 
-  treeview.view > dndtarget.before:drop(active) {
+  treeview > dndtarget.before:drop(active) {
       border-bottom-style: none;
   }
 
