@@ -67,6 +67,11 @@
     border-bottom: var(--tab_border_width) solid var(--border_dark) !important;
 }
 
+/* When menubar is hidden, remove the bottom border */
+#toolbar-menubar[inactive] {
+    border-bottom: none !important;
+}
+
 #mail-menubar > menu {
     margin-right: 0.5rem !important;
 }
