@@ -513,6 +513,6 @@ dialog.xfsm-logout-dialog button:focus {
   /* nothing special */
 }
 
-.thunar notebook treeview:selected:not(:focus) {
+.thunar notebook treeview:not(:focus) *:selected {
   color: @fg_color;
 }

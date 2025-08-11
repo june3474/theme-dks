@@ -4094,17 +4094,17 @@ treeview {
 }
 */
 
-treeview:selected:backdrop {
+treeview:backdrop row:selected {
     color: @fg_color;
     background-color: @bg_color;
 }
 
-treeview:selected:focus {
+treeview:focus row:selected {
     color: @selected_fg_color;
     background-color: @selected_bg_color;
 }
 
-treeview:selected:disabled {
+treeview:disable row:selected {
     color: @insensitive_fg_color;
     background-color: @insensitive_bg_color;
 }
