@@ -4600,7 +4600,7 @@ treeview.view
       background-color: @selected_bg_color;
   }
 
-  treeview:disable row:selected {
+  treeview:disabled row:selected {
       color: @insensitive_fg_color;
       background-color: @insensitive_bg_color;
   }
