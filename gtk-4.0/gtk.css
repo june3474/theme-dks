@@ -310,14 +310,14 @@ headerbar button.titlebutton,
 .titlebar button.titlebutton,
 windowcontrols > button {
     padding: 0;
-    min-width: 18px;
-    min-height: 18px;
     box-shadow: none;
     border: none;
     border-radius: 50%;
     color: transparent;
     background-color: transparent;
-    background-image: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 16px 16px;      
 }
 
 headerbar button.titlebutton:not(:last-child),
@@ -326,24 +326,50 @@ windowcontrols > button:not(:last-child) {
     margin-right: 5px;
 }
 
+/* image를 불러오는 것 관련해서,
+   -gtk-icon-source는 gtk3 전용으로 gtk4에서는 폐기됨.
+   대신 url(image-path)를 써서 특정 이미지를 불러 오든지, 아니면
+   -gtk-icontheme("window-close")처럼 icon theme에서 불러올 수 있음.
+
+   특히, icon theme에서 불러서 쓸 때는 아래 예처럼 symbolic icon을
+   mask-image로 불러 쓰는 경우가 많음. 이 경우 svg의 opacity가 100%인 부분이
+   background-color로 100% 색칠됨. foreground-color로 칠하려면 아래처럼
+   background-color를 currentColor로 설정.
+   
+   [예시]
+   button.close {
+     -gtk-icon-shadow: none;
+     mask-image: -gtk-icontheme("window-close-symbolic");
+     mask-repeat: no-repeat;
+     mask-position: center;
+     mask-size: 16px 16px;
+     background-color: currentColor;
+   }
+
+   button.close {
+     background-image: url("assets/close.png");
+     background-repeat: no-repeat;
+     background-position: center;
+     background-size: 16px 16px;
+     min-width: 32px;
+     min-height: 32px;
+   }
+
+   추가로 HiDPI 대응용 꼼수 함수였던 -gtk-scaled()도 rendering 파이프라인이
+   개선되면서 GTK4에서 제거됐음.
+*/
 headerbar button.titlebutton.close,
 .titlebar button.titlebutton.close,
 windowcontrols > button.close {
-    color: rgba(255, 255, 255, 1);
-    background-color: rgba(211, 0, 10, 0.7) ;
-    /* It seems impossible to load custom icons with -gtk-icon-source.
-       Gtk loads "window-close/maximize/minimize-symbolic" icon
-       from the current icon theme.
-
-    -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("objects/title-buttons/titlebutton-close.svg")), -gtk-recolor(url("objects/title-buttons/titlebutton-close@2.svg")));
-   */  
+    background-image: url("objects/title-buttons/titlebutton-close.svg");
+    background-color: transparent;
 }
 
 headerbar button.titlebutton.close:backdrop,
 .titlebar button.titlebutton.close:backdrop,
 windowcontrols > button.close:backdrop {
-    color: rgba(255, 255, 255, 0.7);
-    background-color: rgba(119, 119, 119, 1);
+    background-image: url("objects/title-buttons/titlebutton-close-backdrop.svg");
+    background-color: transparent;      
 }
 
 headerbar button.titlebutton.close:hover,
@@ -352,23 +378,22 @@ windowcontrols button:hover,
 headerbar button.titlebutton.close:backdrop:hover,
 .titlebar button.titlebutton.close:backdrop:hover,
 windowcontrols button:backdrop:hover {
-    color: rgba(31, 31, 31, 0.7);
-    background-color: white;
+    background-image: url("objects/title-buttons/titlebutton-close-hover.svg");
+    background-color: transparent;  /* button default override */
 }
 
 headerbar button.titlebutton.maximize,
 .titlebar button.titlebutton.maximize,
 windowcontrols > button.maximize {
-    color: rgba(31, 31, 31, 1);
-    /*
-    -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("objects/title-buttons/titlebutton-maximize.svg")), -gtk-recolor(url("objects/title-buttons/titlebutton-maximize@2.svg")));
-    */
+    background-image: url("objects/title-buttons/titlebutton-maximize.svg");
+    background-color: transparent;    
 }
 
 headerbar button.titlebutton.maximize:backdrop,
 .titlebar button.titlebutton.maximize:backdrop,
 windowcontrols > button.maximize:backdrop {
-    color: rgba(31, 31, 31, 0.7);
+    background-image: url("objects/title-buttons/titlebutton-maximize-backdrop.svg");
+    background-color: transparent;            
 }
 
 headerbar button.titlebutton.maximize:hover,
@@ -376,24 +401,23 @@ headerbar button.titlebutton.maximize:hover,
 windowcontrols > button.maximize:hover,
 headerbar button.titlebutton.maximize:backdrop:hover,
 .titlebar button.titlebutton.maximize:backdrop:hover,
-windowcontrols > button.maximize:backdrop:hover {
-    color: rgba(31, 31, 31, 1);
-    background-color: white;
+windowcontrols > button.maximize:backdrop:hover {      
+    background-image: url("objects/title-buttons/titlebutton-maximize-hover.svg");
+    background-color: transparent;      
 }
 
 headerbar button.titlebutton.minimize,
 .titlebar button.titlebutton.minimize,
 windowcontrols > button.minimize {
-    color: rgba(31, 31, 31, 1);
-    /*
-    -gtk-icon-source: -gtk-scaled(-gtk-recolor(url("objects/title-buttons/titlebutton-minimize.svg")), -gtk-recolor(url("objects/title-buttons/titlebutton-minimize@2.svg")));
-    */
+    background-image: url("objects/title-buttons/titlebutton-minimize.svg");
+    background-color: transparent;          
 }
 
 headerbar button.titlebutton.minimize:backdrop,
 .titlebar button.titlebutton.minimize:backdrop,
 windowcontrols > button.minimize:backdrop {
-    color: rgba(31, 31, 31, 0.7);
+    background-image: url("objects/title-buttons/titlebutton-minimize-backdrop.svg");
+    background-color: transparent;      
 }
 
 headerbar button.titlebutton.minimize:hover,
@@ -402,23 +426,22 @@ windowcontrols > button.minimize:hover,
 headerbar button.titlebutton.minimize:backdrop:hover,
 .titlebar button.titlebutton.minimize:backdrop:hover,
 windowcontrols > button.minimize:backdrop:hover {
-    color: rgba(31, 31, 31, 1);
-    background-color: white;
+    background-image: url("objects/title-buttons/titlebutton-minimize-hover.svg");
+    background-color: transparent;      
 }
 
 headerbar button.titlebutton.restore,
 .titlebar button.titlebutton.restore,
 windowcontrols > button.restore {
-    color: rgba(31, 31, 31, 1);
-    /*
-    -gtk-icon-source: -gtk-recolor(url("objects/title-buttons/titlebutton-maximize.svg")), -gtk-recolor(url("objects/title-buttons/titlebutton-maximize@2.svg")));
-    */
+    background-image: url("objects/title-buttons/titlebutton-restore.svg");
+    background-color: transparent;                
 }
 
 headerbar button.titlebutton.restore:backdrop,
 .titlebar button.restore:backdrop,
 windowcontrols > button.titlebutton.restore:backdrop {
-    color: rgba(31, 31, 31, 0.7);
+    background-image: url("objects/title-buttons/titlebutton-restore-backdrop.svg");
+    background-color: transparent;      
 }
 
 headerbar button.titlebutton.restore:hover,
@@ -426,9 +449,14 @@ headerbar button.titlebutton.restore:hover,
 windowcontrols button.titlebutton.restore:hover,
 headerbar button.titlebutton.restore:backdrop:hover,
 .titlebar button.titlebutton.restore:backdrop:hover,
-windowcontrols button.titlebutton.restore:backdrop:hover {  
-    color: rgba(31, 31, 31, 1);
-    background-color: white;
+windowcontrols button.titlebutton.restore:backdrop:hover {
+    background-image: url("objects/title-buttons/titlebutton-restore-hover.svg");
+    background-color: transparent;
+}
+
+/* useful only(?) for file-roller */
+headerbar windowcontrols.start {
+    margin-right: 5px;
 }
 
 /* button.osd */
@@ -2110,7 +2138,7 @@ modelbutton check:dir(rtl) {
 /*************************************************/
 
 headerbar {
-    min-height: 38px;
+    /* min-height: 38px; */
     padding: 5px 10px;
     border-bottom: 1px solid @border_color;
     background-color: transparent;
@@ -2139,6 +2167,8 @@ headerbar .subtitle {
 
 headerbar button {
     -gtk-icon-style: symbolic;
+    min-height: 0px;
+    min-width: 0px;
 }
 
 headerbar button.image-button:not(.text-button):not(.image-text-button)  {
