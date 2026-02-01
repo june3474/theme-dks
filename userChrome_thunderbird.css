@@ -1,23 +1,20 @@
 /*
- * For thunderbird 128.
- * Rename this file to userChrom.css and put in <profile folder>/chrome/ directory.
- */
+ userChrome.css for thunderbird.
+ Rename this file to userChrom.css and put it in <profile folder>/chrome/.
+ Or just make a symlink named 'userChrome.css' in <profile folder>/chrome/.
+*/
 
 /*
- * Documents say userChrome.css must include the line below at the top:
- * @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
- * But this line causes the problem of css varibles not being recognized. 
- * https://www.userchrome.org/adding-style-recipes-userchrome-css.html#namespaces
- */
+ Documents say userChrome.css must include the line below at the top:
+ @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+ But this line causes the problems of css varibles not being recognized.
+ https://www.userchrome.org/adding-style-recipes-userchrome-css.html#namespaces
+*/
 
 /*
- * This doesn't seems to work. why?
- * @import url("gtk-3.0/colors.css");
- */
-
-/*
- * tooltip follows the gtk theme, i.e., gtk.css
- */
+ This doesn't seems to work. why?
+ @import url("gtk-3.0/colors.css");
+*/
 
 
 /*************************************************/
@@ -146,9 +143,8 @@ toolbarbutton#spacesPinnedButton[open="true"] {
     font-weight: bold !important;
 }
 
-/* seleted item, 특히 tab 위 부분에 나타나는 파란 색 라인
- * developer tool로 보면 별거 없음. 그냥 tab안에 box(?)?
- */
+/* Disable tab-line: selected tab 위 부분에 나타나는 파란 색 라인
+ * developer tool로 보면 별거 없음. 그냥 tab안에 box(?)? */
 .tab-line {
     background: transparent !important;
 }
@@ -262,7 +258,7 @@ tab.tabmail-tab[selected="true"]::after {
 
 
 /*************************************************/
-/*          MESSAGE BOX: LOWER-RIGHT             */
+/*          THREAD PANE: UPPER-RIGHT             */
 /*************************************************/
 
 /* total # of messages */
@@ -304,6 +300,10 @@ table.tree-table > tbody[is="tree-view-table-body"] > tr[is="thread-card"] {
 #threadpane-splitter, #attachment-splitter {
     border-bottom: 1px solid var(--border_dark) !important;
 }
+
+/*************************************************/
+/*          MESSAGE PANE: LOWER-RIGHT             */
+/*************************************************/
 
 /* messagePane */
 #messagePane {
@@ -370,7 +370,7 @@ table.tree-table > tbody[is="tree-view-table-body"] > tr[is="thread-card"] {
             WIRTE WINDOW - 메일 작성화면
  ----------------------------------------------*/
 
-/* 메일 작성화면에서 developer tool을 사용하려면
+/* 메일 작성화면에서 developer tool을 사용해 debug 하려면
    툴바 오른쪽에 있는 화면 분할 모양의 "Select an iframe" 버튼을 사용해야 한다.
    https://stackoverflow.com/questions/63289427/using-developer-tools-on-a-thuderbird-add-on-dialog */
 
