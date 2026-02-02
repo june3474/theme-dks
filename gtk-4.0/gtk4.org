@@ -456,6 +456,13 @@ minimize, maxmize, close buttons
       background-color: transparent;  /* button default override */
   }
 
+  headerbar button.titlebutton.close:active,
+  .titlebar button.titlebutton.close:active,
+  windowcontrols button.titlebutton.close:active {
+      background-image: url("objects/title-buttons/titlebutton-close-active.svg");
+      background-color: transparent;
+  }
+
   headerbar button.titlebutton.maximize,
   .titlebar button.titlebutton.maximize,
   windowcontrols > button.maximize {
@@ -478,6 +485,13 @@ minimize, maxmize, close buttons
   windowcontrols > button.maximize:backdrop:hover {      
       background-image: url("objects/title-buttons/titlebutton-maximize-hover.svg");
       background-color: transparent;      
+  }
+
+  headerbar button.titlebutton.maximize:active,
+  .titlebar button.titlebutton.maximize:active,
+  windowcontrols button.titlebutton:active {
+      background-image: url("objects/title-buttons/titlebutton-maximize-active.svg");
+      background-color: transparent;
   }
 
   headerbar button.titlebutton.minimize,
@@ -504,6 +518,13 @@ minimize, maxmize, close buttons
       background-color: transparent;      
   }
 
+  headerbar button.titlebutton.minimize:active,
+  .titlebar button.titlebutton.minimize:active,
+  windowcontrols button.titlebutton.minimize:active {
+      background-image: url("objects/title-buttons/titlebutton-minimize-active.svg");
+      background-color: transparent;
+  }
+
   headerbar button.titlebutton.restore,
   .titlebar button.titlebutton.restore,
   windowcontrols > button.restore {
@@ -528,7 +549,14 @@ minimize, maxmize, close buttons
       background-color: transparent;
   }
 
-  /* useful only(?) for file-roller */
+  headerbar button.titlebutton.restore:active,
+  .titlebar button.titlebutton.restore:active,
+  windowcontrols button.titlebutton.restore:active {
+      background-image: url("objects/title-buttons/titlebutton-maximize-active.svg");
+      background-color: transparent;
+  }
+  
+  /* useful only(?) for gtk4 file-roller */
   headerbar windowcontrols.start {
       margin-right: 5px;
   }

@@ -390,20 +390,23 @@ minimize, maxmize, close buttons
 
 #+begin_src css
 
-  /* titlebutton */
+  /* titlebutton - minimize, maxmize, close buttons */
 
   headerbar button.titlebutton,
   .titlebar button.titlebutton,
   windowcontrols button.titlebutton {
       padding: 0;
+      /*
       min-width: 22px;
       min-height: 22px;
+      ,*/
       box-shadow: none;
       border: none;
       color: transparent;
       background-color: transparent;
       background-position: center;
       background-repeat: no-repeat;
+      background-size: 16px 16px;         
   }
 
   headerbar button.titlebutton > image,
@@ -421,12 +424,14 @@ minimize, maxmize, close buttons
   .titlebar button.titlebutton.close,
   windowcontrols button.titlebutton.close {
       background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-close.svg"), url("objects/title-buttons/titlebutton-close@2.svg"));
+      background-color: transparent;
   }
 
   headerbar button.titlebutton.close:backdrop,
   .titlebar button.titlebutton.close:backdrop,
   windowcontrols button.titlebutton.close:backdrop {
       background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-close-backdrop.svg"), url("objects/title-buttons/titlebutton-close-backdrop@2.svg"));
+      background-color: transparent;
   }
 
   headerbar button.titlebutton.close:hover,
@@ -436,24 +441,28 @@ minimize, maxmize, close buttons
   .titlebar button.titlebutton.close:backdrop:hover,
   windowcontrols button.titlebutton.close:backdrop:hover {
       background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-close-hover.svg"), url("objects/title-buttons/titlebutton-close-hover@2.svg"));
+      background-color: transparent;
   }
 
   headerbar button.titlebutton.close:active,
   .titlebar button.titlebutton.close:active,
   windowcontrols button.titlebutton.close:active {
       background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-close-active.svg"), url("objects/title-buttons/titlebutton-close-active@2.svg"));
+      background-color: transparent;
   }
 
   headerbar button.titlebutton.maximize,
   .titlebar button.titlebutton.maximize,
   windowcontrols button.titlebutton.maximize {
       background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize.svg"), url("objects/title-buttons/titlebutton-maximize@2.svg"));
+      background-color: transparent;
   }
 
   headerbar button.titlebutton.maximize:backdrop,
   .titlebar button.titlebutton.maximize:backdrop,
   windowcontrols button.titlebutton.maximize:backdrop {
       background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize-backdrop.svg"), url("objects/title-buttons/titlebutton-maximize-backdrop@2.svg"));
+      background-color: transparent;
   }
 
   headerbar button.titlebutton.maximize:hover,
@@ -463,24 +472,28 @@ minimize, maxmize, close buttons
   .titlebar button.titlebutton.maximize:backdrop:hover,
   windowcontrols button.titlebutton.maximize:backdrop:hover {
       background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize-hover.svg"), url("objects/title-buttons/titlebutton-maximize-hover@2.svg"));
+      background-color: transparent;
   }
 
   headerbar button.titlebutton.maximize:active,
   .titlebar button.titlebutton.maximize:active,
   windowcontrols button.titlebutton:active {
       background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize-active.svg"), url("objects/title-buttons/titlebutton-maximize-active@2.svg"));
+      background-color: transparent;
   }
 
   headerbar button.titlebutton.minimize,
   .titlebar button.titlebutton.minimize,
   windowcontrols button.titlebutton.minimize {
       background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-minimize.svg"), url("objects/title-buttons/titlebutton-minimize@2.svg"));
+      background-color: transparent;
   }
 
   headerbar button.titlebutton.minimize:backdrop,
   .titlebar button.titlebutton.minimize:backdrop,
   windowcontrols button.titlebutton.minimize:backdrop {
       background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-minimize-backdrop.svg"), url("objects/title-buttons/titlebutton-minimize-backdrop@2.svg"));
+      background-color: transparent;
   }
 
   headerbar button.titlebutton.minimize:hover,
@@ -490,24 +503,28 @@ minimize, maxmize, close buttons
   .titlebar button.titlebutton.minimize:backdrop:hover,
   windowcontrols button.titlebutton.minimize:backdrop:hover {
       background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-minimize-hover.svg"), url("objects/title-buttons/titlebutton-minimize-hover@2.svg"));
+      background-color: transparent;
   }
 
   headerbar button.titlebutton.minimize:active,
   .titlebar button.titlebutton.minimize:active,
   windowcontrols button.titlebutton.minimize:active {
       background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-minimize-active.svg"), url("objects/title-buttons/titlebutton-minimize-active@2.svg"));
+      background-color: transparent;
   }
 
   headerbar button.titlebutton.restore,
   .titlebar button.titlebutton.restore,
   windowcontrols button.titlebutton.restore {
-      background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize.svg"), url("objects/title-buttons/titlebutton-maximize@2.svg"));
+      background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-restore.svg"), url("objects/title-buttons/titlebutton-restore@2.svg"));
+      background-color: transparent;
   }
 
   headerbar button.titlebutton.restore:backdrop,
   .titlebar button.titlebutton.restore:backdrop,
   windowcontrols button.titlebutton.restore:backdrop {
-      background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize-backdrop.svg"), url("objects/title-buttons/titlebutton-maximize-backdrop@2.svg"));
+      background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-restore-backdrop.svg"), url("objects/title-buttons/titlebutton-restore-backdrop@2.svg"));
+      background-color: transparent;
   }
 
   headerbar button.titlebutton.restore:hover,
@@ -516,14 +533,17 @@ minimize, maxmize, close buttons
   headerbar button.titlebutton.restore:backdrop:hover,
   .titlebar button.titlebutton.restore:backdrop:hover,
   windowcontrols button.titlebutton.restore:backdrop:hover {
-      background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize-hover.svg"), url("objects/title-buttons/titlebutton-maximize-hover@2.svg"));
+      background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-restore-hover.svg"), url("objects/title-buttons/titlebutton-restore-hover@2.svg"));
+      background-color: transparent;
   }
 
   headerbar button.titlebutton.restore:active,
   .titlebar button.titlebutton.restore:active,
   windowcontrols button.titlebutton.restore:active {
-      background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-maximize-active.svg"), url("objects/title-buttons/titlebutton-maximize-active@2.svg"));
+      background-image: -gtk-scaled(url("objects/title-buttons/titlebutton-restore-active.svg"), url("objects/title-buttons/titlebutton-restore-active@2.svg"));
+      background-color: transparent;
   }
+  
 #+end_src
 **** button.sidebar
 #+begin_src css
@@ -2173,7 +2193,7 @@ headerbar
   /*************************************************/
 
   headerbar {
-      min-height: 38px;
+      /* min-height: 38px; */
       padding: 5px 10px;
       border-bottom: 1px solid @border_color;
       color: rgba(41, 33, 33, 0.8);
@@ -2202,28 +2222,30 @@ headerbar
 **** button
 #+begin_src css
 
-   /* HEADERBAR BUTTON */
+  /* HEADERBAR BUTTON */
 
-   headerbar button {
-       -gtk-icon-style: symbolic;
-   }
+  headerbar button {
+      -gtk-icon-style: symbolic;
+      min-height: 0px;
+      min-width: 0px;      
+  }
 
-   headerbar button.image-button:not(.text-button):not(.image-text-button)  {
-       background-color: transparent;
-       background-image: none;
-       border: none;
-   }
+  headerbar button.image-button:not(.text-button):not(.image-text-button)  {
+      background-color: transparent;
+      background-image: none;
+      border: none;
+  }
 
-   /* re-color symbolic icon */
-   headerbar button.image-button:hover {
-       color: white;
-   }      
+  /* re-color symbolic icon */
+  headerbar button.image-button:hover {
+      color: white;
+  }      
 
-   headerbar button.image-button:checked,
-   headerbar button.image-button:checked:hover,
-   headerbar button.image-button:checked image {
-       color: @selected_bg_color;
-   }  
+  headerbar button.image-button:checked,
+  headerbar button.image-button:checked:hover,
+  headerbar button.image-button:checked image {
+      color: @selected_bg_color;
+  }  
 #+end_src
 *** menubar & menu
 The GtkMenuBar is a subclass of GtkMenuShell which contains one or more GtkMenuItems.
