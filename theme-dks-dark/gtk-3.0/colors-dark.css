@@ -1,0 +1,113 @@
+/*************************************************/
+/*             DARK COLOR DEFINITION             */
+/*************************************************/
+
+/* Naming and order: see colors.css. */
+
+/* window and views */
+/* active_color_2 (xfwm4 themerc) == bg_color == #202833 */
+@define-color bg_color #202833;
+@define-color fg_color #f7f8fa;
+@define-color base_color #202833;
+@define-color text_color #f7f8fa;
+@define-color content_bg_color #202833;
+@define-color placeholder_text_color #8ea0b7;   /* looked up by GTK itself */
+
+/* selection */
+@define-color selected_bg_color #4b5f7a;
+@define-color selected_fg_color #f7f8fa;
+
+/* insensitive and unfocused */
+@define-color insensitive_bg_color #283340;
+@define-color insensitive_fg_color #8ea0b7;
+@define-color unfocused_fg_color #d7dde6;
+@define-color unfocused_selected_bg_color #39485c;
+
+/* borders */
+@define-color border_color #405168;
+@define-color unfocused_border_color #39485c;
+@define-color dim_border_color alpha(@border_color, 0.7);
+@define-color selected_border_color shade(@selected_bg_color, 1.2);
+@define-color insensitive_border_color alpha(@border_color, 0.5);
+
+/* semantic colors */
+@define-color warning_color #c49363;
+@define-color error_color #b35a5e;
+@define-color success_color #789878;
+@define-color destructive_color #b35a5e;
+@define-color link_color #a9bdd6;
+@define-color link_visited_color #c1b2d1;
+@define-color drop_target_color @warning_color;
+
+/* effects */
+@define-color shade_color #000000;
+@define-color highlight_color rgba(255, 255, 255, 0);
+
+/* surfaces (alt: secondary surfaces that are not selected) */
+@define-color alt_bg_color #283340;
+@define-color raised_bg_color @sidebar_bg_color;
+@define-color hover_bg_color #39485c;
+@define-color scrollbar_bg_color #283340;
+@define-color tab_bg_color #283340;
+@define-color sidebar_bg_color #303d4d;
+@define-color tooltip_bg_color @sidebar_bg_color;
+@define-color panel_bg_color @bg_color;
+
+/* menubar and menus */
+@define-color menubar_bg_color @bg_color;
+@define-color menubar_unfocused_fg_color #777777;
+@define-color menu_selected_bg_color @selected_bg_color;
+
+/* toolbar */
+@define-color toolbar_bg_color @alt_bg_color;
+@define-color toolbar_fg_color @fg_color;
+@define-color toolbar_border_color shade(@toolbar_bg_color, 1.15);
+
+/* buttons */
+@define-color button_bg_color @sidebar_bg_color;
+@define-color button_active_bg_color @selected_bg_color;
+@define-color button_checked_bg_color @button_active_bg_color;  /* [1] */
+@define-color suggested_hover_bg_color shade(@selected_bg_color, 1.2);
+
+/* window frame */
+@define-color window_border_color #5a6c82;
+@define-color window_unfocused_border_color #405168;
+
+/* infobar */
+@define-color infobar_bg_color @selected_bg_color;
+@define-color infobar_shade_color shade(@selected_bg_color, 0.85);
+@define-color infobar_warning_bg_color @warning_color;
+
+/* rubberband */
+@define-color rubberband_bg_color alpha(@insensitive_fg_color, 0.2);
+@define-color rubberband_border_color @insensitive_fg_color;
+
+/* osd */
+@define-color osd_border_color rgba(35, 38, 46, 0.95);
+
+/* scale: the filled part (highlight) of a scale */
+@define-color scale_bg_color shade(@selected_bg_color, 1.75);  /* [4] */
+@define-color scale_insensitive_bg_color shade(@selected_bg_color, 0.8);  /* [4] */
+
+/* desktop */
+@define-color desktop_icon_active_fg_color #cad7e7;
+
+/* GTK compatibility names [2] */
+@define-color theme_fg_color @fg_color;
+@define-color theme_text_color @text_color;
+@define-color theme_bg_color @bg_color;
+@define-color theme_base_color @base_color;
+@define-color theme_selected_bg_color @selected_bg_color;
+@define-color theme_selected_fg_color @selected_fg_color;
+@define-color insensitive_base_color @base_color;
+@define-color theme_unfocused_fg_color @unfocused_fg_color;
+@define-color theme_unfocused_text_color @unfocused_fg_color;
+@define-color theme_unfocused_bg_color #283340;  /* [3] */
+@define-color theme_unfocused_base_color @base_color;
+@define-color theme_unfocused_selected_bg_color @unfocused_selected_bg_color;
+@define-color theme_unfocused_selected_fg_color @unfocused_fg_color;
+@define-color unfocused_insensitive_color @insensitive_fg_color;
+@define-color borders @border_color;
+@define-color unfocused_borders @unfocused_border_color;
+
+/* Notes: [1] to [4] are explained at the end of gtk-3.0/colors.css. */

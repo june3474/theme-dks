@@ -1,0 +1,384 @@
+/*************************************************/
+/*                   NAUTILUS                    */
+/*************************************************/
+
+.nautilus-window .floating-bar {
+  padding: 1px;
+  background-color: @selected_bg_color;
+  color: @selected_fg_color;
+  text-shadow:  0 -1px alpha(@highlight_color, 0.04),
+				 -1px  0px alpha(@shade_color, 0.05),
+				  1px  0px alpha(@shade_color, 0.05),
+				  0px  1px alpha(@shade_color, 0.3),
+				  0px  2px alpha(@shade_color, 0.05);
+  border-radius: 2px 2px 0 0; }
+
+.nautilus-window .floating-bar button {
+  color: @selected_fg_color;
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.5); }
+
+.nautilus-window .floating-bar button.flat {
+  border-color: transparent;
+  background-color: transparent;
+  background-image: none;
+  color: @selected_fg_color; }
+
+.nautilus-window .floating-bar button.sidebar-button {
+  border-color: transparent;
+  background-color: transparent;
+  background-image: none;
+  color: @selected_fg_color; }
+
+.nautilus-window .floating-bar button.flat:disabled {
+  color: alpha(@selected_fg_color, 0.4); }
+
+.nautilus-window .floating-bar button.sidebar-button:disabled {
+  color: alpha(@selected_fg_color, 0.4); }
+
+.nautilus-window .floating-bar button.flat:disabled label {
+  color: alpha(@selected_fg_color, 0.4); }
+
+.nautilus-window .floating-bar button.sidebar-button:disabled label {
+  color: alpha(@selected_fg_color, 0.4); }
+
+.nautilus-window .floating-bar button:hover {
+  color: @selected_fg_color;
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.8); }
+
+.nautilus-window .floating-bar button:active {
+  color: @selected_bg_color;
+  background-color: @selected_fg_color;
+  border-color: @selected_fg_color; }
+
+.nautilus-window .floating-bar button:active:hover {
+  color: @selected_bg_color;
+  background-color: @selected_fg_color;
+  border-color: @selected_fg_color; }
+
+.nautilus-window .floating-bar button:checked {
+  color: @selected_bg_color;
+  background-color: @selected_fg_color;
+  border-color: @selected_fg_color; }
+
+.nautilus-window .floating-bar button:disabled {
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.4); }
+
+.nautilus-window .floating-bar button:disabled {
+  color: alpha(@selected_fg_color, 0.5); }
+
+.nautilus-window .floating-bar button:disabled label {
+  color: alpha(@selected_fg_color, 0.5); }
+
+.nautilus-window .floating-bar button:disabled:active {
+  color: alpha(@selected_fg_color, 0.5);
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.5); }
+
+.nautilus-window .floating-bar button:disabled:checked {
+   color: alpha(@selected_fg_color, 0.5);
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.5); }
+
+.nautilus-window .floating-bar.bottom.left {
+  border-top-left-radius: 0; }
+
+.nautilus-window .floating-bar.bottom.right {
+  border-top-right-radius: 0; }
+
+/* NAUTILUS WINDOW SEARCHBAR */
+
+.nautilus-window searchbar {
+  border-top: 1px solid @dim_border_color; }
+
+.nautilus-window .searchbar-container {
+  margin-top: -1px; }
+
+/* NAUTILUS WINDOW NOTEBOOK */
+
+.nautilus-window notebook {
+  background-color: @content_bg_color; }
+
+.nautilus-window notebook > stack:not(:only-child) searchbar {
+  background-color: @content_bg_color; }
+
+/* NAUTILUS DESKTOP */
+
+.nautilus-desktop.nautilus-canvas-item {
+  color: @selected_fg_color;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.6); }
+
+.nautilus-desktop.nautilus-canvas-item:active {
+  color: @selected_fg_color;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.6); }
+
+.nautilus-desktop.nautilus-canvas-item:selected {
+  color: @selected_fg_color;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.6); }
+
+/* NAUTILUS CANVAS */
+
+.nautilus-canvas-item {
+  border-radius: 2px; }
+
+.nautilus-canvas-item.dim-label {
+  color: @insensitive_fg_color; }
+
+.nautilus-canvas-item.dim-label:selected {
+  color: @unfocused_fg_color; }
+  
+.nautilus-canvas-item.dim-label:selected:focus {
+	color: @unfocused_fg_color; }
+
+headerbar .nautilus-canvas-item.subtitle {
+  color: @insensitive_fg_color; }
+
+headerbar .nautilus-canvas-item.subtitle:selected {
+  color: @unfocused_fg_color; }
+   
+headerbar .nautilus-canvas-item.subtitle:selected:focus {
+  color: @unfocused_fg_color; }
+
+.titlebar:not(headerbar) .nautilus-canvas-item.subtitle {
+  color: @insensitive_fg_color; }
+
+.titlebar:not(headerbar) .nautilus-canvas-item.subtitle:selected {
+  color: @unfocused_fg_color; }
+
+.titlebar:not(headerbar) .nautilus-canvas-item.subtitle:selected:focus {
+  color: @unfocused_fg_color; }
+
+/* NAUTILUS LIST DIM */
+
+.nautilus-list-dim-label {
+  color: @insensitive_fg_color; }
+
+.nautilus-list-dim-label:selected {
+  color: @unfocused_fg_color; }
+
+.nautilus-list-dim-label:selected:focus {
+  color: @unfocused_fg_color; }
+
+/* NAUTILUS WINDOW PANED SEPARATOR */
+
+/*
+.nautilus-window paned > separator {
+box-shadow: 0px 1px 14px 14px rgba(0, 0, 0, 0.4);
+  background-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,1)); 
+ }
+
+.nautilus-window paned > separator:dir(ltr) {
+  margin-left: 0px; }
+
+.nautilus-window paned > separator:dir(rtl) {
+  margin-right: 0px; }
+*/
+
+/* NAUTILUS WINDOW CSD */
+
+.nautilus-window.csd.background {
+    background-color: transparent; }
+
+/* NAUTILUS PLACESSIDEBAR  */
+
+.nautilus-window placessidebar.sidebar separator {
+    background-color: alpha(shade(@bg_color, 0), 0.1);/*transparent;black;*/
+    color:  alpha(shade(@bg_color, 0), 0.1);
+    /*transparent; black; */ }
+
+.nautilus-window paned > separator {
+  background-color: @border_color;
+  /*background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.1));*/ 
+ }
+
+.nautilus-window paned > separator:dir(ltr) {
+  margin-left: -1px; }
+
+.nautilus-window paned > separator:dir(rtl) {
+  margin-right: 0px; }
+
+/* NAUTILUS WINDOW SIDEBAR SCROLLBAR */
+
+.nautilus-window placessidebar.sidebar scrollbar {
+   border-color: alpha(mix(shade(@tab_bg_color, 1.5013), shade(@selected_bg_color, 1.036), 0.1845), 0.85); }
+
+.nautilus-window placessidebar.sidebar scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider {
+  background-color: shade(@border_color, 0.9219);
+  border: 1px solid rgba(0, 0, 0, 0.3); }
+
+.nautilus-window placessidebar.sidebar scrollbar slider {
+  background-color: alpha(shade(@border_color, 0.9219), 0.7); }
+
+.nautilus-window placessidebar.sidebar scrollbar slider:hover {
+  background-color: shade(@border_color, 1.0234); }
+
+.nautilus-window placessidebar.sidebar scrollbar slider:hover:active {
+  background-color: @selected_bg_color; }
+
+.nautilus-window placessidebar.sidebar scrollbar slider:disabled {
+  background-color: transparent; }
+
+.nautilus-window placessidebar.sidebar scrollbar trough {
+  background-color: alpha(mix(shade(@tab_bg_color, 1.5013), shade(@selected_bg_color, 1.036), 0.1845), 0.85); }
+ 
+/* NAUTILUS MISSELANEOUS */
+
+.nautilus-operations-button-needs-attention {
+  animation: needs_attention_keyframes 2s ease-in-out; }
+
+.nautilus-operations-button-needs-attention-multiple {
+  animation: needs_attention_keyframes 3s ease-in-out;
+  animation-iteration-count: 3; }
+
+button.nautilus-circular-button.image-button {
+  padding: 0;
+  min-width: 16px;
+  min-height: 24px;
+  padding: 2px 6px;
+  border-radius: 50%; }
+
+button.nautilus-circular-button.image-button label {
+  padding: 0; }
+
+
+/*************************************************/
+/*                TWEAK TOOL                     */
+/*************************************************/
+
+.tweak-categories {
+  background-image: linear-gradient(to bottom, @content_bg_color, @content_bg_color); }
+
+.tweak-category:not(:selected):not(:hover) {
+  background-image: linear-gradient(to bottom, @content_bg_color, @content_bg_color); }
+
+.tweak-category:hover {
+background-image:image(@sidebar_bg_color);
+color: @fg_color; }
+.tweak-category:hover:active {
+background-image:image(@selected_bg_color);
+color: @selected_fg_color; }
+.tweak-category:selected {
+background-image:image(@selected_bg_color);
+color: @selected_fg_color; }
+.tweak-category:hover:selected {
+background-image:image(@selected_bg_color);
+color: @selected_fg_color; }
+
+.tweak-categories separator {
+    min-width: 1px;
+    min-height: 1px;
+ background-color: transparent;
+ background-image: linear-gradient(to right, alpha(shade(@fg_color, 1.1563), 0.03), alpha(shade(@fg_color, 1.1563), 0.12), alpha(shade(@fg_color, 1.1563), 0.03));
+    /*background: @dim_border_color;*/ }
+
+.tweak-titlebar-left:dir(ltr) {
+ }
+
+
+/*************************************************/
+/*                    GEDIT                      */
+/*************************************************/
+
+.gedit-document-panel row button {
+  min-width: 22px;
+  min-height: 22px;
+  padding: 0;
+  color: transparent;
+  background: none;
+  border: none;
+  box-shadow: none; }
+
+.gedit-document-panel row button image {
+  color: inherit; }
+
+.gedit-document-panel row:hover:not(:selected) button {
+  color: shade(@border_color, 0.8594); }
+
+.gedit-document-panel row:hover:not(:selected) button:hover {
+  color: @error_color; }
+
+.gedit-document-panel row:hover:not(:selected) button:active {
+  color: @fg_color; }
+
+.gedit-document-panel row:hover:selected button:hover {
+  color: @error_color;
+  background: none;
+  border: none;
+  box-shadow: none; }
+
+.gedit-document-panel row:hover:selected button:hover:active {
+    color: @selected_fg_color; }
+
+.gedit-document-panel-dragged-row {
+  border: 1px solid @dim_border_color;
+  background-color: shade(@bg_color, 1.038);
+  color: @fg_color; }
+
+.gedit-side-panel-paned statusbar {
+  border-top: 1px solid @dim_border_color;
+  background-color: @sidebar_bg_color; }
+
+.gedit-search-slider {
+  background-color: @sidebar_bg_color;
+  padding: 6px;
+  border-color: @dim_border_color;
+  border-radius: 0 0 2px 2px;
+  border-width: 0 1px 1px 1px;
+  border-style: solid; }
+
+.gedit-search-entry-occurrences-tag {
+  color: alpha(shade(@fg_color, 1.1563), 0.6);
+  border: none;
+  margin: 2px;
+  padding: 2px; }
+
+.gedit-map-frame border {
+  border-color: rgba(0, 0, 0, 0.3);
+  border-width: 0; }
+
+.gedit-map-frame border:dir(ltr) {
+  border-left-width: 1px; }
+
+.gedit-map-frame border:dir(rtl) {
+  border-right-width: 1px; }
+
+.gedit-bottom-panel-paned {
+  background-color: @content_bg_color; }
+
+.gedit-side-panel-paned > separator {
+  background-image: linear-gradient(to bottom, alpha(shade(@tab_bg_color, 1.0151), 0.85), alpha(shade(@tab_bg_color, 1.0151), 0.85)); }
+
+.gedit-bottom-panel-paned > separator {
+  background-image: linear-gradient(to bottom, @dim_border_color, @dim_border_color); }
+
+.gedit-document-panel {
+ background-color: alpha(shade(@tab_bg_color, 1.0151), 0.85); }
+
+.maximized .gedit-document-panel {
+  background-color: @alt_bg_color; }
+
+.gedit-document-panel row {
+  color: @fg_color;
+  background-color: transparent; }
+
+.gedit-document-panel row:hover {
+  background-color: alpha(shade(@border_color, 0.625), 0.15); }
+
+.gedit-document-panel row:active {
+  color: @selected_fg_color;
+  background-color: @selected_bg_color; }
+
+.gedit-document-panel row:active button {
+  color: @selected_fg_color; }
+
+.gedit-document-panel row:selected, .gedit-document-panel row:selected:hover {
+  color: @selected_fg_color;
+  background-color: @selected_bg_color; }
+
+.gedit-document-panel row:hover:not(:selected) button:active {
+  color: @fg_color; }
+
+.gedit-bottom-panel-paned notebook > header.top > tabs > tab:checked {
+	box-shadow: inset 0 -1px @dim_border_color; }

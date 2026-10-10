@@ -1,0 +1,310 @@
+/*************************************************/
+/*               DARK OVERRIDES                  */
+/*************************************************/
+
+window,
+window.background,
+dialog,
+.background {
+  color: @fg_color;
+  background-color: @bg_color;
+}
+
+view,
+treeview,
+textview text,
+iconview,
+notebook > stack {
+  color: @fg_color;
+  background-color: @base_color;
+}
+
+listview > row:selected,
+gridview > child:selected {
+  background-color: @selected_bg_color;
+  color: @selected_fg_color;
+}
+
+listview > row:backdrop:selected,
+gridview > child:backdrop:selected {
+  background-color: @unfocused_selected_bg_color;
+  color: @unfocused_fg_color;
+}
+
+headerbar,
+.titlebar {
+  color: @fg_color;
+  background-color: @alt_bg_color;
+}
+
+toolbar {
+  color: @fg_color;
+  background-color: transparent;
+  background-image: linear-gradient(to bottom, @toolbar_border_color 1px,
+shade(@toolbar_bg_color, 0.8) 75%, @toolbar_bg_color 100%);
+}
+
+button,
+entry,
+spinbutton,
+spinbutton.horizontal,
+combobox > box > button.combo {
+  color: @fg_color;
+  border-color: @border_color;
+  background-color: @button_bg_color;
+  background-image: none;
+}
+
+button:hover,
+entry:focus,
+spinbutton.horizontal:focus {
+  color: @fg_color;
+  border-color: @window_unfocused_border_color;
+  background-color: @hover_bg_color;
+}
+
+button:active,
+button:checked {
+  color: @selected_fg_color;
+  background-color: @button_active_bg_color;
+}
+
+button:disabled,
+entry:disabled,
+spinbutton.horizontal:disabled {
+  color: @insensitive_fg_color;
+  background-color: @insensitive_bg_color;
+  background-image: none;
+}
+
+label:disabled {
+  color: @insensitive_fg_color;
+  /* background-color: @insensitive_bg_color;  disabled label에 배경 박스가 생겨 제외 */
+}
+
+notebook > header > tabs > tab {
+  color: @unfocused_fg_color;
+  border-color: @border_color;
+  background-color: @alt_bg_color;
+  background-image: none;
+}
+
+notebook > header > tabs > tab:checked {
+  color: @selected_fg_color;
+  background-color: @selected_bg_color;
+  background-image: none;
+}
+
+notebook > header > tabs > tab:disabled {
+  color: @insensitive_fg_color;
+  background-color: @insensitive_bg_color;
+  background-image: none;
+}
+
+tooltip,
+tooltip.background {
+  color: @fg_color;
+  background-color: @tooltip_bg_color;
+  border-color: @border_color;
+}
+
+menu,
+popover.menu {
+  color: @fg_color;
+  background-color: @sidebar_bg_color;
+}
+
+dialog,
+window.dialog {
+  color: @fg_color;
+  background-color: @bg_color;
+  border-color: @window_border_color;
+}
+
+button.destructive-action,
+.destructive-action,
+infobar.error {
+  color: @selected_fg_color;
+  border-color: @destructive_color;
+  background-color: @destructive_color;
+  background-image: none;
+}
+
+check,
+check:selected,
+selection check,
+list > row:selected check,
+list > row:focus check,
+menuitem > check:hover,
+modelbutton > check:hover {
+  -gtk-icon-source: -gtk-scaled(url("objects/checkbox-objects/checkbox-unchecked-dark.svg"), url("objects/checkbox-objects/checkbox-unchecked-dark@2.svg"));
+}
+
+selection check,
+list > row:selected check,
+list > row:focus check,
+menuitem > check:hover,
+modelbutton > check:hover {
+  -gtk-icon-source: -gtk-scaled(url("objects/checkbox-objects/checkbox-selectionmode-dark.svg"), url("objects/checkbox-objects/checkbox-selectionmode-dark@2.svg"));
+}
+
+check:disabled,
+selection check:disabled {
+  -gtk-icon-source: -gtk-scaled(url("objects/checkbox-objects/checkbox-unchecked-insensitive-dark.svg"), url("objects/checkbox-objects/checkbox-unchecked-insensitive-dark@2.svg"));
+}
+
+check:checked {
+  -gtk-icon-source: -gtk-scaled(url("objects/checkbox-objects/checkbox-checked-dark.svg"), url("objects/checkbox-objects/checkbox-checked-dark@2.svg"));
+}
+
+check:checked:selected,
+selection check:checked,
+list > row:selected check:checked,
+list > row:focus check:checked,
+menuitem > check:checked:hover,
+modelbutton > check:checked:hover {
+  -gtk-icon-source: -gtk-scaled(url("objects/checkbox-objects/checkbox-checked-selectionmode-dark.svg"), url("objects/checkbox-objects/checkbox-checked-selectionmode-dark@2.svg"));
+}
+
+check:checked:disabled,
+check:checked:disabled:selected,
+selection check:checked:disabled {
+  -gtk-icon-source: -gtk-scaled(url("objects/checkbox-objects/checkbox-checked-insensitive-dark.svg"), url("objects/checkbox-objects/checkbox-checked-insensitive-dark@2.svg"));
+}
+
+check:indeterminate,
+check:indeterminate:selected,
+selection check:indeterminate {
+  -gtk-icon-source: -gtk-scaled(url("objects/checkbox-objects/checkbox-mixed-dark.svg"), url("objects/checkbox-objects/checkbox-mixed-dark@2.svg"));
+}
+
+check:indeterminate:disabled,
+check:indeterminate:disabled:selected,
+selection check:indeterminate:disabled {
+  -gtk-icon-source: -gtk-scaled(url("objects/checkbox-objects/checkbox-mixed-insensitive-dark.svg"), url("objects/checkbox-objects/checkbox-mixed-insensitive-dark@2.svg"));
+}
+
+radio,
+radio:selected,
+selection radio,
+list > row:selected radio,
+list > row:focus radio,
+menuitem > radio:hover,
+modelbutton > radio:hover {
+  -gtk-icon-source: -gtk-scaled(url("objects/radio-objects/radio-unchecked-dark.svg"), url("objects/radio-objects/radio-unchecked-dark@2.svg"));
+}
+
+radio:disabled,
+radio:disabled:selected,
+selection radio:disabled {
+  -gtk-icon-source: -gtk-scaled(url("objects/radio-objects/radio-unchecked-insensitive-dark.svg"), url("objects/radio-objects/radio-unchecked-insensitive-dark@2.svg"));
+}
+
+radio:checked,
+radio:checked:selected,
+selection radio:checked,
+list > row:selected radio:checked,
+list > row:focus radio:checked,
+menuitem > radio:checked:hover,
+modelbutton > radio:checked:hover {
+  -gtk-icon-source: -gtk-scaled(url("objects/radio-objects/radio-checked-dark.svg"), url("objects/radio-objects/radio-checked-dark@2.svg"));
+}
+
+radio:checked:disabled,
+radio:checked:disabled:selected,
+selection radio:checked:disabled {
+  -gtk-icon-source: -gtk-scaled(url("objects/radio-objects/radio-checked-insensitive-dark.svg"), url("objects/radio-objects/radio-checked-insensitive-dark@2.svg"));
+}
+
+radio:indeterminate,
+radio:indeterminate:selected,
+selection radio:indeterminate {
+  -gtk-icon-source: -gtk-scaled(url("objects/radio-objects/radio-mixed-dark.svg"), url("objects/radio-objects/radio-mixed-dark@2.svg"));
+}
+
+radio:indeterminate:disabled,
+radio:indeterminate:disabled:selected,
+selection radio:indeterminate:disabled {
+  -gtk-icon-source: -gtk-scaled(url("objects/radio-objects/radio-mixed-insensitive-dark.svg"), url("objects/radio-objects/radio-mixed-insensitive-dark@2.svg"));
+}
+
+headerbar button.titlebutton.close,
+.titlebar button.titlebutton.close,
+windowcontrols button.close {
+  background-image: -gtk-scaled(url("objects/title-buttons-dark/titlebutton-close-dark.svg"), url("objects/title-buttons-dark/titlebutton-close-dark@2.svg"));
+}
+
+headerbar button.titlebutton.close:backdrop,
+.titlebar button.titlebutton.close:backdrop,
+windowcontrols button.close:backdrop {
+  background-image: -gtk-scaled(url("objects/title-buttons-dark/titlebutton-close-backdrop-dark.svg"), url("objects/title-buttons-dark/titlebutton-close-backdrop-dark@2.svg"));
+}
+
+headerbar button.titlebutton.close:hover,
+.titlebar button.titlebutton.close:hover,
+windowcontrols button.close:hover,
+headerbar button.titlebutton.close:backdrop:hover,
+.titlebar button.titlebutton.close:backdrop:hover,
+windowcontrols button.close:backdrop:hover {
+  background-image: -gtk-scaled(url("objects/title-buttons-dark/titlebutton-close-hover-dark.svg"), url("objects/title-buttons-dark/titlebutton-close-hover-dark@2.svg"));
+}
+
+headerbar button.titlebutton.close:active,
+.titlebar button.titlebutton.close:active,
+windowcontrols button.close:active {
+  background-image: -gtk-scaled(url("objects/title-buttons-dark/titlebutton-close-active-dark.svg"), url("objects/title-buttons-dark/titlebutton-close-active-dark@2.svg"));
+}
+
+headerbar button.titlebutton.maximize,
+.titlebar button.titlebutton.maximize,
+windowcontrols button.maximize {
+  background-image: -gtk-scaled(url("objects/title-buttons-dark/titlebutton-maximize-dark.svg"), url("objects/title-buttons-dark/titlebutton-maximize-dark@2.svg"));
+}
+
+headerbar button.titlebutton.maximize:backdrop,
+.titlebar button.titlebutton.maximize:backdrop,
+windowcontrols button.maximize:backdrop {
+  background-image: -gtk-scaled(url("objects/title-buttons-dark/titlebutton-maximize-backdrop-dark.svg"), url("objects/title-buttons-dark/titlebutton-maximize-backdrop-dark@2.svg"));
+}
+
+headerbar button.titlebutton.maximize:hover,
+.titlebar button.titlebutton.maximize:hover,
+windowcontrols button.maximize:hover,
+headerbar button.titlebutton.maximize:backdrop:hover,
+.titlebar button.titlebutton.maximize:backdrop:hover,
+windowcontrols button.maximize:backdrop:hover {
+  background-image: -gtk-scaled(url("objects/title-buttons-dark/titlebutton-maximize-hover-dark.svg"), url("objects/title-buttons-dark/titlebutton-maximize-hover-dark@2.svg"));
+}
+
+headerbar button.titlebutton.maximize:active,
+.titlebar button.titlebutton.maximize:active,
+windowcontrols button.maximize:active {
+  background-image: -gtk-scaled(url("objects/title-buttons-dark/titlebutton-maximize-active-dark.svg"), url("objects/title-buttons-dark/titlebutton-maximize-active-dark@2.svg"));
+}
+
+headerbar button.titlebutton.minimize,
+.titlebar button.titlebutton.minimize,
+windowcontrols button.minimize {
+  background-image: -gtk-scaled(url("objects/title-buttons-dark/titlebutton-minimize-dark.svg"), url("objects/title-buttons-dark/titlebutton-minimize-dark@2.svg"));
+}
+
+headerbar button.titlebutton.minimize:backdrop,
+.titlebar button.titlebutton.minimize:backdrop,
+windowcontrols button.minimize:backdrop {
+  background-image: -gtk-scaled(url("objects/title-buttons-dark/titlebutton-minimize-backdrop-dark.svg"), url("objects/title-buttons-dark/titlebutton-minimize-backdrop-dark@2.svg"));
+}
+
+headerbar button.titlebutton.minimize:hover,
+.titlebar button.titlebutton.minimize:hover,
+windowcontrols button.minimize:hover,
+headerbar button.titlebutton.minimize:backdrop:hover,
+.titlebar button.titlebutton.minimize:backdrop:hover,
+windowcontrols button.minimize:backdrop:hover {
+  background-image: -gtk-scaled(url("objects/title-buttons-dark/titlebutton-minimize-hover-dark.svg"), url("objects/title-buttons-dark/titlebutton-minimize-hover-dark@2.svg"));
+}
+
+headerbar button.titlebutton.minimize:active,
+.titlebar button.titlebutton.minimize:active,
+windowcontrols button.minimize:active {
+  background-image: -gtk-scaled(url("objects/title-buttons-dark/titlebutton-minimize-active-dark.svg"), url("objects/title-buttons-dark/titlebutton-minimize-active-dark@2.svg"));
+}

@@ -1,0 +1,6 @@
+[X-GNOME-Metatheme]
+Name=theme-dks
+Type=X-GNOME-Metatheme
+Comment=Theme DKS light GTK and Xfwm4 theme
+Encoding=UTF-8
+GtkTheme=theme-dks
