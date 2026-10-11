@@ -312,6 +312,18 @@ check_gtk3_dark() {
         | xargs -0 identify >/dev/null 2>&1
 
     assert_multiline_pattern "$repo_root/gtk-3.0/xfce.css" \
+        '#whiskermenu-window box\.commands-area button\.command-button \{[^}]*background-color: transparent;[^}]*background-image: none;[^}]*border: none;[^}]*box-shadow: none;' \
+        'transparent Whisker command-button chrome'
+    assert_multiline_pattern "$repo_root/gtk-3.0/xfce.css" \
+        '#whiskermenu-window box\.search-area entry \{[^}]*border: 1px solid @window_border_color;[^}]*background-color: @button_bg_color;' \
+        'the palette-aware Whisker search entry'
+    assert_multiline_pattern "$repo_root/gtk-3.0/xfce.css" \
+        '#whiskermenu-window box\.search-area entry:focus \{[^}]*border-color: @selected_border_color;[^}]*background-color: @hover_bg_color;' \
+        'the focused Whisker search entry'
+    assert_multiline_pattern "$repo_root/gtk-3.0/xfce.css" \
+        '#whiskermenu-window box\.search-area entry image\.left \{[^}]*color: @fg_color;[^}]*-gtk-icon-theme: "Adwaita";' \
+        'the recolorable Whisker search icon foreground token'
+    assert_multiline_pattern "$repo_root/gtk-3.0/xfce.css" \
         '\.thunar notebook treeview \{[^}]*background-color: @bg_color;' \
         'the Thunar main background token'
     assert_multiline_pattern "$repo_root/gtk-3.0/xfce.css" \

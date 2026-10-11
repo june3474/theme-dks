@@ -33,22 +33,6 @@ XfdesktopIconView.view.label:active {
 */
 
 /*
-   As of version 4.12, xfce4-panel uses gtk2.
-   But some panel plugins(ex, whiskermenu) are gtk3 apps.
-   Thus, setting for xfc4-panel and its bundled plugins(ex, clock; systray)
-   goes in the gtk2 theme. Here, we theme gtk3 plugins.
-
-   As for the  hierarchy of objects and style classes of a xfce4-panel plugin,
-   refer to the whiskermenu plugin's below.  -- by dks
-
-   Object                   Name                   Style class
-   -------------------------------------------------------------------------------
-   window                 XfcePanelWindowWrapper   .background .panel .xfce4-panel
-     widget               whiskermenu-*
-       button                                      .flat .toggle
-*/
-
-/*
 XfceHeading {
   margin: 0;
   padding: 0;
@@ -191,6 +175,8 @@ XfceHeading {
 /*************************************************/
 /*                Whisker Menu                   */
 /*************************************************/
+/* To use gtk-inspector, right-click on the Whisker Menu icon, select Properties.
+   Under Behavior tab, tick the Stay visible when focus is lost box. */
 
 /* whisker menu button on the panel */
 #whiskermenu-button image {
@@ -208,37 +194,46 @@ XfceHeading {
     /* border: none; */
 }
 
+#whiskermenu-window box.vertical {
+    margin-top: 5px;
+}
+
 #whiskermenu-window box.title-area {
     /* Nothing special */
 }
 
-#whiskermenu-window box.title-area button.command-button {
-    /* background-color: transparent; */
+
+#whiskermenu-window box.commands-area button.command-button {
+    /* -gtk-icon-theme: "Adwaita"; */
+    background-color: transparent;
     background-image: none;
     border: none;
+    box-shadow: none;
 }
 
 #whiskermenu-window box.search-area {
     /* Nothing special */
 }
 
-#whiskermenu-window box.search-area entry,
-#whiskermenu-window box.search-area entry:focus {
+#whiskermenu-window box.search-area entry {
     margin: 4px 5px;
-    border: 1px solid;
-    border-color:rgba(0, 0, 0, 0.12);
-    border-bottom-color: rgba(0, 0, 0, 0.18);
-    border-top-color: rgba(0, 0, 0, 0.08);
-    background-color: @base_color;
+    border: 1px solid @window_border_color;
+    background-color: @button_bg_color;
+}
+
+#whiskermenu-window box.search-area entry:focus {
+    border-color: @selected_border_color;
+    background-color: @hover_bg_color;
+}
+
+#whiskermenu-window box.search-area entry image.left {
+    color: @fg_color;
+    -gtk-icon-theme: "Adwaita";
 }
 
 /* catergory pane */
 #whiskermenu-window scrolledwindow:not(.launchers-pane) {
     border: none;
-}
-
-#whiskermenu-window box.vertical {
-    margin-top: 5px;
 }
 
 #whiskermenu-window button.category-button {
@@ -268,14 +263,15 @@ XfceHeading {
 
 /* launchers pane */
 #whiskermenu-window scrolledwindow.launchers-pane {
+    background-color: @sidebar_bg_color;
     border-color: @dim_border_color;
     border-radius: 6px;
     margin-right: 5px;
+    padding: 3px;
 }
 
 #whiskermenu-window scrolledwindow.launchers-pane treeview {
-    background-color: @sidebar_bg_color;
-    border-radius: 6px;
+    background-color: transparent;
     padding: 1px 5px;
     color: @fg_color;
 }
@@ -283,6 +279,11 @@ XfceHeading {
 #whiskermenu-window scrolledwindow.launchers-pane treeview:hover {
     background-color: @selected_bg_color;
     color: @selected_fg_color;
+    border-radius: 6px;
+}
+
+#whiskermenu-window scrolledwindow.launchers-pane treeview button {
+    background-color: transparent;
 }
 
 
@@ -341,8 +342,20 @@ XfceHeading {
 /*                LOGOUT DIALOG                  */
 /*************************************************/
 
+dialog.xfsm-logout-dialog button {
+  -gtk-icon-style: symbolic;
+}
+
 dialog.xfsm-logout-dialog button:focus {
     box-shadow: 0px 0px 0px 1.3px @selected_bg_color inset;
+}
+
+dialog.xfsm-logout-dialog box.xfsm-logout-buttons image {
+    -gtk-icon-transform: scale(0.85);
+    color: @fg_color;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 48px 48px;
 }
 
 
