@@ -13,6 +13,20 @@ The repository provides two manually selectable theme names:
 The dark variant uses a restrained blue-gray palette and a subtle one-pixel
 window border. It intentionally has no GTK 2 dark variant.
 
+## Screenshots
+
+### GTK3
+
+<image src="screenshots/gtk3-light.png" width="1000px" height="543px" title="gtk3-light"></img>
+
+<image src="screenshots/gtk3-dark.png" width="1000px" height="543px" title="gtk3-dark"></img>
+
+### GTK4
+
+<image src="screenshots/gtk4-light.png" width="1000px" height="488px" title="gtk4-light"></img>
+
+<image src="screenshots/gtk4-dark.png" width="1000px" height="488px" title="gtk4-dark"></img>
+
 ## Installation
 
 If this checkout is already located at `~/.themes/theme-dks`, expose the dark
